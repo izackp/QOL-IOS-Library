@@ -12,5 +12,7 @@
 
 - (bool)isBeforeDate:(NSDate*)otherDate;
 - (bool)isAfterDate:(NSDate*)otherDate;
+- (bool)isToday;
+- (bool)isYesterday;
 
 @end
