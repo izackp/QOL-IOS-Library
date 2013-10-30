@@ -30,13 +30,14 @@
 }
 
 - (bool)isYesterday {
-    NSDate* thisDate = [self dateYMD];
+   NSDate* todaysDate = [[NSDate date] dateYMD];
     
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* offsetComp = [[NSDateComponents alloc] init];
     offsetComp.day = -1;
-    NSDate* yesterday = [cal dateByAddingComponents:offsetComp toDate:thisDate options:0];
+    NSDate* yesterday = [cal dateByAddingComponents:offsetComp toDate:todaysDate options:0];
     
+     NSDate* thisDate = [self dateYMD];
     return [thisDate isEqualToDate:yesterday];
 }
 
