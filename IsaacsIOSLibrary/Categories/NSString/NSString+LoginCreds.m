@@ -18,4 +18,10 @@
   return [emailTest evaluateWithObject:self];
 }
 
+- (BOOL)isAlphanumeric
+{
+    NSCharacterSet *unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+    return ([self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound);
+}
+
 @end
