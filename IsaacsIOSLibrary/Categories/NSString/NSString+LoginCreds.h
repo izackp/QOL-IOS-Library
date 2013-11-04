@@ -10,4 +10,6 @@
 
 - (BOOL)isValidEmail;
 
+- (BOOL)isAlphanumeric;
+
 @end
