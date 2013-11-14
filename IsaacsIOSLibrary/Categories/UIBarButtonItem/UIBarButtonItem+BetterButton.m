@@ -10,14 +10,20 @@
 
 @implementation UIBarButtonItem (BetterButton)
 
-+ (UIBarButtonItem *)buttonFromImage:(UIImage *)image andTarget:(id)target andAction:(SEL)action
++ (UIBarButtonItem *)buttonFromImage:(UIImage *)image andText:(NSString*)text andTarget:(id)target andAction:(SEL)action
 {
-    return [UIBarButtonItem buttonFromImage:image andTarget:target andAction:action andSize:image.size];
+    return [UIBarButtonItem buttonFromImage:image andText:text andTarget:target andAction:action andSize:image.size];
 }
 
-+ (UIBarButtonItem *)buttonFromImage:(UIImage *)image andTarget:(id)target andAction:(SEL)action andSize:(CGSize)size
++ (UIBarButtonItem *)buttonFromImage:(UIImage *)image andTarget:(id)target andAction:(SEL)action
+{
+    return [UIBarButtonItem buttonFromImage:image andText:nil andTarget:target andAction:action andSize:image.size];
+}
+
++ (UIBarButtonItem *)buttonFromImage:(UIImage *)image andText:(NSString*)text andTarget:(id)target andAction:(SEL)action andSize:(CGSize)size
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:text forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [button setFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
