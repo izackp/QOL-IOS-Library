@@ -16,7 +16,7 @@
 
 @protocol TableViewCellCacheDelegate;
 
-@interface TableViewCellCache : NSObject <UITableViewDataSource, UITableViewDelegate>
+@interface TableViewCellCache : NSObject
 
 @property (assign, nonatomic) id <TableViewCellCacheDelegate> delegate;
 @property (assign, nonatomic) int cacheSize;
