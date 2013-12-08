@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
 		DF27183A1820293E00C7D7E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718391820293E00C7D7E0 /* Foundation.framework */; };
 		DF27183F1820293E00C7D7E0 /* IsaacsIOSLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */; };
 		DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */; };
@@ -64,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
 		DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIsaacsIOSLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2718391820293E00C7D7E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF27183D1820293E00C7D7E0 /* IsaacsIOSLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsaacsIOSLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -146,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF17EF641854B08E0064E3C0 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */,
+				DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
 		DF27182D1820293E00C7D7E0 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,8 @@
 		DF27185F1820299500C7D7E0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DF2718601820299500C7D7E0 /* NSDate */,
+				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
 				DF27186F1820299500C7D7E0 /* UIApplication */,
@@ -225,7 +239,6 @@
 				DF2718781820299500C7D7E0 /* UIImage */,
 				DF2718821820299500C7D7E0 /* UIImagePickerController */,
 				DF2718881820299500C7D7E0 /* UINavigationController */,
-				DF2718601820299500C7D7E0 /* NSDate */,
 				DF27188B1820299500C7D7E0 /* UIView */,
 			);
 			path = Categories;
@@ -502,6 +515,7 @@
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
 				DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */,
+				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DF2718A81820299500C7D7E0 /* UIFont+Debug.m in Sources */,
 				DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */,
 				DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */,
