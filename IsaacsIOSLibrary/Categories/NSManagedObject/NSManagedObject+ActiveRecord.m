@@ -10,7 +10,7 @@
 
 #import <objc/runtime.h>
 #import "NSManagedObject+ActiveRecord.h"
-#import "CoreDataStuff.h"
+#import "CoreDataGlobalContext.h"
 //#import <RestKit.h>
 //#import <CoreData.h>
 
@@ -27,11 +27,11 @@ static NSNumber *defaultBatchSize = nil;
 
 // TODO: Not sure that we even need the objectStore...
 + (NSManagedObjectContext*)managedObjectContext {
-	return [[CoreDataStuff sharedInstance] managedObjectContext];
+	return [[CoreDataGlobalContext sharedInstance] managedObjectContext];
 }
 
 + (NSManagedObjectContext*)currentContext; {
-    return [[CoreDataStuff sharedInstance] managedObjectContext];
+    return [[CoreDataGlobalContext sharedInstance] managedObjectContext];
 }
 
 + (NSEntityDescription*)entity {
@@ -732,7 +732,7 @@ static NSNumber *defaultBatchSize = nil;
 {
 	[context deleteObject:self];
     NSError *executeError = nil;
-    if(![[CoreDataStuff sharedInstance] saveContext:&executeError]) {
+    if(![[CoreDataGlobalContext sharedInstance] saveContext:&executeError]) {
         NSLog(@"Failed to save %@ to data store", NSStringFromClass([self class]));
         NSLog(@"Error is: %@", [executeError localizedDescription]);
     }
@@ -787,7 +787,7 @@ static NSNumber *defaultBatchSize = nil;
 
 + (void)saveGlobalContext {
     NSError *executeError = nil;
-    if(![[CoreDataStuff sharedInstance] saveContext:&executeError]) {
+    if(![[CoreDataGlobalContext sharedInstance] saveContext:&executeError]) {
         //Commented out because its misleading
         //NSLog(@"Failed to save %@ to data store.", NSStringFromClass([self class]));
     }
