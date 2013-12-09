@@ -62,7 +62,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"SightHound" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.databaseName withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -88,7 +88,8 @@ const static int cMaxTries = 2;
         return false;
     }
     
-    NSURL *storeURL             = [[self sqlRootUrl] URLByAppendingPathComponent:@"SightHound.sqlite"];
+    NSString* dbName = [NSString stringWithFormat:@"%@.sqlite", self.databaseName];
+    NSURL *storeURL             = [[self sqlRootUrl] URLByAppendingPathComponent:dbName];
     NSError *error              = nil;
     NSDictionary* options       = nil;
     
