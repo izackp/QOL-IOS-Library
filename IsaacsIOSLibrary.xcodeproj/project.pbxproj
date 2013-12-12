@@ -20,7 +20,7 @@
 		DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718641820299500C7D7E0 /* NSDate+FuzzyTime.m */; };
 		DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718671820299500C7D7E0 /* NSString+LoginCreds.m */; };
 		DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718691820299500C7D7E0 /* NSString+MD5.m */; };
-		DF2718A41820299500C7D7E0 /* NSString+Trim.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186B1820299500C7D7E0 /* NSString+Trim.m */; };
+		DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186B1820299500C7D7E0 /* NSString+Formatting.m */; };
 		DF2718A51820299500C7D7E0 /* UIAlertView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186E1820299500C7D7E0 /* UIAlertView+Shortcuts.m */; };
 		DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718711820299500C7D7E0 /* UIApplication+EasyAccess.m */; };
 		DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718741820299500C7D7E0 /* UIBarButtonItem+BetterButton.m */; };
@@ -83,8 +83,8 @@
 		DF2718671820299500C7D7E0 /* NSString+LoginCreds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LoginCreds.m"; sourceTree = "<group>"; };
 		DF2718681820299500C7D7E0 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		DF2718691820299500C7D7E0 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		DF27186A1820299500C7D7E0 /* NSString+Trim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Trim.h"; sourceTree = "<group>"; };
-		DF27186B1820299500C7D7E0 /* NSString+Trim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trim.m"; sourceTree = "<group>"; };
+		DF27186A1820299500C7D7E0 /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Formatting.h"; sourceTree = "<group>"; };
+		DF27186B1820299500C7D7E0 /* NSString+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Formatting.m"; sourceTree = "<group>"; };
 		DF27186D1820299500C7D7E0 /* UIAlertView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Shortcuts.h"; sourceTree = "<group>"; };
 		DF27186E1820299500C7D7E0 /* UIAlertView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Shortcuts.m"; sourceTree = "<group>"; };
 		DF2718701820299500C7D7E0 /* UIApplication+EasyAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+EasyAccess.h"; sourceTree = "<group>"; };
@@ -249,8 +249,8 @@
 				DF2718671820299500C7D7E0 /* NSString+LoginCreds.m */,
 				DF2718681820299500C7D7E0 /* NSString+MD5.h */,
 				DF2718691820299500C7D7E0 /* NSString+MD5.m */,
-				DF27186A1820299500C7D7E0 /* NSString+Trim.h */,
-				DF27186B1820299500C7D7E0 /* NSString+Trim.m */,
+				DF27186A1820299500C7D7E0 /* NSString+Formatting.h */,
+				DF27186B1820299500C7D7E0 /* NSString+Formatting.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -488,7 +488,7 @@
 				DF2718AC1820299500C7D7E0 /* UIImage+RoundedCorner.m in Sources */,
 				DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */,
 				DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */,
-				DF2718A41820299500C7D7E0 /* NSString+Trim.m in Sources */,
+				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
