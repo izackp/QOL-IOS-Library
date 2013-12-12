@@ -1,13 +1,14 @@
 //
-//  NSString+MD5.h
+//  NSString+Formatting.h
 //  IsaacsIOSLibrary
 //
 //  Created by IsaacPaul on 10/29/13.
 //  Copyright (c) 2013 Isaac Paul. All rights reserved.
 //
 
-@interface NSString (Trim)
+@interface NSString (Formatting)
 
+- (NSString*)urlEncoded;
 - (NSString*)trimWhiteSpace;
 
 @end
