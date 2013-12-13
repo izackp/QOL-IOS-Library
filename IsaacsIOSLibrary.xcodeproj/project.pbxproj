@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
+		DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
+		DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
 		DF27183A1820293E00C7D7E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718391820293E00C7D7E0 /* Foundation.framework */; };
 		DF27183F1820293E00C7D7E0 /* IsaacsIOSLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */; };
 		DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */; };
@@ -32,7 +35,6 @@
 		DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188A1820299500C7D7E0 /* UINavigationController+SetItems.m */; };
 		DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188D1820299500C7D7E0 /* UIView+FindFirstResponder.m */; };
 		DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188F1820299500C7D7E0 /* UIView+Positioning.m */; };
-		DF2718B21820299600C7D7E0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718921820299500C7D7E0 /* TableViewCellCache.m */; };
 		DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718961820299500C7D7E0 /* ButtonReverseContent.m */; };
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
@@ -64,6 +66,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		DF17EF711854B2610064E3C0 /* CoreDataGlobalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataGlobalContext.h; sourceTree = "<group>"; };
+		DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataGlobalContext.m; sourceTree = "<group>"; };
+		DF17EF741854B2610064E3C0 /* TableViewCellCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellCache.h; sourceTree = "<group>"; };
+		DF17EF751854B2610064E3C0 /* TableViewCellCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellCache.m; sourceTree = "<group>"; };
 		DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIsaacsIOSLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2718391820293E00C7D7E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF27183D1820293E00C7D7E0 /* IsaacsIOSLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsaacsIOSLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -109,8 +117,6 @@
 		DF27188D1820299500C7D7E0 /* UIView+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindFirstResponder.m"; sourceTree = "<group>"; };
 		DF27188E1820299500C7D7E0 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
 		DF27188F1820299500C7D7E0 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
-		DF2718911820299500C7D7E0 /* TableViewCellCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellCache.h; sourceTree = "<group>"; };
-		DF2718921820299500C7D7E0 /* TableViewCellCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellCache.m; sourceTree = "<group>"; };
 		DF2718951820299500C7D7E0 /* ButtonReverseContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonReverseContent.h; sourceTree = "<group>"; };
 		DF2718961820299500C7D7E0 /* ButtonReverseContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonReverseContent.m; sourceTree = "<group>"; };
 		DF2718981820299500C7D7E0 /* TextFieldAutoKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldAutoKeyboard.h; sourceTree = "<group>"; };
@@ -146,6 +152,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF17EF641854B08E0064E3C0 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */,
+				DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */ = {
+			isa = PBXGroup;
+			children = (
+				DF17EF711854B2610064E3C0 /* CoreDataGlobalContext.h */,
+				DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */,
+			);
+			path = CoreDataGlobalContext;
+			sourceTree = "<group>";
+		};
+		DF17EF731854B2610064E3C0 /* UITableViewCellCache */ = {
+			isa = PBXGroup;
+			children = (
+				DF17EF741854B2610064E3C0 /* TableViewCellCache.h */,
+				DF17EF751854B2610064E3C0 /* TableViewCellCache.m */,
+			);
+			path = UITableViewCellCache;
+			sourceTree = "<group>";
+		};
 		DF27182D1820293E00C7D7E0 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +250,8 @@
 		DF27185F1820299500C7D7E0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DF2718601820299500C7D7E0 /* NSDate */,
+				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
 				DF27186F1820299500C7D7E0 /* UIApplication */,
@@ -225,7 +260,6 @@
 				DF2718781820299500C7D7E0 /* UIImage */,
 				DF2718821820299500C7D7E0 /* UIImagePickerController */,
 				DF2718881820299500C7D7E0 /* UINavigationController */,
-				DF2718601820299500C7D7E0 /* NSDate */,
 				DF27188B1820299500C7D7E0 /* UIView */,
 			);
 			path = Categories;
@@ -348,8 +382,8 @@
 		DF2718901820299500C7D7E0 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DF2718911820299500C7D7E0 /* TableViewCellCache.h */,
-				DF2718921820299500C7D7E0 /* TableViewCellCache.m */,
+				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
+				DF17EF731854B2610064E3C0 /* UITableViewCellCache */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -493,15 +527,17 @@
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
 				DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */,
+				DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */,
 				DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */,
-				DF2718B21820299600C7D7E0 /* TableViewCellCache.m in Sources */,
 				DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
+				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,
 				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
 				DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
 				DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */,
+				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DF2718A81820299500C7D7E0 /* UIFont+Debug.m in Sources */,
 				DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */,
 				DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */,
