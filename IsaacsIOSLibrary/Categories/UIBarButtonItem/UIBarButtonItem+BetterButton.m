@@ -7,6 +7,7 @@
 //
 
 #import "UIBarButtonItem+BetterButton.h"
+#import "UIView+Positioning.h"
 
 @implementation UIBarButtonItem (BetterButton)
 
@@ -31,6 +32,17 @@
     UIBarButtonItem* btn = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     return btn;
+}
+
++ (UIBarButtonItem*)buttonUsingButton:(UIButton*)button withOffset:(CGPoint)offset {
+
+    [button setFrame:CGRectMake(0.0f, 0.0f, button.imageView.image.size.width, button.imageView.image.size.height)];
+    
+    UIView *backButtonView = [[UIView alloc] initWithFrame:button.bounds];
+    backButtonView.bounds = CGRectOffset(backButtonView.bounds, offset.x, offset.y);
+    [backButtonView addSubview:button];
+    return [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+
 }
 
 @end
