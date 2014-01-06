@@ -11,8 +11,6 @@
 #import <objc/runtime.h>
 #import "NSManagedObject+ActiveRecord.h"
 #import "CoreDataGlobalContext.h"
-//#import <RestKit.h>
-//#import <CoreData.h>
 
 // Set Logging Component
 #undef RKLogComponent
@@ -25,7 +23,6 @@ static NSNumber *defaultBatchSize = nil;
 
 #pragma mark - RKManagedObject methods
 
-// TODO: Not sure that we even need the objectStore...
 + (NSManagedObjectContext*)managedObjectContext {
 	return [[CoreDataGlobalContext sharedInstance] managedObjectContext];
 }
