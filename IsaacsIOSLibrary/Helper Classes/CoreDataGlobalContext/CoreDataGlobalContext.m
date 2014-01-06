@@ -43,18 +43,21 @@
 
 #pragma mark - Core Data stack
 
+//We're storing the object context in thread local storage.. which is a design that Apple is moving away from. So we should update this to not do that.
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+    NSManagedObjectContext* mocForThisThread = [[[NSThread currentThread] threadDictionary] objectForKey:@"CDGCManagedObjectContext"];
+    if (mocForThisThread != nil) {
+        return mocForThisThread;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+        mocForThisThread = [[NSManagedObjectContext alloc] init];
+        [mocForThisThread setPersistentStoreCoordinator:coordinator];
+        [[[NSThread currentThread] threadDictionary] setObject:mocForThisThread forKey:@"CDGCManagedObjectContext"];
     }
-    return _managedObjectContext;
+    return mocForThisThread;
 }
 
 - (NSManagedObjectModel *)managedObjectModel
