@@ -46,18 +46,19 @@
 //We're storing the object context in thread local storage.. which is a design that Apple is moving away from. So we should update this to not do that.
 - (NSManagedObjectContext *)managedObjectContext
 {
-    NSManagedObjectContext* mocForThisThread = [[[NSThread currentThread] threadDictionary] objectForKey:@"CDGCManagedObjectContext"];
-    if (mocForThisThread != nil) {
-        return mocForThisThread;
+    if ([NSThread currentThread] != [NSThread mainThread])
+        return nil;
+    
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        mocForThisThread = [[NSManagedObjectContext alloc] init];
-        [mocForThisThread setPersistentStoreCoordinator:coordinator];
-        [[[NSThread currentThread] threadDictionary] setObject:mocForThisThread forKey:@"CDGCManagedObjectContext"];
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
-    return mocForThisThread;
+    return _managedObjectContext;
 }
 
 - (NSManagedObjectModel *)managedObjectModel

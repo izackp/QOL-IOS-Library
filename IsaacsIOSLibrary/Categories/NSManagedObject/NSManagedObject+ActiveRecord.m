@@ -786,7 +786,7 @@ static NSNumber *defaultBatchSize = nil;
     NSError *executeError = nil;
     if(![[CoreDataGlobalContext sharedInstance] saveContext:&executeError]) {
         //Commented out because its misleading
-        //NSLog(@"Failed to save %@ to data store.", NSStringFromClass([self class]));
+        NSLog(@"Failed to save %@ to data store.", NSStringFromClass([self class]));
     }
 }
 
