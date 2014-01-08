@@ -39,6 +39,7 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
 
@@ -523,6 +524,7 @@
 				DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */,
 				DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */,
 				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
+				DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
