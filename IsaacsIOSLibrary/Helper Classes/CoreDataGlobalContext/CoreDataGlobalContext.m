@@ -43,8 +43,12 @@
 
 #pragma mark - Core Data stack
 
+//We're storing the object context in thread local storage.. which is a design that Apple is moving away from. So we should update this to not do that.
 - (NSManagedObjectContext *)managedObjectContext
 {
+    if ([NSThread currentThread] != [NSThread mainThread])
+        return nil;
+    
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
