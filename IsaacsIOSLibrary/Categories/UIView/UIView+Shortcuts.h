@@ -12,4 +12,6 @@
 
 + (instancetype)createFromNib;
 
+- (bool)isVisible;
+
 @end
