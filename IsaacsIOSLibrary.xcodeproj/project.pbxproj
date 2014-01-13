@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
 		DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
 		DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
@@ -39,6 +40,7 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Shortcuts.h"; sourceTree = "<group>"; };
+		DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Shortcuts.m"; sourceTree = "<group>"; };
 		DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
 		DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
 		DF17EF711854B2610064E3C0 /* CoreDataGlobalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataGlobalContext.h; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF02844A1880302600596BA6 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */,
+				DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		DF17EF641854B08E0064E3C0 /* NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,7 @@
 		DF27185F1820299500C7D7E0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DF02844A1880302600596BA6 /* UIColor */,
 				DF2718601820299500C7D7E0 /* NSDate */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
@@ -523,6 +537,8 @@
 				DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */,
 				DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */,
 				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
+				DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */,
+				DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
