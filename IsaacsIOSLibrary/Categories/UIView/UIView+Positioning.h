@@ -19,4 +19,6 @@
 
 - (void)cropForVisibleSubviews;
 
+- (void)centerSubviewsVerticallyWithPadding:(CGFloat)padding;
+
 @end

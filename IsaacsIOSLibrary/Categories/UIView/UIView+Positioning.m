@@ -138,4 +138,38 @@
     self.height = lowestView - highestView;
 }
 
+/*! @todo using 'of' in a function name seems to imply a context that should be implied by the class its in. Which means it probably needs to be refactored */
+- (CGFloat)totalHeightOfVerticallyCenteredSubviewsWithPadding:(CGFloat)padding {
+    NSArray* views = self.subviews;
+    CGFloat totalHeight = 0.0f;
+    int numViews = [views count];
+    
+    if (numViews == 0)
+        return 0.0f;
+    
+    for (UIView* eachView in views)
+        totalHeight += eachView.height;
+    
+    totalHeight += padding * (numViews - 1);
+    return totalHeight;
+}
+
+- (void)centerSubviewsVerticallyWithPadding:(CGFloat)padding {
+
+    CGFloat totalHeightOfCenteredSubviews = [self totalHeightOfVerticallyCenteredSubviewsWithPadding:padding];
+    if (totalHeightOfCenteredSubviews == 0.0f)
+        return;
+    
+    CGFloat extraSpace = self.height - totalHeightOfCenteredSubviews;
+    CGFloat topPadding = extraSpace * 0.5f;
+    CGFloat startingY  = topPadding;
+    CGFloat offset = 0.0f;
+    
+    for (UIView* eachView in self.subviews)
+    {
+        eachView.y = startingY + offset;
+        offset += padding + eachView.height;
+    }
+}
+
 @end
