@@ -18,4 +18,15 @@
     return view;
 }
 
+- (bool)isVisible {
+    UIView* superview = self.superview;
+    while (superview != nil)
+    {
+        if ([superview isKindOfClass:[UIWindow class]])
+            return true;
+        superview = superview.superview;
+    }
+    return false;
+}
+
 @end
