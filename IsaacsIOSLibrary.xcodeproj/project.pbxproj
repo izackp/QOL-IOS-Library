@@ -41,6 +41,7 @@
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
 		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
+		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoKeyboard.m; sourceTree = "<group>"; };
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
+		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
+		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shortcuts.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +275,7 @@
 				DF2718721820299500C7D7E0 /* UIBarButtonItem */,
 				DF2718751820299500C7D7E0 /* UIFont */,
 				DF2718781820299500C7D7E0 /* UIImage */,
+				DFDB30FB188EC5E100B1287C /* UIImageView */,
 				DF2718821820299500C7D7E0 /* UIImagePickerController */,
 				DF2718881820299500C7D7E0 /* UINavigationController */,
 				DF27188B1820299500C7D7E0 /* UIView */,
@@ -449,6 +453,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DFDB30FB188EC5E100B1287C /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */,
+				DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,6 +567,7 @@
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
 				DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */,
 				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
+				DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */,
 				DF2718A81820299500C7D7E0 /* UIFont+Debug.m in Sources */,
 				DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */,
 				DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */,
