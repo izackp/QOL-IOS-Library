@@ -41,6 +41,15 @@
     return [thisDate isEqualToDate:yesterday];
 }
 
+- (int)daysSince:(NSDate*)other {
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+                                                        fromDate:other
+                                                          toDate:self
+                                                         options:0];
+    return [components day];
+}
+
 - (NSDate*)dateYMD {
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* ymdComps = [self componentsYMD];
