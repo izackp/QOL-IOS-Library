@@ -12,24 +12,31 @@
 
 + (UIAlertView*)showAlertWithTitle:(NSString*)title andMessage:(NSString*)message {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    [alert forceMainThreadShow];
     return alert;
 }
 
 + (UIAlertView*)showMessage:(NSString*)message {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    [alert forceMainThreadShow];
     return alert;
 }
 
 + (UIAlertView*)showQuestion:(NSString*)message {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [alert show];
+    [alert forceMainThreadShow];
     return alert;
 }
 
 + (UIAlertView*)showNotice:(NSString*)message {
     return [UIAlertView showAlertWithTitle:@"Notice" andMessage:message];
+}
+
+- (void)forceMainThreadShow {
+    if ([NSThread currentThread] == [NSThread mainThread])
+        [self show];
+    else
+        [self performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:true];
 }
 
 @end
