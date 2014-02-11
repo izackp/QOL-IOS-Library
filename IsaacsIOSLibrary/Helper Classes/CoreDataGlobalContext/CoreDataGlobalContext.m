@@ -41,6 +41,19 @@
     return true;
 }
 
+- (void)clearStore {
+    NSPersistentStoreCoordinator *storeCoordinator = [self persistentStoreCoordinator];
+    NSPersistentStore *store = [[storeCoordinator persistentStores] lastObject];
+    NSError *error;
+    NSURL *storeURL = store.URL;
+    [storeCoordinator removePersistentStore:store error:&error];
+    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
+    _managedObjectContext = nil;
+    _managedObjectModel = nil;
+    _persistentStoreCoordinator = nil;
+    [self persistentStoreCoordinator];
+}
+
 #pragma mark - Core Data stack
 
 //We're storing the object context in thread local storage.. which is a design that Apple is moving away from. So we should update this to not do that.
