@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
 		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
@@ -70,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
+		6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Shortcuts.m"; sourceTree = "<group>"; };
 		DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Shortcuts.h"; sourceTree = "<group>"; };
 		DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Shortcuts.m"; sourceTree = "<group>"; };
 		DF056B701890035D00FB39D0 /* UIButton+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Shortcuts.h"; sourceTree = "<group>"; };
@@ -303,6 +306,8 @@
 				DF2718621820299500C7D7E0 /* NSDate+Compare.m */,
 				DF2718631820299500C7D7E0 /* NSDate+FuzzyTime.h */,
 				DF2718641820299500C7D7E0 /* NSDate+FuzzyTime.m */,
+				6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */,
+				6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */,
 			);
 			path = NSDate;
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
 				DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */,
 				DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */,
+				6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */,
 				DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */,
 				DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
