@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+Compare.h"
+#import "NSDate+Shortcuts.h"
 
 @implementation NSDate (Compare)
 
@@ -23,21 +24,21 @@
 }
 
 - (bool)isToday {
-    NSDate* thisDate = [self dateYMD];
-    NSDate* todaysDate = [[NSDate date] dateYMD];
+    NSDate* thisDate = [self today];
+    NSDate* todaysDate = [[NSDate date] today];
     
     return [thisDate isEqualToDate:todaysDate];
 }
 
 - (bool)isYesterday {
-   NSDate* todaysDate = [[NSDate date] dateYMD];
+   NSDate* todaysDate = [[NSDate date] today];
     
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* offsetComp = [[NSDateComponents alloc] init];
     offsetComp.day = -1;
     NSDate* yesterday = [cal dateByAddingComponents:offsetComp toDate:todaysDate options:0];
     
-     NSDate* thisDate = [self dateYMD];
+     NSDate* thisDate = [self today];
     return [thisDate isEqualToDate:yesterday];
 }
 
@@ -48,22 +49,6 @@
                                                           toDate:self
                                                          options:0];
     return [components day];
-}
-
-- (NSDate*)dateYMD {
-    NSCalendar* cal = [NSCalendar currentCalendar];
-    NSDateComponents* ymdComps = [self componentsYMD];
-    return [cal dateFromComponents:ymdComps];
-}
-
-- (NSDateComponents*)componentsYMD {
-    NSCalendar* cal = [NSCalendar currentCalendar];
-    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
-}
-
-- (NSDateComponents*)componentsOfTimeSinceDate:(NSDate*)date {
-    NSCalendar* cal = [NSCalendar currentCalendar];
-    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date toDate:self options:0];
 }
 
 @end
