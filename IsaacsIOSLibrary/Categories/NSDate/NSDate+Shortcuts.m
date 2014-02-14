@@ -29,15 +29,42 @@
     return result;
 }
 
-- (NSDate*)today {
+- (NSDate*)dateOffsettedBySeconds:(int)seconds {
+    NSDate* dateYMDS = [self dateYMDS];
     NSCalendar* cal = [NSCalendar currentCalendar];
+    NSDateComponents* offsetComp = [[NSDateComponents alloc] init];
+    offsetComp.second = seconds;
+    NSDate* result = [cal dateByAddingComponents:offsetComp toDate:dateYMDS options:0];
+    return result;
+}
+
+- (NSDate*)today {
+    return [self dateYMD];
+}
+
+- (NSDate*)dateYMD {
     NSDateComponents* ymdComps = [self componentsYMD];
-    return [cal dateFromComponents:ymdComps];
+    return [NSDate dateUsingComponents:ymdComps];
+}
+
+- (NSDate*)dateYMDS {
+    NSDateComponents* ymdComps = [self componentsYMDS];
+    return [NSDate dateUsingComponents:ymdComps];
+}
+
++ (NSDate*)dateUsingComponents:(NSDateComponents*)components {
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    return [cal dateFromComponents:components];
 }
 
 - (NSDateComponents*)componentsYMD {
     NSCalendar* cal = [NSCalendar currentCalendar];
     return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
+}
+
+- (NSDateComponents*)componentsYMDS {
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitSecond) fromDate:self];
 }
 
 - (NSDateComponents*)componentsOfTimeSinceDate:(NSDate*)date {
