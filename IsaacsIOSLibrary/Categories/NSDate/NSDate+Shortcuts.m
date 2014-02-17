@@ -30,14 +30,11 @@
 }
 
 - (NSDate*)dateOffsettedBySeconds:(NSTimeInterval)seconds {
-    NSLog(@"original date: %@", self);
     NSDate* dateYMDHMS = [self dateYMDHMS];
-    NSLog(@"ymdhms date: %@", dateYMDHMS);
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* offsetComp = [[NSDateComponents alloc] init];
     offsetComp.second = seconds;
     NSDate* result = [cal dateByAddingComponents:offsetComp toDate:dateYMDHMS options:0];
-    NSLog(@"result date: %@", result);
     return result;
 }
 
