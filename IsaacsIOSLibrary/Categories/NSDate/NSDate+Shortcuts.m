@@ -29,12 +29,15 @@
     return result;
 }
 
-- (NSDate*)dateOffsettedBySeconds:(int)seconds {
-    NSDate* dateYMDS = [self dateYMDS];
+- (NSDate*)dateOffsettedBySeconds:(NSTimeInterval)seconds {
+    NSLog(@"original date: %@", self);
+    NSDate* dateYMDHMS = [self dateYMDHMS];
+    NSLog(@"ymdhms date: %@", dateYMDHMS);
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* offsetComp = [[NSDateComponents alloc] init];
     offsetComp.second = seconds;
-    NSDate* result = [cal dateByAddingComponents:offsetComp toDate:dateYMDS options:0];
+    NSDate* result = [cal dateByAddingComponents:offsetComp toDate:dateYMDHMS options:0];
+    NSLog(@"result date: %@", result);
     return result;
 }
 
@@ -47,9 +50,9 @@
     return [NSDate dateUsingComponents:ymdComps];
 }
 
-- (NSDate*)dateYMDS {
-    NSDateComponents* ymdComps = [self componentsYMDS];
-    return [NSDate dateUsingComponents:ymdComps];
+- (NSDate*)dateYMDHMS {
+    NSDateComponents* ymdhmsComps = [self componentsYMDHMS];
+    return [NSDate dateUsingComponents:ymdhmsComps];
 }
 
 + (NSDate*)dateUsingComponents:(NSDateComponents*)components {
@@ -62,9 +65,9 @@
     return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
 }
 
-- (NSDateComponents*)componentsYMDS {
+- (NSDateComponents*)componentsYMDHMS {
     NSCalendar* cal = [NSCalendar currentCalendar];
-    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitSecond) fromDate:self];
+    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute |  NSCalendarUnitSecond) fromDate:self];
 }
 
 - (NSDateComponents*)componentsOfTimeSinceDate:(NSDate*)date {

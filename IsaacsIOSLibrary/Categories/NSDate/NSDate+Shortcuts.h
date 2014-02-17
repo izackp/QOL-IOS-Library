@@ -14,9 +14,10 @@
 - (NSDate*)yesterday;
 - (NSDate*)today;
 - (NSDate*)dateOffsettedByDays:(int)days;
-- (NSDate*)dateOffsettedBySeconds:(int)seconds;
+- (NSDate*)dateOffsettedBySeconds:(NSTimeInterval)seconds;
 
-- (NSDateComponents*)componentsYMD;
+
+- (NSDateComponents*)componentsYMDHMS;
 - (NSDateComponents*)componentsOfTimeSinceDate:(NSDate*)date;
 
 @end
