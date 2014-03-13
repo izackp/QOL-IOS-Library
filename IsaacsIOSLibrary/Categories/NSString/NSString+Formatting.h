@@ -10,5 +10,7 @@
 
 - (NSString*)urlEncoded;
 - (NSString*)trimWhiteSpace;
+- (NSString*)httpAddress;
+- (NSString*)httpAddressWithBasicAuthUsername:(NSString*)username password:(NSString*)password;
 
 @end
