@@ -7,9 +7,11 @@
 //
 
 #import "NSString+Formatting.h"
+#import "NSString+Search.h"
 #import <CommonCrypto/CommonDigest.h>
 
 NSString* const cHttpPrefix = @"http://";
+NSString* const cHttpSuffix = @"/";
 
 @implementation NSString (Formatting)
 
@@ -33,28 +35,41 @@ NSString* const cHttpPrefix = @"http://";
     return [self rangeOfString:cHttpPrefix];
 }
 
-- (NSString*)httpAddress {
-    NSRange range = [self rangeOfPrefix];
-    if (range.location == NSNotFound)
-        return [[NSString stringWithFormat:@"%@%@", cHttpPrefix, self] urlEncoded];
-    
-    if (range.location == 0)
-        return [self urlEncoded];
-    
+- (NSString*)strippedHost {
+    NSString* content = [self getFirstStringInbetweenPrefix:cHttpPrefix suffix:cHttpSuffix];
+    return content;
+}
+
+- (NSString*)hostSubPath {
+    NSString* content = [self getFirstStringAfter:cHttpPrefix];
+    if ([content containsText:cHttpSuffix])
+    {
+        NSString* additionalContent = [content getFirstStringAfter:cHttpSuffix];
+        return additionalContent;
+    }
     return nil;
 }
 
-/*! does not work if the prefix is in the middle of the string */
-- (NSString*)removeHttpPrefix {
-    NSRange range = [self rangeOfPrefix];
-    if (range.location != 0)
-        return self;
-    
-    return [self substringFromIndex:cHttpPrefix.length];
+- (NSString*)httpAddressWithSubpath {
+    NSString* finalAddress = [[self httpAddress] stringByAppendingString:[self hostSubPath]];
+    return finalAddress;
 }
 
-- (NSString*)httpAddressWithBasicAuthUsername:(NSString*)username password:(NSString*)password {
-    return [[NSString stringWithFormat:@"http://%@:%@@%@/", username, password, [self removeHttpPrefix]] urlEncoded];
+- (NSString*)httpAddress {
+    NSString* host = [self strippedHost];
+    NSString* formattedHost = [cHttpPrefix stringByAppendingFormat:@"%@%@", host, cHttpSuffix];
+    return [formattedHost urlEncoded];
+}
+
+- (NSString*)httpAddressWithSubpathUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
+    NSString* httpAddressWithAuth = [self httpAddressUsingBasicAuthUsername:username password:password];
+    NSString* subPath = [self hostSubPath];
+    NSString* final = [httpAddressWithAuth stringByAppendingString:[subPath urlEncoded]];
+    return final;
+}
+
+- (NSString*)httpAddressUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
+    return [[NSString stringWithFormat:@"%@%@:%@@%@%@", cHttpPrefix, username, password, [self strippedHost], cHttpSuffix] urlEncoded];
 }
 
 @end
