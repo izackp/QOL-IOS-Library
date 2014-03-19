@@ -45,4 +45,12 @@
 
 }
 
++ (UIBarButtonItem*)barButtonFromButton:(UIButton*)button offset:(CGPoint)offset {
+    
+    UIView *backButtonView = [[UIView alloc] initWithFrame:button.bounds];
+    backButtonView.bounds = CGRectOffset(backButtonView.bounds, offset.x, offset.y);
+    [backButtonView addSubview:button];
+    return [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+}
+
 @end

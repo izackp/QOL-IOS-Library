@@ -14,5 +14,6 @@
 + (UIBarButtonItem *)buttonFromImage:(UIImage *)image andText:(NSString*)text andTarget:(id)target andAction:(SEL)action;
 + (UIBarButtonItem *)buttonFromImage:(UIImage *)image andText:(NSString*)text andTarget:(id)target andAction:(SEL)action andSize:(CGSize)size;
 + (UIBarButtonItem*)buttonUsingButton:(UIButton*)button withOffset:(CGPoint)offset;
++ (UIBarButtonItem*)barButtonFromButton:(UIButton*)button offset:(CGPoint)offset;
 
 @end
