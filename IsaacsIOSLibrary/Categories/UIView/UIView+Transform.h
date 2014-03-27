@@ -11,5 +11,6 @@
 @interface UIView (Transform)
 
 - (void)rotate90Degrees:(bool)clockwise;
+- (void)scaleWidthWithAspectRatio:(CGFloat)newWidth;
 
 @end
