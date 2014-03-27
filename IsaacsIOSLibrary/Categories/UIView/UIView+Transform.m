@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Transform.h"
+#import "UIView+Positioning.h"
 
 @implementation UIView (Transform)
 
@@ -15,6 +16,14 @@
     CGFloat idk = M_PI * !self.transform.a;
     CGFloat finalIdk = M_PI_2 - idk;
     self.transform = CGAffineTransformRotate(self.transform, finalIdk);
+}
+
+- (void)scaleWidthWithAspectRatio:(CGFloat)newWidth {
+    CGFloat oldWidth = self.width;
+    CGFloat scaleFactor = newWidth / oldWidth;
+    
+    self.height = self.height * scaleFactor;
+    self.width = oldWidth * scaleFactor;
 }
 
 @end
