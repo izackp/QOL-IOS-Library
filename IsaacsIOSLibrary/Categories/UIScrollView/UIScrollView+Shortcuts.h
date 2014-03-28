@@ -11,5 +11,6 @@
 @interface UIScrollView (Shortcuts)
 
 - (void)offsetContentHeight:(CGFloat)offset;
+- (void)setContentHeight:(CGFloat)height;
 
 @end
