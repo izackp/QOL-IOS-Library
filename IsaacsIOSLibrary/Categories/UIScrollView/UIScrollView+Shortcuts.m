@@ -14,4 +14,8 @@
     self.contentSize = CGSizeMake(self.contentSize.width, self.contentSize.height + offset);
 }
 
+- (void)setContentHeight:(CGFloat)height {
+    self.contentSize = CGSizeMake(self.contentSize.width, height);
+}
+
 @end
