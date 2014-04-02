@@ -16,4 +16,6 @@
 
 - (void)removeAllSubviews;
 
+- (UIImage*)generateImage;
+
 @end
