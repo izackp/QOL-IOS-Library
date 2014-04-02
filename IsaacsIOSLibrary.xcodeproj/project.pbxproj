@@ -11,6 +11,7 @@
 		6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
 		6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
 		6A5DDBEB18CA4E7000725BDE /* NSString+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */; };
+		6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */; };
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
 		6AA6432418E32A720047927E /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432318E32A720047927E /* NSObject+Properties.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
@@ -86,6 +87,8 @@
 		6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SystemVersion.m"; sourceTree = "<group>"; };
 		6A5DDBE918CA4E7000725BDE /* NSString+Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Search.h"; sourceTree = "<group>"; };
 		6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Search.m"; sourceTree = "<group>"; };
+		6A7FDD1D18EC7B7000F04632 /* UIViewController+AddChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddChild.h"; sourceTree = "<group>"; };
+		6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AddChild.m"; sourceTree = "<group>"; };
 		6AA642EF18E316DA0047927E /* UIView+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Transform.h"; sourceTree = "<group>"; };
 		6AA642F018E316DA0047927E /* UIView+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transform.m"; sourceTree = "<group>"; };
 		6AA6432218E32A720047927E /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Properties.h"; sourceTree = "<group>"; };
@@ -202,6 +205,15 @@
 				6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */,
 			);
 			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		6A7FDD1C18EC7B4500F04632 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6A7FDD1D18EC7B7000F04632 /* UIViewController+AddChild.h */,
+				6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		6AA6432118E32A520047927E /* NSObject */ = {
@@ -355,6 +367,7 @@
 				DF2718881820299500C7D7E0 /* UINavigationController */,
 				6AA6432B18E35DA70047927E /* UIScrollView */,
 				DF27188B1820299500C7D7E0 /* UIView */,
+				6A7FDD1C18EC7B4500F04632 /* UIViewController */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -647,6 +660,7 @@
 				6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */,
 				DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */,
 				DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */,
+				6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
 				6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */,
 				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,

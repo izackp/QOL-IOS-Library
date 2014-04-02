@@ -14,4 +14,6 @@
 
 - (bool)isVisible;
 
+- (void)removeAllSubviews;
+
 @end

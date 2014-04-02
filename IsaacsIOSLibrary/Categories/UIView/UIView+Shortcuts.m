@@ -29,4 +29,9 @@
     return false;
 }
 
+- (void)removeAllSubviews {
+    for (UIView* eachView in self.subviews)
+        [eachView removeFromSuperview];
+}
+
 @end
