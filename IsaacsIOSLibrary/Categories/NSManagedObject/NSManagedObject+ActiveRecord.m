@@ -118,7 +118,7 @@ static NSNumber *defaultBatchSize = nil;
 {
 	@synchronized(defaultBatchSize)
 	{
-		defaultBatchSize = [NSNumber numberWithInt:newBatchSize];
+		defaultBatchSize = @(newBatchSize);
 	}
 }
 
@@ -325,7 +325,7 @@ static NSNumber *defaultBatchSize = nil;
 	NSUInteger count = [context countForFetchRequest:request error:&error];
 	[self handleErrors:error];
 	
-	return [NSNumber numberWithUnsignedInt:count];	
+	return @(count);
 }
 
 + (NSNumber *)numberOfEntitiesWithPredicate:(NSPredicate *)searchTerm;

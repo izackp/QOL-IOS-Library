@@ -142,7 +142,7 @@
 - (CGFloat)totalHeightOfVerticallyCenteredSubviewsWithPadding:(CGFloat)padding {
     NSArray* views = self.subviews;
     CGFloat totalHeight = 0.0f;
-    int numViews = [views count];
+    NSUInteger numViews = [views count];
     
     if (numViews == 0)
         return 0.0f;
