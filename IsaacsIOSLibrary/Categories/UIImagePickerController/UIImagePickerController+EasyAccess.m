@@ -31,7 +31,6 @@
 
 - (void)presentPicker {
     [[[[UIApplication sharedApplication] delegate] window].rootViewController presentViewController:self animated:YES completion:nil];
-    
 }
 
 - (void)setMediaTypePhotoAndVideo {
