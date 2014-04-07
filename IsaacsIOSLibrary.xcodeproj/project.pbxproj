@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
+		6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
+		6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
 		6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
 		6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
 		6A544F5318ED97D400B466EB /* UIStoryboard+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A544F5218ED97D400B466EB /* UIStoryboard+Shortcuts.m */; };
@@ -82,6 +84,10 @@
 /* Begin PBXFileReference section */
 		6A0BD6B718BB86FC00E45103 /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
 		6A0BD6B818BB86FC00E45103 /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
+		6A1B990C18F315630056F52C /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
+		6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
+		6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Shortcuts.h"; sourceTree = "<group>"; };
+		6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4F60C418BE2F6E008858EB /* UIImage+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Factory.h"; sourceTree = "<group>"; };
 		6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Factory.m"; sourceTree = "<group>"; };
 		6A50C22618BCF75E003EC6E3 /* UIDevice+SystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SystemVersion.h"; sourceTree = "<group>"; };
@@ -199,6 +205,24 @@
 				6A0BD6B818BB86FC00E45103 /* StopWatch.m */,
 			);
 			path = StopWatch;
+			sourceTree = "<group>";
+		};
+		6A1B990A18F315440056F52C /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				6A1B990C18F315630056F52C /* NSArray+Shortcuts.h */,
+				6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		6A1B991518F327160056F52C /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */,
+				6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */,
+			);
+			path = NSManagedObjectContext;
 			sourceTree = "<group>";
 		};
 		6A50C22518BCF741003EC6E3 /* UIDevice */ = {
@@ -362,8 +386,10 @@
 		DF27185F1820299500C7D7E0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6A1B990A18F315440056F52C /* NSArray */,
 				DF2718601820299500C7D7E0 /* NSDate */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
+				6A1B991518F327160056F52C /* NSManagedObjectContext */,
 				6AA6432118E32A520047927E /* NSObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
@@ -678,6 +704,8 @@
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
 				6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */,
 				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,
+				6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */,
+				6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */,
 				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
 				DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */,
 				DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */,
