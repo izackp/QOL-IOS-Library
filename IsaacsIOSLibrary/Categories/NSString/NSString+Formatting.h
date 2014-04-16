@@ -10,6 +10,7 @@
 
 - (NSString*)urlEncoded;
 - (NSString*)trimWhiteSpace;
+- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
 
 /*! returns the string in http address format: http://string/ . Supports strings that already include the 'http://' and '/'. This method will truncate anything after the final '/'*/
 - (NSString*)httpAddress;
