@@ -42,13 +42,22 @@
     return [thisDate isEqualToDate:yesterday];
 }
 
-- (int)daysSince:(NSDate*)other {
+- (NSInteger)daysSince:(NSDate*)other {
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
                                                         fromDate:other
                                                           toDate:self
                                                          options:0];
     return [components day];
+}
+
+- (NSInteger)yearsSince:(NSDate*)other {
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorianCalendar components:NSYearCalendarUnit
+                                                        fromDate:other
+                                                          toDate:self
+                                                         options:0];
+    return [components year];
 }
 
 @end

@@ -14,4 +14,8 @@
 
 - (bool)isVisible;
 
+- (void)removeAllSubviews;
+
+- (UIImage*)generateImage;
+
 @end

@@ -29,4 +29,19 @@
     return false;
 }
 
+- (void)removeAllSubviews {
+    for (UIView* eachView in self.subviews)
+        [eachView removeFromSuperview];
+}
+
+- (UIImage*)generateImage {
+    UIGraphicsBeginImageContext(self.bounds.size);
+    
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 @end

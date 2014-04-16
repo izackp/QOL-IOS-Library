@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+Factory.h"
+#import "UIView+Shortcuts.h"
 
 @implementation UIImage (Factory)
 
@@ -29,6 +30,12 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
++ (UIImage*)buildImageOfRootView {
+    UIApplication* app = [UIApplication sharedApplication];
+    UIView* rootView = app.delegate.window.rootViewController.view;
+    return [rootView generateImage];
 }
 
 @end

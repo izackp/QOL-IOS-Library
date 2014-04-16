@@ -12,5 +12,6 @@
 
 + (UIImage*)buildWithColor:(UIColor*)color;
 + (UIImage*)buildWithColor:(UIColor*)color size:(CGSize)size;
++ (UIImage*)buildImageOfRootView;
 
 @end

@@ -14,16 +14,6 @@
 static bool isRetina = false;
 static bool isSetup = false;
 
-static inline CGSize swapWidthAndHeight(CGSize size)
-{
-    CGFloat swap = size.width;
-    
-    size.width  = size.height;
-    size.height = swap;
-    
-    return size;
-}
-
 @implementation UIImage (Echo)
 
 + (void)setUpIfNeeded {

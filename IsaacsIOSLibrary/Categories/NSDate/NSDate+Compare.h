@@ -14,6 +14,7 @@
 - (bool)isAfterDate:(NSDate*)otherDate;
 - (bool)isToday;
 - (bool)isYesterday;
-- (int)daysSince:(NSDate*)other;
+- (NSInteger)daysSince:(NSDate*)other;
+- (NSInteger)yearsSince:(NSDate*)other;
 
 @end
