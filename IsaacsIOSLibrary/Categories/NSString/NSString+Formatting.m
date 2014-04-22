@@ -31,6 +31,21 @@ NSString* const cHttpSuffix = @"/";
     return [mStr copy];
 }
 
+- (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet {
+    NSUInteger location = 0;
+    NSUInteger length = [self length];
+    unichar charBuffer[length];
+    [self getCharacters:charBuffer];
+    
+    for (; length > 0; length--) {
+        if (![characterSet characterIsMember:charBuffer[length - 1]]) {
+            break;
+        }
+    }
+    
+    return [self substringWithRange:NSMakeRange(location, length - location)];
+}
+
 - (NSRange)rangeOfPrefix {
     return [self rangeOfString:cHttpPrefix];
 }
