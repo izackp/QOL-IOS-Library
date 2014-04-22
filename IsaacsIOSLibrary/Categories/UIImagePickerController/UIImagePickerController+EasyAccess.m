@@ -45,4 +45,13 @@
     self.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
 }
 
++ (bool)isAnyCameraAvailable {
+    BOOL frontCameraAvailable = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
+    BOOL backCameraAvailable = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+    
+    if (frontCameraAvailable || backCameraAvailable)
+        return true;
+    return false;
+}
+
 @end
