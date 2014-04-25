@@ -8,6 +8,7 @@
 
 #import "UIImagePickerController+EasyAccess.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "UIAlertView+Shortcuts.h"
 
 @implementation UIImagePickerController (EasyAccess)
 
@@ -17,15 +18,15 @@
 }
 
 - (void)getMediaFromCamera {
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    if (![UIImagePickerController isAnyCameraAvailable])
     {
         [self getMediaFromDevice];
+        [UIAlertView showMessage:@"Could not find a camera device."];
         return;
     }
     
     self.sourceType = UIImagePickerControllerSourceTypeCamera;
-    if (![UIImagePickerController isSourceTypeAvailable:self.sourceType])
-        [self getMediaFromDevice];
+    //[self getMediaFromDevice
     [self presentPicker];
 }
 
@@ -46,12 +47,7 @@
 }
 
 + (bool)isAnyCameraAvailable {
-    BOOL frontCameraAvailable = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
-    BOOL backCameraAvailable = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
-    
-    if (frontCameraAvailable || backCameraAvailable)
-        return true;
-    return false;
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
 }
 
 @end
