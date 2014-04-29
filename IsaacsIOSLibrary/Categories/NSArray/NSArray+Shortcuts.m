@@ -23,4 +23,15 @@
     return array;
 }
 
+//Why use a predicate when I can have a category :P
+- (NSArray*)matchingObjects:(NSObject*)objectToMatch {
+    NSMutableArray* mutArr = [NSMutableArray new];
+    for (NSObject* eachObj in self)
+    {
+        if ([eachObj isEqual:objectToMatch])
+            [mutArr addObject:eachObj];
+    }
+    return mutArr;
+}
+
 @end

@@ -11,5 +11,6 @@
 @interface NSArray (Shortcuts)
 
 - (NSArray*)arrayByExtractingProperty:(NSString*)key;
+- (NSArray*)matchingObjects:(NSObject*)objectToMatch;
 
 @end
