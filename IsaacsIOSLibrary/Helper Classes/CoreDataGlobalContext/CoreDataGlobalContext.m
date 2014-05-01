@@ -110,9 +110,7 @@ const static int cMaxTries = 2;
     NSError *error              = nil;
     NSDictionary* options       = nil;
     
-    #ifndef DEBUG
-        options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES};
-    #endif
+    options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES};
     
     
     bool hasPersistentStore = false;
