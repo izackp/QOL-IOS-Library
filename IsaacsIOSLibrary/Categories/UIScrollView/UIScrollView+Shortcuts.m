@@ -18,4 +18,14 @@
     self.contentSize = CGSizeMake(self.contentSize.width, height);
 }
 
+- (void)centerContentHorizontally {
+    CGFloat newContentOffsetX = (self.contentSize.width - self.bounds.size.width) * 0.5f;
+    [self setContentOffset:CGPointMake(newContentOffsetX, self.contentOffset.y)];
+}
+
+- (void)centerContentVertically {
+    CGFloat newContentOffsetY = (self.contentSize.height - self.bounds.size.height) * 0.5f;
+    [self setContentOffset:CGPointMake(self.contentOffset.x, newContentOffsetY)];
+}
+
 @end
