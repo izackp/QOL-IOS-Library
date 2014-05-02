@@ -25,7 +25,7 @@
 /*! Produces a color using a hexadecimal rgb value 0xFFAA01 and Alpha ranges from 0.0f to 1.0f */
 + (UIColor*)colorFromRGBHexValue:(NSInteger)hexValue withAlpha:(CGFloat)alpha;
 
-/*! Produces a color using the string representative of CIColor */
+/*! Produces a color using the string representative of the CIColor */
 + (UIColor*)colorFromString:(NSString*)color;
 
 /*! Produces the string representative of the CIColor */
