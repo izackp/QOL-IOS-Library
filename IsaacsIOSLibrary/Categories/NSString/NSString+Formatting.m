@@ -46,6 +46,12 @@ NSString* const cHttpSuffix = @"/";
     return [self substringWithRange:NSMakeRange(location, length - location)];
 }
 
+- (NSString*)stringByCapitalizingFirstCharacter {
+    if (self.length == 0)
+        return nil;
+    return [self stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[self substringToIndex:1] capitalizedString]];
+}
+
 - (NSRange)rangeOfPrefix {
     return [self rangeOfString:cHttpPrefix];
 }
