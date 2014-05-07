@@ -15,6 +15,7 @@
 		6A544F5318ED97D400B466EB /* UIStoryboard+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A544F5218ED97D400B466EB /* UIStoryboard+Shortcuts.m */; };
 		6A5DDBEB18CA4E7000725BDE /* NSString+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */; };
 		6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */; };
+		6A85ACB8191AA37000D3FA08 /* WeakTimedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */; };
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
 		6AA6432418E32A720047927E /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432318E32A720047927E /* NSObject+Properties.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
@@ -98,6 +99,8 @@
 		6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Search.m"; sourceTree = "<group>"; };
 		6A7FDD1D18EC7B7000F04632 /* UIViewController+AddChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddChild.h"; sourceTree = "<group>"; };
 		6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AddChild.m"; sourceTree = "<group>"; };
+		6A85ACB6191AA37000D3FA08 /* WeakTimedSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakTimedSelector.h; sourceTree = "<group>"; };
+		6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakTimedSelector.m; sourceTree = "<group>"; };
 		6AA642EF18E316DA0047927E /* UIView+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Transform.h"; sourceTree = "<group>"; };
 		6AA642F018E316DA0047927E /* UIView+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transform.m"; sourceTree = "<group>"; };
 		6AA6432218E32A720047927E /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Properties.h"; sourceTree = "<group>"; };
@@ -250,6 +253,15 @@
 				6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		6A85ACB5191AA33100D3FA08 /* WeakTimedSelector */ = {
+			isa = PBXGroup;
+			children = (
+				6A85ACB6191AA37000D3FA08 /* WeakTimedSelector.h */,
+				6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */,
+			);
+			path = WeakTimedSelector;
 			sourceTree = "<group>";
 		};
 		6AA6432118E32A520047927E /* NSObject */ = {
@@ -536,6 +548,7 @@
 		DF2718901820299500C7D7E0 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6A85ACB5191AA33100D3FA08 /* WeakTimedSelector */,
 				6A0BD6B618BB86B900E45103 /* StopWatch */,
 				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
 				DF17EF731854B2610064E3C0 /* UITableViewCellCache */,
@@ -704,6 +717,7 @@
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
 				6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */,
 				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,
+				6A85ACB8191AA37000D3FA08 /* WeakTimedSelector.m in Sources */,
 				6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */,
 				6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */,
 				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
