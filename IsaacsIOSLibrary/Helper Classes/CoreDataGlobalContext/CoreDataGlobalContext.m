@@ -69,7 +69,8 @@
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
         _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+        _managedObjectContext.persistentStoreCoordinator = coordinator;
+        _managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
     }
     return _managedObjectContext;
 }
@@ -92,8 +93,27 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
+    
     if (![self addPersistentStore])
         _persistentStoreCoordinator = nil;
+    else
+    {
+        NSNotificationCenter *dc = [NSNotificationCenter defaultCenter];
+        [dc addObserver:self
+               selector:@selector(storesWillChange:)
+                   name:NSPersistentStoreCoordinatorStoresWillChangeNotification
+                 object:_persistentStoreCoordinator];
+        
+        [dc addObserver:self
+               selector:@selector(storesDidChange:)
+                   name:NSPersistentStoreCoordinatorStoresDidChangeNotification
+                 object:_persistentStoreCoordinator];
+        
+        [dc addObserver:self
+               selector:@selector(persistentStoreDidImportUbiquitousContentChanges:)
+                   name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+                 object:_persistentStoreCoordinator];
+    }
 
     return _persistentStoreCoordinator;
 }
@@ -110,7 +130,7 @@ const static int cMaxTries = 2;
     NSError *error              = nil;
     NSDictionary* options       = nil;
     
-    options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES};
+    options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES, NSPersistentStoreUbiquitousContentNameKey : @"iCloudStore"};
     
     
     bool hasPersistentStore = false;
@@ -140,5 +160,52 @@ const static int cMaxTries = 2;
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+#pragma mark - iCloud callbacks
+- (void)persistentStoreDidImportUbiquitousContentChanges:(NSNotification*)note
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"%@", note.userInfo.description);
+    
+    NSManagedObjectContext *moc = self.managedObjectContext;
+    [moc performBlock:^{
+        [moc mergeChangesFromContextDidSaveNotification:note];
+        //
+        //        NSDictionary *changes = note.userInfo;
+        //        NSMutableSet *allChanges = [NSMutableSet new];
+        //        [allChanges unionSet:changes[NSInsertedObjectsKey]];
+        //        [allChanges unionSet:changes[NSUpdatedObjectsKey]];
+        //        [allChanges unionSet:changes[NSDeletedObjectsKey]];
+        //
+        //        for (NSManagedObjectID *objID in allChanges) {
+        //            // do whatever you need to with the NSManagedObjectID
+        //            // you can retrieve the object from with [moc objectWithID:objID]
+        //        }
+        
+    }];
+}
+
+// Subscribe to NSPersistentStoreCoordinatorStoresWillChangeNotification
+// most likely to be called if the user enables / disables iCloud
+// (either globally, or just for your app) or if the user changes
+// iCloud accounts.
+- (void)storesWillChange:(NSNotification *)note {
+    NSManagedObjectContext *moc = self.managedObjectContext;
+    [moc performBlockAndWait:^{
+        NSError *error = nil;
+        if ([moc hasChanges]) {
+            [moc save:&error];
+        }
+        
+        [moc reset];
+    }];
+    
+    // now reset your UI to be prepared for a totally different
+}
+
+// Subscribe to NSPersistentStoreCoordinatorStoresDidChangeNotification
+- (void)storesDidChange:(NSNotification *)note {
+    // here is when you can refresh your UI and
+    // load new data from the new store
+}
 
 @end
