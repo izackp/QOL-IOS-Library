@@ -8,6 +8,7 @@
 
 #import "CoreDataGlobalContext.h"
 #import <CoreData/CoreData.h>
+#import "NSManagedObjectContext+Shortcuts.h"
 #import "UIAlertView+Shortcuts.h"
 
 @implementation CoreDataGlobalContext
@@ -169,17 +170,8 @@ const static int cMaxTries = 2;
     NSManagedObjectContext *moc = self.managedObjectContext;
     [moc performBlock:^{
         [moc mergeChangesFromContextDidSaveNotification:note];
-        //
-        //        NSDictionary *changes = note.userInfo;
-        //        NSMutableSet *allChanges = [NSMutableSet new];
-        //        [allChanges unionSet:changes[NSInsertedObjectsKey]];
-        //        [allChanges unionSet:changes[NSUpdatedObjectsKey]];
-        //        [allChanges unionSet:changes[NSDeletedObjectsKey]];
-        //
-        //        for (NSManagedObjectID *objID in allChanges) {
-        //            // do whatever you need to with the NSManagedObjectID
-        //            // you can retrieve the object from with [moc objectWithID:objID]
-        //        }
+        NSNotification *refreshNotification = [NSNotification notificationWithName:@"iCloudContentUpdate" object:self userInfo:[note userInfo]];
+        [[NSNotificationCenter defaultCenter] postNotification:refreshNotification];
         
     }];
 }
@@ -204,8 +196,38 @@ const static int cMaxTries = 2;
 
 // Subscribe to NSPersistentStoreCoordinatorStoresDidChangeNotification
 - (void)storesDidChange:(NSNotification *)note {
-    // here is when you can refresh your UI and
-    // load new data from the new store
+    NSLog(@"storesDidChange called - >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    
+    // Check type of transition
+    NSNumber *type = [note.userInfo objectForKey:NSPersistentStoreUbiquitousTransitionTypeKey];
+    
+    NSLog(@" userInfo is %@", note.userInfo);
+    NSLog(@" transition type is %@", type);
+    
+    if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeInitialImportCompleted) {
+        
+        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeInitialImportCompleted");
+        
+    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeAccountAdded) {
+        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeAccountAdded");
+    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeAccountRemoved) {
+        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeAccountRemoved");
+    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeContentRemoved) {
+        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeContentRemoved");
+    }
+    
+    if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeContentRemoved)
+    {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            _managedObjectContext = nil;
+            NSLog(@"iCloud store was removed! Wait for empty store");
+        }];
+    }
+    
+    [self.managedObjectContext performBlock:^{
+        
+        [self.managedObjectContext saveAndLogError];
+    }];
 }
 
 @end
