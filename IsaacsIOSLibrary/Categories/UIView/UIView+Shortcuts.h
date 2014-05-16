@@ -18,4 +18,6 @@
 
 - (UIImage*)generateImage;
 
+- (void)swapWithView:(UIView*)view;
+
 @end
