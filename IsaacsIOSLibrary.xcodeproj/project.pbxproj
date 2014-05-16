@@ -10,6 +10,7 @@
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
 		6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
 		6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
+		6A4AB5F7192660F900AC1C16 /* NSObject+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */; };
 		6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
 		6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
 		6A544F5318ED97D400B466EB /* UIStoryboard+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A544F5218ED97D400B466EB /* UIStoryboard+Shortcuts.m */; };
@@ -17,7 +18,6 @@
 		6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */; };
 		6A85ACB8191AA37000D3FA08 /* WeakTimedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */; };
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
-		6AA6432418E32A720047927E /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432318E32A720047927E /* NSObject+Properties.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
 		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
@@ -89,6 +89,8 @@
 		6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
 		6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Shortcuts.h"; sourceTree = "<group>"; };
 		6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Shortcuts.m"; sourceTree = "<group>"; };
+		6A4AB5F5192660F900AC1C16 /* NSObject+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shortcuts.h"; sourceTree = "<group>"; };
+		6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4F60C418BE2F6E008858EB /* UIImage+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Factory.h"; sourceTree = "<group>"; };
 		6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Factory.m"; sourceTree = "<group>"; };
 		6A50C22618BCF75E003EC6E3 /* UIDevice+SystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SystemVersion.h"; sourceTree = "<group>"; };
@@ -103,8 +105,6 @@
 		6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakTimedSelector.m; sourceTree = "<group>"; };
 		6AA642EF18E316DA0047927E /* UIView+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Transform.h"; sourceTree = "<group>"; };
 		6AA642F018E316DA0047927E /* UIView+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transform.m"; sourceTree = "<group>"; };
-		6AA6432218E32A720047927E /* NSObject+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Properties.h"; sourceTree = "<group>"; };
-		6AA6432318E32A720047927E /* NSObject+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Properties.m"; sourceTree = "<group>"; };
 		6AA6432C18E35E1C0047927E /* UIScrollView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Shortcuts.h"; sourceTree = "<group>"; };
 		6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Shortcuts.m"; sourceTree = "<group>"; };
 		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
@@ -267,8 +267,8 @@
 		6AA6432118E32A520047927E /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				6AA6432218E32A720047927E /* NSObject+Properties.h */,
-				6AA6432318E32A720047927E /* NSObject+Properties.m */,
+				6A4AB5F5192660F900AC1C16 /* NSObject+Shortcuts.h */,
+				6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -731,7 +731,7 @@
 				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */,
 				6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */,
-				6AA6432418E32A720047927E /* NSObject+Properties.m in Sources */,
+				6A4AB5F7192660F900AC1C16 /* NSObject+Shortcuts.m in Sources */,
 				DF2718A81820299500C7D7E0 /* UIFont+Debug.m in Sources */,
 				DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */,
 				DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */,
