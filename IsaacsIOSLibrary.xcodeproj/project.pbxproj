@@ -20,6 +20,7 @@
 		6AA6432418E32A720047927E /* NSObject+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432318E32A720047927E /* NSObject+Properties.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
 		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
+		6ADE46EA192B934E00B913F8 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE46E9192B934E00B913F8 /* Widget.m */; };
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
 		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
@@ -109,6 +110,8 @@
 		6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Shortcuts.m"; sourceTree = "<group>"; };
 		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
 		6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Shortcuts.m"; sourceTree = "<group>"; };
+		6ADE46E8192B934E00B913F8 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		6ADE46E9192B934E00B913F8 /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Shortcuts.h"; sourceTree = "<group>"; };
 		DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Shortcuts.m"; sourceTree = "<group>"; };
 		DF056B701890035D00FB39D0 /* UIButton+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Shortcuts.h"; sourceTree = "<group>"; };
@@ -280,6 +283,15 @@
 				6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */,
 			);
 			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		6ADE46E7192B934E00B913F8 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE46E8192B934E00B913F8 /* Widget.h */,
+				6ADE46E9192B934E00B913F8 /* Widget.m */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		DF02844A1880302600596BA6 /* UIColor */ = {
@@ -552,6 +564,7 @@
 				6A0BD6B618BB86B900E45103 /* StopWatch */,
 				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
 				DF17EF731854B2610064E3C0 /* UITableViewCellCache */,
+				6ADE46E7192B934E00B913F8 /* Widget */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -723,6 +736,7 @@
 				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
 				DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */,
 				DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */,
+				6ADE46EA192B934E00B913F8 /* Widget.m in Sources */,
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
