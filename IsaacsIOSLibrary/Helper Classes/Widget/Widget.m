@@ -22,13 +22,13 @@
     [super awakeFromNib];
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
     
-    bool unFlexableWidth = (self.view.autoresizingMask & UIViewAutoresizingFlexibleWidth);
-    bool unFlexableHeight = (self.view.autoresizingMask & UIViewAutoresizingFlexibleHeight);
+    bool flexableWidth = (self.view.autoresizingMask & UIViewAutoresizingFlexibleWidth);
+    bool flexableHeight = (self.view.autoresizingMask & UIViewAutoresizingFlexibleHeight);
     
-    if (unFlexableWidth)
+    if (!flexableWidth)
         self.width = self.view.width;
     
-    if (unFlexableHeight)
+    if (!flexableHeight)
         self.height = self.view.height;
     
     [self addSubview:self.view];
