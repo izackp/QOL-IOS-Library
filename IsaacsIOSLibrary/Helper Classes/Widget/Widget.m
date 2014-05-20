@@ -17,21 +17,32 @@
 
 @implementation Widget
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
     
+    [self fitUIIfNecessary];
+    
+    [self addSubview:self.view];
+}
+
+- (void)fitUIIfNecessary {
+    [self fitWidthWithContentIfNecessary];
+    [self fitHeightWithContentIfNecessary];
+}
+
+- (void)fitWidthWithContentIfNecessary {
     bool flexableWidth = (self.view.autoresizingMask & UIViewAutoresizingFlexibleWidth);
-    bool flexableHeight = (self.view.autoresizingMask & UIViewAutoresizingFlexibleHeight);
     
     if (!flexableWidth)
         self.width = self.view.width;
+}
+
+- (void)fitHeightWithContentIfNecessary {
+    bool flexableHeight = (self.view.autoresizingMask & UIViewAutoresizingFlexibleHeight);
     
     if (!flexableHeight)
         self.height = self.view.height;
-    
-    [self addSubview:self.view];
 }
 
 @end
