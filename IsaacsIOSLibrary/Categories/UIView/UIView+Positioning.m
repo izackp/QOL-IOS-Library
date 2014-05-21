@@ -172,4 +172,42 @@
     }
 }
 
+- (CGFloat)totalWidthOfSubviews {
+    CGFloat totalWidth = 0.0f;
+    for (UIView* eachView in self.subviews)
+        totalWidth += eachView.width;
+    
+    return totalWidth;
+}
+
+- (void)evenlySpaceSubviewsHorizontally {
+    
+    NSArray* subviews = [self.subviews sortedArrayUsingComparator:^NSComparisonResult(UIView* obj1, UIView* obj2) {
+        if (obj1.x < obj2.x)
+            return NSOrderedAscending;
+        
+        if (obj1.x == obj2.x)
+        {
+            if (obj1.y < obj2.y)
+                return NSOrderedAscending;
+            
+            if (obj1.y == obj2.y)
+                return NSOrderedSame;
+        }
+        
+        return NSOrderedDescending;
+    }];
+    
+    int extraSpace = self.width - [self totalWidthOfSubviews];
+    int numSpaces = subviews.count + 1;
+    int padding = extraSpace / numSpaces;
+    
+    int x = padding;
+    for (UIView* eachView in subviews)
+    {
+        eachView.x = x;
+        x += padding + eachView.width;
+    }
+}
+
 @end
