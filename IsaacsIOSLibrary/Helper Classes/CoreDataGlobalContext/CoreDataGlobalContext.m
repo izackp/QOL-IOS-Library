@@ -56,8 +56,6 @@
 }
 
 #pragma mark - Core Data stack
-
-//We're storing the object context in thread local storage.. which is a design that Apple is moving away from. So we should update this to not do that.
 - (NSManagedObjectContext *)managedObjectContext
 {
     if ([NSThread currentThread] != [NSThread mainThread])
@@ -81,6 +79,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.databaseName withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
@@ -97,24 +96,6 @@
     
     if (![self addPersistentStore])
         _persistentStoreCoordinator = nil;
-    else
-    {
-        NSNotificationCenter *dc = [NSNotificationCenter defaultCenter];
-        [dc addObserver:self
-               selector:@selector(storesWillChange:)
-                   name:NSPersistentStoreCoordinatorStoresWillChangeNotification
-                 object:_persistentStoreCoordinator];
-        
-        [dc addObserver:self
-               selector:@selector(storesDidChange:)
-                   name:NSPersistentStoreCoordinatorStoresDidChangeNotification
-                 object:_persistentStoreCoordinator];
-        
-        [dc addObserver:self
-               selector:@selector(persistentStoreDidImportUbiquitousContentChanges:)
-                   name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
-                 object:_persistentStoreCoordinator];
-    }
 
     return _persistentStoreCoordinator;
 }
@@ -126,13 +107,9 @@ const static int cMaxTries = 2;
         return false;
     }
     
-    NSString* dbName = [NSString stringWithFormat:@"%@.sqlite", self.databaseName];
-    NSURL *storeURL             = [[self sqlRootUrl] URLByAppendingPathComponent:dbName];
+    NSURL *storeURL             = [self storeUrl];
     NSError *error              = nil;
-    NSDictionary* options       = nil;
-    
-    options = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES, NSPersistentStoreUbiquitousContentNameKey : @"iCloudStore"};
-    
+    NSDictionary* options       = @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES};
     
     bool hasPersistentStore = false;
     int numTries = 0;
@@ -161,73 +138,14 @@ const static int cMaxTries = 2;
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-#pragma mark - iCloud callbacks
-- (void)persistentStoreDidImportUbiquitousContentChanges:(NSNotification*)note
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSLog(@"%@", note.userInfo.description);
-    
-    NSManagedObjectContext *moc = self.managedObjectContext;
-    [moc performBlock:^{
-        [moc mergeChangesFromContextDidSaveNotification:note];
-        NSNotification *refreshNotification = [NSNotification notificationWithName:@"iCloudContentUpdate" object:self userInfo:[note userInfo]];
-        [[NSNotificationCenter defaultCenter] postNotification:refreshNotification];
-        
-    }];
+- (NSURL*)storeUrl {
+    NSString* dbName = [NSString stringWithFormat:@"%@.sqlite", self.databaseName];
+    NSURL *storeURL = [[self sqlRootUrl] URLByAppendingPathComponent:dbName];
+    return storeURL;
 }
 
-// Subscribe to NSPersistentStoreCoordinatorStoresWillChangeNotification
-// most likely to be called if the user enables / disables iCloud
-// (either globally, or just for your app) or if the user changes
-// iCloud accounts.
-- (void)storesWillChange:(NSNotification *)note {
-    NSManagedObjectContext *moc = self.managedObjectContext;
-    [moc performBlockAndWait:^{
-        NSError *error = nil;
-        if ([moc hasChanges]) {
-            [moc save:&error];
-        }
-        
-        [moc reset];
-    }];
-    
-    // now reset your UI to be prepared for a totally different
-}
-
-// Subscribe to NSPersistentStoreCoordinatorStoresDidChangeNotification
-- (void)storesDidChange:(NSNotification *)note {
-    NSLog(@"storesDidChange called - >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-    
-    // Check type of transition
-    NSNumber *type = [note.userInfo objectForKey:NSPersistentStoreUbiquitousTransitionTypeKey];
-    
-    NSLog(@" userInfo is %@", note.userInfo);
-    NSLog(@" transition type is %@", type);
-    
-    if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeInitialImportCompleted) {
-        
-        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeInitialImportCompleted");
-        
-    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeAccountAdded) {
-        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeAccountAdded");
-    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeAccountRemoved) {
-        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeAccountRemoved");
-    } else if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeContentRemoved) {
-        NSLog(@" transition type is NSPersistentStoreUbiquitousTransitionTypeContentRemoved");
-    }
-    
-    if (type.intValue == NSPersistentStoreUbiquitousTransitionTypeContentRemoved)
-    {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-            _managedObjectContext = nil;
-            NSLog(@"iCloud store was removed! Wait for empty store");
-        }];
-    }
-    
-    [self.managedObjectContext performBlock:^{
-        
-        [self.managedObjectContext saveAndLogError];
-    }];
+- (NSString*)storePath {
+    return [self storeUrl].path;
 }
 
 @end
