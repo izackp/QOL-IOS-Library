@@ -11,6 +11,8 @@
 @implementation NSString (Search)
 
 - (bool)containsText:(NSString*)text {
+    if (text == nil)
+        return false;
     if ([self rangeOfString:text].location != NSNotFound)
         return true;
     return false;
