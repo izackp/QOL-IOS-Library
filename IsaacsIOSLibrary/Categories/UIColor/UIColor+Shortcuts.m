@@ -25,9 +25,40 @@
     return [self colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha];
 }
 
++ (UIColor*)colorFromRGBHexValue:(NSInteger)hexValue {
+    return [self colorFromRGBHexValue:hexValue withAlpha:1.0f];
+}
+
+CGFloat redColor(NSInteger hexValue) {
+    return colorFromHexMasked(hexValue, 0xFF0000, 16);
+}
+
+CGFloat greenColor(NSInteger hexValue) {
+    return colorFromHexMasked(hexValue, 0xFF00, 8);
+}
+
+CGFloat blueColor(NSInteger hexValue) {
+    return colorFromHexMasked(hexValue, 0xFF, 0);
+}
+
+CGFloat colorFromHexMasked(NSInteger hexValue, NSInteger hexMask, NSInteger offset) {
+    return ((CGFloat)((hexValue & hexMask) >> offset))/255.0f;
+}
+
 + (UIColor*)colorFromRGBHexValue:(NSInteger)hexValue withAlpha:(CGFloat)alpha {
-    
-    return [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:alpha];
+    return [UIColor colorWithRed:redColor(hexValue) green:greenColor(hexValue) blue:blueColor(hexValue) alpha:alpha];
+}
+
++ (UIColor*)colorFromString:(NSString*)colorString {
+    CIColor* coreColor = [CIColor colorWithString:colorString];
+    UIColor* color = [UIColor colorWithCIColor:coreColor];
+    return color;
+}
+
+- (NSString*)stringValue {
+    CGColorRef colorRef = self.CGColor;
+    NSString* colorString = [CIColor colorWithCGColor:colorRef].stringRepresentation;
+    return colorString;
 }
 
 @end

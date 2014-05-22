@@ -12,5 +12,7 @@
 
 - (void)offsetContentHeight:(CGFloat)offset;
 - (void)setContentHeight:(CGFloat)height;
+- (void)centerContentHorizontally;
+- (void)centerContentVertically;
 
 @end

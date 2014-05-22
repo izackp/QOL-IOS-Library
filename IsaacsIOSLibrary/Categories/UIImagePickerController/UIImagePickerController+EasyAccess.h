@@ -20,4 +20,6 @@
 - (void)setMediaTypePhotoAndVideo;
 - (void)setMediaTypePhoto;
 - (void)setMediaTypeVideo;
+
++ (bool)isAnyCameraAvailable;
 @end
