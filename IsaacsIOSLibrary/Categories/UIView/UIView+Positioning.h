@@ -21,4 +21,6 @@
 
 - (void)centerSubviewsVerticallyWithPadding:(CGFloat)padding;
 
+- (void)evenlySpaceSubviewsHorizontally;
+
 @end
