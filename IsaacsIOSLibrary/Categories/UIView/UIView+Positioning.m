@@ -199,7 +199,7 @@
     }];
     
     int extraSpace = self.width - [self totalWidthOfSubviews];
-    int numSpaces = subviews.count + 1;
+    int numSpaces = (int)subviews.count + 1;
     int padding = extraSpace / numSpaces;
     
     int x = padding;

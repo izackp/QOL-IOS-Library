@@ -50,6 +50,12 @@ CGFloat colorFromHexMasked(NSInteger hexValue, NSInteger hexMask, NSInteger offs
 }
 
 + (UIColor*)colorFromString:(NSString*)colorString {
+    if (![colorString isKindOfClass:NSString.class])
+    {
+        NSLog(@"Warning: Wrong class (%@) passed to colorFromString:", NSStringFromClass(colorString.class));
+        return nil;
+    }
+    
     CIColor* coreColor = [CIColor colorWithString:colorString];
     UIColor* color = [UIColor colorWithCIColor:coreColor];
     return color;
