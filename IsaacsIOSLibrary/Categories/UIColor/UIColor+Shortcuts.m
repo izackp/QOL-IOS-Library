@@ -58,6 +58,7 @@ CGFloat colorFromHexMasked(NSInteger hexValue, NSInteger hexMask, NSInteger offs
     
     CIColor* coreColor = [CIColor colorWithString:colorString];
     UIColor* color = [UIColor colorWithCIColor:coreColor];
+    color = [UIColor colorWithCGColor:color.CGColor]; //Apple bug fix
     return color;
 }
 
