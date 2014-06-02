@@ -20,6 +20,7 @@
 
 + (id)sharedInstance;
 - (bool)saveContext:(NSError**)error;
+- (NSString*)storePath;
 - (void)clearStore;
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
