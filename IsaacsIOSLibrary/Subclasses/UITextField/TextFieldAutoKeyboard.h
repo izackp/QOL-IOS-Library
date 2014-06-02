@@ -10,6 +10,4 @@
 
 @interface TextFieldAutoKeyboard : UITextField
 
-- (void)customInit;
-
 @end

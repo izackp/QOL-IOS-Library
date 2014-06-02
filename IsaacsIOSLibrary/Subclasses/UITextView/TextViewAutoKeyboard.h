@@ -1,5 +1,5 @@
 //
-//  TextFieldAutoKeyboard.h
+//  TextViewAutoKeyboard.h
 //  IsaacsIOSLibrary
 //
 //  Created by IsaacPaul on 10/29/13.
@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TextViewAutoKeyboard : UITextView
-
-- (void)customInit;
 
 @end
