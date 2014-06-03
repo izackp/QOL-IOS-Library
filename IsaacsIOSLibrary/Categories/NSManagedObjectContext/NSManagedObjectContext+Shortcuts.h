@@ -11,5 +11,7 @@
 @interface NSManagedObjectContext (Shortcuts)
 
 - (void)saveAndLogError;
+- (NSArray*)allObjects;
+- (void)printAll;
 
 @end
