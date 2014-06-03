@@ -35,7 +35,7 @@
 }
 
 - (UIImage*)generateImage {
-    UIGraphicsBeginImageContext(self.bounds.size);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0.0f);
     
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
