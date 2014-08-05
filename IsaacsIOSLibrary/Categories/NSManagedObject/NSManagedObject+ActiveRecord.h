@@ -184,5 +184,6 @@
 + (id)createUnsavedEntity;
 + (void)saveGlobalContext;
 //- (BOOL)deleteEntityAndRelationships;
++ (void)deleteAll;
 
 @end

@@ -36,6 +36,14 @@
     return [self substringFromIndex:rangeOfPrefix.location + rangeOfPrefix.length];
 }
 
+- (NSString*)getLastStringAfter:(NSString*)prefix {
+    NSRange rangeOfPrefix = [self rangeOfString:prefix options:NSBackwardsSearch];
+    if (rangeOfPrefix.location == NSNotFound)
+        return self;
+    
+    return [self substringFromIndex:rangeOfPrefix.location + rangeOfPrefix.length];
+}
+
 - (NSString*)getFirstStringBefore:(NSString*)suffix {
     NSRange rangeOfSuffix = [self rangeOfString:suffix];
     if (rangeOfSuffix.location == NSNotFound)

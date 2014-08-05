@@ -34,7 +34,11 @@
         return false;
     }
     
-    if ([managedObjectContext hasChanges] && ![managedObjectContext save:error]) {
+    if (![managedObjectContext hasChanges])
+        return true;
+    
+    bool success = [managedObjectContext save:error];
+    if (!success && error != nil) {
         
         NSLog(@"Unresolved error %@, %@", *error, [*error userInfo]);
         return false;
@@ -59,7 +63,9 @@
 - (NSManagedObjectContext *)managedObjectContext
 {
     if ([NSThread currentThread] != [NSThread mainThread])
-        return nil;
+    {
+        NSLog(@"Warning accessing managed object context on main thread");
+    }
     
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
@@ -76,9 +82,8 @@
 
 - (NSManagedObjectModel *)managedObjectModel
 {
-    if (_managedObjectModel != nil) {
+    if (_managedObjectModel != nil)
         return _managedObjectModel;
-    }
     
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.databaseName withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
@@ -87,12 +92,10 @@
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (_persistentStoreCoordinator != nil) {
+    if (_persistentStoreCoordinator != nil)
         return _persistentStoreCoordinator;
-    }
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
     
     if (![self addPersistentStore])
         _persistentStoreCoordinator = nil;
@@ -103,9 +106,8 @@
 const static int cMaxTries = 2;
 
 - (bool)addPersistentStore {
-    if (_persistentStoreCoordinator == nil) {
+    if (_persistentStoreCoordinator == nil)
         return false;
-    }
     
     NSURL *storeURL             = [self storeUrl];
     NSError *error              = nil;

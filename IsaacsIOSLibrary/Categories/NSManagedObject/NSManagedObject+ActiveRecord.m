@@ -790,4 +790,11 @@ static NSNumber *defaultBatchSize = nil;
     }
 }
 
++ (void)deleteAll {
+    NSArray* allObjects = [self findAll];
+    for (NSManagedObject* eachObj in allObjects)
+        [eachObj deleteInContext:[NSManagedObject currentContext]];
+    [self saveGlobalContext];
+}
+
 @end

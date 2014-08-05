@@ -15,8 +15,8 @@
 
 - (NSString*)getFirstStringInbetweenPrefix:(NSString*)prefix suffix:(NSString*)suffix;
 - (NSString*)getFirstStringAfter:(NSString*)prefix;
+- (NSString*)getLastStringAfter:(NSString*)prefix;
 - (NSString*)getFirstStringBefore:(NSString*)suffix;
-
 - (NSString*)getFirstStringStrictInbetweenPrefix:(NSString*)prefix suffix:(NSString*)suffix;
 - (NSString*)getFirstStringStrictAfter:(NSString*)prefix;
 - (NSString*)getFirstStringStrictBefore:(NSString*)suffix;
