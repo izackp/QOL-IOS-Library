@@ -17,4 +17,24 @@
         NSLog(@"Could not save context from %@: \n%@", [self description], [error description]);
 }
 
+- (NSManagedObject*)existingObjectWithIDLogError:(NSManagedObjectID*)objId {
+    NSError* error;
+    id obj = [self existingObjectWithID:objId error:&error];
+    if (error)
+    {
+        NSLog(@"Pulling clip from main context failed: %@", error);
+        return nil;
+    }
+    return obj;
+}
+
+- (NSManagedObject*)existingOrCreatedObjectWithID:(NSManagedObjectID*)objId {
+    id obj = [self existingObjectWithIDLogError:objId];
+    if (obj)
+        return obj;
+    
+    obj = [self objectWithID:objId];
+    return obj;
+}
+
 @end

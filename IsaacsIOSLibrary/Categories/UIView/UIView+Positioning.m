@@ -198,11 +198,11 @@
         return NSOrderedDescending;
     }];
     
-    int extraSpace = self.width - [self totalWidthOfSubviews];
-    int numSpaces = (int)subviews.count + 1;
-    int padding = extraSpace / numSpaces;
+    CGFloat extraSpace = self.width - [self totalWidthOfSubviews];
+    CGFloat numSpaces = subviews.count + 1;
+    CGFloat padding = extraSpace / numSpaces;
     
-    int x = padding;
+    CGFloat x = padding;
     for (UIView* eachView in subviews)
     {
         eachView.x = x;

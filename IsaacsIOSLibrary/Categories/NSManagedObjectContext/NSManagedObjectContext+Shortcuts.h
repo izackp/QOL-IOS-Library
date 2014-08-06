@@ -11,5 +11,7 @@
 @interface NSManagedObjectContext (Shortcuts)
 
 - (void)saveAndLogError;
+- (NSManagedObject*)existingObjectWithIDLogError:(NSManagedObjectID*)objId;
+- (NSManagedObject*)existingOrCreatedObjectWithID:(NSManagedObjectID*)objId;
 
 @end

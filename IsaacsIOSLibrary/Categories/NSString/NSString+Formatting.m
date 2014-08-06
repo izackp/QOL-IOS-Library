@@ -15,12 +15,42 @@ NSString* const cHttpSuffix = @"/";
 
 @implementation NSString (Formatting)
 
+- (NSString*)urlEncodedAllCharacters
+{
+    CFStringRef originalStringRef = (__bridge_retained CFStringRef)self;
+    NSString *s = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, originalStringRef, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 );
+    CFRelease(originalStringRef);
+    return s;
+}
+
 - (NSString*)urlEncoded
 {
     CFStringRef originalStringRef = (__bridge_retained CFStringRef)self;
-    NSString *s = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,originalStringRef, NULL, NULL,kCFStringEncodingUTF8);
+    NSString *s = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, originalStringRef, NULL, NULL, kCFStringEncodingUTF8 );
     CFRelease(originalStringRef);
     return s;
+}
+
+- (NSString*)urlDecode {
+    return (__bridge NSString *) CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef) self, CFSTR(""), kCFStringEncodingUTF8);
+}
+
+- (NSDictionary*)decodeUrlParameters {
+    NSString* withoutProtocol = [self getLastStringAfter:@"://"];
+    NSString* method = [withoutProtocol getFirstStringBefore:@"?"];
+    NSString* parameters = [withoutProtocol getFirstStringAfter:@"?"];
+    NSArray* parameterList = [parameters componentsSeparatedByString:@"&"];
+    NSMutableDictionary* parameterKeyValue = [[NSMutableDictionary alloc] initWithCapacity:parameterList.count];
+    for (NSString* eachParameter in parameterList)
+    {
+        NSArray* keyValue = [eachParameter componentsSeparatedByString:@"="];
+        if (keyValue.count != 2)
+            continue;
+        [parameterKeyValue setObject:[keyValue[1] urlDecode] forKey:keyValue[0]];
+    }
+    
+    [parameterKeyValue setObject:method forKey:@"method"];//TODO: hack until I implement a class
+    return parameterKeyValue;
 }
 
 - (NSString*)trimWhiteSpace
@@ -72,7 +102,7 @@ NSString* const cHttpSuffix = @"/";
 }
 
 - (NSString*)httpAddressWithSubpath {
-    NSString* finalAddress = [[self httpAddress] stringByAppendingString:[self hostSubPath]];
+    NSString* finalAddress = [[self httpAddress] stringByAppendingWeakString:[self hostSubPath]];
     return finalAddress;
 }
 
@@ -85,12 +115,18 @@ NSString* const cHttpSuffix = @"/";
 - (NSString*)httpAddressWithSubpathUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
     NSString* httpAddressWithAuth = [self httpAddressUsingBasicAuthUsername:username password:password];
     NSString* subPath = [self hostSubPath];
-    NSString* final = [httpAddressWithAuth stringByAppendingString:[subPath urlEncoded]];
+    NSString* final = [httpAddressWithAuth stringByAppendingWeakString:[subPath urlEncoded]];
     return final;
 }
 
 - (NSString*)httpAddressUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
     return [[NSString stringWithFormat:@"%@%@:%@@%@%@", cHttpPrefix, username, password, [self strippedHost], cHttpSuffix] urlEncoded];
+}
+
+- (NSString*)stringByAppendingWeakString:(NSString*)strToAppend {
+    if (strToAppend == nil)
+        return self;
+    return [self stringByAppendingString:strToAppend];
 }
 
 @end
