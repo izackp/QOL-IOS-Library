@@ -37,4 +37,13 @@
     return obj;
 }
 
+- (NSArray*)existingOrCreatedObjectsWithIDs:(NSArray*)objIds {
+    NSMutableArray* objs = [[NSMutableArray alloc] initWithCapacity:objIds.count];
+    
+    for (NSManagedObjectID* eachId in objIds)
+        [objs addObject:[self existingOrCreatedObjectWithID:eachId]];
+    
+    return objs;
+}
+
 @end
