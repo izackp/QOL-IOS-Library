@@ -13,6 +13,8 @@
 - (NSString*)urlDecode;
 - (NSDictionary*)decodeUrlParameters;
 - (NSString*)trimWhiteSpace;
+- (NSString*)stringWithOnlyLetters;
+- (NSString*)stringWithOnlyNumbers;
 - (NSString*)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
 - (NSString*)stringByCapitalizingFirstCharacter;
 

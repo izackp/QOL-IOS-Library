@@ -61,6 +61,16 @@ NSString* const cHttpSuffix = @"/";
     return [mStr copy];
 }
 
+- (NSString*)stringWithOnlyLetters {
+    NSCharacterSet *numSet = [[NSCharacterSet letterCharacterSet] invertedSet];
+    return [[self componentsSeparatedByCharactersInSet:numSet] componentsJoinedByString:@""];
+}
+
+- (NSString*)stringWithOnlyNumbers {
+    NSCharacterSet* letters = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    return [[self componentsSeparatedByCharactersInSet:letters] componentsJoinedByString:@""];
+}
+
 - (NSString *)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet {
     NSUInteger location = 0;
     NSUInteger length = [self length];
