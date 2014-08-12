@@ -54,4 +54,8 @@
     [invocation invoke];
 }
 
+- (NSError*)errorWithCode:(NSInteger)code andLocalizedDescription:(NSString*)desc {
+    return [NSError errorWithDomain:NSStringFromClass([self class]) code:code userInfo:@{NSLocalizedDescriptionKey:desc}];
+}
+
 @end

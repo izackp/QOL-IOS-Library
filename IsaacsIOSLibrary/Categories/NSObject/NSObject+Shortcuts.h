@@ -17,4 +17,6 @@
 - (void)invokeSelector:(SEL)selector;
 - (void)invokeSelector:(SEL)selector withObject:(NSObject*)obj;
 
+- (NSError*)errorWithCode:(NSInteger)code andLocalizedDescription:(NSString*)desc;
+
 @end

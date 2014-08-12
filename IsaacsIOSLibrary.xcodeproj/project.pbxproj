@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
 		6A1A80BA19993B18002F6F01 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
+		6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
 		6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
 		6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
 		6A4AB5F7192660F900AC1C16 /* NSObject+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */; };
@@ -89,6 +90,8 @@
 		6A0BD6B818BB86FC00E45103 /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
 		6A1A80B819993B18002F6F01 /* DispatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchHelper.h; sourceTree = "<group>"; };
 		6A1A80B919993B18002F6F01 /* DispatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchHelper.m; sourceTree = "<group>"; };
+		6A184D5219925B6D00F51CE5 /* InAppTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppTransactions.h; sourceTree = "<group>"; };
+		6A184D5319925B6D00F51CE5 /* InAppTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppTransactions.m; sourceTree = "<group>"; };
 		6A1B990C18F315630056F52C /* NSArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shortcuts.h"; sourceTree = "<group>"; };
 		6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
 		6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Shortcuts.h"; sourceTree = "<group>"; };
@@ -215,7 +218,7 @@
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
-		};
+        };
 		6A1A80B619993ADC002F6F01 /* Helper Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +234,15 @@
 				6A1A80B919993B18002F6F01 /* DispatchHelper.m */,
 			);
 			path = Dispatch;
+            sourceTree = "<group>";
+        };
+		6A184D5119925B6D00F51CE5 /* InAppTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				6A184D5219925B6D00F51CE5 /* InAppTransactions.h */,
+				6A184D5319925B6D00F51CE5 /* InAppTransactions.m */,
+			);
+			path = InAppTransactions;
 			sourceTree = "<group>";
 		};
 		6A1B990A18F315440056F52C /* NSArray */ = {
@@ -581,10 +593,11 @@
 		DF2718901820299500C7D7E0 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6A85ACB5191AA33100D3FA08 /* WeakTimedSelector */,
-				6A0BD6B618BB86B900E45103 /* StopWatch */,
 				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
+				6A184D5119925B6D00F51CE5 /* InAppTransactions */,
 				DF17EF731854B2610064E3C0 /* UITableViewCellCache */,
+				6A0BD6B618BB86B900E45103 /* StopWatch */,
+				6A85ACB5191AA33100D3FA08 /* WeakTimedSelector */,
 				6ADE46E7192B934E00B913F8 /* Widget */,
 			);
 			path = "Helper Classes";
@@ -750,6 +763,7 @@
 				6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
 				6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */,
+				6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */,
 				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,
 				6A85ACB8191AA37000D3FA08 /* WeakTimedSelector.m in Sources */,
 				6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */,
