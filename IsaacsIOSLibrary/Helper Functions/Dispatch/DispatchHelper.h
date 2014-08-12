@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 void dispatch_safe_main_sync(dispatch_block_t block);
+bool dispatch_queue_is_empty(dispatch_queue_t queue);
