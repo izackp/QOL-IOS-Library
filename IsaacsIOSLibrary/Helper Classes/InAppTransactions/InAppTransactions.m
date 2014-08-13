@@ -14,7 +14,6 @@
 @interface InAppTransactions () <SKPaymentTransactionObserver, SKProductsRequestDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) SKProductsRequest* productRequester;
-
 @property (nonatomic, strong) NSString* currentProductId;
 @property (nonatomic, copy) purchaseSuccess successBlock;
 @property (nonatomic, copy) purchaseCanceled canceledBlock;
