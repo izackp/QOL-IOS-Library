@@ -64,7 +64,7 @@
 {
     if ([NSThread currentThread] != [NSThread mainThread])
     {
-        NSLog(@"Warning accessing managed object context on main thread");
+        NSLog(@"Warning accessing managed object context on BG thread");
     }
     
     if (_managedObjectContext != nil) {

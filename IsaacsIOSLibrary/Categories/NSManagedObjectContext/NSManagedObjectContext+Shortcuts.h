@@ -13,5 +13,6 @@
 - (void)saveAndLogError;
 - (NSManagedObject*)existingObjectWithIDLogError:(NSManagedObjectID*)objId;
 - (NSManagedObject*)existingOrCreatedObjectWithID:(NSManagedObjectID*)objId;
+- (NSArray*)existingOrCreatedObjectsWithIDs:(NSArray*)objIds;
 
 @end

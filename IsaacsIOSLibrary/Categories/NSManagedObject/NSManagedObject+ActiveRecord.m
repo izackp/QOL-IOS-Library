@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 #import "NSManagedObject+ActiveRecord.h"
 #import "CoreDataGlobalContext.h"
+#import "NSManagedObjectContext+Shortcuts.h"
 
 // Set Logging Component
 #undef RKLogComponent
@@ -108,11 +109,6 @@ static NSNumber *defaultBatchSize = nil;
 }
 
 #pragma mark - MagicalRecord Ported Methods
-/*
-+ (NSManagedObjectContext*)currentContext; {
-    return [[RKObjectManager sharedManager].objectStore managedObjectContext];
-}
-*/
 
 + (void)setDefaultBatchSize:(NSUInteger)newBatchSize
 {
@@ -133,7 +129,6 @@ static NSNumber *defaultBatchSize = nil;
 
 + (void)handleErrors:(NSError *)error
 {
-    /*
 	if (error)
 	{
 		NSDictionary *userInfo = [error userInfo];
@@ -145,29 +140,23 @@ static NSNumber *defaultBatchSize = nil;
 				{
 					if ([e respondsToSelector:@selector(userInfo)])
 					{
-						RKLogError(@"Error Details: %@", [e userInfo]);
+						NSLog(@"Error Details: %@", [e userInfo]);
 					}
 					else
 					{
-						RKLogError(@"Error Details: %@", e);
+						NSLog(@"Error Details: %@", e);
 					}
 				}
 			}
 			else
 			{
-				RKLogError(@"Error: %@", detailedError);
+				NSLog(@"Error: %@", detailedError);
 			}
 		}
-		RKLogError(@"Error Domain: %@", [error domain]);
-		RKLogError(@"Recovery Suggestion: %@", [error localizedRecoverySuggestion]);	
+		NSLog(@"Error Domain: %@", [error domain]);
+		NSLog(@"Recovery Suggestion: %@", [error localizedRecoverySuggestion]);
 	}
-    */
 }
-
-//- (void)handleErrors:(NSError *)error
-//{
-//	[[self class] handleErrors:error];
-//}
 
 + (NSArray *)executeFetchRequest:(NSFetchRequest *)request inContext:(NSManagedObjectContext *)context
 {
@@ -728,11 +717,6 @@ static NSNumber *defaultBatchSize = nil;
 - (BOOL)deleteInContext:(NSManagedObjectContext *)context
 {
 	[context deleteObject:self];
-    NSError *executeError = nil;
-    if(![[CoreDataGlobalContext sharedInstance] saveContext:&executeError]) {
-        NSLog(@"Failed to save %@ to data store", NSStringFromClass([self class]));
-        NSLog(@"Error is: %@", [executeError localizedDescription]);
-    }
 	return YES;
 }
 
