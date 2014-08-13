@@ -37,7 +37,6 @@
 }
 
 #pragma mark - Public API
-
 - (void)askToPurchase:(NSString*)productId msg:(NSString*)message success:(purchaseSuccess)successBlock canceled:(purchaseCanceled)canceledBlock failed:(purchaseFailed)failedBlock {
     
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
