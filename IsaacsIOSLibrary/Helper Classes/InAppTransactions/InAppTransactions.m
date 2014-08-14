@@ -41,7 +41,9 @@
     
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
     if (!success)
+    {
         return;
+    }
     
     UIAlertView* alert = [UIAlertView showQuestion:message];
     alert.delegate = self;
@@ -52,6 +54,11 @@
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
     if (!success)
         return;
+    
+#if TARGET_IPHONE_SIMULATOR
+    [self callSuccessBlock];
+    return;
+#endif
     
     [self startProductRequest];
 }
@@ -139,6 +146,11 @@
         [self callCancelBlock];
         return;
     }
+    
+#if TARGET_IPHONE_SIMULATOR
+    [self callSuccessBlock];
+    return;
+#endif
     
     [self startProductRequest];
 }
