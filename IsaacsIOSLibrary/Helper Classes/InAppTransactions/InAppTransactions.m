@@ -14,7 +14,6 @@
 @interface InAppTransactions () <SKPaymentTransactionObserver, SKProductsRequestDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) SKProductsRequest* productRequester;
-
 @property (nonatomic, strong) NSString* currentProductId;
 @property (nonatomic, copy) purchaseSuccess successBlock;
 @property (nonatomic, copy) purchaseCanceled canceledBlock;
@@ -38,12 +37,13 @@
 }
 
 #pragma mark - Public API
-
 - (void)askToPurchase:(NSString*)productId msg:(NSString*)message success:(purchaseSuccess)successBlock canceled:(purchaseCanceled)canceledBlock failed:(purchaseFailed)failedBlock {
     
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
     if (!success)
+    {
         return;
+    }
     
     UIAlertView* alert = [UIAlertView showQuestion:message];
     alert.delegate = self;
@@ -54,6 +54,11 @@
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
     if (!success)
         return;
+    
+#if TARGET_IPHONE_SIMULATOR
+    [self callSuccessBlock];
+    return;
+#endif
     
     [self startProductRequest];
 }
@@ -141,6 +146,11 @@
         [self callCancelBlock];
         return;
     }
+    
+#if TARGET_IPHONE_SIMULATOR
+    [self callSuccessBlock];
+    return;
+#endif
     
     [self startProductRequest];
 }
