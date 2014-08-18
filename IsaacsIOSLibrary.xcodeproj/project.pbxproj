@@ -23,6 +23,7 @@
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
 		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
+		6AC536FA19A2862300FC53BA /* NSData+Cryptography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC536F919A2862300FC53BA /* NSData+Cryptography.m */; };
 		6ADE46EA192B934E00B913F8 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE46E9192B934E00B913F8 /* Widget.m */; };
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
@@ -119,6 +120,8 @@
 		6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Shortcuts.m"; sourceTree = "<group>"; };
 		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
 		6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Shortcuts.m"; sourceTree = "<group>"; };
+		6AC536F819A2862300FC53BA /* NSData+Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Cryptography.h"; sourceTree = "<group>"; };
+		6AC536F919A2862300FC53BA /* NSData+Cryptography.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Cryptography.m"; sourceTree = "<group>"; };
 		6ADE46E8192B934E00B913F8 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
 		6ADE46E9192B934E00B913F8 /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Shortcuts.h"; sourceTree = "<group>"; };
@@ -330,6 +333,15 @@
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
+		6AC536F719A285F200FC53BA /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				6AC536F819A2862300FC53BA /* NSData+Cryptography.h */,
+				6AC536F919A2862300FC53BA /* NSData+Cryptography.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
 		6ADE46E7192B934E00B913F8 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +470,7 @@
 			children = (
 				6A1B990A18F315440056F52C /* NSArray */,
 				DF2718601820299500C7D7E0 /* NSDate */,
+				6AC536F719A285F200FC53BA /* NSData */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				6A1B991518F327160056F52C /* NSManagedObjectContext */,
 				6AA6432118E32A520047927E /* NSObject */,
@@ -762,6 +775,7 @@
 				6A8F8928199A92D00008FF86 /* Debugging.m in Sources */,
 				DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */,
 				DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */,
+				6AC536FA19A2862300FC53BA /* NSData+Cryptography.m in Sources */,
 				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
 				DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */,
 				DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */,
