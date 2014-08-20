@@ -122,6 +122,14 @@ NSString* const cHttpSuffix = @"/";
     return [formattedHost urlEncoded];
 }
 
+- (unsigned int)port {
+    NSString* ipAddr = [self strippedHost];
+    NSArray* split = [ipAddr componentsSeparatedByString:@":"];
+    if (split.count != 2)
+        return 80;
+    return [split[1] unsignedIntValue];
+}
+
 - (NSString*)httpAddressWithSubpathUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
     NSString* httpAddressWithAuth = [self httpAddressUsingBasicAuthUsername:username password:password];
     NSString* subPath = [self hostSubPath];

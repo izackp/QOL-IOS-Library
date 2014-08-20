@@ -12,6 +12,7 @@
 		6A1A80BA19993B18002F6F01 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
 		6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
 		6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
+		6A3EE6E519A4E7A1007663B6 /* NSURLCredential+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */; };
 		6A4AB5F7192660F900AC1C16 /* NSObject+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */; };
 		6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
 		6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
@@ -98,6 +99,8 @@
 		6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
 		6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Shortcuts.h"; sourceTree = "<group>"; };
 		6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Shortcuts.m"; sourceTree = "<group>"; };
+		6A3EE6E319A4E7A1007663B6 /* NSURLCredential+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCredential+Shortcuts.h"; sourceTree = "<group>"; };
+		6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCredential+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4AB5F5192660F900AC1C16 /* NSObject+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shortcuts.h"; sourceTree = "<group>"; };
 		6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4F60C418BE2F6E008858EB /* UIImage+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Factory.h"; sourceTree = "<group>"; };
@@ -268,6 +271,15 @@
 				6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */,
 			);
 			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		6A3EE6E219A4E77A007663B6 /* NSURLCredential */ = {
+			isa = PBXGroup;
+			children = (
+				6A3EE6E319A4E7A1007663B6 /* NSURLCredential+Shortcuts.h */,
+				6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */,
+			);
+			path = NSURLCredential;
 			sourceTree = "<group>";
 		};
 		6A50C22518BCF741003EC6E3 /* UIDevice */ = {
@@ -475,6 +487,7 @@
 				6A1B991518F327160056F52C /* NSManagedObjectContext */,
 				6AA6432118E32A520047927E /* NSObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
+				6A3EE6E219A4E77A007663B6 /* NSURLCredential */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
 				DF27186F1820299500C7D7E0 /* UIApplication */,
 				DF2718721820299500C7D7E0 /* UIBarButtonItem */,
@@ -781,6 +794,7 @@
 				DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
+				6A3EE6E519A4E7A1007663B6 /* NSURLCredential+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
 				DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */,
 				DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */,
