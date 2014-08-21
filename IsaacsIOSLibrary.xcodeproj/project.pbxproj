@@ -12,6 +12,7 @@
 		6A1A80BA19993B18002F6F01 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
 		6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
 		6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
+		6A3EE6E519A4E7A1007663B6 /* NSURLCredential+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */; };
 		6A4AB5F7192660F900AC1C16 /* NSObject+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */; };
 		6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
 		6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
@@ -23,6 +24,7 @@
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
 		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
+		6AC536FA19A2862300FC53BA /* NSData+Cryptography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC536F919A2862300FC53BA /* NSData+Cryptography.m */; };
 		6ADE46EA192B934E00B913F8 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE46E9192B934E00B913F8 /* Widget.m */; };
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
@@ -97,6 +99,8 @@
 		6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shortcuts.m"; sourceTree = "<group>"; };
 		6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Shortcuts.h"; sourceTree = "<group>"; };
 		6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Shortcuts.m"; sourceTree = "<group>"; };
+		6A3EE6E319A4E7A1007663B6 /* NSURLCredential+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLCredential+Shortcuts.h"; sourceTree = "<group>"; };
+		6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLCredential+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4AB5F5192660F900AC1C16 /* NSObject+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shortcuts.h"; sourceTree = "<group>"; };
 		6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shortcuts.m"; sourceTree = "<group>"; };
 		6A4F60C418BE2F6E008858EB /* UIImage+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Factory.h"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Shortcuts.m"; sourceTree = "<group>"; };
 		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
 		6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Shortcuts.m"; sourceTree = "<group>"; };
+		6AC536F819A2862300FC53BA /* NSData+Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Cryptography.h"; sourceTree = "<group>"; };
+		6AC536F919A2862300FC53BA /* NSData+Cryptography.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Cryptography.m"; sourceTree = "<group>"; };
 		6ADE46E8192B934E00B913F8 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
 		6ADE46E9192B934E00B913F8 /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Shortcuts.h"; sourceTree = "<group>"; };
@@ -267,6 +273,15 @@
 			path = NSManagedObjectContext;
 			sourceTree = "<group>";
 		};
+		6A3EE6E219A4E77A007663B6 /* NSURLCredential */ = {
+			isa = PBXGroup;
+			children = (
+				6A3EE6E319A4E7A1007663B6 /* NSURLCredential+Shortcuts.h */,
+				6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */,
+			);
+			path = NSURLCredential;
+			sourceTree = "<group>";
+		};
 		6A50C22518BCF741003EC6E3 /* UIDevice */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +343,15 @@
 				6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */,
 			);
 			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		6AC536F719A285F200FC53BA /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				6AC536F819A2862300FC53BA /* NSData+Cryptography.h */,
+				6AC536F919A2862300FC53BA /* NSData+Cryptography.m */,
+			);
+			path = NSData;
 			sourceTree = "<group>";
 		};
 		6ADE46E7192B934E00B913F8 /* Widget */ = {
@@ -458,10 +482,12 @@
 			children = (
 				6A1B990A18F315440056F52C /* NSArray */,
 				DF2718601820299500C7D7E0 /* NSDate */,
+				6AC536F719A285F200FC53BA /* NSData */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				6A1B991518F327160056F52C /* NSManagedObjectContext */,
 				6AA6432118E32A520047927E /* NSObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
+				6A3EE6E219A4E77A007663B6 /* NSURLCredential */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
 				DF27186F1820299500C7D7E0 /* UIApplication */,
 				DF2718721820299500C7D7E0 /* UIBarButtonItem */,
@@ -762,11 +788,13 @@
 				6A8F8928199A92D00008FF86 /* Debugging.m in Sources */,
 				DF2718B11820299500C7D7E0 /* UIView+Positioning.m in Sources */,
 				DF2718B31820299600C7D7E0 /* ButtonReverseContent.m in Sources */,
+				6AC536FA19A2862300FC53BA /* NSData+Cryptography.m in Sources */,
 				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
 				DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */,
 				DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
+				6A3EE6E519A4E7A1007663B6 /* NSURLCredential+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
 				DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */,
 				DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */,

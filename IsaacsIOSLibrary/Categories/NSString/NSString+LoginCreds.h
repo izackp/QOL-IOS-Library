@@ -1,5 +1,5 @@
 //
-//  NSString+MD5.h
+//  NSString+LoginCreds.h
 //  IsaacsIOSLibrary
 //
 //  Created by IsaacPaul on 10/29/13.
