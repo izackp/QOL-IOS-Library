@@ -13,15 +13,16 @@
 
 - (NSString*)sha1 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    if (CC_SHA1([self bytes], [self length], digest)) {
-        NSMutableString *hexDigest = [[NSMutableString alloc] init];
-        for(NSUInteger i = 0; i < CC_SHA1_DIGEST_LENGTH; i++ )
-        {
-            [hexDigest appendFormat:@"%02x", digest[i]];
-        }
-        return hexDigest;
+    bool successful = CC_SHA1([self bytes], (CC_LONG)[self length], digest);
+    if (!successful)
+        return nil;
+
+    NSMutableString *hexDigest = [[NSMutableString alloc] init];
+    for(NSUInteger i = 0; i < CC_SHA1_DIGEST_LENGTH; i++ )
+    {
+        [hexDigest appendFormat:@"%02x", digest[i]];
     }
-    return nil;
+    return hexDigest;
 }
 
 @end

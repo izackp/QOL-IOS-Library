@@ -108,7 +108,16 @@
     {
         NSLog(@"Invalid Product Identifier(s): %@", [response.invalidProductIdentifiers description]);
         NSLog(@"Product request failed: %@", [response debugDescription]);
-        [self purchaseFailed:@"Unable to purchase content" error:[self errorWithCode:2 andLocalizedDescription:@"Invalid product Id"] transaction:nil];
+        
+        if (_isDebugging)
+        {
+            [UIAlertView showAlertWithTitle:@"Unable to purchase content" andMessage:@"Invalid product ID, but, since this is a debug build, we'll pretend this didn't happen."];
+            [self callSuccessBlock];
+        }
+        else
+        {
+            [self purchaseFailed:@"Unable to purchase content" error:[self errorWithCode:2 andLocalizedDescription:@"Invalid product ID"] transaction:nil];
+        }
         return;
     }
 

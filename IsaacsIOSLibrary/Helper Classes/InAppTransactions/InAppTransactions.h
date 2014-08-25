@@ -20,4 +20,6 @@ typedef void (^purchaseCanceled)();
 - (NSUInteger)purchaseCount:(NSString*)productId;
 - (void)restorePurchases;
 
+@property (nonatomic, assign) bool isDebugging;
+
 @end
