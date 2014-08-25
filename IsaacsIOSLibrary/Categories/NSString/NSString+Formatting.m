@@ -138,7 +138,7 @@ NSString* const cHttpSuffix = @"/";
 }
 
 - (NSString*)httpAddressUsingBasicAuthUsername:(NSString*)username password:(NSString*)password {
-    return [[NSString stringWithFormat:@"%@%@:%@@%@%@", cHttpPrefix, username, password, [self strippedHost], cHttpSuffix] urlEncoded];
+    return [NSString stringWithFormat:@"%@%@:%@@%@%@", cHttpPrefix, [username urlEncodedAllCharacters], [password urlEncodedAllCharacters], [[self strippedHost] urlEncoded], cHttpSuffix];
 }
 
 - (NSString*)stringByAppendingWeakString:(NSString*)strToAppend {
