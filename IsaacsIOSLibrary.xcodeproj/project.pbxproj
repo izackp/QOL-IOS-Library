@@ -31,6 +31,7 @@
 		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
 		DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
 		DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
+		DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */; };
 		DF27183A1820293E00C7D7E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718391820293E00C7D7E0 /* Foundation.framework */; };
 		DF27183F1820293E00C7D7E0 /* IsaacsIOSLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */; };
 		DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */; };
@@ -137,6 +138,8 @@
 		DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataGlobalContext.m; sourceTree = "<group>"; };
 		DF17EF741854B2610064E3C0 /* TableViewCellCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellCache.h; sourceTree = "<group>"; };
 		DF17EF751854B2610064E3C0 /* TableViewCellCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellCache.m; sourceTree = "<group>"; };
+		DF1996D619B4B23200FEE940 /* NSMutableArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shortcuts.h"; sourceTree = "<group>"; };
+		DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shortcuts.m"; sourceTree = "<group>"; };
 		DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIsaacsIOSLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2718391820293E00C7D7E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF27183D1820293E00C7D7E0 /* IsaacsIOSLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsaacsIOSLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -408,6 +411,15 @@
 			path = UITableViewCellCache;
 			sourceTree = "<group>";
 		};
+		DF1996D519B4B1DF00FEE940 /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				DF1996D619B4B23200FEE940 /* NSMutableArray+Shortcuts.h */,
+				DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */,
+			);
+			path = NSMutableArray;
+			sourceTree = "<group>";
+		};
 		DF27182D1820293E00C7D7E0 = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +497,7 @@
 				6AC536F719A285F200FC53BA /* NSData */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				6A1B991518F327160056F52C /* NSManagedObjectContext */,
+				DF1996D519B4B1DF00FEE940 /* NSMutableArray */,
 				6AA6432118E32A520047927E /* NSObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
 				6A3EE6E219A4E77A007663B6 /* NSURLCredential */,
@@ -815,6 +828,7 @@
 				DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */,
 				6ADE46EA192B934E00B913F8 /* Widget.m in Sources */,
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,
+				DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */,
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
