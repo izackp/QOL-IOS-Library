@@ -11,5 +11,7 @@
 @interface NSData (Cryptography)
 
 - (NSString*)sha1;
+- (NSData*)rsaEncrypt:(NSData*)publicKey;
++ (void)testAsymmetricEncryptionAndDecryption;
 
 @end
