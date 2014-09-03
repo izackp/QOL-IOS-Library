@@ -11,7 +11,16 @@
 @interface NSData (Cryptography)
 
 - (NSString*)sha1;
-- (NSData*)rsaEncrypt:(NSData*)publicKey;
+- (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey andPadding:(SecPadding)padding;
+- (NSData*)rsaDecryptWithKey:(SecKeyRef)privateKey andPadding:(SecPadding)padding;
+
+/*! @attention will be moved into a seperate class*/
+typedef struct {
+    SecKeyRef publicKey;
+    SecKeyRef privateKey;
+} KeyPair;
+
++ (KeyPair)generateKeyPair:(NSUInteger)keySize;
 + (void)testAsymmetricEncryptionAndDecryption;
 
 @end

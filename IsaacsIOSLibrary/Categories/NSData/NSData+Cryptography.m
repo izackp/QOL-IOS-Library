@@ -11,11 +11,6 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <Security/Security.h>
 
-typedef struct {
-    SecKeyRef publicKey;
-    SecKeyRef privateKey;
-} KeyPair;
-
 @implementation NSData (Cryptography)
 
 - (NSString*)sha1 {
@@ -112,6 +107,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     NSAssert([encryptedData isEqualToData:expectedData], @"rsa encryption failed");
 }
 
+//Untested
 - (SecKeyRef)publicKey {
     SecCertificateRef cert = SecCertificateCreateWithData (kCFAllocatorDefault, (__bridge CFDataRef)(self));
     CFArrayRef certs = CFArrayCreate(kCFAllocatorDefault, (const void **) &cert, 1, NULL);
@@ -125,7 +121,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     return pub_key_leaf;
 }
 
-//Taken From Apple Example
+//Untested; Taken From Apple Example
 - (SecKeyRef)publicKey2 {
     OSStatus errorCheck = noErr;
     SecKeyRef peerKeyRef = NULL;
