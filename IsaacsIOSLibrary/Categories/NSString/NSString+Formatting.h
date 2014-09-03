@@ -17,6 +17,8 @@
 - (NSString*)stringWithOnlyNumbers;
 - (NSString*)stringByTrimmingTrailingCharactersInSet:(NSCharacterSet *)characterSet;
 - (NSString*)stringByCapitalizingFirstCharacter;
+- (NSString*)stringByInserting:(NSString*)insert inbetweenNumberOfCharacters:(int)numChars;
+- (NSArray*)componentsSeparatedByNumberOfCharacters:(int)numChars;
 
 - (NSString*)stringByAppendingWeakString:(NSString*)strToAppend;
 

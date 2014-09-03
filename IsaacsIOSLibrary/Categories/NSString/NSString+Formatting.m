@@ -92,6 +92,44 @@ NSString* const cHttpSuffix = @"/";
     return [self stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[self substringToIndex:1] capitalizedString]];
 }
 
+- (NSString*)stringByInserting:(NSString*)insert inbetweenNumberOfCharacters:(int)numChars {
+    NSArray* comps = [self componentsSeparatedByNumberOfCharacters:2];
+    NSString* result = [comps componentsJoinedByString:insert];
+    return result;
+}
+
+- (NSArray*)componentsSeparatedByNumberOfCharacters:(int)numChars {
+    NSUInteger numComponents = self.length / numChars;
+    double mod = fmod(self.length, numChars);
+    if (numComponents == 0)
+        return @[self];
+    
+    NSUInteger numSeperations = numComponents;
+    if (mod == 0)
+        numSeperations -= 1;
+    
+    NSMutableArray* components = [[NSMutableArray alloc] initWithCapacity:numComponents];
+    for (int i = 0; i < numSeperations; i+= 1)
+    {
+        NSUInteger length = numChars;
+        NSUInteger location = i * numChars;
+        if (self.length < location + length)
+            length = location - self.length;
+        NSRange range = NSMakeRange(location, length);
+        NSString* strComp = [self substringWithRange:range];
+        [components addObject:strComp];
+    }
+    
+    NSUInteger lastLocation = numSeperations * numChars;
+    if (lastLocation < self.length)
+    {
+        NSRange range = NSMakeRange(lastLocation, self.length - lastLocation);
+        NSString* strComp = [self substringWithRange:range];
+        [components addObject:strComp];
+    }
+    return components;
+}
+
 - (NSRange)rangeOfPrefix {
     return [self rangeOfString:cHttpPrefix];
 }

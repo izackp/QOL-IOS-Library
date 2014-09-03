@@ -10,7 +10,8 @@
 
 @interface NSData (Cryptography)
 
-- (NSString*)sha1;
+- (NSData*)sha1;
+- (NSString*)hexString;
 - (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey andPadding:(SecPadding)padding;
 - (NSData*)rsaDecryptWithKey:(SecKeyRef)privateKey andPadding:(SecPadding)padding;
 

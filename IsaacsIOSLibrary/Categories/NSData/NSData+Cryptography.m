@@ -13,17 +13,23 @@
 
 @implementation NSData (Cryptography)
 
-- (NSString*)sha1 {
+- (NSData*)sha1 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
     bool successful = CC_SHA1([self bytes], (CC_LONG)[self length], digest);
     if (!successful)
         return nil;
+    
+    return [NSData dataWithBytes:&digest length:CC_SHA1_DIGEST_LENGTH];
+}
 
-    NSMutableString *hexDigest = [[NSMutableString alloc] init];
-    for(NSUInteger i = 0; i < CC_SHA1_DIGEST_LENGTH; i++ )
-    {
-        [hexDigest appendFormat:@"%02x", digest[i]];
-    }
+- (NSString*)hexString {
+    NSUInteger numBytes = [self length];
+    NSMutableString *hexDigest = [[NSMutableString alloc] initWithCapacity:numBytes];
+    uint8_t* bytes = (uint8_t*)[self bytes];
+    
+    for (NSUInteger i = 0; i < numBytes; i++)
+        [hexDigest appendFormat:@"%02x", bytes[i]];
+    
     return hexDigest;
 }
 
