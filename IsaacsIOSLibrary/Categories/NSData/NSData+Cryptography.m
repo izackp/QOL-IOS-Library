@@ -39,9 +39,11 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     NSUInteger dataSize = [self length];
     uint8_t* data = (uint8_t*)[self bytes];
     
-    int maxDataSize = secKeyGetBlockSize(publicKey);
+    int maxDataSize = SecKeyGetBlockSize(publicKey);
     if (padding == kSecPaddingPKCS1)
         maxDataSize -= 11;
+    
+    NSAssert(dataSize <= maxDataSize, @"Data to encrypt is too big");
     
     size_t cipherDataSize = CIPHER_BUFFER_SIZE;
     uint8_t* cipherBuffer = (uint8_t *)calloc(CIPHER_BUFFER_SIZE, sizeof(uint8_t));
@@ -66,14 +68,21 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     uint8_t* plainData = (uint8_t *)calloc(plainDataSize, sizeof(uint8_t));
     
     OSStatus status = SecKeyDecrypt(privateKey, padding, &encryptedData[0], dataSize, &plainData[0], &plainDataSize);
-    size_t finalSize = plainDataSize;
+    if (status == noErr)
+    {
+        size_t finalSize = plainDataSize;
+        NSData* finalData = [NSData dataWithBytes:plainData length:finalSize];
+        free(plainData);
+        return finalData;
+    }
     
-    return [NSData dataWithBytes:plainData length:finalSize];
+    free(plainData);
+    return nil;
 }
 
 + (void)testAsymmetricEncryptionAndDecryption {
     
-    NSString* testString = @"This is a test demo for RSA Implementation in Objective C";
+    NSString* testString = @"This is a test demo for RSA Implementation";
     NSData* testData = [NSData dataWithBytes:[testString UTF8String] length:testString.length];
     
     KeyPair keyPair = [self generateKeyPair:512];
@@ -85,6 +94,22 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     NSLog(@"decrypted data: %@", decryptedString);
     
     NSAssert([testString isEqualToString:decryptedString], @"rsa encryption failed");
+}
+
++ (void)testPublicKeyAsData {
+    
+    uint8_t data[] = "salt+password";
+    NSData* testData = [NSData dataWithBytes:&data length:13];
+    
+    uint8_t publicKey[] = "inputHere";
+    NSData* publicKeyData = [NSData dataWithBytes:&publicKey length:9];
+    SecKeyRef publicKeyRef = [publicKeyData publicKey];
+    
+    SecPadding padding = kSecPaddingPKCS1;
+    NSData* encryptedData = [testData rsaEncryptWithKey:publicKeyRef andPadding:padding];
+    NSData* expectedData = nil;
+    
+    NSAssert([encryptedData isEqualToData:expectedData], @"rsa encryption failed");
 }
 
 - (SecKeyRef)publicKey {
