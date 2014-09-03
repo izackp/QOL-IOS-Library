@@ -21,6 +21,8 @@ typedef struct {
 } KeyPair;
 
 + (KeyPair)generateKeyPair:(NSUInteger)keySize;
+- (SecKeyRef)publicKey;
+- (SecKeyRef)publicKeyAppleMethod;
 + (void)testAsymmetricEncryptionAndDecryption;
 
 @end

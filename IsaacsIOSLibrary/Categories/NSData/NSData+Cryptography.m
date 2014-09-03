@@ -122,7 +122,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
 }
 
 //Untested; Taken From Apple Example
-- (SecKeyRef)publicKey2 {
+- (SecKeyRef)publicKeyAppleMethod {
     OSStatus errorCheck = noErr;
     SecKeyRef peerKeyRef = NULL;
     CFTypeRef persistPeer = NULL;
