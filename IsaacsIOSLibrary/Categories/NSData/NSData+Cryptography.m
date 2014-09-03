@@ -32,16 +32,20 @@ typedef struct {
     return hexDigest;
 }
 
+#warning Buffer Size is Arbitrary
 const static size_t CIPHER_BUFFER_SIZE = 1024;
-const uint32_t PADDING = kSecPaddingNone;
-- (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey {
+- (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey andPadding:(SecPadding)padding {
     
     NSUInteger dataSize = [self length];
     uint8_t* data = (uint8_t*)[self bytes];
     
+    int maxDataSize = secKeyGetBlockSize(publicKey);
+    if (padding == kSecPaddingPKCS1)
+        maxDataSize -= 11;
+    
     size_t cipherDataSize = CIPHER_BUFFER_SIZE;
     uint8_t* cipherBuffer = (uint8_t *)calloc(CIPHER_BUFFER_SIZE, sizeof(uint8_t));
-    OSStatus status = SecKeyEncrypt(publicKey, PADDING, data, dataSize, &cipherBuffer[0], &cipherDataSize);
+    OSStatus status = SecKeyEncrypt(publicKey, padding, data, dataSize, &cipherBuffer[0], &cipherDataSize);
     
     if (status == noErr)
     {
@@ -53,7 +57,7 @@ const uint32_t PADDING = kSecPaddingNone;
     return nil;
 }
 
-- (NSData*)rsaDecryptWithKey:(SecKeyRef)privateKey {
+- (NSData*)rsaDecryptWithKey:(SecKeyRef)privateKey andPadding:(SecPadding)padding {
 
     NSUInteger dataSize = [self length];
     uint8_t* encryptedData = (uint8_t*)[self bytes];
@@ -61,7 +65,7 @@ const uint32_t PADDING = kSecPaddingNone;
     size_t plainDataSize = CIPHER_BUFFER_SIZE;
     uint8_t* plainData = (uint8_t *)calloc(plainDataSize, sizeof(uint8_t));
     
-    OSStatus status = SecKeyDecrypt(privateKey, PADDING, &encryptedData[0], dataSize, &plainData[0], &plainDataSize);
+    OSStatus status = SecKeyDecrypt(privateKey, padding, &encryptedData[0], dataSize, &plainData[0], &plainDataSize);
     size_t finalSize = plainDataSize;
     
     return [NSData dataWithBytes:plainData length:finalSize];
@@ -73,9 +77,9 @@ const uint32_t PADDING = kSecPaddingNone;
     NSData* testData = [NSData dataWithBytes:[testString UTF8String] length:testString.length];
     
     KeyPair keyPair = [self generateKeyPair:512];
-    
-    NSData* encryptedData = [testData rsaEncryptWithKey:keyPair.publicKey];
-    NSData* decryptedData = [encryptedData rsaDecryptWithKey:keyPair.privateKey];
+    SecPadding padding = kSecPaddingPKCS1;
+    NSData* encryptedData = [testData rsaEncryptWithKey:keyPair.publicKey andPadding:padding];
+    NSData* decryptedData = [encryptedData rsaDecryptWithKey:keyPair.privateKey andPadding:padding];
     
     NSString* decryptedString = [NSString stringWithUTF8String:[decryptedData bytes]];
     NSLog(@"decrypted data: %@", decryptedString);
