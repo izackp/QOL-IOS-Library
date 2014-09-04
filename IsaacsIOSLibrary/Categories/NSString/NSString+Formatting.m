@@ -93,7 +93,7 @@ NSString* const cHttpSuffix = @"/";
 }
 
 - (NSString*)stringByInserting:(NSString*)insert inbetweenNumberOfCharacters:(int)numChars {
-    NSArray* comps = [self componentsSeparatedByNumberOfCharacters:2];
+    NSArray* comps = [self componentsSeparatedByNumberOfCharacters:numChars];
     NSString* result = [comps componentsJoinedByString:insert];
     return result;
 }

@@ -12,6 +12,7 @@
 
 - (NSData*)sha1;
 - (NSString*)hexString;
++ (NSData*)dataWithHexString:(NSString*)hexString;
 - (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey andPadding:(SecPadding)padding;
 - (NSData*)rsaDecryptWithKey:(SecKeyRef)privateKey andPadding:(SecPadding)padding;
 
@@ -24,6 +25,7 @@ typedef struct {
 + (KeyPair)generateKeyPair:(NSUInteger)keySize;
 - (SecKeyRef)publicKey;
 - (SecKeyRef)publicKeyAppleMethod;
++ (void)testPublicKeyAsData;
 + (void)testAsymmetricEncryptionAndDecryption;
 
 @end
