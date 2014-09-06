@@ -120,50 +120,17 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     NSAssert([testString isEqualToString:decryptedString], @"rsa encryption failed");
 }
 
-+ (void)testPublicKeyAsData {
-    
-//    //uint8_t data[] = "hziwh44vw:CozB[5=Y}fy#&-TSqtWLoPs";
-//    //NSData* testData = [NSData dataWithBytes:&data length:sizeof(data)];
-//    NSData* testKeyData = [NSData dataWithHexString:testKey];
-//    
-//    //NSString* pem = [self addLineBreaksToPEMData:cPem];
-//    //pem = [NSString stringWithFormat:@"%@%@%@", @"-----BEGIN PUBLIC KEY-----\n", pem, @"\n-----END PUBLIC KEY-----"];
-//    NSData* publicKey = [[NSData alloc] initWithBase64EncodedString:cPem options:0];
-//    //publicKey = [publicKey stripPublicKeyHeader];
-//    
-//    //NSData* publicKeyData = [[NSData dataWithHexString:testKey] generatePEM];
-//    //SecKeyRef publicKeyApple = [publicKey publicKeyAppleMethod];
-//    SecKeyRef publicKeyRef = [publicKey publicKeyMethod2];
-//    
-//    //SecPadding padding = kSecPaddingPKCS1;
-//    NSData* encryptedData1 = [testKeyData rsaEncryptWithKey:publicKeyRef andPadding:kSecPaddingPKCS1];
-//    NSData* encryptedData2 = [testKeyData rsaEncryptWithKey:publicKeyRef andPadding:kSecPaddingNone];
-//    NSData* encryptedData3 = [testKeyData rsaDecryptWithKey:publicKeyRef andPadding:kSecPaddingPKCS1];
-//    NSData* encryptedData4 = [testKeyData rsaDecryptWithKey:publicKeyRef andPadding:kSecPaddingNone];
-//    NSString* result = [encryptedData1 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength | NSDataBase64EncodingEndLineWithLineFeed];
-//    NSString* result2 = [encryptedData2 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength | NSDataBase64EncodingEndLineWithLineFeed];
-//    NSString* result3 = [encryptedData3 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength | NSDataBase64EncodingEndLineWithLineFeed];
-//    NSString* result4 = [encryptedData4 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength | NSDataBase64EncodingEndLineWithLineFeed];
-//    NSLog(@"Result1:\n%@\n\n%@\n\n%@\n\n%@", result, result2, result3, result4);
-//    NSData* expectedData = [NSData dataWithHexString:resultData];;
-//    
-//    //NSAssert([encryptedData isEqualToData:expectedData], @"rsa encryption failed");
-}
-
-- (NSData*)generatePEM {
+//Example type is: PUBLIC KEY
+- (NSData*)generatePEMWithType:(NSString*)type {
     NSString* base64Data = [self base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength | NSDataBase64EncodingEndLineWithLineFeed];
-    //NSString* content = [NSData addLineBreaksToPEMData:base64Data];//you suppose
-    NSString* pem = [NSString stringWithFormat:@"%@%@%@", @"-----BEGIN PUBLIC KEY-----\n", base64Data, @"\n-----END PUBLIC KEY-----"];
+    NSString* beginHeader = [NSString stringWithFormat:@"-----BEGIN %@-----\n", type];
+    NSString* endHeader = [NSString stringWithFormat:@"\n-----END %@-----", type];
+    NSString* pem = [NSString stringWithFormat:@"%@%@%@", beginHeader, base64Data, endHeader];
     return [pem dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-+ (NSString*)addLineBreaksToPEMData:(NSString*)pemData {
-    NSString* lineBroke = [pemData stringByInserting:@"\n" inbetweenNumberOfCharacters:64];
-    return lineBroke;
-}
-
 //Untested
-- (SecKeyRef)publicKeyViaCert {
+- (SecKeyRef)publicKeyViaCertData {
     NSData* publicKey = self;
     SecCertificateRef cert = SecCertificateCreateWithData (kCFAllocatorDefault, (__bridge CFDataRef)(publicKey));
     CFArrayRef certs = CFArrayCreate(kCFAllocatorDefault, (const void **) &cert, 1, NULL);
@@ -177,7 +144,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     return pub_key_leaf;
 }
 
-- (SecKeyRef)publicKey
+- (SecKeyRef)publicKeyFromDerData
 {
     NSString* tag = @"dummy";
     NSData* d_key = [self stripPublicKeyHeader];
