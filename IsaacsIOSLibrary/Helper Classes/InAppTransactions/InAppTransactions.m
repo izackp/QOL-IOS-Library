@@ -32,6 +32,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[InAppTransactions alloc] init];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:sharedInstance];
+        [sharedInstance updateTransactions];
     });
     return sharedInstance;
 }
@@ -56,6 +58,7 @@
         return;
     
 #if TARGET_IPHONE_SIMULATOR
+    [self incrementPuchaseForId:productId];
     [self callSuccessBlock];
     return;
 #endif
@@ -78,6 +81,8 @@
         return false;
     }
     
+    [self updateTransactions];
+    
     self.currentProductId = productId;
     self.successBlock = successBlock;
     self.canceledBlock = canceledBlock;
@@ -95,7 +100,7 @@
 }
 
 - (void)restorePurchases {
-    if ([SKPaymentQueue canMakePayments])
+    if (![SKPaymentQueue canMakePayments])
         return;
     
     SKPaymentQueue* paymentQueue = [SKPaymentQueue defaultQueue];
@@ -112,6 +117,8 @@
         if (_isDebugging)
         {
             [UIAlertView showAlertWithTitle:@"Unable to purchase content" andMessage:@"Invalid product ID, but, since this is a debug build, we'll pretend this didn't happen."];
+            if (_currentProductId != nil)
+                [self incrementPuchaseForId:_currentProductId];
             [self callSuccessBlock];
         }
         else
@@ -121,14 +128,20 @@
         return;
     }
 
-    SKProduct *selectedProduct = [response.products objectAtIndex:0];
+    SKProduct *selectedProduct = response.products[0];
     SKPayment *payment = [SKPayment paymentWithProduct:selectedProduct];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
-    [self userDefaultSavePurchases:nil];
     
+    [self updateTransactions];
+}
+
+- (void)updateTransactions {
+    //[self userDefaultSavePurchases:nil];
+    
+    NSArray* transactions = [[SKPaymentQueue defaultQueue] transactions];
     for (SKPaymentTransaction *transaction in transactions)
     {
         switch (transaction.transactionState)
@@ -157,6 +170,8 @@
     }
     
 #if TARGET_IPHONE_SIMULATOR
+    if (_currentProductId != nil)
+        [self incrementPuchaseForId:_currentProductId];
     [self callSuccessBlock];
     return;
 #endif
@@ -169,7 +184,6 @@
     NSLog(@"Restoration Success");
     [UIAlertView showAlertWithTitle:@"Notice" andMessage:@"Restoration Successful"];
     
-    [self callSuccessBlock];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
@@ -187,10 +201,10 @@
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
     NSString* productId = transaction.payment.productIdentifier;
     
+    [self incrementPuchaseForId:productId];
+    
     if ([productId isEqualToString:_currentProductId])
         [self callSuccessBlock];
-    else
-        [self incrementPuchaseForId:productId];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
@@ -247,7 +261,6 @@
 }
 
 - (void)callSuccessBlock {
-    [self incrementPuchaseForId:_currentProductId];
     if (_successBlock)
         _successBlock();
     [self clearBlocks];
