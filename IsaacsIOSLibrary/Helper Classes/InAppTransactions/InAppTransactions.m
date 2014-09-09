@@ -182,7 +182,7 @@
 #pragma mark - SKPaymentTransactionWrapper Methods
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
     NSLog(@"Restoration Success");
-    [UIAlertView showAlertWithTitle:@"Notice" andMessage:@"Restoration Successful"];
+    [UIAlertView showMessage:@"Restoration Successful"];
     
 }
 

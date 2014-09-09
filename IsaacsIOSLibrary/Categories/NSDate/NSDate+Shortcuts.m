@@ -41,6 +41,18 @@
     return [self dateYMD];
 }
 
+- (NSDate*)closestHalfHour {
+    NSDateComponents* ymdhmComps = [self componentsYMDHM];
+    ymdhmComps.minute = [NSDate roundClosestHalfHour:ymdhmComps.minute];
+    return [NSDate dateUsingComponents:ymdhmComps];
+}
+
++ (double)roundClosestHalfHour:(double)minutes {
+    minutes = minutes / 30.0;
+    minutes = round(minutes) * 30;
+    return minutes;
+}
+
 - (NSDate*)dateYMD {
     NSDateComponents* ymdComps = [self componentsYMD];
     return [NSDate dateUsingComponents:ymdComps];
@@ -59,6 +71,11 @@
 - (NSDateComponents*)componentsYMD {
     NSCalendar* cal = [NSCalendar currentCalendar];
     return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
+}
+
+- (NSDateComponents*)componentsYMDHM {
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    return [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:self];
 }
 
 - (NSDateComponents*)componentsYMDHMS {
