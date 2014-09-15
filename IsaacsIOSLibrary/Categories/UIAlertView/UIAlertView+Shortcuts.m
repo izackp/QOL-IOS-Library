@@ -7,6 +7,7 @@
 //
 
 #import "UIAlertView+Shortcuts.h"
+#import "UIDevice+SystemVersion.h"
 
 @implementation UIAlertView (Shortcuts)
 
@@ -28,6 +29,11 @@
         NSLog(@"Warning: Trying to show a 0 length message");
         return nil;
     }
+    
+    //Messages without titles are ugly on iOS 8
+    if ([[UIDevice currentDevice] isSystemVersionEqualOrGreaterThan:@"8.0"])
+        return [self showNotice:message];
+
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert forceMainThreadShow];
     return alert;
@@ -51,6 +57,12 @@
         return nil;
     }
     return [UIAlertView showAlertWithTitle:@"Notice" andMessage:message];
+}
+
++ (UIAlertView*)showError:(NSError*)error {
+    NSString* title = [NSString stringWithFormat:@"Error code %li", (long)error.code];
+    NSString* message = [error localizedDescription];
+    return [self showAlertWithTitle:title andMessage:message];
 }
 
 - (void)forceMainThreadShow {

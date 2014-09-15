@@ -13,6 +13,7 @@
 + (UIAlertView*)showAlertWithTitle:(NSString*)title andMessage:(NSString*)message;
 + (UIAlertView*)showMessage:(NSString*)message;
 + (UIAlertView*)showNotice:(NSString*)message;
++ (UIAlertView*)showError:(NSError*)error;
 + (UIAlertView*)showQuestion:(NSString*)message;
 
 @end
