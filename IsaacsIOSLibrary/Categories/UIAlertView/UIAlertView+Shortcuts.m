@@ -9,12 +9,15 @@
 #import "UIAlertView+Shortcuts.h"
 #import "UIDevice+SystemVersion.h"
 
+static NSString* const cGenericTitle = @"Notice";
+static NSString* const c0LengthMessageWarning = @"Warning: Trying to show a 0 length message";
+
 @implementation UIAlertView (Shortcuts)
 
 + (UIAlertView*)showAlertWithTitle:(NSString*)title andMessage:(NSString*)message {
     if (message.length == 0 && title.length == 0)
     {
-        NSLog(@"Warning: Trying to show a 0 length message");
+        NSLog(c0LengthMessageWarning);
         return nil;
     }
     
@@ -26,7 +29,7 @@
 + (UIAlertView*)showMessage:(NSString*)message {
     if (message.length == 0)
     {
-        NSLog(@"Warning: Trying to show a 0 length message");
+        NSLog(c0LengthMessageWarning);
         return nil;
     }
     
@@ -42,10 +45,15 @@
 + (UIAlertView*)showQuestion:(NSString*)message {
     if (message.length == 0)
     {
-        NSLog(@"Warning: Trying to show a 0 length question");
+        NSLog(c0LengthMessageWarning);
         return nil;
     }
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    
+    NSString* title = nil;
+    if ([[UIDevice currentDevice] isSystemVersionEqualOrGreaterThan:@"8.0"])
+        title = cGenericTitle;
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [alert forceMainThreadShow];
     return alert;
 }
@@ -53,10 +61,11 @@
 + (UIAlertView*)showNotice:(NSString*)message {
     if (message.length == 0)
     {
-        NSLog(@"Warning: Trying to show a 0 length notice");
+        NSLog(c0LengthMessageWarning);
         return nil;
     }
-    return [UIAlertView showAlertWithTitle:@"Notice" andMessage:message];
+    
+    return [UIAlertView showAlertWithTitle:cGenericTitle andMessage:message];
 }
 
 + (UIAlertView*)showError:(NSError*)error {
