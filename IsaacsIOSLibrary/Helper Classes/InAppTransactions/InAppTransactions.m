@@ -8,6 +8,7 @@
 
 #import "InAppTransactions.h"
 #import <StoreKit/StoreKit.h>
+#import "ProgressHUDWrapper.h"
 #import "UIAlertView+Shortcuts.h"
 #import "NSObject+Shortcuts.h"
 
@@ -24,14 +25,14 @@
 
 @implementation InAppTransactions
 
-@synthesize productRequester;
-
 #pragma mark - Singleton Stuff
 + (instancetype)sharedInstance {
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[InAppTransactions alloc] init];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:sharedInstance];
+        [sharedInstance updateTransactionsClearPurchasing:true];
     });
     return sharedInstance;
 }
@@ -41,9 +42,7 @@
     
     bool success = [self copyBlocksProductId:productId success:successBlock canceled:canceledBlock failed:failedBlock];
     if (!success)
-    {
         return;
-    }
     
     UIAlertView* alert = [UIAlertView showQuestion:message];
     alert.delegate = self;
@@ -56,6 +55,7 @@
         return;
     
 #if TARGET_IPHONE_SIMULATOR
+    [self incrementPuchaseForId:productId];
     [self callSuccessBlock];
     return;
 #endif
@@ -63,14 +63,21 @@
     [self startProductRequest];
 }
 
+//TODO: does 2 things should do 1
 - (bool)copyBlocksProductId:(NSString*)productId success:(purchaseSuccess)successBlock canceled:(purchaseCanceled)canceledBlock failed:(purchaseFailed)failedBlock {
-    if (self.successBlock != nil)
-    {
-        if (failedBlock)
-            failedBlock([self errorWithCode:2 andLocalizedDescription:@"Purchase already in progress"]);
-        return false;
-    }
+//    bool notProcessingAnyTransactions = ([self transactionCount] == 0);
+//    if (notProcessingAnyTransactions)
+//        [self clearBlocks];
     
+    [self updateTransactionsClearPurchasing:true];
+
+//    if (self.successBlock != nil)
+//    {
+//        if (failedBlock)
+//            failedBlock([self errorWithCode:2 andLocalizedDescription:@"Purchase already in progress"]);
+//        return false;
+//    }
+//    
     if (![SKPaymentQueue canMakePayments])
     {
         if (failedBlock)
@@ -78,6 +85,8 @@
         return false;
     }
     
+    [_productRequester cancel];
+    self.productRequester = nil;
     self.currentProductId = productId;
     self.successBlock = successBlock;
     self.canceledBlock = canceledBlock;
@@ -85,25 +94,35 @@
     return true;
 }
 
-- (void)startProductRequest {
-    NSSet* set = [NSSet setWithObject:_currentProductId];
-    
-    self.productRequester = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
-    productRequester.delegate = self;
-    
-    [productRequester start];
-}
-
 - (void)restorePurchases {
-    if ([SKPaymentQueue canMakePayments])
+    if (![SKPaymentQueue canMakePayments])
         return;
     
     SKPaymentQueue* paymentQueue = [SKPaymentQueue defaultQueue];
     [paymentQueue restoreCompletedTransactions];
 }
 
+- (void)startProductRequest {
+    NSSet* set = [NSSet setWithObject:_currentProductId];
+    
+    self.productRequester = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
+    _productRequester.delegate = self;
+    
+    [_productRequester start];
+    [ProgressHUDWrapper show:@"Connecting to iTunes"];
+    [self performSelector:@selector(productRequesterTimeout) withObject:nil afterDelay:15];
+}
+
+- (void)productRequesterTimeout {
+    [ProgressHUDWrapper showErrorBriefly:@"Could not connect to iTunes"];
+    [self callCancelBlock];
+}
+
 #pragma mark - SKProductsRequestDelegate Protocol
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    [ProgressHUDWrapper dismiss];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(productRequesterTimeout) object:nil];
+    
     if ([response.products count] == 0)
     {
         NSLog(@"Invalid Product Identifier(s): %@", [response.invalidProductIdentifiers description]);
@@ -112,23 +131,29 @@
         if (_isDebugging)
         {
             [UIAlertView showAlertWithTitle:@"Unable to purchase content" andMessage:@"Invalid product ID, but, since this is a debug build, we'll pretend this didn't happen."];
+            if (_currentProductId != nil)
+                [self incrementPuchaseForId:_currentProductId];
             [self callSuccessBlock];
         }
         else
         {
-            [self purchaseFailed:@"Unable to purchase content" error:[self errorWithCode:2 andLocalizedDescription:@"Invalid product ID"] transaction:nil];
+            [self purchaseFailed:@"Unable to purchase content" error:[self errorWithCode:3 andLocalizedDescription:@"Invalid product ID"] transaction:nil];
         }
         return;
     }
 
-    SKProduct *selectedProduct = [response.products objectAtIndex:0];
+    SKProduct *selectedProduct = response.products[0];
     SKPayment *payment = [SKPayment paymentWithProduct:selectedProduct];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
-    [self userDefaultSavePurchases:nil];
     
+    [self updateTransactionsClearPurchasing:false];
+}
+
+- (void)updateTransactionsClearPurchasing:(bool)shouldClearPurchasing {
+    NSArray* transactions = [[SKPaymentQueue defaultQueue] transactions];
     for (SKPaymentTransaction *transaction in transactions)
     {
         switch (transaction.transactionState)
@@ -141,14 +166,21 @@
                 break;
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
-            default:
+                break;
+            case SKPaymentTransactionStatePurchasing:
+                if (shouldClearPurchasing)
+                    [self failedTransaction:transaction];
                 break;
         }
     }
 }
 
-#pragma mark - UIAlertView Delegate
+- (NSUInteger)transactionCount {
+    NSArray* transactions = [[SKPaymentQueue defaultQueue] transactions];
+    return [transactions count];
+}
 
+#pragma mark - UIAlertView Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == alertView.cancelButtonIndex)
     {
@@ -157,6 +189,8 @@
     }
     
 #if TARGET_IPHONE_SIMULATOR
+    if (_currentProductId != nil)
+        [self incrementPuchaseForId:_currentProductId];
     [self callSuccessBlock];
     return;
 #endif
@@ -167,9 +201,7 @@
 #pragma mark - SKPaymentTransactionWrapper Methods
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
     NSLog(@"Restoration Success");
-    [UIAlertView showAlertWithTitle:@"Notice" andMessage:@"Restoration Successful"];
-    
-    [self callSuccessBlock];
+    [UIAlertView showMessage:@"Restoration Successful"];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
@@ -177,20 +209,18 @@
     [self purchaseFailed:@"Unable to restore purchased content" error:error transaction:nil];
 }
 
-//TODO: Untested
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     [self restoreTransaction:transaction];
 }
 
-//TODO: Untested
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
     NSString* productId = transaction.payment.productIdentifier;
     
+    [self incrementPuchaseForId:productId];
+    
     if ([productId isEqualToString:_currentProductId])
         [self callSuccessBlock];
-    else
-        [self incrementPuchaseForId:productId];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
@@ -205,7 +235,7 @@
 }
 
 - (void)purchaseFailed:(NSString*)title error:(NSError*)error transaction:(SKPaymentTransaction *)transaction {
-    NSLog(@"Purchased Failed: %@ - %@", title, [error localizedDescription]);
+    NSLog(@"Purchase Failed: %@ - %@", title, [error localizedDescription]);
     
     if (title)
         [UIAlertView showAlertWithTitle:title andMessage:[error localizedDescription]];
@@ -247,13 +277,14 @@
 }
 
 - (void)callSuccessBlock {
-    [self incrementPuchaseForId:_currentProductId];
     if (_successBlock)
         _successBlock();
     [self clearBlocks];
 }
 
 - (void)callCancelBlock {
+    [_productRequester cancel];
+    self.productRequester = nil;
     if (_canceledBlock)
         _canceledBlock();
     [self clearBlocks];

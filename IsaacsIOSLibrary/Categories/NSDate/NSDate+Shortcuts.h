@@ -13,13 +13,13 @@
 - (NSDate*)tomorrow;
 - (NSDate*)yesterday;
 - (NSDate*)today;
+- (NSDate*)closestHalfHour;
 
 /*! Truncates minutes, hours, seconds, ects before offsetting the date*/
 - (NSDate*)dateOffsettedByDays:(int)days;
 
 /*! Does not truncate the date */
 - (NSDate*)dateOffsettedBySeconds:(NSTimeInterval)seconds;
-
 
 - (NSDateComponents*)componentsYMDHMS;
 - (NSDateComponents*)componentsOfTimeSinceDate:(NSDate*)date;

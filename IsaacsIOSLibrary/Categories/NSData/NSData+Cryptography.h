@@ -23,8 +23,8 @@ typedef struct {
 } KeyPair;
 
 + (KeyPair)generateKeyPair:(NSUInteger)keySize;
-- (SecKeyRef)publicKey;
-+ (void)testPublicKeyAsData;
-+ (void)testAsymmetricEncryptionAndDecryption;
+- (SecKeyRef)publicKeyViaCertData;
+- (SecKeyRef)publicKeyFromDerData;
+- (NSData*)generatePEMWithType:(NSString*)type;
 
 @end
