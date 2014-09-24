@@ -135,12 +135,12 @@ NSString* const cHttpSuffix = @"/";
 }
 
 - (NSString*)strippedHost {
-    NSString* content = [self getFirstStringInbetweenPrefix:cHttpPrefix suffix:cHttpSuffix];
+    NSString* content = [self getFirstStringInbetweenPrefix:@"://" suffix:cHttpSuffix];
     return content;
 }
 
 - (NSString*)hostSubPath {
-    NSString* content = [self getFirstStringAfter:cHttpPrefix];
+    NSString* content = [self getFirstStringAfter:[self strippedHost]];
     if ([content containsText:cHttpSuffix])
     {
         NSString* additionalContent = [content getFirstStringAfter:cHttpSuffix];
@@ -156,7 +156,12 @@ NSString* const cHttpSuffix = @"/";
 
 - (NSString*)httpAddress {
     NSString* host = [self strippedHost];
-    NSString* formattedHost = [cHttpPrefix stringByAppendingFormat:@"%@%@", host, cHttpSuffix];
+    NSString* scheme = nil;
+    if ([self hasPrefix:@"http"])
+        scheme = [self getFirstStringBefore:host];
+    else
+        scheme = cHttpPrefix;
+    NSString* formattedHost = [scheme stringByAppendingFormat:@"%@%@", host, cHttpSuffix];
     return [formattedHost urlEncoded];
 }
 
