@@ -144,13 +144,15 @@ NSString* const cHttpSuffix = @"/";
     if ([content containsText:cHttpSuffix])
     {
         NSString* additionalContent = [content getFirstStringAfter:cHttpSuffix];
-        return additionalContent;
+        return [additionalContent urlEncoded];
     }
     return nil;
 }
 
 - (NSString*)httpAddressWithSubpath {
     NSString* finalAddress = [[self httpAddress] stringByAppendingWeakString:[self hostSubPath]];
+    if (![finalAddress hasSuffix:@"/"] && [finalAddress pathExtension].length == 0)
+        return [finalAddress stringByAppendingString:@"/"];
     return finalAddress;
 }
 
