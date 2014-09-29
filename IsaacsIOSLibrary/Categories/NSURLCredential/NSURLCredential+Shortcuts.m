@@ -43,7 +43,7 @@
     
     if (trustResult == kSecTrustResultRecoverableTrustFailure){
         
-        NSLog(@"kSecTrustResultRecoverableTrustFailure");
+        //NSLog(@"kSecTrustResultRecoverableTrustFailure");
         CFDataRef errDataRef = SecTrustCopyExceptions(trust);
         SecTrustSetExceptions(trust, errDataRef);
         err = SecTrustEvaluate(trust, &trustResult);

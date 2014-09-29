@@ -20,7 +20,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    
     [self fitUIIfNecessary];
     
     [self addSubview:self.view];
@@ -32,17 +31,17 @@
 }
 
 - (void)fitWidthWithContentIfNecessary {
-    bool flexableWidth = (self.view.autoresizingMask & UIViewAutoresizingFlexibleWidth);
+    bool flexableWidth = (self.view.autoresizingMask | UIViewAutoresizingFlexibleWidth);
     
-    if (!flexableWidth)
-        self.width = self.view.width;
+    if (flexableWidth)
+        self.view.width = self.width;
 }
 
 - (void)fitHeightWithContentIfNecessary {
-    bool flexableHeight = (self.view.autoresizingMask & UIViewAutoresizingFlexibleHeight);
+    bool flexableHeight = (self.view.autoresizingMask | UIViewAutoresizingFlexibleHeight);
     
-    if (!flexableHeight)
-        self.height = self.view.height;
+    if (flexableHeight)
+        self.view.height = self.height;
 }
 
 @end
