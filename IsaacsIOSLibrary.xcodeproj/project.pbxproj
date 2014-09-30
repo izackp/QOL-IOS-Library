@@ -28,6 +28,8 @@
 		6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
 		6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
 		6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
+		6AAF132E19DAF64C004438AE /* UINavigationController+Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAF132D19DAF64C004438AE /* UINavigationController+Transitions.m */; };
+		6AAF133319DAFCC9004438AE /* TransitionSlideUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAF133219DAFCC9004438AE /* TransitionSlideUp.m */; };
 		6AB795DF19D3005200287B23 /* NSString+FormattingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB795DE19D3005200287B23 /* NSString+FormattingTests.m */; };
 		6AB795E019D30BD700287B23 /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186B1820299500C7D7E0 /* NSString+Formatting.m */; };
 		6AB795E119D30BEF00287B23 /* NSString+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */; };
@@ -141,6 +143,10 @@
 		6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Shortcuts.m"; sourceTree = "<group>"; };
 		6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Shortcuts.h"; sourceTree = "<group>"; };
 		6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Shortcuts.m"; sourceTree = "<group>"; };
+		6AAF132C19DAF64C004438AE /* UINavigationController+Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Transitions.h"; sourceTree = "<group>"; };
+		6AAF132D19DAF64C004438AE /* UINavigationController+Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Transitions.m"; sourceTree = "<group>"; };
+		6AAF133119DAFCC9004438AE /* TransitionSlideUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionSlideUp.h; sourceTree = "<group>"; };
+		6AAF133219DAFCC9004438AE /* TransitionSlideUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionSlideUp.m; sourceTree = "<group>"; };
 		6AB795DE19D3005200287B23 /* NSString+FormattingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FormattingTests.m"; sourceTree = "<group>"; };
 		6AC536F819A2862300FC53BA /* NSData+Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Cryptography.h"; sourceTree = "<group>"; };
 		6AC536F919A2862300FC53BA /* NSData+Cryptography.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Cryptography.m"; sourceTree = "<group>"; };
@@ -397,6 +403,15 @@
 				6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */,
 			);
 			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		6AAF133019DAFC43004438AE /* UINavigationViewControllerTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				6AAF133119DAFCC9004438AE /* TransitionSlideUp.h */,
+				6AAF133219DAFCC9004438AE /* TransitionSlideUp.m */,
+			);
+			path = UINavigationViewControllerTransitions;
 			sourceTree = "<group>";
 		};
 		6AC536F719A285F200FC53BA /* NSData */ = {
@@ -675,6 +690,8 @@
 			children = (
 				DF2718891820299500C7D7E0 /* UINavigationController+SetItems.h */,
 				DF27188A1820299500C7D7E0 /* UINavigationController+SetItems.m */,
+				6AAF132C19DAF64C004438AE /* UINavigationController+Transitions.h */,
+				6AAF132D19DAF64C004438AE /* UINavigationController+Transitions.m */,
 			);
 			path = UINavigationController;
 			sourceTree = "<group>";
@@ -697,6 +714,7 @@
 		DF2718901820299500C7D7E0 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6AAF133019DAFC43004438AE /* UINavigationViewControllerTransitions */,
 				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
 				6A184D5119925B6D00F51CE5 /* InAppTransactions */,
 				6A080D1719C0CB98009BBBFF /* ProgressHudWrapper */,
@@ -863,6 +881,7 @@
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
 				6A3EE6E519A4E7A1007663B6 /* NSURLCredential+Shortcuts.m in Sources */,
 				DF2718A31820299500C7D7E0 /* NSString+MD5.m in Sources */,
+				6AAF132E19DAF64C004438AE /* UINavigationController+Transitions.m in Sources */,
 				DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */,
 				DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */,
 				6AA7B66E18ABECA000E8F3F6 /* NSDate+Shortcuts.m in Sources */,
@@ -890,6 +909,7 @@
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
 				DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */,
+				6AAF133319DAFCC9004438AE /* TransitionSlideUp.m in Sources */,
 				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */,
 				6AA642F118E316DA0047927E /* UIView+Transform.m in Sources */,

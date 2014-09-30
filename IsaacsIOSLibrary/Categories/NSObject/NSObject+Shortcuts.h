@@ -19,4 +19,7 @@
 
 - (NSError*)errorWithCode:(NSInteger)code andLocalizedDescription:(NSString*)desc;
 
+- (void)setAssociatedObject:(id)object key:(NSString* const)key;
+- (id)getAssociatedObject:(NSString* const)key;
+
 @end
