@@ -43,6 +43,10 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if (touch.view == self || [touch.view isDescendantOfView:self])
         return NO;
+    if ([touch.view isKindOfClass:[UITextField class]])
+        return NO;
+    if ([touch.view isKindOfClass:[UITextView class]])
+        return NO;
     [self resignFirstResponder];
     return YES;
 }
