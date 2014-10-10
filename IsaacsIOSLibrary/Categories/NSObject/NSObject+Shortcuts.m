@@ -59,13 +59,15 @@
 }
 
 - (void)setAssociatedObject:(id)object key:(NSString* const)key {
-    NSLog(@"Retaining %@ with key: %i", object, key);
     objc_setAssociatedObject(self, (__bridge const void *)(key), object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)getAssociatedObject:(NSString* const)key {
-    NSLog(@"Getting obj with key: %i", key);
     return objc_getAssociatedObject(self, (__bridge const void *)(key));
+}
+
++ (NSError*)errorWithCode:(NSInteger)code description:(NSString*)errorDesc {
+    return [NSError errorWithDomain:NSStringFromClass(self) code:code userInfo:@{NSLocalizedDescriptionKey:errorDesc}];
 }
 
 @end
