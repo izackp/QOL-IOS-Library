@@ -22,4 +22,6 @@
 - (void)setAssociatedObject:(id)object key:(NSString* const)key;
 - (id)getAssociatedObject:(NSString* const)key;
 
++ (NSError*)errorWithCode:(NSInteger)code description:(NSString*)errorDesc;
+
 @end
