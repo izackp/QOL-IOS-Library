@@ -171,7 +171,7 @@ NSString* const cHttpSuffix = @"/";
     NSString* ipAddr = [self strippedHost];
     NSArray* split = [ipAddr componentsSeparatedByString:@":"];
     if (split.count != 2)
-        return 80;
+        return NSNotFound;
     return [split[1] unsignedIntValue];
 }
 
