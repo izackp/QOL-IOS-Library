@@ -184,6 +184,8 @@
 	[self hudOrient];
 }
 
+static CGFloat sRotation = 0.0f;
+
 - (void)hudOrient
 {
     CGFloat rotate = 0.0;
@@ -199,6 +201,7 @@
     if (orient == UIInterfaceOrientationLandscapeRight)
         rotate = + M_PI_2;
     
+    sRotation = rotate;
     hud.transform = CGAffineTransformMakeRotation(rotate);
 }
 
@@ -237,6 +240,7 @@
 	image.center = spinner.center = CGPointMake(imagex, imagey);
 	
 	label.frame = labelRect;
+    hud.transform = CGAffineTransformMakeRotation(sRotation);
 }
 
 - (void)hudShow
