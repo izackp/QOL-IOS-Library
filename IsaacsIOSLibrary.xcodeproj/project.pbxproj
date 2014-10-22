@@ -38,6 +38,7 @@
 		DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
 		DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
 		DF17B84B19F81ED5003EBBCF /* NSError+URLError.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17B84A19F81ED5003EBBCF /* NSError+URLError.m */; };
+		DF17B84F19F8501A003EBBCF /* TransitionSimpleSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17B84E19F8501A003EBBCF /* TransitionSimpleSlide.m */; };
 		DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
 		DF17EF761854B2610064E3C0 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
 		DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
@@ -159,6 +160,8 @@
 		DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Shortcuts.m"; sourceTree = "<group>"; };
 		DF17B84919F81ED5003EBBCF /* NSError+URLError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+URLError.h"; sourceTree = "<group>"; };
 		DF17B84A19F81ED5003EBBCF /* NSError+URLError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+URLError.m"; sourceTree = "<group>"; };
+		DF17B84D19F8501A003EBBCF /* TransitionSimpleSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionSimpleSlide.h; sourceTree = "<group>"; };
+		DF17B84E19F8501A003EBBCF /* TransitionSimpleSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionSimpleSlide.m; sourceTree = "<group>"; };
 		DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
 		DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
 		DF17EF711854B2610064E3C0 /* CoreDataGlobalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataGlobalContext.h; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 			children = (
 				6AAF133119DAFCC9004438AE /* TransitionSlideUp.h */,
 				6AAF133219DAFCC9004438AE /* TransitionSlideUp.m */,
+				DF17B84D19F8501A003EBBCF /* TransitionSimpleSlide.h */,
+				DF17B84E19F8501A003EBBCF /* TransitionSimpleSlide.m */,
 			);
 			path = UINavigationViewControllerTransitions;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
+				DF17B84F19F8501A003EBBCF /* TransitionSimpleSlide.m in Sources */,
 				DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */,
 				6AAF133319DAFCC9004438AE /* TransitionSlideUp.m in Sources */,
 				DF17EF671854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m in Sources */,
