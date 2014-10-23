@@ -47,6 +47,11 @@
         return NO;
     if ([touch.view isKindOfClass:[UITextView class]])
         return NO;
+    if ([touch.view isKindOfClass:[UIButton class]])
+    {
+        [self performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];//TODO:Hacky
+        return NO;
+    }
     [self resignFirstResponder];
     return YES;
 }
