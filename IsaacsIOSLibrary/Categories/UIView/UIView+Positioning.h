@@ -23,4 +23,6 @@
 
 - (void)evenlySpaceSubviewsHorizontally;
 
+- (void)alignViewsToTheLeft:(CGFloat)padding;
+
 @end

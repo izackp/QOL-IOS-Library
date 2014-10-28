@@ -13,4 +13,6 @@
 /*! Sets the image for the button's default state */
 - (void)setImageWithName:(NSString*)name;
 
+- (void)setTitle:(NSString*)title;
+
 @end

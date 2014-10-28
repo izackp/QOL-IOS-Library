@@ -210,4 +210,31 @@
     }
 }
 
+- (void)alignViewsToTheLeft:(CGFloat)padding {
+    NSArray* subviews = [self.subviews sortedArrayUsingComparator:^NSComparisonResult(UIView* obj1, UIView* obj2) {
+        if (obj1.x < obj2.x)
+            return NSOrderedAscending;
+        
+        if (obj1.x == obj2.x)
+        {
+            if (obj1.y < obj2.y)
+                return NSOrderedAscending;
+            
+            if (obj1.y == obj2.y)
+                return NSOrderedSame;
+        }
+        
+        return NSOrderedDescending;
+    }];
+    
+    float x = 0;
+    for (UIView* eachView in subviews)
+    {
+        if (eachView.width == 0)
+            continue;
+        eachView.x = x;
+        x += padding + eachView.width;
+    }
+}
+
 @end

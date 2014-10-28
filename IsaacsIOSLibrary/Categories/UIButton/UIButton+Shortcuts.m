@@ -14,4 +14,8 @@
     [self setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
 }
 
+- (void)setTitle:(NSString*)title {
+    [self setTitle:title forState:UIControlStateNormal];
+}
+
 @end
