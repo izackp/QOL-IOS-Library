@@ -17,8 +17,24 @@
 
 @implementation Widget
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self != [super initWithFrame:frame])
+        return self;
+
+    [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    [self fitUIIfNecessary];
+    
+    [self addSubview:self.view];
+    
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    if (self.view != nil)
+        return;
+    
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
     [self fitUIIfNecessary];
     

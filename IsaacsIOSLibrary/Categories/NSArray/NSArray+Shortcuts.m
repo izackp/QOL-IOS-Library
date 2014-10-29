@@ -34,4 +34,12 @@
     return mutArr;
 }
 
+- (id)safeObjectAtIndex:(NSInteger)index {
+    if (index >= [self count])
+        return nil;
+    if (index < 0)
+        return nil;
+    return self[index];
+}
+
 @end

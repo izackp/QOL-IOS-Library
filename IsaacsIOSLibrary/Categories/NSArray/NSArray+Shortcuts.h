@@ -13,4 +13,6 @@
 - (NSArray*)arrayByExtractingProperty:(NSString*)key;
 - (NSArray*)matchingObjects:(NSObject*)objectToMatch;
 
+- (id)safeObjectAtIndex:(NSInteger)index;
+
 @end
