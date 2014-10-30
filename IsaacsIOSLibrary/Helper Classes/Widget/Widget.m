@@ -21,10 +21,7 @@
     if (self != [super initWithFrame:frame])
         return self;
 
-    [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    [self fitUIIfNecessary];
-    
-    [self addSubview:self.view];
+    [self awakeFromNib];
     
     return self;
 }
