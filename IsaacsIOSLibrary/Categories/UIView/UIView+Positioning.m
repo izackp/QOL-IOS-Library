@@ -10,6 +10,14 @@
 
 @implementation UIView (Positioning)
 
+- (void)setCenterX:(CGFloat)centerX {
+    self.center = CGPointMake(centerX, self.centerY);
+}
+
+- (void)setCenterY:(CGFloat)centerY {
+    self.center = CGPointMake(self.centerX, centerY);
+}
+
 - (void)setX:(CGFloat)x {
   self.frame = CGRectMake(x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 }
@@ -48,6 +56,14 @@
 
 - (CGFloat)y {
   return self.frame.origin.y;
+}
+
+- (CGFloat)centerX {
+    return self.center.x;
+}
+
+- (CGFloat)centerY {
+    return self.center.y;
 }
 
 - (CGFloat)width {
