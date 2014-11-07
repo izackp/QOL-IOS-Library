@@ -10,14 +10,15 @@
 
 @implementation NSDate (FuzzyTime)
 
+static const double SECOND  = 1;
+static const double MINUTE  = 60 * SECOND;
+static const double HOUR    = 60 * MINUTE;
+static const double DAY     = 24 * HOUR;
+static const double MONTH   = 30 * DAY;
+static const double YEAR    = 12 * MONTH;
+
 - (NSString*)fuzzyTime {
-    const double SECOND = 1;
-    const double MINUTE = 60 * SECOND;
-    const double HOUR = 60 * MINUTE;
-    const double DAY = 24 * HOUR;
-    const double MONTH = 30 * DAY;
-    const double YEAR = 12 * MONTH;
-    
+
     NSString *time = nil;
     NSTimeInterval delta = [[NSDate date] timeIntervalSinceDate:self];
     

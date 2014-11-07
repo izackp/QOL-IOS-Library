@@ -33,6 +33,13 @@
         return;
     
     [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    
+    if (self.view == nil)
+    {
+        NSLog(@"WARNING VIEW NOT SET ON WIDGET: %@!!!", NSStringFromClass([self class]));
+        return;
+    }
+    
     [self fitUIIfNecessary];
     
     [self addSubview:self.view];

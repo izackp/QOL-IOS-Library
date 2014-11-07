@@ -35,6 +35,21 @@ NSString* const cTransition = @"Transition";
     [navigationController setAssociatedObject:nil key:cTransition];
 }
 
+- (void)popToViewControllerClass:(Class)vcClass {
+    UIViewController* foundVC = [self findVCWithClass:vcClass];
+    [self popToViewController:foundVC animated:true];
+}
+
+- (UIViewController*)findVCWithClass:(Class)vcClass {
+    NSArray* vcs = self.viewControllers;
+    for (UIViewController* eachVc in vcs)
+    {
+        if ([eachVc isKindOfClass:vcClass])
+            return eachVc;
+    }
+    return nil;
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 //Not called; Might not be needed?
 + (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
