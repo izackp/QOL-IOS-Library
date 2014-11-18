@@ -18,7 +18,7 @@
 @implementation Widget
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self != [super initWithFrame:frame])
+    if (!(self = [super initWithFrame:frame]))
         return self;
 
     [self awakeFromNib];
