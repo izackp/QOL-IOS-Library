@@ -21,6 +21,6 @@ B) You can Drag and drop the project file into your project.
 
 you will also have to
 
-- Goto to Build Settings for your project and
+- Go to the Build Settings for your project and
   - Add the `-ObjC -all_load` linker flags to the `Other Linker Flags` property.
   - Add the path of the library to the `Header Search Paths` property and make sure its recursive. Ex: `"$(SOURCE_ROOT)"/ExternalLibs/IsaacsIOSLibrary`
