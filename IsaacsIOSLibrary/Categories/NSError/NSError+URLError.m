@@ -15,24 +15,23 @@
 }
 
 + (bool)isConnectionError:(NSInteger)code {
-    if (code == kCFURLErrorCannotFindHost)
-        return true;
     
-    if (code == kCFURLErrorCannotConnectToHost)
-        return true;
-    
-    if (code == kCFURLErrorNetworkConnectionLost)
-        return true;
-    
-    if (code == kCFURLErrorDNSLookupFailed)
-        return true;
-    
-    if (code == kCFURLErrorNotConnectedToInternet)
-        return true;
-    
-    if (code == kCFURLErrorTimedOut)
-        return true;
-    
+    switch (code) {
+        case kCFURLErrorBadURL:
+        case kCFURLErrorTimedOut:
+        case kCFURLErrorUnsupportedURL:
+        case kCFURLErrorCannotFindHost:
+        case kCFURLErrorCannotConnectToHost:
+        case kCFURLErrorNetworkConnectionLost:
+        case kCFURLErrorDNSLookupFailed:
+        case kCFURLErrorNotConnectedToInternet:
+        case kCFURLErrorRedirectToNonExistentLocation:
+        case kCFURLErrorBadServerResponse:
+            return true;
+            
+        default:
+            return false;
+    }
     return false;
 }
 
@@ -41,23 +40,31 @@
 }
 
 + (NSString*)connectionErrorStringForCode:(NSInteger)code {
-    if (code == kCFURLErrorCannotFindHost)
-        return @"Error connecting to the server: Could not find host.";
-    
-    if (code == kCFURLErrorCannotConnectToHost)
-        return @"Error connecting to the server: Could not connect to host.";
-    
-    if (code == kCFURLErrorNetworkConnectionLost)
-        return @"Error connecting to the server: Network Connection Lost.";
-    
-    if (code == kCFURLErrorDNSLookupFailed)
-        return @"Error connecting to the server: DNS Lookup Failed.";
-    
-    if (code == kCFURLErrorNotConnectedToInternet)
-        return @"Error connecting to the server: Not connected to a network.";
-    
-    if (code == kCFURLErrorTimedOut)
-        return @"Error connecting to the server: Connection timed out.";
+    switch (code) {
+        case kCFURLErrorBadURL:
+            return @"Error connecting to the server: Bad URL.";
+        case kCFURLErrorTimedOut:
+            return @"Error connecting to the server: Connection timed out.";
+        case kCFURLErrorUnsupportedURL:
+            return @"Error connecting to the server: Unsupported URL.";
+        case kCFURLErrorCannotFindHost:
+            return @"Error connecting to the server: Could not find host.";
+        case kCFURLErrorCannotConnectToHost:
+            return @"Error connecting to the server: Could not connect to host.";
+        case kCFURLErrorNetworkConnectionLost:
+            return @"Error connecting to the server: Network connection lost.";
+        case kCFURLErrorDNSLookupFailed:
+            return @"Error connecting to the server: DNS lookup failed.";
+        case kCFURLErrorNotConnectedToInternet:
+            return @"Error connecting to the server: Not connected to a network.";
+        case kCFURLErrorRedirectToNonExistentLocation:
+            return @"Error connecting to the server: Redirect to non existent location.";
+        case kCFURLErrorBadServerResponse:
+            return @"Error connecting to the server: Bad server response.";
+            
+        default:
+            return nil;
+    }
     
     return nil;
 }
