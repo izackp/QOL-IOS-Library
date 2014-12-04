@@ -4,7 +4,9 @@ Isaac's IOS Library
 What is this?
 ---
 
-This is mostly a collection of generic and extremely useful categories on top of the iOS SDK's classes. With a few helper classes. It will be easier to for you to look at the code then for me to explain everything here.
+This is mostly a collection of generic and extremely useful categories on top of the iOS SDK's classes with a few helper classes.
+
+It will be easier to for you to look at the code then for me to explain everything here.
 
 Project Setup Instructions
 ---
