@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A080D3C19C0CB98009BBBFF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
 		6A080D3D19C0CB98009BBBFF /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
-		6A080D4119C0CB98009BBBFF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D3719C0CB98009BBBFF /* SVProgressHUD.m */; };
+		6A080D4119C0CB98009BBBFF /* _SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */; };
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
 		6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
 		6A1A80BA19993B18002F6F01 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
@@ -107,8 +107,8 @@
 		6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUDWrapper.h; sourceTree = "<group>"; };
 		6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUDWrapper.m; sourceTree = "<group>"; };
 		6A080D3519C0CB98009BBBFF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		6A080D3619C0CB98009BBBFF /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		6A080D3719C0CB98009BBBFF /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _SVProgressHUD.h; path = SVProgressHUD/_SVProgressHUD.h; sourceTree = "<group>"; };
+		6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _SVProgressHUD.m; path = SVProgressHUD/_SVProgressHUD.m; sourceTree = "<group>"; };
 		6A0BD6B718BB86FC00E45103 /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
 		6A0BD6B818BB86FC00E45103 /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
 		6A184D5219925B6D00F51CE5 /* InAppTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppTransactions.h; sourceTree = "<group>"; };
@@ -277,8 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				6A080D3519C0CB98009BBBFF /* SVProgressHUD.bundle */,
-				6A080D3619C0CB98009BBBFF /* SVProgressHUD.h */,
-				6A080D3719C0CB98009BBBFF /* SVProgressHUD.m */,
+				6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */,
+				6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
 			sourceTree = "<group>";
@@ -922,7 +922,7 @@
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,
 				6A080D3D19C0CB98009BBBFF /* ProgressHUDWrapper.m in Sources */,
 				DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */,
-				6A080D4119C0CB98009BBBFF /* SVProgressHUD.m in Sources */,
+				6A080D4119C0CB98009BBBFF /* _SVProgressHUD.m in Sources */,
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,

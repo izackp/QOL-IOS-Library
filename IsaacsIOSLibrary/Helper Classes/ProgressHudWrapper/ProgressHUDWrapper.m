@@ -8,7 +8,7 @@
 
 #import "ProgressHUDWrapper.h"
 #import "ProgressHUD.h"
-#import "SVProgressHUD.h"
+#import "_SVProgressHUD.h"
 #import "UIDevice+SystemVersion.h"
 
 @implementation ProgressHUDWrapper
@@ -44,7 +44,7 @@ static NSString* sLastText = nil;
     [self setUserInteractionOnNormalWindow:allow];
     
     if ([[UIDevice currentDevice] isIOS6OrLower])
-        [SVProgressHUD showWithStatus:text];
+        [_SVProgressHUD showWithStatus:text];
     else
         [ProgressHUD show:text];
 }
@@ -53,7 +53,7 @@ static NSString* sLastText = nil;
     [self reset];
     
     if ([[UIDevice currentDevice] isIOS6OrLower])
-        [SVProgressHUD showErrorWithStatus:text];
+        [_SVProgressHUD showErrorWithStatus:text];
     else
         [ProgressHUD showError:text];
 }
@@ -62,7 +62,7 @@ static NSString* sLastText = nil;
     [self reset];
     
     if ([[UIDevice currentDevice] isIOS6OrLower])
-        [SVProgressHUD showSuccessWithStatus:text];
+        [_SVProgressHUD showSuccessWithStatus:text];
     else
         [ProgressHUD showSuccess:text];
 }
@@ -71,7 +71,7 @@ static NSString* sLastText = nil;
     [self reset];
     
     if ([[UIDevice currentDevice] isIOS6OrLower])
-        [SVProgressHUD dismiss];
+        [_SVProgressHUD dismiss];
     else
         [ProgressHUD dismiss];
 }

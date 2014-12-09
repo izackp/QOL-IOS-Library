@@ -19,15 +19,15 @@ extern NSString * const SVProgressHUDDidAppearNotification;
 extern NSString * const SVProgressHUDStatusUserInfoKey;
 
 enum {
-    SVProgressHUDMaskTypeNone = 1, // allow user interactions while HUD is displayed
-    SVProgressHUDMaskTypeClear, // don't allow
-    SVProgressHUDMaskTypeBlack, // don't allow and dim the UI in the back of the HUD
-    SVProgressHUDMaskTypeGradient // don't allow and dim the UI with a a-la-alert-view bg gradient
+    _SVProgressHUDMaskTypeNone = 1, // allow user interactions while HUD is displayed
+    _SVProgressHUDMaskTypeClear, // don't allow
+    _SVProgressHUDMaskTypeBlack, // don't allow and dim the UI in the back of the HUD
+    _SVProgressHUDMaskTypeGradient // don't allow and dim the UI with a a-la-alert-view bg gradient
 };
 
-typedef NSUInteger SVProgressHUDMaskType;
+typedef NSUInteger _SVProgressHUDMaskType;
 
-@interface SVProgressHUD : UIView
+@interface _SVProgressHUD : UIView
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000
 @property (readwrite, nonatomic, retain) UIColor *hudBackgroundColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
@@ -44,13 +44,13 @@ typedef NSUInteger SVProgressHUDMaskType;
 + (void)resetOffsetFromCenter;
 
 + (void)show;
-+ (void)showWithMaskType:(SVProgressHUDMaskType)maskType;
++ (void)showWithMaskType:(_SVProgressHUDMaskType)maskType;
 + (void)showWithStatus:(NSString*)status;
-+ (void)showWithStatus:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;
++ (void)showWithStatus:(NSString*)status maskType:(_SVProgressHUDMaskType)maskType;
 
 + (void)showProgress:(float)progress;
 + (void)showProgress:(float)progress status:(NSString*)status;
-+ (void)showProgress:(float)progress status:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;
++ (void)showProgress:(float)progress status:(NSString*)status maskType:(_SVProgressHUDMaskType)maskType;
 
 + (void)setStatus:(NSString*)string; // change the HUD loading status while it's showing
 
