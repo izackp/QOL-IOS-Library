@@ -13,7 +13,6 @@
 #import "NSString+Formatting.h"
 
 
-
 @implementation NSData (Cryptography)
 
 - (NSData*)sha1 {
