@@ -11,8 +11,12 @@
 @implementation UIView (Shortcuts)
 
 + (instancetype)createFromNib {
+    return [self createFromNib:NSStringFromClass([self class])];
+}
+
++ (instancetype)createFromNib:(NSString*)nibName {
     UIView* view = nil;
-    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil];
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil];
     view = [topLevelObjects objectAtIndex:0];
     NSAssert([view isKindOfClass:[self class]], @"The view loaded from the nib is not of the expected class.");
     return view;

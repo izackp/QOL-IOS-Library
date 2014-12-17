@@ -11,6 +11,7 @@
 @interface UIView (Shortcuts)
 
 + (instancetype)createFromNib;
++ (instancetype)createFromNib:(NSString*)nibName;
 
 - (bool)isVisible;
 
