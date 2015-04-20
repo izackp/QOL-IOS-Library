@@ -11,11 +11,6 @@
 
 @implementation TransitionSimpleSlide
 
-+ (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-    return 0.33f;
-}
-
 + (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -41,11 +36,6 @@
 
 @implementation TransitionSimpleSlideReverse
 
-+ (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-    return 0.33f;
-}
-
 + (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -55,9 +45,10 @@
     UIView *containerView = [transitionContext containerView];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     
-    
     [containerView addSubview:toViewController.view];
     [containerView sendSubviewToBack:toViewController.view];
+  
+    toViewController.view.x = containerView.x - containerView.width;
     
     [UIView animateWithDuration:duration animations:^{
         fromViewController.view.frame = CGRectOffset(fromViewController.view.frame, containerView.frame.size.width, 0);

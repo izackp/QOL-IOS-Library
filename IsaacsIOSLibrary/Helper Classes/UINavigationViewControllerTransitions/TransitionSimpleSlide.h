@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TransitionSimpleSlide : NSObject
+#import "TransitionBase.h"
+
+@interface TransitionSimpleSlide : TransitionBase
 
 @end
 
-@interface TransitionSimpleSlideReverse : NSObject
+@interface TransitionSimpleSlideReverse : TransitionBase
 
 @end
