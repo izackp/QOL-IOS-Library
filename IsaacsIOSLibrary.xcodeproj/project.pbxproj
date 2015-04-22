@@ -74,6 +74,7 @@
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
 		DFB6133E1AE594E3007B0401 /* TransitionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6133D1AE594E3007B0401 /* TransitionBase.m */; };
 		DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
+		DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
 		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
 		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
@@ -229,6 +230,8 @@
 		DFB6133D1AE594E3007B0401 /* TransitionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionBase.m; sourceTree = "<group>"; };
 		DFB613491AE6D91F007B0401 /* ViewAvoidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAvoidKeyboard.h; sourceTree = "<group>"; };
 		DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAvoidKeyboard.m; sourceTree = "<group>"; };
+		DFB615581AE7FE86007B0401 /* NSURLSession+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Additions.h"; sourceTree = "<group>"; };
+		DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Additions.m"; sourceTree = "<group>"; };
 		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
@@ -593,6 +596,7 @@
 				6AA6432118E32A520047927E /* NSObject */,
 				DF2718651820299500C7D7E0 /* NSString */,
 				6A3EE6E219A4E77A007663B6 /* NSURLCredential */,
+				DFB615571AE7FE59007B0401 /* NSURLSession */,
 				DF27186C1820299500C7D7E0 /* UIAlertView */,
 				DF27186F1820299500C7D7E0 /* UIApplication */,
 				DF2718721820299500C7D7E0 /* UIBarButtonItem */,
@@ -801,6 +805,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DFB615571AE7FE59007B0401 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				DFB615581AE7FE86007B0401 /* NSURLSession+Additions.h */,
+				DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
 		DFDB30FB188EC5E100B1287C /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +930,7 @@
 				6A593AB519D5BDF9001BF583 /* UIViewController+Shortcuts.m in Sources */,
 				6A544F5318ED97D400B466EB /* UIStoryboard+Shortcuts.m in Sources */,
 				DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */,
+				DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */,
 				DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */,
 				6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
