@@ -20,26 +20,26 @@
     }
     
     NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if ([response isKindOfClass:NSHTTPURLResponse.class] == false) {
-            if (failure) {
-                dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (error) {
+                if (failure) {
+                    failure(error);
+                    return;
+                }
+            }
+            
+            if ([response isKindOfClass:NSHTTPURLResponse.class] == false) {
+                if (failure) {
                     failure([self errorWithCode:0 andLocalizedDescription:@"Non HTTP Response"]);
-                });
+                }
+                return;
             }
-            return;
-        }
-        
-        if (error) {
-            if (failure) {
-                failure(error);
-            }
-        }
-        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-        if (success) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+            if (success) {
                 success(data, httpResponse);
-            });
-        }
+            }
+        });
     }];
     [dataTask resume];
 }
