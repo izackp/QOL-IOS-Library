@@ -81,7 +81,7 @@
     if (![SKPaymentQueue canMakePayments])
     {
         if (failedBlock)
-            failedBlock([self errorWithCode:1 andLocalizedDescription:@"Cannot make payments"]);
+            failedBlock([self errorWithCode:1 andLocalizedDescription:@"This device does not support Apple Pay."]);
         return false;
     }
     
