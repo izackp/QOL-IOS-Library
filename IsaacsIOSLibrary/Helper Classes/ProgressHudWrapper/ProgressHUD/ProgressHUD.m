@@ -288,7 +288,7 @@ static CGFloat sRotation = 0.0f;
 		NSTimeInterval sleep = length * 0.04 + 0.5;
 		
 		[NSThread sleepForTimeInterval:sleep];
-		[self hudHide];
+		[self performSelectorOnMainThread:@selector(hudHide) withObject:nil waitUntilDone:false];
 	}
 }
 
