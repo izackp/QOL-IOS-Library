@@ -37,10 +37,12 @@
 }
 
 - (void)clickOut {
-    
+    [self resignFirstResponder];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (touch.view == nil)
+        return NO;
     if (touch.view == self || [touch.view isDescendantOfView:self])
         return NO;
     if ([touch.view isKindOfClass:[UITextField class]])
@@ -49,10 +51,11 @@
         return NO;
     if ([touch.view isKindOfClass:[UIButton class]])
     {
-        [self performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];//TODO:Hacky
-        return NO;
+        UIButton* button = touch.view;
+        if (button.isEnabled)
+            return NO;
+        return YES;
     }
-    [self resignFirstResponder];
     return YES;
 }
 @end

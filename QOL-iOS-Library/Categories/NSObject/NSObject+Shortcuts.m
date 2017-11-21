@@ -11,6 +11,13 @@
 
 @implementation NSObject (Shortcuts)
 
++ (instancetype)typecastWithAssertion:(id)object {
+    if (object != nil)
+        NSAssert([object isKindOfClass:[self class]], @"Object %@ is not kind of class %@", object, NSStringFromClass([self class]));
+    return object;
+}
+
+
 - (NSArray*)getAllPropertyNames {
     NSMutableArray* propertyNames = [NSMutableArray new];
     

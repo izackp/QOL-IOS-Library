@@ -7,7 +7,6 @@
 //
 
 #import "WeakTimedSelector.h"
-#import "NSDate+Shortcuts.h"
 
 @interface WeakTimedSelector ()
 
@@ -40,9 +39,8 @@
         return;
     }
     
-    NSDate* date = [NSDate date];
-    NSDate* newFireDate = [date dateOffsettedBySeconds:seconds];
-    [self.timer setFireDate:newFireDate];
+    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:seconds];
+    [self.timer setFireDate:date];
 }
 
 - (void)fire {

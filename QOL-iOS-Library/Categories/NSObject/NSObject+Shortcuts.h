@@ -10,6 +10,8 @@
 
 @interface NSObject (Shortcuts)
 
++ (instancetype)typecastWithAssertion:(id)object;
+
 - (NSArray*)getAllPropertyNames;
 
 - (void)invokeSelectorSafe:(SEL)selector;
