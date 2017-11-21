@@ -20,8 +20,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.tapGesture = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(clickOut)];
-    self.viewWithTapGesture = [UIApplication getMainWindowRootViewController].view;
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOut)];
+    self.viewWithTapGesture = [UIApplication getMainWindow];
 
     [_tapGesture setDelegate:self];
 }
@@ -51,7 +51,7 @@
         return NO;
     if ([touch.view isKindOfClass:[UIButton class]])
     {
-        UIButton* button = touch.view;
+        UIButton* button = (UIButton*)touch.view;
         if (button.isEnabled)
             return NO;
         return YES;
