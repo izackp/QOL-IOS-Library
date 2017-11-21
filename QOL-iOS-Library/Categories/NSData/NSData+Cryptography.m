@@ -51,14 +51,14 @@
     return bytes;
 }
 
-#warning Buffer Size is Arbitrary
+//#warning Buffer Size is Arbitrary
 const static size_t CIPHER_BUFFER_SIZE = 1024;
 - (NSData*)rsaEncryptWithKey:(SecKeyRef)publicKey andPadding:(SecPadding)padding {
     
     NSUInteger dataSize = [self length];
     uint8_t* data = (uint8_t*)[self bytes];
     
-    int maxDataSize = SecKeyGetBlockSize(publicKey);
+    size_t maxDataSize = SecKeyGetBlockSize(publicKey);
     if (padding == kSecPaddingPKCS1)
         maxDataSize -= 11;
     
@@ -191,7 +191,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
 - (NSData *)stripPublicKeyHeader
 {
     // Skip ASN.1 public key header
-    unsigned int len = [self length];
+    NSUInteger len = [self length];
     if (!len)
         return nil;
     
@@ -272,11 +272,12 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     OSStatus errorCheck = SecKeyGeneratePair((__bridge CFDictionaryRef)keyPairAttr, &publicKey, &privateKey);
 
     KeyPair pair;
+    pair.publicKey = publicKey;
+    pair.privateKey = privateKey;
+    
     if (errorCheck == noErr && publicKey != NULL && privateKey != NULL)
     {
-        NSLog(@"Successful");
-        pair.publicKey = publicKey;
-        pair.privateKey = privateKey;
+        NSLog(@"Successful Generating KeyPair");
     }
     
     return pair;

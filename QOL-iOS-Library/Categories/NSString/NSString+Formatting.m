@@ -167,7 +167,7 @@ NSString* const cHttpSuffix = @"/";
     return [formattedHost urlEncoded];
 }
 
-- (unsigned int)port {
+- (NSInteger)port {
     NSString* ipAddr = [self strippedHost];
     NSArray* split = [ipAddr componentsSeparatedByString:@":"];
     if (split.count != 2)

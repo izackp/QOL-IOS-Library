@@ -1,4 +1,4 @@
-Isaac's IOS Library
+QOL-iOS-Library
 ===
 
 What is this?

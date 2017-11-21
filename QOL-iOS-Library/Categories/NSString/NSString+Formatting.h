@@ -26,7 +26,7 @@
 - (NSString*)httpAddress;
 
 /*! returns the port. Defaults to 80 if none found*/
-- (unsigned int)port;
+- (NSInteger)port;
 
 /*! This method will retain the subpath */
 - (NSString*)httpAddressWithSubpath;

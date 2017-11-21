@@ -44,12 +44,10 @@
 		DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
 		DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */; };
 		DF27183A1820293E00C7D7E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718391820293E00C7D7E0 /* Foundation.framework */; };
-		DF27183F1820293E00C7D7E0 /* IsaacsIOSLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */; };
-		DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */; };
 		DF2718481820293F00C7D7E0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718471820293F00C7D7E0 /* XCTest.framework */; };
 		DF2718491820293F00C7D7E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718391820293E00C7D7E0 /* Foundation.framework */; };
 		DF27184B1820293F00C7D7E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF27184A1820293F00C7D7E0 /* UIKit.framework */; };
-		DF27184E1820293F00C7D7E0 /* libIsaacsIOSLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */; };
+		DF27184E1820293F00C7D7E0 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DF2718541820293F00C7D7E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF2718521820293F00C7D7E0 /* InfoPlist.strings */; };
 		DF2718561820293F00C7D7E0 /* IsaacsIOSLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718551820293F00C7D7E0 /* IsaacsIOSLibraryTests.m */; };
 		DF2718A01820299500C7D7E0 /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718621820299500C7D7E0 /* NSDate+Compare.m */; };
@@ -97,7 +95,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				DF27183F1820293E00C7D7E0 /* IsaacsIOSLibrary.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,15 +170,13 @@
 		DF17EF751854B2610064E3C0 /* TableViewCellCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellCache.m; sourceTree = "<group>"; };
 		DF1996D619B4B23200FEE940 /* NSMutableArray+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shortcuts.h"; sourceTree = "<group>"; };
 		DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shortcuts.m"; sourceTree = "<group>"; };
-		DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIsaacsIOSLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQOL-iOS-Library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2718391820293E00C7D7E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DF27183D1820293E00C7D7E0 /* IsaacsIOSLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsaacsIOSLibrary-Prefix.pch"; sourceTree = "<group>"; };
-		DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsaacsIOSLibrary.h; sourceTree = "<group>"; };
-		DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsaacsIOSLibrary.m; sourceTree = "<group>"; };
-		DF2718461820293F00C7D7E0 /* IsaacsIOSLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsaacsIOSLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF27183D1820293E00C7D7E0 /* QOL-iOS-Library-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QOL-iOS-Library-Prefix.pch"; sourceTree = "<group>"; };
+		DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QOL-iOS-LibraryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2718471820293F00C7D7E0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DF27184A1820293F00C7D7E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		DF2718511820293F00C7D7E0 /* IsaacsIOSLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IsaacsIOSLibraryTests-Info.plist"; sourceTree = "<group>"; };
+		DF2718511820293F00C7D7E0 /* QOL-iOS-LibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QOL-iOS-LibraryTests-Info.plist"; sourceTree = "<group>"; };
 		DF2718531820293F00C7D7E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF2718551820293F00C7D7E0 /* IsaacsIOSLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsaacsIOSLibraryTests.m; sourceTree = "<group>"; };
 		DF2718611820299500C7D7E0 /* NSDate+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
@@ -254,7 +249,7 @@
 				DF2718481820293F00C7D7E0 /* XCTest.framework in Frameworks */,
 				DF27184B1820293F00C7D7E0 /* UIKit.framework in Frameworks */,
 				DF2718491820293F00C7D7E0 /* Foundation.framework in Frameworks */,
-				DF27184E1820293F00C7D7E0 /* libIsaacsIOSLibrary.a in Frameworks */,
+				DF27184E1820293F00C7D7E0 /* libQOL-iOS-Library.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +512,7 @@
 		DF27182D1820293E00C7D7E0 = {
 			isa = PBXGroup;
 			children = (
-				DF27183B1820293E00C7D7E0 /* IsaacsIOSLibrary */,
+				DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF27184F1820293F00C7D7E0 /* IsaacsIOSLibraryTests */,
 				DF2718381820293E00C7D7E0 /* Frameworks */,
 				DF2718371820293E00C7D7E0 /* Products */,
@@ -527,8 +522,8 @@
 		DF2718371820293E00C7D7E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */,
-				DF2718461820293F00C7D7E0 /* IsaacsIOSLibraryTests.xctest */,
+				DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */,
+				DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -543,24 +538,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF27183B1820293E00C7D7E0 /* IsaacsIOSLibrary */ = {
+		DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */ = {
 			isa = PBXGroup;
 			children = (
 				DF27185F1820299500C7D7E0 /* Categories */,
 				DF2718901820299500C7D7E0 /* Helper Classes */,
 				6A1A80B619993ADC002F6F01 /* Helper Functions */,
 				DF2718931820299500C7D7E0 /* Subclasses */,
-				DF27183E1820293E00C7D7E0 /* IsaacsIOSLibrary.h */,
-				DF2718401820293E00C7D7E0 /* IsaacsIOSLibrary.m */,
 				DF27183C1820293E00C7D7E0 /* Supporting Files */,
 			);
-			path = IsaacsIOSLibrary;
+			path = "QOL-iOS-Library";
 			sourceTree = "<group>";
 		};
 		DF27183C1820293E00C7D7E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF27183D1820293E00C7D7E0 /* IsaacsIOSLibrary-Prefix.pch */,
+				DF27183D1820293E00C7D7E0 /* QOL-iOS-Library-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -577,7 +570,7 @@
 		DF2718501820293F00C7D7E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF2718511820293F00C7D7E0 /* IsaacsIOSLibraryTests-Info.plist */,
+				DF2718511820293F00C7D7E0 /* QOL-iOS-LibraryTests-Info.plist */,
 				DF2718521820293F00C7D7E0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -826,9 +819,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF2718351820293E00C7D7E0 /* IsaacsIOSLibrary */ = {
+		DF2718351820293E00C7D7E0 /* QOL-iOS-Library */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF2718591820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "IsaacsIOSLibrary" */;
+			buildConfigurationList = DF2718591820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "QOL-iOS-Library" */;
 			buildPhases = (
 				DF2718321820293E00C7D7E0 /* Sources */,
 				DF2718331820293E00C7D7E0 /* Frameworks */,
@@ -838,14 +831,14 @@
 			);
 			dependencies = (
 			);
-			name = IsaacsIOSLibrary;
+			name = "QOL-iOS-Library";
 			productName = IsaacsIOSLibrary;
-			productReference = DF2718361820293E00C7D7E0 /* libIsaacsIOSLibrary.a */;
+			productReference = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DF2718451820293E00C7D7E0 /* IsaacsIOSLibraryTests */ = {
+		DF2718451820293E00C7D7E0 /* QOL-iOS-LibraryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF27185C1820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "IsaacsIOSLibraryTests" */;
+			buildConfigurationList = DF27185C1820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "QOL-iOS-LibraryTests" */;
 			buildPhases = (
 				DF2718421820293E00C7D7E0 /* Sources */,
 				DF2718431820293E00C7D7E0 /* Frameworks */,
@@ -856,9 +849,9 @@
 			dependencies = (
 				DF27184D1820293F00C7D7E0 /* PBXTargetDependency */,
 			);
-			name = IsaacsIOSLibraryTests;
+			name = "QOL-iOS-LibraryTests";
 			productName = IsaacsIOSLibraryTests;
-			productReference = DF2718461820293F00C7D7E0 /* IsaacsIOSLibraryTests.xctest */;
+			productReference = DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -870,7 +863,7 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Isaac Paul";
 			};
-			buildConfigurationList = DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "IsaacsIOSLibrary" */;
+			buildConfigurationList = DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "QOL-iOS-Library" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -882,8 +875,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF2718351820293E00C7D7E0 /* IsaacsIOSLibrary */,
-				DF2718451820293E00C7D7E0 /* IsaacsIOSLibraryTests */,
+				DF2718351820293E00C7D7E0 /* QOL-iOS-Library */,
+				DF2718451820293E00C7D7E0 /* QOL-iOS-LibraryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -942,7 +935,6 @@
 				6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */,
 				DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */,
 				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
-				DF2718411820293E00C7D7E0 /* IsaacsIOSLibrary.m in Sources */,
 				DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */,
 				6ADE46EA192B934E00B913F8 /* Widget.m in Sources */,
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,
@@ -983,7 +975,7 @@
 /* Begin PBXTargetDependency section */
 		DF27184D1820293F00C7D7E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DF2718351820293E00C7D7E0 /* IsaacsIOSLibrary */;
+			target = DF2718351820293E00C7D7E0 /* QOL-iOS-Library */;
 			targetProxy = DF27184C1820293F00C7D7E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1076,7 +1068,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/IsaacsIOSLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IsaacsIOSLibrary/IsaacsIOSLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "QOL-iOS-Library/QOL-iOS-Library-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1090,7 +1082,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/IsaacsIOSLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IsaacsIOSLibrary/IsaacsIOSLibrary-Prefix.pch";
+				GCC_PREFIX_HEADER = "QOL-iOS-Library/QOL-iOS-Library-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1113,7 +1105,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "IsaacsIOSLibraryTests/IsaacsIOSLibraryTests-Info.plist";
+				INFOPLIST_FILE = "IsaacsIOSLibraryTests/QOL-iOS-LibraryTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "NA.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -1130,7 +1122,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IsaacsIOSLibrary/IsaacsIOSLibrary-Prefix.pch";
-				INFOPLIST_FILE = "IsaacsIOSLibraryTests/IsaacsIOSLibraryTests-Info.plist";
+				INFOPLIST_FILE = "IsaacsIOSLibraryTests/QOL-iOS-LibraryTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "NA.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -1140,7 +1132,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "IsaacsIOSLibrary" */ = {
+		DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "QOL-iOS-Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF2718571820293F00C7D7E0 /* Debug */,
@@ -1149,7 +1141,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF2718591820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "IsaacsIOSLibrary" */ = {
+		DF2718591820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "QOL-iOS-Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF27185A1820293F00C7D7E0 /* Debug */,
@@ -1158,7 +1150,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF27185C1820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "IsaacsIOSLibraryTests" */ = {
+		DF27185C1820293F00C7D7E0 /* Build configuration list for PBXNativeTarget "QOL-iOS-LibraryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF27185D1820293F00C7D7E0 /* Debug */,

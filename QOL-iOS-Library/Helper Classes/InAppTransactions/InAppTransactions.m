@@ -171,6 +171,8 @@
                 if (shouldClearPurchasing)
                     [self failedTransaction:transaction];
                 break;
+            case SKPaymentTransactionStateDeferred:
+                break;
         }
     }
 }

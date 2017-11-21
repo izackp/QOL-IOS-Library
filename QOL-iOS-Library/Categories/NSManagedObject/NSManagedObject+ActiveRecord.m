@@ -32,17 +32,20 @@ static NSNumber *defaultBatchSize = nil;
     return [[CoreDataGlobalContext sharedInstance] managedObjectContext];
 }
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_10_0
 + (NSEntityDescription*)entity {
-	NSString* className = [NSString stringWithCString:class_getName([self class]) encoding:NSASCIIStringEncoding];
-	return [NSEntityDescription entityForName:className inManagedObjectContext:[self managedObjectContext]];
+    NSString* className = [NSString stringWithCString:class_getName([self class]) encoding:NSASCIIStringEncoding];
+    return [NSEntityDescription entityForName:className inManagedObjectContext:[self managedObjectContext]];
 }
 
 + (NSFetchRequest*)fetchRequest {
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [self entity];
-	[fetchRequest setEntity:entity];
-	return fetchRequest;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [self entity];
+    [fetchRequest setEntity:entity];
+    return fetchRequest;
 }
+#endif
+
 
 + (NSArray*)objectsWithFetchRequest:(NSFetchRequest*)fetchRequest {
 	NSError* error = nil;

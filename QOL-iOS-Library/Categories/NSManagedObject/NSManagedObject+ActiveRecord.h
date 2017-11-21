@@ -18,6 +18,7 @@
  */
 + (NSManagedObjectContext*)managedObjectContext;
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_10_0
 /**
  *	The NSEntityDescription for the Subclass 
  *	defaults to the subclass className, may be overridden
@@ -28,6 +29,7 @@
  *	Returns an initialized NSFetchRequest for the entity, with no predicate
  */
 + (NSFetchRequest*)fetchRequest;
+#endif
 
 /**
  * Fetches all objects from the persistent store identified by the fetchRequest
