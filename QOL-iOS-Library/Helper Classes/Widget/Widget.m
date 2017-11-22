@@ -8,6 +8,7 @@
 
 #import "Widget.h"
 #import "UIView+Positioning.h"
+#import "NSObject+Shortcuts.h"
 
 @interface Widget ()
 
@@ -32,7 +33,7 @@
     if (self.view != nil)
         return;
     
-    [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
+    [[NSBundle mainBundle] loadNibNamed:[self classNameWithoutModule] owner:self options:nil];
     
     if (self.view == nil)
     {

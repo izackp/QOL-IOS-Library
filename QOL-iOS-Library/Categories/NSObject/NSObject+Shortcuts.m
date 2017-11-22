@@ -17,6 +17,19 @@
     return object;
 }
 
++ (NSString*)classNameWithoutModule {
+    NSString* className = NSStringFromClass([self class]);
+    NSArray* comps = [className componentsSeparatedByString:@"."];
+    NSString* name = comps.lastObject;
+    return name;
+}
+
+- (NSString*)classNameWithoutModule {
+    NSString* className = NSStringFromClass([self class]);
+    NSArray* comps = [className componentsSeparatedByString:@"."];
+    NSString* name = comps.lastObject;
+    return name;
+}
 
 - (NSArray*)getAllPropertyNames {
     NSMutableArray* propertyNames = [NSMutableArray new];

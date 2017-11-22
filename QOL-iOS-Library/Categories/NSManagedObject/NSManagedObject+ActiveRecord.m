@@ -12,6 +12,7 @@
 #import "NSManagedObject+ActiveRecord.h"
 #import "CoreDataGlobalContext.h"
 #import "NSManagedObjectContext+Shortcuts.h"
+#import "NSObject+Shortcuts.h"
 
 // Set Logging Component
 #undef RKLogComponent
@@ -205,8 +206,16 @@ static NSNumber *defaultBatchSize = nil;
 
 + (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context
 {
-    NSString *entityName = NSStringFromClass([self class]);
-    return [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    NSString* entityName = [self classNameWithoutModule];
+    NSEntityDescription *desc = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    if (desc == nil) {
+        NSLog(@"Warning: No Entity found called %@. Printing names in obj model:", entityName);
+        NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
+        for (NSEntityDescription *entity in [model entities]) {
+            NSLog(@"Found: %@", entity.name);
+        }
+    }
+    return desc;
 }
 
 + (NSEntityDescription *)entityDescription
@@ -696,7 +705,7 @@ static NSNumber *defaultBatchSize = nil;
 
 + (id)createInContext:(NSManagedObjectContext *)context
 {
-    NSString *entityName = NSStringFromClass([self class]);
+    NSString *entityName = [self classNameWithoutModule];
     return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:context];
 }
 

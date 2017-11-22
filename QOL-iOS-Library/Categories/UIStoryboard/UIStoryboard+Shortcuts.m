@@ -7,11 +7,12 @@
 //
 
 #import "UIStoryboard+Shortcuts.h"
+#import "NSObject+Shortcuts.h"
 
 @implementation UIStoryboard (Shortcuts)
 
 - (id)instantiateViewControllerWithClass:(Class)theClass {
-    return [self instantiateViewControllerWithIdentifier:NSStringFromClass([theClass class])];
+    return [self instantiateViewControllerWithIdentifier:[theClass classNameWithoutModule]];//TODO: Not sure if this will give use the right name.. Class vs DesiredType
 }
 
 @end

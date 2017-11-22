@@ -7,11 +7,12 @@
 //
 
 #import "UIView+Shortcuts.h"
+#import "NSObject+Shortcuts.h"
 
 @implementation UIView (Shortcuts)
 
 + (instancetype)createFromNib {
-    return [self createFromNib:NSStringFromClass([self class])];
+    return [self createFromNib:[self classNameWithoutModule]];
 }
 
 + (instancetype)createFromNib:(NSString*)nibName {

@@ -12,6 +12,9 @@
 
 + (instancetype)typecastWithAssertion:(id)object;
 
++ (NSString*)classNameWithoutModule;
+- (NSString*)classNameWithoutModule;
+
 - (NSArray*)getAllPropertyNames;
 
 - (void)invokeSelectorSafe:(SEL)selector;
