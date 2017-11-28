@@ -61,4 +61,24 @@
     return image;
 }
 
++ (ScreenTypes)screenSizeType {
+    int height = [self getMainWindow].frame.size.height;
+    switch (height) {
+        case 568:
+            return ScreenTypesiPhone5;
+            
+        case 667:
+            return ScreenTypesiPhone6;
+            
+        case 736:
+            return ScreenTypesiPhone6Plus;
+            
+        case 812:
+            return ScreenTypesiPhoneX;
+    }
+    
+    return ScreenTypesiPhone5;
+}
+
+
 @end

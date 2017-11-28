@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    ScreenTypesiPhone5,
+    ScreenTypesiPhone6,
+    ScreenTypesiPhone6Plus,
+    ScreenTypesiPhoneX
+} ScreenTypes;
+
 @interface UIApplication (EasyAccess)
 
 + (UIWindow*)getMainWindow;
 + (UIViewController*)getMainWindowRootViewController;
 + (UIImage*)getScreenShot;
++ (ScreenTypes)screenSizeType;
 
 @end
