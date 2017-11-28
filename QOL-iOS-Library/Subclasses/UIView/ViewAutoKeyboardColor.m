@@ -66,8 +66,7 @@
     _actualKeyboardBG.y = rootView.height;
 }
 
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
+- (void)keyboardWillShow:(NSNotification *)aNotification {
 	CGRect keyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGFloat keyboardHeight = keyboardRect.size.height;

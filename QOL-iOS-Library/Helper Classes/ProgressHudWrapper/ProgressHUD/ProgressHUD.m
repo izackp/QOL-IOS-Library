@@ -110,7 +110,7 @@
 	[self hudShow];
 	
 	if (hide)
-        [NSThread detachNewThreadSelector:@selector(timedHide) toTarget:self withObject:nil];
+        [NSThread detachNewThreadSelector:@selector(timedHide:) toTarget:self withObject:[NSNumber numberWithUnsignedInteger:label.text.length]];
 }
 
 - (void)hudCreate
@@ -280,11 +280,11 @@ static CGFloat sRotation = 0.0f;
 	}
 }
 
-- (void)timedHide
+- (void)timedHide:(NSNumber*)textLength
 {
 	@autoreleasepool
 	{
-		double length = label.text.length;
+		double length = textLength.doubleValue;
 		NSTimeInterval sleep = length * 0.04 + 0.5;
 		
 		[NSThread sleepForTimeInterval:sleep];
