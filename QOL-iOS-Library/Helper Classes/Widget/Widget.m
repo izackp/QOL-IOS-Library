@@ -41,6 +41,7 @@
         return;
     }
     
+    [self.view removeFromSuperview];
     [self fitUIIfNecessary];
     
     [self addSubview:self.view];
