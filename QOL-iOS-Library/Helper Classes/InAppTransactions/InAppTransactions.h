@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^purchaseSuccess)();
+typedef void (^purchaseSuccess)(void);
 typedef void (^purchaseFailed)(NSError* error);
-typedef void (^purchaseCanceled)();
+typedef void (^purchaseCanceled)(void);
 
 @interface InAppTransactions : NSObject
 

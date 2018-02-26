@@ -57,10 +57,9 @@
 #if TARGET_IPHONE_SIMULATOR
     [self incrementPuchaseForId:productId];
     [self callSuccessBlock];
-    return;
-#endif
-    
+#else
     [self startProductRequest];
+#endif
 }
 
 //TODO: does 2 things should do 1
@@ -195,9 +194,9 @@
         [self incrementPuchaseForId:_currentProductId];
     [self callSuccessBlock];
     return;
-#endif
-    
+#else
     [self startProductRequest];
+#endif
 }
 
 #pragma mark - SKPaymentTransactionWrapper Methods

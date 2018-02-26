@@ -74,8 +74,9 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     
     if (status == noErr)
     {
+        NSData* data = [NSData dataWithBytes:cipherBuffer length:cipherDataSize];
         free(cipherBuffer);
-        return [NSData dataWithBytes:cipherBuffer length:cipherDataSize];
+        return data;
     }
     
     free(cipherBuffer);
