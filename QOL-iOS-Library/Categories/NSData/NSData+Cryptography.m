@@ -37,8 +37,7 @@
 
 + (NSData*)dataWithHexString:(NSString*)hexString {
     hexString = [hexString stringByReplacingOccurrencesOfString:@" " withString:@""];
-    bool strIsOdd = (hexString.length % 2);
-    NSAssert(!strIsOdd, @"Hex string is odd!");
+    NSAssert((hexString.length % 2) == false, @"Hex string is odd!");
     NSMutableData *bytes = [[NSMutableData alloc] init];
     
     for (int i = 0; i < [hexString length] * 0.5f; i++) {
