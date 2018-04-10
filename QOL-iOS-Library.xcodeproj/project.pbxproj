@@ -49,7 +49,7 @@
 		DF27184B1820293F00C7D7E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF27184A1820293F00C7D7E0 /* UIKit.framework */; };
 		DF27184E1820293F00C7D7E0 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DF2718541820293F00C7D7E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF2718521820293F00C7D7E0 /* InfoPlist.strings */; };
-		DF2718561820293F00C7D7E0 /* IsaacsIOSLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718551820293F00C7D7E0 /* IsaacsIOSLibraryTests.m */; };
+		DF2718561820293F00C7D7E0 /* QOLiOSLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718551820293F00C7D7E0 /* QOLiOSLibraryTests.m */; };
 		DF2718A01820299500C7D7E0 /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718621820299500C7D7E0 /* NSDate+Compare.m */; };
 		DF2718A11820299500C7D7E0 /* NSDate+FuzzyTime.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718641820299500C7D7E0 /* NSDate+FuzzyTime.m */; };
 		DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718671820299500C7D7E0 /* NSString+LoginCreds.m */; };
@@ -178,7 +178,7 @@
 		DF27184A1820293F00C7D7E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DF2718511820293F00C7D7E0 /* QOL-iOS-LibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QOL-iOS-LibraryTests-Info.plist"; sourceTree = "<group>"; };
 		DF2718531820293F00C7D7E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DF2718551820293F00C7D7E0 /* IsaacsIOSLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsaacsIOSLibraryTests.m; sourceTree = "<group>"; };
+		DF2718551820293F00C7D7E0 /* QOLiOSLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QOLiOSLibraryTests.m; sourceTree = "<group>"; };
 		DF2718611820299500C7D7E0 /* NSDate+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
 		DF2718621820299500C7D7E0 /* NSDate+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Compare.m"; sourceTree = "<group>"; };
 		DF2718631820299500C7D7E0 /* NSDate+FuzzyTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FuzzyTime.h"; sourceTree = "<group>"; };
@@ -513,7 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */,
-				DF27184F1820293F00C7D7E0 /* IsaacsIOSLibraryTests */,
+				DF27184F1820293F00C7D7E0 /* QOL-iOS-LibraryTests */,
 				DF2718381820293E00C7D7E0 /* Frameworks */,
 				DF2718371820293E00C7D7E0 /* Products */,
 			);
@@ -558,13 +558,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DF27184F1820293F00C7D7E0 /* IsaacsIOSLibraryTests */ = {
+		DF27184F1820293F00C7D7E0 /* QOL-iOS-LibraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF2718551820293F00C7D7E0 /* IsaacsIOSLibraryTests.m */,
+				DF2718551820293F00C7D7E0 /* QOLiOSLibraryTests.m */,
 				DF2718501820293F00C7D7E0 /* Supporting Files */,
 			);
-			path = IsaacsIOSLibraryTests;
+			path = "QOL-iOS-LibraryTests";
 			sourceTree = "<group>";
 		};
 		DF2718501820293F00C7D7E0 /* Supporting Files */ = {
@@ -860,7 +860,7 @@
 		DF27182E1820293E00C7D7E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Isaac Paul";
 			};
 			buildConfigurationList = DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "QOL-iOS-Library" */;
@@ -966,7 +966,7 @@
 				6AB795DF19D3005200287B23 /* NSString+FormattingTests.m in Sources */,
 				6AB795E119D30BEF00287B23 /* NSString+Search.m in Sources */,
 				6AB795E019D30BD700287B23 /* NSString+Formatting.m in Sources */,
-				DF2718561820293F00C7D7E0 /* IsaacsIOSLibraryTests.m in Sources */,
+				DF2718561820293F00C7D7E0 /* QOLiOSLibraryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,12 +1004,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1054,12 +1056,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
