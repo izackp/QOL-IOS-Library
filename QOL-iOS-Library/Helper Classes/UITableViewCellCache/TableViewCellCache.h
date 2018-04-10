@@ -9,13 +9,14 @@
 //!!!!!!!! Do not use dequeueReusableCellWithIdentifier  !!!!!
 //This class conflicts with dequeueReusableCellWithIdentifier
 
-//Todo: this should also manage allocation of table view cells
-//and store them in a pool for maximum performance
+//TODO: this should also manage allocation of table view cells
+//and store them in a pool for improved performance
 
 #import <UIKit/UIKit.h>
 
 @protocol TableViewCellCacheDelegate;
 
+/*! This class was primary created to create a 'preload' cell functionality, so images and other data loaded on the fly can start loading before they become visible on the screen */
 @interface TableViewCellCache : NSObject
 
 @property (assign, nonatomic) id <TableViewCellCacheDelegate> delegate;
