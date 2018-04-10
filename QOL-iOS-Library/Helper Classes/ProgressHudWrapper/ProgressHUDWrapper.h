@@ -3,7 +3,7 @@
 //  SightHound
 //
 //  Created by IsaacPaul on 11/19/13.
-//  Copyright (c) 2013 SnapShots. All rights reserved.
+//  Copyright (c) 2013 IsaacPaul. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
