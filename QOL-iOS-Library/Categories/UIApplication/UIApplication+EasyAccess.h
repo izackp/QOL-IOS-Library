@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
+    ScreenTypesUnknown,
+    ScreenTypesiPhone4s,
     ScreenTypesiPhone5,
     ScreenTypesiPhone6,
     ScreenTypesiPhone6Plus,

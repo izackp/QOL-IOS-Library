@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Isaac Paul. All rights reserved.
 //
 
-//ARC
-
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Echo)

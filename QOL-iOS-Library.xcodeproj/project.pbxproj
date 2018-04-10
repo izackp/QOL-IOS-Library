@@ -60,7 +60,7 @@
 		DF2718A71820299500C7D7E0 /* UIBarButtonItem+BetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718741820299500C7D7E0 /* UIBarButtonItem+BetterButton.m */; };
 		DF2718A81820299500C7D7E0 /* UIFont+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718771820299500C7D7E0 /* UIFont+Debug.m */; };
 		DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187B1820299500C7D7E0 /* UIImage+Alpha.m */; };
-		DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187D1820299500C7D7E0 /* UIImage+Echo.m */; };
+		DF2718AA1820299500C7D7E0 /* UIImage+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187D1820299500C7D7E0 /* UIImage+Manipulation.m */; };
 		DF2718AB1820299500C7D7E0 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187F1820299500C7D7E0 /* UIImage+Resize.m */; };
 		DF2718AC1820299500C7D7E0 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718811820299500C7D7E0 /* UIImage+RoundedCorner.m */; };
 		DF2718AF1820299500C7D7E0 /* UINavigationController+SetItems.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188A1820299500C7D7E0 /* UINavigationController+SetItems.m */; };
@@ -199,8 +199,8 @@
 		DF2718771820299500C7D7E0 /* UIFont+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Debug.m"; sourceTree = "<group>"; };
 		DF27187A1820299500C7D7E0 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		DF27187B1820299500C7D7E0 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
-		DF27187C1820299500C7D7E0 /* UIImage+Echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Echo.h"; sourceTree = "<group>"; };
-		DF27187D1820299500C7D7E0 /* UIImage+Echo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Echo.m"; sourceTree = "<group>"; };
+		DF27187C1820299500C7D7E0 /* UIImage+Manipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Manipulation.h"; sourceTree = "<group>"; };
+		DF27187D1820299500C7D7E0 /* UIImage+Manipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Manipulation.m"; sourceTree = "<group>"; };
 		DF27187E1820299500C7D7E0 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		DF27187F1820299500C7D7E0 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		DF2718801820299500C7D7E0 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
@@ -689,8 +689,8 @@
 			children = (
 				DF27187A1820299500C7D7E0 /* UIImage+Alpha.h */,
 				DF27187B1820299500C7D7E0 /* UIImage+Alpha.m */,
-				DF27187C1820299500C7D7E0 /* UIImage+Echo.h */,
-				DF27187D1820299500C7D7E0 /* UIImage+Echo.m */,
+				DF27187C1820299500C7D7E0 /* UIImage+Manipulation.h */,
+				DF27187D1820299500C7D7E0 /* UIImage+Manipulation.m */,
 				DF27187E1820299500C7D7E0 /* UIImage+Resize.h */,
 				DF27187F1820299500C7D7E0 /* UIImage+Resize.m */,
 				DF2718801820299500C7D7E0 /* UIImage+RoundedCorner.h */,
@@ -934,7 +934,7 @@
 				6A1B991818F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m in Sources */,
 				6A1B990E18F315630056F52C /* NSArray+Shortcuts.m in Sources */,
 				DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */,
-				DF2718AA1820299500C7D7E0 /* UIImage+Echo.m in Sources */,
+				DF2718AA1820299500C7D7E0 /* UIImage+Manipulation.m in Sources */,
 				DF056B721890035D00FB39D0 /* UIButton+Shortcuts.m in Sources */,
 				6ADE46EA192B934E00B913F8 /* Widget.m in Sources */,
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,

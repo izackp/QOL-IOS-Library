@@ -64,6 +64,9 @@
 + (ScreenTypes)screenSizeType {
     int height = [self getMainWindow].frame.size.height;
     switch (height) {
+        case 480:
+            return ScreenTypesiPhone4s;
+            
         case 568:
             return ScreenTypesiPhone5;
             
@@ -77,7 +80,7 @@
             return ScreenTypesiPhoneX;
     }
     
-    return ScreenTypesiPhone5;
+    return ScreenTypesUnknown;
 }
 
 
