@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Isaac Paul. All rights reserved.
 //
 
-#import "UIImage+Echo.h"
+#import "UIImage+Manipulation.h"
 #import "UIImage+Resize.h"
 
 #define radians(degrees) (degrees * M_PI/180)

@@ -27,10 +27,18 @@
 }
 
 - (void)setWidth:(CGFloat)width {
+    if (width < 0) {
+        NSLog(@"Warning: Setting width to a value < 0");
+        return;
+    }
   self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
 }
 
 - (void)setHeight:(CGFloat)height {
+    if (height < 0) {
+        NSLog(@"Warning: Setting width to a value < 0");
+        return; //we abort because this will change a UIView's x position which is an unintended sideeffect
+    }
   self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
 }
 
@@ -39,6 +47,14 @@
 }
 
 - (void)setSize:(CGSize)size {
+    if (size.height < 0) {
+        NSLog(@"Warning: Setting height to a value < 0");
+        return; //we abort because this will change a UIView's y position which is an unintended sideeffect
+    }
+    if (size.width < 0) {
+        NSLog(@"Warning: Setting width to a value < 0");
+        return;
+    }
   self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
 }
 
@@ -72,6 +88,54 @@
 
 - (CGFloat)height {
   return self.frame.size.height;
+}
+
+- (CGFloat)left {
+    return self.x;
+}
+
+- (CGFloat)top {
+    return self.y;
+}
+
+- (CGFloat)right {
+    return self.x + self.width;
+}
+
+- (CGFloat)bottom {
+    return self.y + self.height;
+}
+
+- (void)setLeft:(CGFloat)value {
+    CGFloat diff = value - self.left;
+    self.frame = CGRectMake(self.x + diff, self.y, self.width - diff, self.height);
+}
+
+- (void)setTop:(CGFloat)value {
+    CGFloat diff = value - self.top;
+    self.frame = CGRectMake(self.x, self.y + diff, self.width, self.height - diff);
+}
+
+- (void)setRight:(CGFloat)value {
+    CGFloat diff = value - self.left;
+    self.frame = CGRectMake(self.x, self.y, self.width + diff, self.height);
+}
+
+- (void)setBottom:(CGFloat)value {
+    CGFloat diff = value - self.top;
+    self.frame = CGRectMake(self.x, self.y, self.width, self.height + diff);
+}
+
+- (CGPoint)positionInWindow {
+    UIWindow* window = UIApplication.sharedApplication.delegate.window;
+    CGPoint windowPoint = [self.superview convertPoint:self.frame.origin fromView:window];
+    return windowPoint;
+}
+
+- (void)setPositionInWindow:(CGPoint)value {
+    UIWindow* window = UIApplication.sharedApplication.delegate.window;
+    CGPoint newPoint = [window convertPoint:value toView:self.superview];
+    self.frame = CGRectMake(newPoint.x, newPoint.y, self.frame.size.width, self.frame.size.height);
 }
 
 - (float)subviewTop {

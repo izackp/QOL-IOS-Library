@@ -587,10 +587,10 @@ CGFloat _SVProgressHUDRingThickness = 6;
                              
                              [[NSNotificationCenter defaultCenter] removeObserver:self];
                              [self cancelRingLayerAnimation];
-                             [hudView removeFromSuperview];
+                             [self.hudView removeFromSuperview];
                              hudView = nil;
                              
-                             [overlayView removeFromSuperview];
+                             [self.overlayView removeFromSuperview];
                              overlayView = nil;
 
                              UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
