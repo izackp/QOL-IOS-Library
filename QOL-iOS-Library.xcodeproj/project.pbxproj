@@ -74,6 +74,24 @@
 		DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
 		DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
 		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
+		DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */; };
+		DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */; };
+		DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
+		DFCB57BE207E4F210084C5B2 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
+		DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */; };
+		DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B2207E4F200084C5B2 /* UIApplication+Shortcuts.swift */; };
+		DFCB57C1207E4F210084C5B2 /* TimeInterval+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B3207E4F200084C5B2 /* TimeInterval+Shortcuts.swift */; };
+		DFCB57C2207E4F210084C5B2 /* UINavigationController+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B4207E4F200084C5B2 /* UINavigationController+Shortcuts.swift */; };
+		DFCB57C3207E4F210084C5B2 /* CGRect+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */; };
+		DFCB57C4207E4F210084C5B2 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B6207E4F200084C5B2 /* UIImage+Orientation.swift */; };
+		DFCB57C5207E4F210084C5B2 /* UICollectionView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B7207E4F200084C5B2 /* UICollectionView+Shortcuts.swift */; };
+		DFCB57C6207E4F210084C5B2 /* UIView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */; };
+		DFCB57C7207E4F210084C5B2 /* Sequence+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */; };
+		DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57BA207E4F210084C5B2 /* UILabel+Shortcuts.swift */; };
+		DFCB57C9207E4F210084C5B2 /* UIImage+FaceDectection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57BB207E4F210084C5B2 /* UIImage+FaceDectection.swift */; };
+		DFCB57CF207E4F410084C5B2 /* UIViewController+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */; };
+		DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */; };
+		DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
@@ -86,10 +104,26 @@
 			remoteGlobalIDString = DF2718351820293E00C7D7E0;
 			remoteInfo = IsaacsIOSLibrary;
 		};
+		DFCB57D3207E50C10084C5B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF27182E1820293E00C7D7E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF2718351820293E00C7D7E0;
+			remoteInfo = "QOL-iOS-Library";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DF2718341820293E00C7D7E0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCB579E207E4D7F0084C5B2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -227,6 +261,25 @@
 		DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAvoidKeyboard.m; sourceTree = "<group>"; };
 		DFB615581AE7FE86007B0401 /* NSURLSession+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Additions.h"; sourceTree = "<group>"; };
 		DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Additions.m"; sourceTree = "<group>"; };
+		DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQOL-iOS-Swiftly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QOL_iOS_Swiftly.swift; sourceTree = "<group>"; };
+		DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B2207E4F200084C5B2 /* UIApplication+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B3207E4F200084C5B2 /* TimeInterval+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B4207E4F200084C5B2 /* UINavigationController+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B6207E4F200084C5B2 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
+		DFCB57B7207E4F200084C5B2 /* UICollectionView+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57BA207E4F210084C5B2 /* UILabel+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57BB207E4F210084C5B2 /* UIImage+FaceDectection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FaceDectection.swift"; sourceTree = "<group>"; };
+		DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
@@ -250,6 +303,14 @@
 				DF27184B1820293F00C7D7E0 /* UIKit.framework in Frameworks */,
 				DF2718491820293F00C7D7E0 /* Foundation.framework in Frameworks */,
 				DF27184E1820293F00C7D7E0 /* libQOL-iOS-Library.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCB579D207E4D7F0084C5B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +575,7 @@
 			children = (
 				DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF27184F1820293F00C7D7E0 /* QOL-iOS-LibraryTests */,
+				DFCB57A1207E4D7F0084C5B2 /* QOL-iOS-Swiftly */,
 				DF2718381820293E00C7D7E0 /* Frameworks */,
 				DF2718371820293E00C7D7E0 /* Products */,
 			);
@@ -524,6 +586,7 @@
 			children = (
 				DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */,
 				DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */,
+				DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -807,6 +870,39 @@
 			path = NSURLSession;
 			sourceTree = "<group>";
 		};
+		DFCB57A1207E4D7F0084C5B2 /* QOL-iOS-Swiftly */ = {
+			isa = PBXGroup;
+			children = (
+				DFCB57A7207E4DA20084C5B2 /* Categories */,
+				DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */,
+				DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */,
+			);
+			path = "QOL-iOS-Swiftly";
+			sourceTree = "<group>";
+		};
+		DFCB57A7207E4DA20084C5B2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */,
+				DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */,
+				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
+				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
+				DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */,
+				DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */,
+				DFCB57B3207E4F200084C5B2 /* TimeInterval+Shortcuts.swift */,
+				DFCB57B2207E4F200084C5B2 /* UIApplication+Shortcuts.swift */,
+				DFCB57B7207E4F200084C5B2 /* UICollectionView+Shortcuts.swift */,
+				DFCB57BB207E4F210084C5B2 /* UIImage+FaceDectection.swift */,
+				DFCB57B6207E4F200084C5B2 /* UIImage+Orientation.swift */,
+				DFCB57BA207E4F210084C5B2 /* UILabel+Shortcuts.swift */,
+				DFCB57B4207E4F200084C5B2 /* UINavigationController+Shortcuts.swift */,
+				DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */,
+				DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */,
+				DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		DFDB30FB188EC5E100B1287C /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,14 +950,39 @@
 			productReference = DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DFCB579F207E4D7F0084C5B2 /* QOL-iOS-Swiftly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCB57A4207E4D800084C5B2 /* Build configuration list for PBXNativeTarget "QOL-iOS-Swiftly" */;
+			buildPhases = (
+				DFCB579C207E4D7F0084C5B2 /* Sources */,
+				DFCB579D207E4D7F0084C5B2 /* Frameworks */,
+				DFCB579E207E4D7F0084C5B2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFCB57D4207E50C10084C5B2 /* PBXTargetDependency */,
+			);
+			name = "QOL-iOS-Swiftly";
+			productName = "QOL-iOS-Swiftly";
+			productReference = DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DF27182E1820293E00C7D7E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Isaac Paul";
+				TargetAttributes = {
+					DFCB579F207E4D7F0084C5B2 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = DF2718311820293E00C7D7E0 /* Build configuration list for PBXProject "QOL-iOS-Library" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -877,6 +998,7 @@
 			targets = (
 				DF2718351820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF2718451820293E00C7D7E0 /* QOL-iOS-LibraryTests */,
+				DFCB579F207E4D7F0084C5B2 /* QOL-iOS-Swiftly */,
 			);
 		};
 /* End PBXProject section */
@@ -970,6 +1092,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFCB579C207E4D7F0084C5B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCB57C7207E4F210084C5B2 /* Sequence+Shortcuts.swift in Sources */,
+				DFCB57C5207E4F210084C5B2 /* UICollectionView+Shortcuts.swift in Sources */,
+				DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */,
+				DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */,
+				DFCB57CF207E4F410084C5B2 /* UIViewController+Shortcuts.swift in Sources */,
+				DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */,
+				DFCB57C4207E4F210084C5B2 /* UIImage+Orientation.swift in Sources */,
+				DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */,
+				DFCB57C1207E4F210084C5B2 /* TimeInterval+Shortcuts.swift in Sources */,
+				DFCB57BE207E4F210084C5B2 /* Array+Shortcuts.swift in Sources */,
+				DFCB57C3207E4F210084C5B2 /* CGRect+Shortcuts.swift in Sources */,
+				DFCB57C9207E4F210084C5B2 /* UIImage+FaceDectection.swift in Sources */,
+				DFCB57C6207E4F210084C5B2 /* UIView+Shortcuts.swift in Sources */,
+				DFCB57C2207E4F210084C5B2 /* UINavigationController+Shortcuts.swift in Sources */,
+				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
+				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
+				DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -977,6 +1123,11 @@
 			isa = PBXTargetDependency;
 			target = DF2718351820293E00C7D7E0 /* QOL-iOS-Library */;
 			targetProxy = DF27184C1820293F00C7D7E0 /* PBXContainerItemProxy */;
+		};
+		DFCB57D4207E50C10084C5B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF2718351820293E00C7D7E0 /* QOL-iOS-Library */;
+			targetProxy = DFCB57D3207E50C10084C5B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1155,6 +1306,66 @@
 			};
 			name = Release;
 		};
+		DFCB57A5207E4D800084C5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "QOL-iOS-Swiftly/Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFCB57A6207E4D800084C5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "QOL-iOS-Swiftly/Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1181,6 +1392,15 @@
 			buildConfigurations = (
 				DF27185D1820293F00C7D7E0 /* Debug */,
 				DF27185E1820293F00C7D7E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCB57A4207E4D800084C5B2 /* Build configuration list for PBXNativeTarget "QOL-iOS-Swiftly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCB57A5207E4D800084C5B2 /* Debug */,
+				DFCB57A6207E4D800084C5B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

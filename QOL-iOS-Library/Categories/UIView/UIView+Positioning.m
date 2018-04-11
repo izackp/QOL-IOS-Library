@@ -128,7 +128,7 @@
 
 - (CGPoint)positionInWindow {
     UIWindow* window = UIApplication.sharedApplication.delegate.window;
-    CGPoint windowPoint = [self.superview convertPoint:self.frame.origin fromView:window];
+    CGPoint windowPoint = [self.superview convertPoint:self.frame.origin toView:window];
     return windowPoint;
 }
 
