@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension UINavigationController {
     func pushViewControllerList(_ controllers:[UIViewController], animated:Bool) {

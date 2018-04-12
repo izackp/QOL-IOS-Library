@@ -31,7 +31,7 @@ bool dispatch_queue_is_empty(dispatch_queue_t queue)
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-        dispatch_release(group);
+        //dispatch_release(group);
     });
     
     return isReady;

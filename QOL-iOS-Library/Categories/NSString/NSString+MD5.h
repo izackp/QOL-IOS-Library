@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Isaac Paul. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface NSString (MD5)
 
 - (NSString*)MD5;

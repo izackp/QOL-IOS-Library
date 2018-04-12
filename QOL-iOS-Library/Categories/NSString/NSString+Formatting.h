@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Isaac Paul. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 @interface NSString (Formatting)
 
 - (NSString*)urlEncodedAllCharacters;

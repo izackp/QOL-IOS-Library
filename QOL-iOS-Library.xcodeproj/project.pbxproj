@@ -93,6 +93,143 @@
 		DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */; };
 		DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
+		DFF6448E207FAE1200FA38A9 /* QOL_iOS_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
+		DFF64493207FAE7C00FA38A9 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
+		DFF64494207FAE7C00FA38A9 /* CGRect+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */; };
+		DFF64495207FAE7C00FA38A9 /* NSAttributedString+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */; };
+		DFF64496207FAE7C00FA38A9 /* Sequence+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */; };
+		DFF64497207FAE7C00FA38A9 /* String+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */; };
+		DFF64498207FAE7C00FA38A9 /* TimeInterval+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B3207E4F200084C5B2 /* TimeInterval+Shortcuts.swift */; };
+		DFF64499207FAE7C00FA38A9 /* UIApplication+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B2207E4F200084C5B2 /* UIApplication+Shortcuts.swift */; };
+		DFF6449A207FAE7C00FA38A9 /* UICollectionView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B7207E4F200084C5B2 /* UICollectionView+Shortcuts.swift */; };
+		DFF6449B207FAE7C00FA38A9 /* UIImage+FaceDectection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57BB207E4F210084C5B2 /* UIImage+FaceDectection.swift */; };
+		DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B6207E4F200084C5B2 /* UIImage+Orientation.swift */; };
+		DFF6449D207FAE7C00FA38A9 /* UILabel+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57BA207E4F210084C5B2 /* UILabel+Shortcuts.swift */; };
+		DFF6449E207FAE7C00FA38A9 /* UINavigationController+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B4207E4F200084C5B2 /* UINavigationController+Shortcuts.swift */; };
+		DFF6449F207FAE7C00FA38A9 /* UITableViewCell+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */; };
+		DFF644A0207FAE7C00FA38A9 /* UIView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */; };
+		DFF644A1207FAE7C00FA38A9 /* UIViewController+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */; };
+		DFF644A2207FAE7F00FA38A9 /* QOL_iOS_Swiftly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */; };
+		DFF644A3207FAECF00FA38A9 /* NSArray+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1B990C18F315630056F52C /* NSArray+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644A4207FAECF00FA38A9 /* NSArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B990D18F315630056F52C /* NSArray+Shortcuts.m */; };
+		DFF644A5207FAECF00FA38A9 /* NSDate+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718611820299500C7D7E0 /* NSDate+Compare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644A6207FAECF00FA38A9 /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718621820299500C7D7E0 /* NSDate+Compare.m */; };
+		DFF644A7207FAECF00FA38A9 /* NSDate+FuzzyTime.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718631820299500C7D7E0 /* NSDate+FuzzyTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644A8207FAECF00FA38A9 /* NSDate+FuzzyTime.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718641820299500C7D7E0 /* NSDate+FuzzyTime.m */; };
+		DFF644A9207FAECF00FA38A9 /* NSDate+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AA7B66C18ABECA000E8F3F6 /* NSDate+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644AA207FAECF00FA38A9 /* NSDate+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7B66D18ABECA000E8F3F6 /* NSDate+Shortcuts.m */; };
+		DFF644AB207FAECF00FA38A9 /* NSData+Cryptography.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AC536F819A2862300FC53BA /* NSData+Cryptography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644AC207FAECF00FA38A9 /* NSData+Cryptography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC536F919A2862300FC53BA /* NSData+Cryptography.m */; };
+		DFF644AD207FAECF00FA38A9 /* NSError+URLError.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17B84919F81ED5003EBBCF /* NSError+URLError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644AE207FAECF00FA38A9 /* NSError+URLError.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17B84A19F81ED5003EBBCF /* NSError+URLError.m */; };
+		DFF644AF207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17EF651854B08E0064E3C0 /* NSManagedObject+ActiveRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644B0207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF661854B08E0064E3C0 /* NSManagedObject+ActiveRecord.m */; };
+		DFF644B1207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1B991618F3273B0056F52C /* NSManagedObjectContext+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644B2207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B991718F3273B0056F52C /* NSManagedObjectContext+Shortcuts.m */; };
+		DFF644B3207FAECF00FA38A9 /* NSMutableArray+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1996D619B4B23200FEE940 /* NSMutableArray+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644B4207FAECF00FA38A9 /* NSMutableArray+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1996D719B4B23200FEE940 /* NSMutableArray+Shortcuts.m */; };
+		DFF644B5207FAECF00FA38A9 /* NSObject+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4AB5F5192660F900AC1C16 /* NSObject+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644B6207FAECF00FA38A9 /* NSObject+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4AB5F6192660F900AC1C16 /* NSObject+Shortcuts.m */; };
+		DFF644B7207FAECF00FA38A9 /* NSString+LoginCreds.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718661820299500C7D7E0 /* NSString+LoginCreds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644B8207FAECF00FA38A9 /* NSString+LoginCreds.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718671820299500C7D7E0 /* NSString+LoginCreds.m */; };
+		DFF644B9207FAECF00FA38A9 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718681820299500C7D7E0 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644BA207FAECF00FA38A9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718691820299500C7D7E0 /* NSString+MD5.m */; };
+		DFF644BB207FAECF00FA38A9 /* NSString+Formatting.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27186A1820299500C7D7E0 /* NSString+Formatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644BC207FAECF00FA38A9 /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186B1820299500C7D7E0 /* NSString+Formatting.m */; };
+		DFF644BE207FAECF00FA38A9 /* NSString+Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A5DDBE918CA4E7000725BDE /* NSString+Search.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644BF207FAECF00FA38A9 /* NSString+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DDBEA18CA4E7000725BDE /* NSString+Search.m */; };
+		DFF644C0207FAECF00FA38A9 /* NSURLCredential+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A3EE6E319A4E7A1007663B6 /* NSURLCredential+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644C1207FAECF00FA38A9 /* NSURLCredential+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EE6E419A4E7A1007663B6 /* NSURLCredential+Shortcuts.m */; };
+		DFF644C2207FAECF00FA38A9 /* NSURLSession+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB615581AE7FE86007B0401 /* NSURLSession+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644C3207FAECF00FA38A9 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
+		DFF644C4207FAECF00FA38A9 /* UIAlertView+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27186D1820299500C7D7E0 /* UIAlertView+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644C5207FAECF00FA38A9 /* UIAlertView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27186E1820299500C7D7E0 /* UIAlertView+Shortcuts.m */; };
+		DFF644C6207FAECF00FA38A9 /* UIApplication+EasyAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718701820299500C7D7E0 /* UIApplication+EasyAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644C7207FAECF00FA38A9 /* UIApplication+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718711820299500C7D7E0 /* UIApplication+EasyAccess.m */; };
+		DFF644C8207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718731820299500C7D7E0 /* UIBarButtonItem+BetterButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644C9207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718741820299500C7D7E0 /* UIBarButtonItem+BetterButton.m */; };
+		DFF644CA207FAECF00FA38A9 /* UIButton+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DF056B701890035D00FB39D0 /* UIButton+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644CB207FAECF00FA38A9 /* UIButton+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF056B711890035D00FB39D0 /* UIButton+Shortcuts.m */; };
+		DFF644CC207FAECF00FA38A9 /* UIColor+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DF02844B1880305700596BA6 /* UIColor+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644CD207FAECF00FA38A9 /* UIColor+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DF02844C1880305700596BA6 /* UIColor+Shortcuts.m */; };
+		DFF644CE207FAECF00FA38A9 /* UIDevice+SystemVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A50C22618BCF75E003EC6E3 /* UIDevice+SystemVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644CF207FAECF00FA38A9 /* UIDevice+SystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50C22718BCF75E003EC6E3 /* UIDevice+SystemVersion.m */; };
+		DFF644D0207FAECF00FA38A9 /* UIFont+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718761820299500C7D7E0 /* UIFont+Debug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644D1207FAECF00FA38A9 /* UIFont+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718771820299500C7D7E0 /* UIFont+Debug.m */; };
+		DFF644D2207FAECF00FA38A9 /* UIImage+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4F60C418BE2F6E008858EB /* UIImage+Factory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644D3207FAECF00FA38A9 /* UIImage+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F60C518BE2F6E008858EB /* UIImage+Factory.m */; };
+		DFF644D4207FAECF00FA38A9 /* UIImageView+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
+		DFF644D6207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718831820299500C7D7E0 /* UIImagePickerController+EasyAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644D7207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
+		DFF644D8207FAECF00FA38A9 /* UINavigationController+SetItems.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718891820299500C7D7E0 /* UINavigationController+SetItems.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644D9207FAECF00FA38A9 /* UINavigationController+SetItems.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188A1820299500C7D7E0 /* UINavigationController+SetItems.m */; };
+		DFF644DA207FAECF00FA38A9 /* UINavigationController+Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AAF132C19DAF64C004438AE /* UINavigationController+Transitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644DB207FAECF00FA38A9 /* UINavigationController+Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAF132D19DAF64C004438AE /* UINavigationController+Transitions.m */; };
+		DFF644DC207FAECF00FA38A9 /* UIScrollView+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AA6432C18E35E1C0047927E /* UIScrollView+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644DD207FAECF00FA38A9 /* UIScrollView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6432D18E35E1C0047927E /* UIScrollView+Shortcuts.m */; };
+		DFF644DE207FAECF00FA38A9 /* UIStoryboard+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A544F5118ED97D400B466EB /* UIStoryboard+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644DF207FAECF00FA38A9 /* UIStoryboard+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A544F5218ED97D400B466EB /* UIStoryboard+Shortcuts.m */; };
+		DFF644E0207FAECF00FA38A9 /* UIView+FindFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27188C1820299500C7D7E0 /* UIView+FindFirstResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644E1207FAECF00FA38A9 /* UIView+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188D1820299500C7D7E0 /* UIView+FindFirstResponder.m */; };
+		DFF644E2207FAECF00FA38A9 /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27188E1820299500C7D7E0 /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644E3207FAECF00FA38A9 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27188F1820299500C7D7E0 /* UIView+Positioning.m */; };
+		DFF644E4207FAECF00FA38A9 /* UIView+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644E5207FAECF00FA38A9 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
+		DFF644E6207FAECF00FA38A9 /* UIView+Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AA642EF18E316DA0047927E /* UIView+Transform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644E7207FAECF00FA38A9 /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA642F018E316DA0047927E /* UIView+Transform.m */; };
+		DFF644E8207FAECF00FA38A9 /* UIViewController+AddChild.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7FDD1D18EC7B7000F04632 /* UIViewController+AddChild.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644E9207FAECF00FA38A9 /* UIViewController+AddChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7FDD1E18EC7B7000F04632 /* UIViewController+AddChild.m */; };
+		DFF644EA207FAECF00FA38A9 /* UIViewController+Shortcuts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A593AB319D5BDF9001BF583 /* UIViewController+Shortcuts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644EB207FAECF00FA38A9 /* UIViewController+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A593AB419D5BDF9001BF583 /* UIViewController+Shortcuts.m */; };
+		DFF644EC207FAEE100FA38A9 /* UIImage+Alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27187A1820299500C7D7E0 /* UIImage+Alpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644ED207FAEE100FA38A9 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187B1820299500C7D7E0 /* UIImage+Alpha.m */; };
+		DFF644EE207FAEE100FA38A9 /* UIImage+Manipulation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27187C1820299500C7D7E0 /* UIImage+Manipulation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644EF207FAEE100FA38A9 /* UIImage+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187D1820299500C7D7E0 /* UIImage+Manipulation.m */; };
+		DFF644F0207FAEE100FA38A9 /* UIImage+Resize.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27187E1820299500C7D7E0 /* UIImage+Resize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644F1207FAEE100FA38A9 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27187F1820299500C7D7E0 /* UIImage+Resize.m */; };
+		DFF644F2207FAEE100FA38A9 /* UIImage+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718801820299500C7D7E0 /* UIImage+RoundedCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644F3207FAEE100FA38A9 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718811820299500C7D7E0 /* UIImage+RoundedCorner.m */; };
+		DFF644F4207FAF0400FA38A9 /* TransitionBase.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB6133C1AE594E3007B0401 /* TransitionBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644F5207FAF0400FA38A9 /* TransitionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6133D1AE594E3007B0401 /* TransitionBase.m */; };
+		DFF644F6207FAF0400FA38A9 /* TransitionSlideUp.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AAF133119DAFCC9004438AE /* TransitionSlideUp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644F7207FAF0400FA38A9 /* TransitionSlideUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAF133219DAFCC9004438AE /* TransitionSlideUp.m */; };
+		DFF644F8207FAF0400FA38A9 /* TransitionSimpleSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17B84D19F8501A003EBBCF /* TransitionSimpleSlide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644F9207FAF0400FA38A9 /* TransitionSimpleSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17B84E19F8501A003EBBCF /* TransitionSimpleSlide.m */; };
+		DFF644FA207FAF0400FA38A9 /* CoreDataGlobalContext.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17EF711854B2610064E3C0 /* CoreDataGlobalContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644FB207FAF0400FA38A9 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
+		DFF644FC207FAF0400FA38A9 /* InAppTransactions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A184D5219925B6D00F51CE5 /* InAppTransactions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF644FD207FAF0400FA38A9 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
+		DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1A19C0CB98009BBBFF /* ProgressHUD.h */; };
+		DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
+		DFF64500207FAF0400FA38A9 /* _SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */; };
+		DFF64501207FAF0400FA38A9 /* _SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */; };
+		DFF64502207FAF0400FA38A9 /* ProgressHUDWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
+		DFF64504207FAF0400FA38A9 /* TableViewCellCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17EF741854B2610064E3C0 /* TableViewCellCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64505207FAF0400FA38A9 /* TableViewCellCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF751854B2610064E3C0 /* TableViewCellCache.m */; };
+		DFF64506207FAF0400FA38A9 /* StopWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A0BD6B718BB86FC00E45103 /* StopWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64507207FAF0400FA38A9 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
+		DFF64508207FAF0400FA38A9 /* WeakTimedSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A85ACB6191AA37000D3FA08 /* WeakTimedSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64509207FAF0400FA38A9 /* WeakTimedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A85ACB7191AA37000D3FA08 /* WeakTimedSelector.m */; };
+		DFF6450A207FAF0400FA38A9 /* Widget.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ADE46E8192B934E00B913F8 /* Widget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF6450B207FAF0400FA38A9 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE46E9192B934E00B913F8 /* Widget.m */; };
+		DFF6450C207FAF0F00FA38A9 /* Debugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A8F8926199A92D00008FF86 /* Debugging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF6450D207FAF0F00FA38A9 /* Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F8927199A92D00008FF86 /* Debugging.m */; };
+		DFF6450E207FAF0F00FA38A9 /* DispatchHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1A80B819993B18002F6F01 /* DispatchHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF6450F207FAF0F00FA38A9 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
+		DFF64510207FAF1A00FA38A9 /* ButtonReverseContent.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718951820299500C7D7E0 /* ButtonReverseContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64511207FAF1A00FA38A9 /* ButtonReverseContent.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718961820299500C7D7E0 /* ButtonReverseContent.m */; };
+		DFF64512207FAF1A00FA38A9 /* TextFieldAutoKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2718981820299500C7D7E0 /* TextFieldAutoKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64513207FAF1A00FA38A9 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
+		DFF64514207FAF1A00FA38A9 /* TextViewAutoKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27189B1820299500C7D7E0 /* TextViewAutoKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64515207FAF1A00FA38A9 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
+		DFF64516207FAF1A00FA38A9 /* ViewAutoKeyboardColor.h in Headers */ = {isa = PBXBuildFile; fileRef = DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64517207FAF1A00FA38A9 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DFF64518207FAF1A00FA38A9 /* ViewAvoidKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB613491AE6D91F007B0401 /* ViewAvoidKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
+		DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
 
@@ -282,6 +419,10 @@
 		DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
+		DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QOL_iOS_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QOL_iOS_Framework.h; sourceTree = "<group>"; };
+		DFF6448D207FAE1200FA38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shortcuts.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,6 +452,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF64486207FAE1200FA38A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +724,7 @@
 				DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF27184F1820293F00C7D7E0 /* QOL-iOS-LibraryTests */,
 				DFCB57A1207E4D7F0084C5B2 /* QOL-iOS-Swiftly */,
+				DFF6448B207FAE1200FA38A9 /* QOL-iOS-Framwork */,
 				DF2718381820293E00C7D7E0 /* Frameworks */,
 				DF2718371820293E00C7D7E0 /* Products */,
 			);
@@ -587,6 +736,7 @@
 				DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */,
 				DF2718461820293F00C7D7E0 /* QOL-iOS-LibraryTests.xctest */,
 				DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */,
+				DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -594,6 +744,7 @@
 		DF2718381820293E00C7D7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFF64522207FB01600FA38A9 /* UIKit.framework */,
 				DF2718391820293E00C7D7E0 /* Foundation.framework */,
 				DF2718471820293F00C7D7E0 /* XCTest.framework */,
 				DF27184A1820293F00C7D7E0 /* UIKit.framework */,
@@ -912,7 +1063,87 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		DFF6448B207FAE1200FA38A9 /* QOL-iOS-Framwork */ = {
+			isa = PBXGroup;
+			children = (
+				DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */,
+				DFF6448D207FAE1200FA38A9 /* Info.plist */,
+			);
+			path = "QOL-iOS-Framwork";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DFF64487207FAE1200FA38A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF6450A207FAF0400FA38A9 /* Widget.h in Headers */,
+				DFF644A5207FAECF00FA38A9 /* NSDate+Compare.h in Headers */,
+				DFF644B1207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.h in Headers */,
+				DFF644A7207FAECF00FA38A9 /* NSDate+FuzzyTime.h in Headers */,
+				DFF644DE207FAECF00FA38A9 /* UIStoryboard+Shortcuts.h in Headers */,
+				DFF64506207FAF0400FA38A9 /* StopWatch.h in Headers */,
+				DFF644F0207FAEE100FA38A9 /* UIImage+Resize.h in Headers */,
+				DFF64504207FAF0400FA38A9 /* TableViewCellCache.h in Headers */,
+				DFF644C8207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.h in Headers */,
+				DFF644DC207FAECF00FA38A9 /* UIScrollView+Shortcuts.h in Headers */,
+				DFF6448E207FAE1200FA38A9 /* QOL_iOS_Framework.h in Headers */,
+				DFF644B7207FAECF00FA38A9 /* NSString+LoginCreds.h in Headers */,
+				DFF644B3207FAECF00FA38A9 /* NSMutableArray+Shortcuts.h in Headers */,
+				DFF644F4207FAF0400FA38A9 /* TransitionBase.h in Headers */,
+				DFF64508207FAF0400FA38A9 /* WeakTimedSelector.h in Headers */,
+				DFF644F8207FAF0400FA38A9 /* TransitionSimpleSlide.h in Headers */,
+				DFF644EE207FAEE100FA38A9 /* UIImage+Manipulation.h in Headers */,
+				DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */,
+				DFF644CA207FAECF00FA38A9 /* UIButton+Shortcuts.h in Headers */,
+				DFF644E8207FAECF00FA38A9 /* UIViewController+AddChild.h in Headers */,
+				DFF644B5207FAECF00FA38A9 /* NSObject+Shortcuts.h in Headers */,
+				DFF644C2207FAECF00FA38A9 /* NSURLSession+Additions.h in Headers */,
+				DFF644E2207FAECF00FA38A9 /* UIView+Positioning.h in Headers */,
+				DFF644AD207FAECF00FA38A9 /* NSError+URLError.h in Headers */,
+				DFF644C6207FAECF00FA38A9 /* UIApplication+EasyAccess.h in Headers */,
+				DFF644D6207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.h in Headers */,
+				DFF64516207FAF1A00FA38A9 /* ViewAutoKeyboardColor.h in Headers */,
+				DFF6450C207FAF0F00FA38A9 /* Debugging.h in Headers */,
+				DFF644B9207FAECF00FA38A9 /* NSString+MD5.h in Headers */,
+				DFF644E4207FAECF00FA38A9 /* UIView+Shortcuts.h in Headers */,
+				DFF644F6207FAF0400FA38A9 /* TransitionSlideUp.h in Headers */,
+				DFF644E0207FAECF00FA38A9 /* UIView+FindFirstResponder.h in Headers */,
+				DFF644BE207FAECF00FA38A9 /* NSString+Search.h in Headers */,
+				DFF644C0207FAECF00FA38A9 /* NSURLCredential+Shortcuts.h in Headers */,
+				DFF644E6207FAECF00FA38A9 /* UIView+Transform.h in Headers */,
+				DFF64512207FAF1A00FA38A9 /* TextFieldAutoKeyboard.h in Headers */,
+				DFF6450E207FAF0F00FA38A9 /* DispatchHelper.h in Headers */,
+				DFF644AB207FAECF00FA38A9 /* NSData+Cryptography.h in Headers */,
+				DFF644FA207FAF0400FA38A9 /* CoreDataGlobalContext.h in Headers */,
+				DFF644EA207FAECF00FA38A9 /* UIViewController+Shortcuts.h in Headers */,
+				DFF644A3207FAECF00FA38A9 /* NSArray+Shortcuts.h in Headers */,
+				DFF644CE207FAECF00FA38A9 /* UIDevice+SystemVersion.h in Headers */,
+				DFF64510207FAF1A00FA38A9 /* ButtonReverseContent.h in Headers */,
+				DFF64502207FAF0400FA38A9 /* ProgressHUDWrapper.h in Headers */,
+				DFF644F2207FAEE100FA38A9 /* UIImage+RoundedCorner.h in Headers */,
+				DFF644BB207FAECF00FA38A9 /* NSString+Formatting.h in Headers */,
+				DFF644D0207FAECF00FA38A9 /* UIFont+Debug.h in Headers */,
+				DFF64500207FAF0400FA38A9 /* _SVProgressHUD.h in Headers */,
+				DFF644EC207FAEE100FA38A9 /* UIImage+Alpha.h in Headers */,
+				DFF64518207FAF1A00FA38A9 /* ViewAvoidKeyboard.h in Headers */,
+				DFF644A9207FAECF00FA38A9 /* NSDate+Shortcuts.h in Headers */,
+				DFF644FC207FAF0400FA38A9 /* InAppTransactions.h in Headers */,
+				DFF644D8207FAECF00FA38A9 /* UINavigationController+SetItems.h in Headers */,
+				DFF644C4207FAECF00FA38A9 /* UIAlertView+Shortcuts.h in Headers */,
+				DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */,
+				DFF644CC207FAECF00FA38A9 /* UIColor+Shortcuts.h in Headers */,
+				DFF644DA207FAECF00FA38A9 /* UINavigationController+Transitions.h in Headers */,
+				DFF644AF207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.h in Headers */,
+				DFF644D2207FAECF00FA38A9 /* UIImage+Factory.h in Headers */,
+				DFF64514207FAF1A00FA38A9 /* TextViewAutoKeyboard.h in Headers */,
+				DFF644D4207FAECF00FA38A9 /* UIImageView+Shortcuts.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		DF2718351820293E00C7D7E0 /* QOL-iOS-Library */ = {
@@ -968,6 +1199,24 @@
 			productReference = DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		DFF64489207FAE1200FA38A9 /* QOL-iOS-Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF64491207FAE1200FA38A9 /* Build configuration list for PBXNativeTarget "QOL-iOS-Framework" */;
+			buildPhases = (
+				DFF64485207FAE1200FA38A9 /* Sources */,
+				DFF64486207FAE1200FA38A9 /* Frameworks */,
+				DFF64487207FAE1200FA38A9 /* Headers */,
+				DFF64488207FAE1200FA38A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QOL-iOS-Framework";
+			productName = "QOL-iOS-Framwork";
+			productReference = DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -980,6 +1229,11 @@
 				TargetAttributes = {
 					DFCB579F207E4D7F0084C5B2 = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+					DFF64489207FAE1200FA38A9 = {
+						CreatedOnToolsVersion = 9.3;
+						DevelopmentTeam = NZPR7GBH9W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -999,6 +1253,7 @@
 				DF2718351820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF2718451820293E00C7D7E0 /* QOL-iOS-LibraryTests */,
 				DFCB579F207E4D7F0084C5B2 /* QOL-iOS-Swiftly */,
+				DFF64489207FAE1200FA38A9 /* QOL-iOS-Framework */,
 			);
 		};
 /* End PBXProject section */
@@ -1009,6 +1264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2718541820293F00C7D7E0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF64488207FAE1200FA38A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1375,89 @@
 				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
 				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
 				DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF64485207FAE1200FA38A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF64501207FAF0400FA38A9 /* _SVProgressHUD.m in Sources */,
+				DFF64496207FAE7C00FA38A9 /* Sequence+Shortcuts.swift in Sources */,
+				DFF644DD207FAECF00FA38A9 /* UIScrollView+Shortcuts.m in Sources */,
+				DFF64515207FAF1A00FA38A9 /* TextViewAutoKeyboard.m in Sources */,
+				DFF64493207FAE7C00FA38A9 /* CGPoint+Shortcuts.swift in Sources */,
+				DFF644FD207FAF0400FA38A9 /* InAppTransactions.m in Sources */,
+				DFF644A8207FAECF00FA38A9 /* NSDate+FuzzyTime.m in Sources */,
+				DFF644E3207FAECF00FA38A9 /* UIView+Positioning.m in Sources */,
+				DFF644F1207FAEE100FA38A9 /* UIImage+Resize.m in Sources */,
+				DFF644B6207FAECF00FA38A9 /* NSObject+Shortcuts.m in Sources */,
+				DFF644BC207FAECF00FA38A9 /* NSString+Formatting.m in Sources */,
+				DFF644BF207FAECF00FA38A9 /* NSString+Search.m in Sources */,
+				DFF644E5207FAECF00FA38A9 /* UIView+Shortcuts.m in Sources */,
+				DFF644C9207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.m in Sources */,
+				DFF644E1207FAECF00FA38A9 /* UIView+FindFirstResponder.m in Sources */,
+				DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */,
+				DFF64507207FAF0400FA38A9 /* StopWatch.m in Sources */,
+				DFF644AC207FAECF00FA38A9 /* NSData+Cryptography.m in Sources */,
+				DFF6449F207FAE7C00FA38A9 /* UITableViewCell+Shortcuts.swift in Sources */,
+				DFF644A1207FAE7C00FA38A9 /* UIViewController+Shortcuts.swift in Sources */,
+				DFF64498207FAE7C00FA38A9 /* TimeInterval+Shortcuts.swift in Sources */,
+				DFF644F5207FAF0400FA38A9 /* TransitionBase.m in Sources */,
+				DFF644A0207FAE7C00FA38A9 /* UIView+Shortcuts.swift in Sources */,
+				DFF644E9207FAECF00FA38A9 /* UIViewController+AddChild.m in Sources */,
+				DFF644ED207FAEE100FA38A9 /* UIImage+Alpha.m in Sources */,
+				DFF6449B207FAE7C00FA38A9 /* UIImage+FaceDectection.swift in Sources */,
+				DFF6449A207FAE7C00FA38A9 /* UICollectionView+Shortcuts.swift in Sources */,
+				DFF6449D207FAE7C00FA38A9 /* UILabel+Shortcuts.swift in Sources */,
+				DFF644FB207FAF0400FA38A9 /* CoreDataGlobalContext.m in Sources */,
+				DFF64517207FAF1A00FA38A9 /* ViewAutoKeyboardColor.m in Sources */,
+				DFF644D1207FAECF00FA38A9 /* UIFont+Debug.m in Sources */,
+				DFF644CD207FAECF00FA38A9 /* UIColor+Shortcuts.m in Sources */,
+				DFF644DF207FAECF00FA38A9 /* UIStoryboard+Shortcuts.m in Sources */,
+				DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */,
+				DFF644D9207FAECF00FA38A9 /* UINavigationController+SetItems.m in Sources */,
+				DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */,
+				DFF644AA207FAECF00FA38A9 /* NSDate+Shortcuts.m in Sources */,
+				DFF6450F207FAF0F00FA38A9 /* DispatchHelper.m in Sources */,
+				DFF644C3207FAECF00FA38A9 /* NSURLSession+Additions.m in Sources */,
+				DFF64513207FAF1A00FA38A9 /* TextFieldAutoKeyboard.m in Sources */,
+				DFF644F7207FAF0400FA38A9 /* TransitionSlideUp.m in Sources */,
+				DFF644D7207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.m in Sources */,
+				DFF644CB207FAECF00FA38A9 /* UIButton+Shortcuts.m in Sources */,
+				DFF644EB207FAECF00FA38A9 /* UIViewController+Shortcuts.m in Sources */,
+				DFF644A2207FAE7F00FA38A9 /* QOL_iOS_Swiftly.swift in Sources */,
+				DFF64499207FAE7C00FA38A9 /* UIApplication+Shortcuts.swift in Sources */,
+				DFF644CF207FAECF00FA38A9 /* UIDevice+SystemVersion.m in Sources */,
+				DFF6450D207FAF0F00FA38A9 /* Debugging.m in Sources */,
+				DFF644B4207FAECF00FA38A9 /* NSMutableArray+Shortcuts.m in Sources */,
+				DFF644C5207FAECF00FA38A9 /* UIAlertView+Shortcuts.m in Sources */,
+				DFF644C7207FAECF00FA38A9 /* UIApplication+EasyAccess.m in Sources */,
+				DFF644D3207FAECF00FA38A9 /* UIImage+Factory.m in Sources */,
+				DFF64494207FAE7C00FA38A9 /* CGRect+Shortcuts.swift in Sources */,
+				DFF64509207FAF0400FA38A9 /* WeakTimedSelector.m in Sources */,
+				DFF644C1207FAECF00FA38A9 /* NSURLCredential+Shortcuts.m in Sources */,
+				DFF644AE207FAECF00FA38A9 /* NSError+URLError.m in Sources */,
+				DFF6449E207FAE7C00FA38A9 /* UINavigationController+Shortcuts.swift in Sources */,
+				DFF64497207FAE7C00FA38A9 /* String+Shortcuts.swift in Sources */,
+				DFF644E7207FAECF00FA38A9 /* UIView+Transform.m in Sources */,
+				DFF644BA207FAECF00FA38A9 /* NSString+MD5.m in Sources */,
+				DFF6450B207FAF0400FA38A9 /* Widget.m in Sources */,
+				DFF644F9207FAF0400FA38A9 /* TransitionSimpleSlide.m in Sources */,
+				DFF64511207FAF1A00FA38A9 /* ButtonReverseContent.m in Sources */,
+				DFF644EF207FAEE100FA38A9 /* UIImage+Manipulation.m in Sources */,
+				DFF644B8207FAECF00FA38A9 /* NSString+LoginCreds.m in Sources */,
+				DFF64495207FAE7C00FA38A9 /* NSAttributedString+Shortcuts.swift in Sources */,
+				DFF64505207FAF0400FA38A9 /* TableViewCellCache.m in Sources */,
+				DFF644B2207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.m in Sources */,
+				DFF644DB207FAECF00FA38A9 /* UINavigationController+Transitions.m in Sources */,
+				DFF644B0207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.m in Sources */,
+				DFF644A6207FAECF00FA38A9 /* NSDate+Compare.m in Sources */,
+				DFF644F3207FAEE100FA38A9 /* UIImage+RoundedCorner.m in Sources */,
+				DFF644A4207FAECF00FA38A9 /* NSArray+Shortcuts.m in Sources */,
+				DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */,
+				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
+				DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,6 +1711,80 @@
 			};
 			name = Release;
 		};
+		DFF6448F207FAE1200FA38A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NZPR7GBH9W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "QOL-iOS-Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "IsaacPaul.QOL-iOS-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFF64490207FAE1200FA38A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NZPR7GBH9W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "QOL-iOS-Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "IsaacPaul.QOL-iOS-Framework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1401,6 +1820,15 @@
 			buildConfigurations = (
 				DFCB57A5207E4D800084C5B2 /* Debug */,
 				DFCB57A6207E4D800084C5B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFF64491207FAE1200FA38A9 /* Build configuration list for PBXNativeTarget "QOL-iOS-Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF6448F207FAE1200FA38A9 /* Debug */,
+				DFF64490207FAE1200FA38A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

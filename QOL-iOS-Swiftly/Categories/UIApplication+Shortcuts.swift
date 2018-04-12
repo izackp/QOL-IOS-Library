@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension UIApplication {
     func openURLExt(_ urlStr:String) {
