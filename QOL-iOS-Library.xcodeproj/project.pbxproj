@@ -229,7 +229,7 @@
 		DFF64517207FAF1A00FA38A9 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
 		DFF64518207FAF1A00FA38A9 /* ViewAvoidKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB613491AE6D91F007B0401 /* ViewAvoidKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
-		DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
 /* End PBXBuildFile section */
 
@@ -1136,10 +1136,10 @@
 				DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */,
 				DFF644CC207FAECF00FA38A9 /* UIColor+Shortcuts.h in Headers */,
 				DFF644DA207FAECF00FA38A9 /* UINavigationController+Transitions.h in Headers */,
+				DFF644D4207FAECF00FA38A9 /* UIImageView+Shortcuts.h in Headers */,
 				DFF644AF207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.h in Headers */,
 				DFF644D2207FAECF00FA38A9 /* UIImage+Factory.h in Headers */,
 				DFF64514207FAF1A00FA38A9 /* TextViewAutoKeyboard.h in Headers */,
-				DFF644D4207FAECF00FA38A9 /* UIImageView+Shortcuts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1733,7 +1733,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "QOL-iOS-Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "IsaacPaul.QOL-iOS-Framework";
@@ -1771,7 +1771,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "QOL-iOS-Framework/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "IsaacPaul.QOL-iOS-Framework";

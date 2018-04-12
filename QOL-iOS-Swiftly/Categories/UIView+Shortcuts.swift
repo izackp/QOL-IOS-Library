@@ -11,6 +11,22 @@ import UIKit
 
 public extension UIView {
     
+    var heightFromBottom: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        set(value) {
+            if (value < 0) {
+                print("Warning: Setting height to a value < 0")
+                return
+            }
+            let diff = height - value
+            
+            let newFrame = CGRect.init(x: x, y: y + diff, width: width, height: value)
+            self.frame = newFrame
+        }
+    }
+    
     func findAllViews<T:UIView>(withType:T.Type) -> [T] {
         var list:[T] = []
         for eachView:UIView in subviews {

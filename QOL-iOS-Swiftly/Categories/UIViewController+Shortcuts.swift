@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-public extension UIViewController {
-    func stylizeNavBar() {//To be flat
+extension UIViewController {
+    public func stylizeNavBar() {//To be flat
         let navController:UINavigationController = self.navigationController!
         let navigationBar:UINavigationBar = navController.navigationBar
         navController.setNavigationBarHidden(false, animated: true)
@@ -20,7 +20,7 @@ public extension UIViewController {
         navigationBar.shadowImage = UIImage()
     }
     
-    func customBarButtonWithText(target:Any?, text:String, action:Selector) -> UIButton {
+    public func customBarButtonWithText(target:Any?, text:String, action:Selector) -> UIButton {
         let button:UIButton = UIButton.init(type: UIButtonType.custom)
         button.setTitle(text, for: UIControlState.normal)
         button.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
@@ -30,7 +30,7 @@ public extension UIViewController {
         return button
     }
     
-    func customBarButton(target:Any?, imageName:String, action:Selector) -> UIButton {
+    public func customBarButton(target:Any?, imageName:String, action:Selector) -> UIButton {
         let image:UIImage = UIImage.init(named: imageName)! //TODO: Check for missing image
         let button:UIButton = UIButton.init(type: UIButtonType.custom)
         button.setTitle(nil, for: UIControlState.normal)
@@ -42,7 +42,7 @@ public extension UIViewController {
         return button
     }
     
-    func findBackButton() -> UIButton? {
+    public func findBackButton() -> UIButton? {
         if (self.navigationController == nil) {
             return nil
         }
@@ -55,7 +55,7 @@ public extension UIViewController {
         return button
     }
     
-    func makeNavigationTransparent() {
+    public func makeNavigationTransparent() {
         let navController = navigationController!
         let navBar = navController.navigationBar
         navBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
@@ -65,7 +65,7 @@ public extension UIViewController {
         navBar.backgroundColor = UIColor.clear
     }
     
-    func showMessage(_ message:String, title:String?) -> UIAlertController {
+    public func showMessage(_ message:String, title:String?) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(action)
@@ -73,15 +73,15 @@ public extension UIViewController {
         return alertController
     }
     
-    @objc @IBAction func tapBack() {
+    @objc @IBAction open func tapBack() {
         self.navigationController?.popViewController(animated: true);
     }
     
-    @objc @IBAction func tapClose() {
+    @objc @IBAction open func tapClose() {
         dismiss(animated: true, completion: nil)
     }
     
-    func isModal() -> Bool {
+    public func isModal() -> Bool {
         if self.presentingViewController != nil {
             return true
         } else if self.navigationController?.presentingViewController?.presentedViewController == self.navigationController  {
@@ -92,7 +92,7 @@ public extension UIViewController {
         return false
     }
     
-    func loadViewIfNeededAnyiOS() {
+    public func loadViewIfNeededAnyiOS() {
         if #available(iOS 9, *) {
             loadViewIfNeeded()
         } else {
