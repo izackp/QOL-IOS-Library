@@ -62,6 +62,7 @@ FOUNDATION_EXPORT const unsigned char QOL_iOS_FrameworkVersionString[];
 #import "UINavigationController+Transitions.h"
 #import "UIScrollView+Shortcuts.h"
 #import "UIStoryboard+Shortcuts.h"
+#import "UITextView+HeightCalc.h"
 #import "UIView+FindFirstResponder.h"
 #import "UIView+Positioning.h"
 #import "UIView+Shortcuts.h"

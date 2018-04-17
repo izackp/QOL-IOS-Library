@@ -70,6 +70,13 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */; };
+		DFB3A8D52086641D001D3118 /* UITextView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */; };
+		DFB3A8D920866579001D3118 /* UITextView+HeightCalc.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFB3A8DA20866579001D3118 /* UITextView+HeightCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */; };
+		DFB3A8DB20866579001D3118 /* UITextView+HeightCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */; };
+		DFB3A8DF208665DD001D3118 /* QOL_iOS_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFB3A8E0208665DD001D3118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFB3A8DE208665DD001D3118 /* Info.plist */; };
 		DFB6133E1AE594E3007B0401 /* TransitionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6133D1AE594E3007B0401 /* TransitionBase.m */; };
 		DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
 		DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
@@ -93,7 +100,6 @@
 		DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */; };
 		DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
-		DFF6448E207FAE1200FA38A9 /* QOL_iOS_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
 		DFF64493207FAE7C00FA38A9 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
 		DFF64494207FAE7C00FA38A9 /* CGRect+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */; };
@@ -392,6 +398,11 @@
 		DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoKeyboard.m; sourceTree = "<group>"; };
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
+		DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+HeightCalc.h"; sourceTree = "<group>"; };
+		DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+HeightCalc.m"; sourceTree = "<group>"; };
+		DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOL_iOS_Framework.h; sourceTree = "<group>"; };
+		DFB3A8DE208665DD001D3118 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFB6133C1AE594E3007B0401 /* TransitionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionBase.h; sourceTree = "<group>"; };
 		DFB6133D1AE594E3007B0401 /* TransitionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionBase.m; sourceTree = "<group>"; };
 		DFB613491AE6D91F007B0401 /* ViewAvoidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAvoidKeyboard.h; sourceTree = "<group>"; };
@@ -420,8 +431,6 @@
 		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QOL_iOS_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QOL_iOS_Framework.h; sourceTree = "<group>"; };
-		DFF6448D207FAE1200FA38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shortcuts.m"; sourceTree = "<group>"; };
@@ -724,7 +733,7 @@
 				DF27183B1820293E00C7D7E0 /* QOL-iOS-Library */,
 				DF27184F1820293F00C7D7E0 /* QOL-iOS-LibraryTests */,
 				DFCB57A1207E4D7F0084C5B2 /* QOL-iOS-Swiftly */,
-				DFF6448B207FAE1200FA38A9 /* QOL-iOS-Framwork */,
+				DFB3A8DC208665DD001D3118 /* QOL-iOS-Framwork */,
 				DF2718381820293E00C7D7E0 /* Frameworks */,
 				DF2718371820293E00C7D7E0 /* Products */,
 			);
@@ -817,6 +826,7 @@
 				DF2718881820299500C7D7E0 /* UINavigationController */,
 				6AA6432B18E35DA70047927E /* UIScrollView */,
 				6A544F5018ED979F00B466EB /* UIStoryboard */,
+				DFB3A8D62086652B001D3118 /* UITextView */,
 				DF27188B1820299500C7D7E0 /* UIView */,
 				6A7FDD1C18EC7B4500F04632 /* UIViewController */,
 			);
@@ -1012,6 +1022,24 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DFB3A8D62086652B001D3118 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */,
+				DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		DFB3A8DC208665DD001D3118 /* QOL-iOS-Framwork */ = {
+			isa = PBXGroup;
+			children = (
+				DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */,
+				DFB3A8DE208665DD001D3118 /* Info.plist */,
+			);
+			path = "QOL-iOS-Framwork";
+			sourceTree = "<group>";
+		};
 		DFB615571AE7FE59007B0401 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1048,6 +1076,7 @@
 				DFCB57BA207E4F210084C5B2 /* UILabel+Shortcuts.swift */,
 				DFCB57B4207E4F200084C5B2 /* UINavigationController+Shortcuts.swift */,
 				DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */,
+				DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */,
 				DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */,
 				DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */,
 			);
@@ -1063,15 +1092,6 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
-		DFF6448B207FAE1200FA38A9 /* QOL-iOS-Framwork */ = {
-			isa = PBXGroup;
-			children = (
-				DFF6448C207FAE1200FA38A9 /* QOL_iOS_Framework.h */,
-				DFF6448D207FAE1200FA38A9 /* Info.plist */,
-			);
-			path = "QOL-iOS-Framwork";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1081,15 +1101,16 @@
 			files = (
 				DFF6450A207FAF0400FA38A9 /* Widget.h in Headers */,
 				DFF644A5207FAECF00FA38A9 /* NSDate+Compare.h in Headers */,
+				DFB3A8D920866579001D3118 /* UITextView+HeightCalc.h in Headers */,
 				DFF644B1207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.h in Headers */,
 				DFF644A7207FAECF00FA38A9 /* NSDate+FuzzyTime.h in Headers */,
 				DFF644DE207FAECF00FA38A9 /* UIStoryboard+Shortcuts.h in Headers */,
 				DFF64506207FAF0400FA38A9 /* StopWatch.h in Headers */,
 				DFF644F0207FAEE100FA38A9 /* UIImage+Resize.h in Headers */,
+				DFB3A8DF208665DD001D3118 /* QOL_iOS_Framework.h in Headers */,
 				DFF64504207FAF0400FA38A9 /* TableViewCellCache.h in Headers */,
 				DFF644C8207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.h in Headers */,
 				DFF644DC207FAECF00FA38A9 /* UIScrollView+Shortcuts.h in Headers */,
-				DFF6448E207FAE1200FA38A9 /* QOL_iOS_Framework.h in Headers */,
 				DFF644B7207FAECF00FA38A9 /* NSString+LoginCreds.h in Headers */,
 				DFF644B3207FAECF00FA38A9 /* NSMutableArray+Shortcuts.h in Headers */,
 				DFF644F4207FAF0400FA38A9 /* TransitionBase.h in Headers */,
@@ -1271,6 +1292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB3A8E0208665DD001D3118 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,6 +1334,7 @@
 				6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */,
 				DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */,
 				6A4F60C618BE2F6E008858EB /* UIImage+Factory.m in Sources */,
+				DFB3A8DA20866579001D3118 /* UITextView+HeightCalc.m in Sources */,
 				6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */,
 				DF17EF771854B2610064E3C0 /* TableViewCellCache.m in Sources */,
 				6A85ACB8191AA37000D3FA08 /* WeakTimedSelector.m in Sources */,
@@ -1371,6 +1394,7 @@
 				DFCB57C3207E4F210084C5B2 /* CGRect+Shortcuts.swift in Sources */,
 				DFCB57C9207E4F210084C5B2 /* UIImage+FaceDectection.swift in Sources */,
 				DFCB57C6207E4F210084C5B2 /* UIView+Shortcuts.swift in Sources */,
+				DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFCB57C2207E4F210084C5B2 /* UINavigationController+Shortcuts.swift in Sources */,
 				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
 				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
@@ -1396,6 +1420,7 @@
 				DFF644BF207FAECF00FA38A9 /* NSString+Search.m in Sources */,
 				DFF644E5207FAECF00FA38A9 /* UIView+Shortcuts.m in Sources */,
 				DFF644C9207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.m in Sources */,
+				DFB3A8D52086641D001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFF644E1207FAECF00FA38A9 /* UIView+FindFirstResponder.m in Sources */,
 				DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */,
 				DFF64507207FAF0400FA38A9 /* StopWatch.m in Sources */,
@@ -1454,6 +1479,7 @@
 				DFF644B0207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DFF644A6207FAECF00FA38A9 /* NSDate+Compare.m in Sources */,
 				DFF644F3207FAEE100FA38A9 /* UIImage+RoundedCorner.m in Sources */,
+				DFB3A8DB20866579001D3118 /* UITextView+HeightCalc.m in Sources */,
 				DFF644A4207FAECF00FA38A9 /* NSArray+Shortcuts.m in Sources */,
 				DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */,
 				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
