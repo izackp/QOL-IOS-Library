@@ -77,6 +77,8 @@
 		DFB3A8DB20866579001D3118 /* UITextView+HeightCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */; };
 		DFB3A8DF208665DD001D3118 /* QOL_iOS_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFB3A8E0208665DD001D3118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFB3A8DE208665DD001D3118 /* Info.plist */; };
+		DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */; };
+		DFB3A9032087D58E001D3118 /* Int32+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */; };
 		DFB6133E1AE594E3007B0401 /* TransitionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6133D1AE594E3007B0401 /* TransitionBase.m */; };
 		DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
 		DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
@@ -403,6 +405,7 @@
 		DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+HeightCalc.m"; sourceTree = "<group>"; };
 		DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QOL_iOS_Framework.h; sourceTree = "<group>"; };
 		DFB3A8DE208665DD001D3118 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int32+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFB6133C1AE594E3007B0401 /* TransitionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionBase.h; sourceTree = "<group>"; };
 		DFB6133D1AE594E3007B0401 /* TransitionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionBase.m; sourceTree = "<group>"; };
 		DFB613491AE6D91F007B0401 /* ViewAvoidKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAvoidKeyboard.h; sourceTree = "<group>"; };
@@ -1065,6 +1068,7 @@
 				DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */,
 				DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */,
 				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
+				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
 				DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */,
 				DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */,
@@ -1386,6 +1390,7 @@
 				DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */,
 				DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */,
 				DFCB57CF207E4F410084C5B2 /* UIViewController+Shortcuts.swift in Sources */,
+				DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
 				DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */,
 				DFCB57C4207E4F210084C5B2 /* UIImage+Orientation.swift in Sources */,
 				DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */,
@@ -1484,6 +1489,7 @@
 				DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */,
 				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
 				DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */,
+				DFB3A9032087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
