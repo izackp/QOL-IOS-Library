@@ -74,7 +74,7 @@ extension UIViewController {
     }
     
     @objc @IBAction open func tapBack() {
-        self.navigationController?.popViewController(animated: true);
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc @IBAction open func tapClose() {
