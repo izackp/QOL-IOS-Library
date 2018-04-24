@@ -70,6 +70,8 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DF9DD703208F779A0016969C /* Float+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DD702208F779A0016969C /* Float+Shortcuts.swift */; };
+		DF9DD704208F779A0016969C /* Float+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DD702208F779A0016969C /* Float+Shortcuts.swift */; };
 		DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */; };
 		DFB3A8D52086641D001D3118 /* UITextView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */; };
 		DFB3A8D920866579001D3118 /* UITextView+HeightCalc.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -400,6 +402,7 @@
 		DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoKeyboard.m; sourceTree = "<group>"; };
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
+		DF9DD702208F779A0016969C /* Float+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+HeightCalc.h"; sourceTree = "<group>"; };
 		DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+HeightCalc.m"; sourceTree = "<group>"; };
@@ -1068,6 +1071,7 @@
 				DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */,
 				DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */,
 				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
+				DF9DD702208F779A0016969C /* Float+Shortcuts.swift */,
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
 				DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */,
@@ -1401,6 +1405,7 @@
 				DFCB57C6207E4F210084C5B2 /* UIView+Shortcuts.swift in Sources */,
 				DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFCB57C2207E4F210084C5B2 /* UINavigationController+Shortcuts.swift in Sources */,
+				DF9DD703208F779A0016969C /* Float+Shortcuts.swift in Sources */,
 				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
 				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
 				DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */,
@@ -1427,6 +1432,7 @@
 				DFF644C9207FAECF00FA38A9 /* UIBarButtonItem+BetterButton.m in Sources */,
 				DFB3A8D52086641D001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFF644E1207FAECF00FA38A9 /* UIView+FindFirstResponder.m in Sources */,
+				DF9DD704208F779A0016969C /* Float+Shortcuts.swift in Sources */,
 				DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */,
 				DFF64507207FAF0400FA38A9 /* StopWatch.m in Sources */,
 				DFF644AC207FAECF00FA38A9 /* NSData+Cryptography.m in Sources */,

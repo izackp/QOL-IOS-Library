@@ -97,6 +97,10 @@ public extension CGRect {
         return width / height
     }
     
+    func aspectRatioInverse() -> CGFloat {
+        return height / width
+    }
+    
     func capValueAtBounds(bounds:CGRect) -> CGRect {
         
         var rect:CGRect = self
