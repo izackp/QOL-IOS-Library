@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+public extension CGPoint {
+    func add(_ other:CGPoint) -> CGPoint {
+        return CGPoint.init(x: x + other.x, y: y + other.y)
+    }
+    
+    func subtract(_ other:CGPoint) -> CGPoint {
+        return CGPoint.init(x: x - other.x, y: y - other.y)
+    }
+}
+
 public extension CGRect {
     
     static func zeroOne() -> CGRect {
@@ -90,6 +100,15 @@ public extension CGRect {
         set(value) {
             let diff = value - bottom;
             height_ += diff
+        }
+    }
+    
+    var center: CGPoint {
+        get {
+            return CGPoint.init(x: x + width * 0.5, y: y + height * 0.5)
+        }
+        set (value) {
+            origin = CGPoint.init(x: value.x - width * 0.5, y: value.y - height * 0.5)
         }
     }
     
