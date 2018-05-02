@@ -11,4 +11,7 @@ import UIKit
 
 public extension CGPoint {
     static let mid:CGPoint = CGPoint(x: 0.5, y: 0.5)
+    func flipValues() -> CGPoint {
+        return CGPoint.init(x: y, y: x)
+    }
 }

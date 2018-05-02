@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+public extension CGPoint {
+    func add(_ other:CGPoint) -> CGPoint {
+        return CGPoint.init(x: x + other.x, y: y + other.y)
+    }
+    
+    func subtract(_ other:CGPoint) -> CGPoint {
+        return CGPoint.init(x: x - other.x, y: y - other.y)
+    }
+}
+
 public extension CGRect {
     
     static func zeroOne() -> CGRect {
@@ -93,6 +103,15 @@ public extension CGRect {
         }
     }
     
+    var center: CGPoint {
+        get {
+            return CGPoint.init(x: x + width * 0.5, y: y + height * 0.5)
+        }
+        set (value) {
+            origin = CGPoint.init(x: value.x - width * 0.5, y: value.y - height * 0.5)
+        }
+    }
+    
     func aspectRatio() -> CGFloat {
         return width / height
     }
@@ -104,6 +123,15 @@ public extension CGRect {
     func capValueAtBounds(bounds:CGRect) -> CGRect {
         
         var rect:CGRect = self
+        
+        if (width > bounds.width) {
+            rect.width_ = bounds.width
+        }
+        
+        if (height > bounds.height) {
+            rect.height_ = bounds.height
+        }
+        
         if (x < bounds.x) {
             rect.left = bounds.x
         }
@@ -119,6 +147,17 @@ public extension CGRect {
         if (bottom > bounds.height) {
             rect.bottom = bounds.height
         }
+        
+        return rect
+    }
+    
+    func roundedRect() -> CGRect {
+        var rect:CGRect = self
+        
+        rect.x = round(rect.x)
+        rect.y = round(rect.y)
+        rect.width_ = round(rect.width_)
+        rect.height_ = round(rect.height_)
         
         return rect
     }
