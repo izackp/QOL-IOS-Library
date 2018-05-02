@@ -123,6 +123,15 @@ public extension CGRect {
     func capValueAtBounds(bounds:CGRect) -> CGRect {
         
         var rect:CGRect = self
+        
+        if (width > bounds.width) {
+            rect.width_ = bounds.width
+        }
+        
+        if (height > bounds.height) {
+            rect.height_ = bounds.height
+        }
+        
         if (x < bounds.x) {
             rect.left = bounds.x
         }
@@ -138,6 +147,17 @@ public extension CGRect {
         if (bottom > bounds.height) {
             rect.bottom = bounds.height
         }
+        
+        return rect
+    }
+    
+    func roundedRect() -> CGRect {
+        var rect:CGRect = self
+        
+        rect.x = round(rect.x)
+        rect.y = round(rect.y)
+        rect.width_ = round(rect.width_)
+        rect.height_ = round(rect.height_)
         
         return rect
     }
