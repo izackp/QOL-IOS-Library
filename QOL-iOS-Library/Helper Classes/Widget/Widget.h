@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic, readonly) IBOutlet UIView* view;
 
+- (NSBundle*)residingBundle;
+
 @end
