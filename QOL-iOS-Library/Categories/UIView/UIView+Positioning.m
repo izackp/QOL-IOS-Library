@@ -122,7 +122,7 @@
 }
 
 - (void)setBottom:(CGFloat)value {
-    CGFloat diff = value - self.top;
+    CGFloat diff = value - self.bottom;
     self.frame = CGRectMake(self.x, self.y, self.width, self.height + diff);
 }
 

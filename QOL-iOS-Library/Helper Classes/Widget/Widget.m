@@ -27,13 +27,17 @@
     return self;
 }
 
+- (NSBundle*)residingBundle {
+    return [NSBundle mainBundle];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
     if (self.view != nil)
         return;
     
-    [[NSBundle mainBundle] loadNibNamed:[self classNameWithoutModule] owner:self options:nil];
+    [[self residingBundle] loadNibNamed:[self classNameWithoutModule] owner:self options:nil];
     
     if (self.view == nil)
     {
