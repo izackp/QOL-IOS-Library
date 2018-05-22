@@ -117,13 +117,23 @@
 }
 
 - (void)setRight:(CGFloat)value {
-    CGFloat diff = value - self.left;
+    CGFloat diff = value - self.right;
     self.frame = CGRectMake(self.x, self.y, self.width + diff, self.height);
 }
 
 - (void)setBottom:(CGFloat)value {
     CGFloat diff = value - self.bottom;
     self.frame = CGRectMake(self.x, self.y, self.width, self.height + diff);
+}
+
+- (void)setRightAnchored:(CGFloat)value {
+    CGFloat diff = value - self.right;
+    self.frame = CGRectMake(self.x + diff, self.y, self.width, self.height);
+}
+
+- (void)setBottomAnchored:(CGFloat)value {
+    CGFloat diff = value - self.bottom;
+    self.frame = CGRectMake(self.x, self.y + diff, self.width, self.height);
 }
 
 - (CGPoint)positionInWindow {

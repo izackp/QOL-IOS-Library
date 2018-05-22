@@ -32,4 +32,7 @@
 
 - (void)alignViewsToTheLeft:(CGFloat)padding;
 
+- (void)setRightAnchored:(CGFloat)value;
+- (void)setBottomAnchored:(CGFloat)value;
+
 @end
