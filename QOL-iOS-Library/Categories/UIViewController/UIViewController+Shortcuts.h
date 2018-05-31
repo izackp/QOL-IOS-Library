@@ -13,4 +13,7 @@
 /*! @return true if the viewcontroller is on screen */
 - (BOOL)isVisible;
 
+/*! searches up the heirachy for a viewcontroller with the specified class */
+- (UIViewController*)findVCInHeirachyWithClass:(Class)vcClass;
+
 @end
