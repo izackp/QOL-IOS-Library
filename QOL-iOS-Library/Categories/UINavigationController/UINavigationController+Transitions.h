@@ -13,6 +13,8 @@
 - (void)pushViewController:(UIViewController *)viewController withTransition:(id <UIViewControllerTransitioningDelegate>)transition;
 - (void)popViewControllerUsingTransition:(id <UIViewControllerTransitioningDelegate>)transition;
 - (void)popToViewControllerClass:(Class)vcClass;
+- (void)hookTransition:(id <UIViewControllerTransitioningDelegate>)transition;
+- (void)unhookTransition;
 - (UIViewController*)findVCWithClass:(Class)vcClass;
 
 @end

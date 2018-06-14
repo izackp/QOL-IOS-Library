@@ -29,10 +29,14 @@ NSString* const cTransition = @"Transition";
     [self setAssociatedObject:transition key:cTransition];
 }
 
+- (void)unhookTransition {
+    self.transitioningDelegate = nil;
+    self.delegate = nil;
+    [self setAssociatedObject:nil key:cTransition];
+}
+
 + (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    navigationController.transitioningDelegate = nil;
-    navigationController.delegate = nil;
-    [navigationController setAssociatedObject:nil key:cTransition];
+    [navigationController unhookTransition];
 }
 
 - (void)popToViewControllerClass:(Class)vcClass {
