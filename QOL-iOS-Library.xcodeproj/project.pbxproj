@@ -80,7 +80,6 @@
 		DFB3A8DA20866579001D3118 /* UITextView+HeightCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */; };
 		DFB3A8DB20866579001D3118 /* UITextView+HeightCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D820866579001D3118 /* UITextView+HeightCalc.m */; };
 		DFB3A8DF208665DD001D3118 /* QOL_iOS_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = DFB3A8DD208665DD001D3118 /* QOL_iOS_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DFB3A8E0208665DD001D3118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFB3A8DE208665DD001D3118 /* Info.plist */; };
 		DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */; };
 		DFB3A9032087D58E001D3118 /* Int32+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */; };
 		DFB6133E1AE594E3007B0401 /* TransitionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6133D1AE594E3007B0401 /* TransitionBase.m */; };
@@ -1304,7 +1303,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFB3A8E0208665DD001D3118 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,12 +37,12 @@ public extension String {
     subscript (i: Int) -> String {
         return String(self[i] as Character)
     }
-    
+    /*
     subscript (r: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: r.lowerBound)
         let end = index(startIndex, offsetBy: r.upperBound)
         return String(self[Range(start ..< end)])
-    }
+    }*/
     
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
