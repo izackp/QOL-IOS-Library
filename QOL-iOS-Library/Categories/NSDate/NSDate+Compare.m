@@ -43,8 +43,8 @@
 }
 
 - (NSInteger)daysSince:(NSDate*)other {
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
                                                         fromDate:other
                                                           toDate:self
                                                          options:0];
@@ -52,8 +52,8 @@
 }
 
 - (NSInteger)yearsSince:(NSDate*)other {
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [gregorianCalendar components:NSYearCalendarUnit
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitYear
                                                         fromDate:other
                                                           toDate:self
                                                          options:0];

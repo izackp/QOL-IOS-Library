@@ -69,9 +69,10 @@ public extension UIImage {
     }*/
     
     public func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage {
+        /*
         let radiansToDegrees: (CGFloat) -> CGFloat = {
             return $0 * (180.0 / .pi)
-        }
+        }*/
         let degreesToRadians: (CGFloat) -> CGFloat = {
             return $0 / 180.0 * .pi
         }
