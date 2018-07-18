@@ -13,9 +13,9 @@ public extension UIApplication {
     func openURLExt(_ urlStr:String) {
         let url = URL(string: urlStr)!
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            open(url, options: [:], completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(url)
+            openURL(url)
         }
     }
 }
