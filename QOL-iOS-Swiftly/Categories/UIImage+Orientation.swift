@@ -29,50 +29,9 @@ public extension UIImage {
         }
         return self.simpleCrop(topLeft: crop.origin, bottomRight: CGPoint.init(x: crop.size.width, y: crop.size.height), rotation:rotation)
     }
-    /*
-    func rotate(_ angle:Int) -> CGImage {
-        let imgWidth = size.width
-        let imgHeight = size.height
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bytesPerPixel = 4
-        
-        let targetWidth = imgWidth
-        let targetHeight = imgHeight
-        let bytesPerRow = bytesPerPixel * Int(targetWidth)
-        let bitsPerComponent = 8
-        
-        let context = CGBitmap
-        
-        -(void) rotate90Degree:(CGImageRef) cgImageRef
-        {
-            int cgImageWidth = (int)CGImageGetWidth(cgImageRef);
-            int cgImageHeight = (int)CGImageGetHeight(cgImageRef);
-            
-            CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-            NSUInteger bytesPerPixel = 4;
-            
-            int targetWidth = cgImageHeight;
-            int targetHeight = cgImageWidth;
-            
-            NSUInteger bytesPerRow = bytesPerPixel * targetWidth;
-            NSUInteger bitsPerComponent = 8;
-            
-            CGContextRef context = CGBitmapContextCreate(nil, targetWidth, targetHeight,
-                                                         bitsPerComponent, bytesPerRow, colorSpace,
-                                                         kCGImageAlphaPremultipliedLast | kCGBitmapByteOrderDefault);
-            
-            CGContextRotateCTM (context, -M_PI_2);
-            CGContextTranslateCTM(context, -(int)targetHeight, 0);
-            
-            CGContextDrawImage(context, CGRectMake(0, 0, cgImageWidth, cgImageHeight), cgImageRef);
-        }
-    }*/
-    
+
     public func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage {
-        /*
-        let radiansToDegrees: (CGFloat) -> CGFloat = {
-            return $0 * (180.0 / .pi)
-        }*/
+
         let degreesToRadians: (CGFloat) -> CGFloat = {
             return $0 / 180.0 * .pi
         }
