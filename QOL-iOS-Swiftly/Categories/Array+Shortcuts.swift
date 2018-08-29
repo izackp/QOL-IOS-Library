@@ -26,6 +26,19 @@ public extension Array {
         }
         return newArray
     }
+    
+    func groupByKey<T>(_ keyForElement:((Element) -> (T))) -> [T:[Element]] {
+        var dic:[T:[Element]] = [:]
+        
+        for eachItem in self {
+            let key = keyForElement(eachItem)
+            var array:[Element] = dic[key] ?? []
+            array.append(eachItem)
+            dic[key] = array
+        }
+        
+        return dic
+    }
 }
 
 public extension Sequence where Iterator.Element: Hashable {
