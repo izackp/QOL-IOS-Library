@@ -58,6 +58,16 @@ public extension String {
         return String(self[..<toIndex])
     }
     
+    func substringSafe(to: Int) -> String {
+        if (self.count == 0) {
+            return ""
+        }
+        
+        let toFinal = (to > self.count) ? self.count : to
+        let toIndex = index(from: toFinal)
+        return String(self[..<toIndex])
+    }
+    
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
