@@ -21,9 +21,9 @@ extension UIViewController {
     }
     
     public func customBarButtonWithText(target:Any?, text:String, action:Selector) -> UIButton {
-        let button:UIButton = UIButton.init(type: UIButtonType.custom)
-        button.setTitle(text, for: UIControlState.normal)
-        button.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        let button:UIButton = UIButton.init(type: UIButton.ButtonType.custom)
+        button.setTitle(text, for: UIControl.State.normal)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         let width:CGFloat = ((button.titleLabel!.attributedText!.width(withConstrainedHeight: 44)) + 4.0)
         button.frame = CGRect.init(origin: CGPoint.zero, size: CGSize(width:width, height:44))
@@ -32,10 +32,10 @@ extension UIViewController {
     
     public func customBarButton(target:Any?, imageName:String, action:Selector) -> UIButton {
         let image:UIImage = UIImage.init(named: imageName)! //TODO: Check for missing image
-        let button:UIButton = UIButton.init(type: UIButtonType.custom)
-        button.setTitle(nil, for: UIControlState.normal)
-        button.setImage(image, for: UIControlState.normal)
-        button.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
+        let button:UIButton = UIButton.init(type: UIButton.ButtonType.custom)
+        button.setTitle(nil, for: UIControl.State.normal)
+        button.setImage(image, for: UIControl.State.normal)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(origin: CGPoint.zero, size: image.size)
         button.height = 44
         button.contentMode = .center
