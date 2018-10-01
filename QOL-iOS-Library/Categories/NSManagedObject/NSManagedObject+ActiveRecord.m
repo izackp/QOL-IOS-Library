@@ -223,9 +223,9 @@ static NSNumber *defaultBatchSize = nil;
 	return [self entityDescriptionInContext:[self currentContext]];
 }
 
-+ (NSArray *)propertiesNamed:(NSArray *)properties
++ (NSArray *)propertiesNamed:(NSArray *)properties inContext:(NSManagedObjectContext*)context
 {
-	NSEntityDescription *description = [self entityDescription];
+	NSEntityDescription *description = [self entityDescriptionInContext:context];
 	NSMutableArray *propertiesWanted = [NSMutableArray array];
 	
 	if (properties)
@@ -387,7 +387,6 @@ static NSNumber *defaultBatchSize = nil;
 + (NSFetchRequest *)requestFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context;
 {
     NSFetchRequest *request = [self createFetchRequestInContext:context];
-    [request setPropertiesToFetch:[self propertiesNamed:[NSArray arrayWithObject:attribute]]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"%K = %@", attribute, searchValue]];
     
     return request;
@@ -594,8 +593,6 @@ static NSNumber *defaultBatchSize = nil;
 + (id)findFirstByAttribute:(NSString *)attribute withValue:(id)searchValue inContext:(NSManagedObjectContext *)context
 {	
 	NSFetchRequest *request = [self requestFirstByAttribute:attribute withValue:searchValue inContext:context];
-    [request setPropertiesToFetch:[self propertiesNamed:[NSArray arrayWithObject:attribute]]];
-    
 	return [self executeFetchRequestAndReturnFirstObject:request inContext:context];
 }
 
@@ -637,7 +634,6 @@ static NSNumber *defaultBatchSize = nil;
 {
 	NSFetchRequest *request = [self createFetchRequestInContext:context];
 	[request setPredicate:searchTerm];
-	[request setPropertiesToFetch:[self propertiesNamed:attributes]];
 	
 	return [self executeFetchRequestAndReturnFirstObject:request inContext:context];
 }
@@ -656,7 +652,6 @@ static NSNumber *defaultBatchSize = nil;
 											 ascending:ascending
 										 withPredicate:searchTerm
 											 inContext:context];
-	[request setPropertiesToFetch:[self propertiesNamed:attributes]];
 	
 	return [self executeFetchRequestAndReturnFirstObject:request inContext:context];
 }

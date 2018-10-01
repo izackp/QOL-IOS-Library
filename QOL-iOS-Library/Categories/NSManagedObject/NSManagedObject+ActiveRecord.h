@@ -102,7 +102,7 @@
 + (NSFetchRequest *)createFetchRequestInContext:(NSManagedObjectContext *)context;
 + (NSEntityDescription *)entityDescription;
 + (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
-+ (NSArray *)propertiesNamed:(NSArray *)properties;
++ (NSArray *)propertiesNamed:(NSArray *)properties inContext:(NSManagedObjectContext*)context;
 
 + (id)createEntity;
 + (id)createTemporaryEntity;
