@@ -88,4 +88,18 @@ public extension String {
         }
         return false
     }
+    
+    static func joinComponents(_ list:[String?], by:String = "") -> String? {
+        let components = NSMutableArray.init(capacity: list.count)
+        for eachStr in list {
+            if String.notEmpty(eachStr){
+                components.add(eachStr!)
+            }
+        }
+        if (components.count == 0) {
+            return nil
+        }
+        let result = components.componentsJoined(by: by)
+        return result
+    }
 }
