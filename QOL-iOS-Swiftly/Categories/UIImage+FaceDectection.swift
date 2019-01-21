@@ -21,7 +21,7 @@ public extension UIImage {
 
     func imageContainsUseableFace() -> Bool {
         
-        let image = self.fixedOrientation()
+        guard let image = self.fixedOrientation() else { return false }
         
         var cgImageOrientation = 0
         
@@ -102,7 +102,7 @@ public extension UIImage {
     
     func facesAsSquareWithDimention(dimention:CGFloat) -> [UIImage] {
         
-        let image = self.fixedOrientation()
+        guard let image = self.fixedOrientation() else { return [] }
         
         var cgImageOrientation = 0
         

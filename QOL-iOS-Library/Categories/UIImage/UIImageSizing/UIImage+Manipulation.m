@@ -50,8 +50,7 @@ static bool isSetup = false;
 }
 
 
-- (UIImage *)imageAtRect:(CGRect)rect
-{
+- (UIImage *)imageAtRect:(CGRect)rect {
     CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], rect);
     UIImage* subImage = [UIImage imageWithCGImage:imageRef];
     CGImageRelease(imageRef);

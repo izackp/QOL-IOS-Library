@@ -12,15 +12,13 @@ import UIKit
 public extension UIImage {
     
     class func imageForName(imageName: String?) -> UIImage? {
-        if (imageName == nil) {
-            return nil
-        }
+        guard let imageName = imageName else { return nil }
         
         if (imageName == "") {
             return nil
         }
         
-        return UIImage.init(named: imageName!)
+        return UIImage.init(named: imageName)
     }
     
     func aspectCrop(_ ratio:CGFloat, allowBestMatch:Bool = false) -> UIImage {
@@ -105,7 +103,7 @@ public extension UIImage {
         return result
     }
     
-    func fixedOrientation() -> UIImage {
+    func fixedOrientation(toSize:CGSize? = nil) -> UIImage? {
         
         if imageOrientation == .up {
             return self
@@ -142,21 +140,25 @@ public extension UIImage {
             break
         }
         
-        let ctx: CGContext = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: self.cgImage!.bitsPerComponent, bytesPerRow: 0, space: (self.cgImage?.colorSpace)!, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+        guard let cgImg = cgImage else { return nil }
+        let finalSize = toSize ?? size
+        let colorSpace:CGColorSpace! = cgImg.colorSpace ?? CGColorSpaceCreateDeviceRGB()
+        
+        guard let ctx: CGContext = CGContext(data: nil, width: Int(finalSize.width), height: Int(finalSize.height), bitsPerComponent: cgImg.bitsPerComponent, bytesPerRow: 0, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
         
         ctx.concatenate(transform)
         
         switch imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:
-            ctx.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
+            ctx.draw(cgImg, in: CGRect(x: 0, y: 0, width: finalSize.height, height: finalSize.width))
             break
         default:
-            ctx.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            ctx.draw(cgImg, in: CGRect(x: 0, y: 0, width: finalSize.width, height: finalSize.height))
             break
         }
         
-        let cgImage: CGImage = ctx.makeImage()!
+        guard let finalImage: CGImage = ctx.makeImage() else { return nil }
         
-        return UIImage(cgImage: cgImage)
+        return UIImage(cgImage: finalImage)
     }
 }
