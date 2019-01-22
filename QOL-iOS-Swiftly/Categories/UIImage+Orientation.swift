@@ -103,62 +103,16 @@ public extension UIImage {
         return result
     }
     
-    func fixedOrientation(toSize:CGSize? = nil) -> UIImage? {
+    func resizeAndFixOrientation(maxSize: CGSize) -> UIImage? {
+        let finalSize = size.aspectFitNoUpscale(maxSize) ?? size
         
-        if imageOrientation == .up {
-            return self
-        }
+        let newHeight = finalSize.height
+        let newWidth = finalSize.width
+        UIGraphicsBeginImageContextWithOptions(finalSize, false, self.scale)
+        draw(in: CGRect.init(x:0, y:0, width:newWidth, height:newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        var transform: CGAffineTransform = CGAffineTransform.identity
-        
-        switch imageOrientation {
-        case .down, .downMirrored:
-            transform = transform.translatedBy(x: size.width, y: size.height)
-            transform = transform.rotated(by: CGFloat(Double.pi / 2))
-            break
-        case .left, .leftMirrored:
-            transform = transform.translatedBy(x: size.width, y: 0)
-            transform = transform.rotated(by: CGFloat(Double.pi / 2))
-            break
-        case .right, .rightMirrored:
-            transform = transform.translatedBy(x: 0, y: size.height)
-            transform = transform.rotated(by: CGFloat(-Double.pi / 2))
-            break
-        case .up, .upMirrored:
-            break
-        }
-        
-        switch imageOrientation {
-        case .upMirrored, .downMirrored:
-            transform.translatedBy(x: size.width, y: 0)
-            transform.scaledBy(x: -1, y: 1)
-            break
-        case .leftMirrored, .rightMirrored:
-            transform.translatedBy(x: size.height, y: 0)
-            transform.scaledBy(x: -1, y: 1)
-        case .up, .down, .left, .right:
-            break
-        }
-        
-        guard let cgImg = cgImage else { return nil }
-        let finalSize = toSize ?? size
-        let colorSpace:CGColorSpace! = cgImg.colorSpace ?? CGColorSpaceCreateDeviceRGB()
-        
-        guard let ctx: CGContext = CGContext(data: nil, width: Int(finalSize.width), height: Int(finalSize.height), bitsPerComponent: cgImg.bitsPerComponent, bytesPerRow: 0, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
-        
-        ctx.concatenate(transform)
-        
-        switch imageOrientation {
-        case .left, .leftMirrored, .right, .rightMirrored:
-            ctx.draw(cgImg, in: CGRect(x: 0, y: 0, width: finalSize.height, height: finalSize.width))
-            break
-        default:
-            ctx.draw(cgImg, in: CGRect(x: 0, y: 0, width: finalSize.width, height: finalSize.height))
-            break
-        }
-        
-        guard let finalImage: CGImage = ctx.makeImage() else { return nil }
-        
-        return UIImage(cgImage: finalImage)
+        return newImage
     }
 }

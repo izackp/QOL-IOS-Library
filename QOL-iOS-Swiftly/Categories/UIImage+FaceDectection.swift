@@ -19,9 +19,10 @@ public enum FaceDetectionError: Error {
 
 public extension UIImage {
 
+    //TODO: Should be cleaned up...
     func imageContainsUseableFace() -> Bool {
         
-        guard let image = self.fixedOrientation() else { return false }
+        guard let image = resizeAndFixOrientation(maxSize: size) else { return false }
         
         var cgImageOrientation = 0
         
@@ -102,7 +103,7 @@ public extension UIImage {
     
     func facesAsSquareWithDimention(dimention:CGFloat) -> [UIImage] {
         
-        guard let image = self.fixedOrientation() else { return [] }
+        guard let image = resizeAndFixOrientation(maxSize: size) else { return [] }
         
         var cgImageOrientation = 0
         

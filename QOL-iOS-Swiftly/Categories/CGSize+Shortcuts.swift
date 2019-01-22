@@ -29,4 +29,8 @@ public extension CGSize {
         }
         return nil
     }
+    
+    public func inverse() -> CGSize {
+        return CGSize(width:height, height:width)
+    }
 }
