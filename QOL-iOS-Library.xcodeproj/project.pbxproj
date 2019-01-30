@@ -72,6 +72,8 @@
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
 		DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
 		DF9135DD20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
+		DF96CACB22020EDE003FBDF6 /* Set+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */; };
+		DF96CACC22020EF0003FBDF6 /* Set+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */; };
 		DF9DD703208F779A0016969C /* Float+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DD702208F779A0016969C /* Float+Shortcuts.swift */; };
 		DF9DD704208F779A0016969C /* Float+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9DD702208F779A0016969C /* Float+Shortcuts.swift */; };
 		DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */; };
@@ -404,6 +406,7 @@
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
 		DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Shortcuts.swift"; sourceTree = "<group>"; };
+		DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF9DD702208F779A0016969C /* Float+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFB3A8D720866579001D3118 /* UITextView+HeightCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+HeightCalc.h"; sourceTree = "<group>"; };
@@ -1077,6 +1080,7 @@
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
 				DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */,
+				DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */,
 				DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */,
 				DFCB57B3207E4F200084C5B2 /* TimeInterval+Shortcuts.swift */,
 				DFCB57B2207E4F200084C5B2 /* UIApplication+Shortcuts.swift */,
@@ -1399,6 +1403,7 @@
 				DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
 				DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */,
 				DFCB57C4207E4F210084C5B2 /* UIImage+Orientation.swift in Sources */,
+				DF96CACB22020EDE003FBDF6 /* Set+Shortcuts.swift in Sources */,
 				DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */,
 				DFCB57C1207E4F210084C5B2 /* TimeInterval+Shortcuts.swift in Sources */,
 				DFCB57BE207E4F210084C5B2 /* Array+Shortcuts.swift in Sources */,
@@ -1443,6 +1448,7 @@
 				DFF644A1207FAE7C00FA38A9 /* UIViewController+Shortcuts.swift in Sources */,
 				DFF64498207FAE7C00FA38A9 /* TimeInterval+Shortcuts.swift in Sources */,
 				DFF644F5207FAF0400FA38A9 /* TransitionBase.m in Sources */,
+				DF96CACC22020EF0003FBDF6 /* Set+Shortcuts.swift in Sources */,
 				DFF644A0207FAE7C00FA38A9 /* UIView+Shortcuts.swift in Sources */,
 				DFF644E9207FAECF00FA38A9 /* UIViewController+AddChild.m in Sources */,
 				DFF644ED207FAEE100FA38A9 /* UIImage+Alpha.m in Sources */,
