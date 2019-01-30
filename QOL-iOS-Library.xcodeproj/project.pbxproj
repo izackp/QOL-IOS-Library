@@ -107,6 +107,10 @@
 		DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */; };
 		DFCB57D9207E57DB0084C5B2 /* libQOL-iOS-Library.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2718361820293E00C7D7E0 /* libQOL-iOS-Library.a */; };
 		DFDB30FE188EC60700B1287C /* UIImageView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */; };
+		DFE1A9D221F63C6C00056EC5 /* CGSize+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */; };
+		DFE1A9D321F63C7E00056EC5 /* CGSize+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */; };
+		DFE1A9D521F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
+		DFE1A9D621F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
 		DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
 		DFF64493207FAE7C00FA38A9 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
 		DFF64494207FAE7C00FA38A9 /* CGRect+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */; };
@@ -441,6 +445,8 @@
 		DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFDB30FC188EC60700B1287C /* UIImageView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
+		DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QOL_iOS_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
@@ -1074,8 +1080,10 @@
 			isa = PBXGroup;
 			children = (
 				DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */,
+				DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */,
 				DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */,
 				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
+				DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */,
 				DF9DD702208F779A0016969C /* Float+Shortcuts.swift */,
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
@@ -1406,6 +1414,7 @@
 				DF96CACB22020EDE003FBDF6 /* Set+Shortcuts.swift in Sources */,
 				DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */,
 				DFCB57C1207E4F210084C5B2 /* TimeInterval+Shortcuts.swift in Sources */,
+				DFE1A9D221F63C6C00056EC5 /* CGSize+Shortcuts.swift in Sources */,
 				DFCB57BE207E4F210084C5B2 /* Array+Shortcuts.swift in Sources */,
 				DFCB57C3207E4F210084C5B2 /* CGRect+Shortcuts.swift in Sources */,
 				DFCB57C9207E4F210084C5B2 /* UIImage+FaceDectection.swift in Sources */,
@@ -1413,6 +1422,7 @@
 				DFB3A8D420866417001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFCB57C2207E4F210084C5B2 /* UINavigationController+Shortcuts.swift in Sources */,
 				DF9DD703208F779A0016969C /* Float+Shortcuts.swift in Sources */,
+				DFE1A9D521F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */,
 				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
 				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
 				DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */,
@@ -1469,6 +1479,7 @@
 				DFF64513207FAF1A00FA38A9 /* TextFieldAutoKeyboard.m in Sources */,
 				DFF644F7207FAF0400FA38A9 /* TransitionSlideUp.m in Sources */,
 				DFF644D7207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.m in Sources */,
+				DFE1A9D321F63C7E00056EC5 /* CGSize+Shortcuts.swift in Sources */,
 				DFF644CB207FAECF00FA38A9 /* UIButton+Shortcuts.m in Sources */,
 				DFF644EB207FAECF00FA38A9 /* UIViewController+Shortcuts.m in Sources */,
 				DFF644A2207FAE7F00FA38A9 /* QOL_iOS_Swiftly.swift in Sources */,
@@ -1495,6 +1506,7 @@
 				DF9135DD20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */,
 				DFF64495207FAE7C00FA38A9 /* NSAttributedString+Shortcuts.swift in Sources */,
 				DFF64505207FAF0400FA38A9 /* TableViewCellCache.m in Sources */,
+				DFE1A9D621F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */,
 				DFF644B2207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.m in Sources */,
 				DFF644DB207FAECF00FA38A9 /* UINavigationController+Transitions.m in Sources */,
 				DFF644B0207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.m in Sources */,
