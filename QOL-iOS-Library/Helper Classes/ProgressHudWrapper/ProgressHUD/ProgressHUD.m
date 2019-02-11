@@ -286,6 +286,9 @@ static CGFloat sRotation = 0.0f;
 	{
 		double length = textLength.doubleValue;
 		NSTimeInterval sleep = length * 0.04 + 0.5;
+        if (sleep > 5) {
+            sleep = 5;
+        }
 		
 		[NSThread sleepForTimeInterval:sleep];
 		[self performSelectorOnMainThread:@selector(hudHide) withObject:nil waitUntilDone:false];
