@@ -93,9 +93,16 @@ public extension UIImage {
         }
         let x = topLeft.x * imgWidth
         let y = topLeft.y * imgHeight
-        let width = bottomRight.x * imgWidth - x
-        let height = bottomRight.y * imgHeight - y
-        let rect = CGRect.init(x: x, y: y, width: width, height: height)
+        var width = bottomRight.x * imgWidth - x
+        var height = bottomRight.y * imgHeight - y
+        if (width < 1) {
+            width = 1
+        }
+        if (height < 1) {
+            height = 1
+        }
+        var rect = CGRect.init(x: x, y: y, width: width, height: height)
+        rect = rect.capValueAtBounds(bounds: CGRect.init(x: 0, y: 0, width: size.width, height: size.height))
         let rotatedImage = imageRotatedByDegrees(CGFloat(rotation), flip:false)
         
         let imageRef:CGImage = rotatedImage.cgImage!.cropping(to: rect)!
