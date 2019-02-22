@@ -101,10 +101,11 @@ public extension UIImage {
         if (height < 1) {
             height = 1
         }
-        var rect = CGRect.init(x: x, y: y, width: width, height: height)
+        var rect = CGRect.init(x: round(x), y: round(y), width: round(width), height: round(height))
         rect = rect.capValueAtBounds(bounds: CGRect.init(x: 0, y: 0, width: size.width, height: size.height))
         let rotatedImage = imageRotatedByDegrees(CGFloat(rotation), flip:false)
         
+        //NOTE: When width is not a whole number then the crop gets rounded up 1 pixel
         let imageRef:CGImage = rotatedImage.cgImage!.cropping(to: rect)!
         let result:UIImage = UIImage.init(cgImage:imageRef, scale: self.scale, orientation: self.imageOrientation)
         return result
