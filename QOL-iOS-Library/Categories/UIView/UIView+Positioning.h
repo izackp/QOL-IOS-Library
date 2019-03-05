@@ -24,6 +24,9 @@
 @property (nonatomic, assign) CGFloat bottom;
 @property (nonatomic, assign) CGPoint positionInWindow;
 
+- (void)setWidthCenterAnchored:(CGFloat)width;
+- (void)setHeightCenterAnchored:(CGFloat)height;
+
 - (void)cropForVisibleSubviews;
 
 - (void)centerSubviewsVerticallyWithPadding:(CGFloat)padding;

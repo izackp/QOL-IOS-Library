@@ -31,7 +31,7 @@
         NSLog(@"Warning: Setting width to a value < 0");
         return;
     }
-  self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
 }
 
 - (void)setHeight:(CGFloat)height {
@@ -39,7 +39,25 @@
         NSLog(@"Warning: Setting width to a value < 0");
         return; //we abort because this will change a UIView's x position which is an unintended sideeffect
     }
-  self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
+}
+
+- (void)setWidthCenterAnchored:(CGFloat)width {
+    if (width < 0) {
+        NSLog(@"Warning: Setting width to a value < 0");
+        return;
+    }
+    CGFloat diff = (self.width - width) * 0.5f;
+    self.frame = CGRectMake(self.frame.origin.x + diff, self.frame.origin.y, width, self.frame.size.height);
+}
+
+- (void)setHeightCenterAnchored:(CGFloat)height {
+    if (height < 0) {
+        NSLog(@"Warning: Setting height to a value < 0");
+        return; //we abort because this will change a UIView's x position which is an unintended sideeffect
+    }
+    CGFloat diff = (self.height - height) * 0.5f;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + diff, self.frame.size.width, height);
 }
 
 - (void)setOrigin:(CGPoint)origin {
