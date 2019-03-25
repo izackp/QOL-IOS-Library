@@ -27,7 +27,7 @@ public extension CGRect {
     
     var width_: CGFloat {
         get {
-            return size.width;
+            return size.width
         }
         set(value) {
             size.width = value
@@ -36,7 +36,7 @@ public extension CGRect {
     
     var height_: CGFloat {
         get {
-            return size.height;
+            return size.height
         }
         set(value) {
             size.height = value
@@ -45,7 +45,7 @@ public extension CGRect {
     
     var x: CGFloat {
         get {
-            return origin.x;
+            return origin.x
         }
         set(value) {
             origin.x = value
@@ -54,7 +54,7 @@ public extension CGRect {
     
     var y: CGFloat {
         get {
-            return origin.y;
+            return origin.y
         }
         set(value) {
             origin.y = value
@@ -66,7 +66,7 @@ public extension CGRect {
             return x
         }
         set(value) {
-            let diff = value - left;
+            let diff = value - left
             x += diff
             width_ -= diff
         }
@@ -77,7 +77,7 @@ public extension CGRect {
             return y
         }
         set(value) {
-            let diff = value - top;
+            let diff = value - top
             y += diff
             height_ -= diff
         }
@@ -88,7 +88,7 @@ public extension CGRect {
             return x + width
         }
         set(value) {
-            let diff = value - right;
+            let diff = value - right
             width_ += diff
         }
     }
@@ -98,7 +98,7 @@ public extension CGRect {
             return y + height
         }
         set(value) {
-            let diff = value - bottom;
+            let diff = value - bottom
             height_ += diff
         }
     }
