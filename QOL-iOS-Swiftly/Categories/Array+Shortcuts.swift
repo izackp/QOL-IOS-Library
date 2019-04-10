@@ -27,8 +27,8 @@ public extension Array {
         return newArray
     }
     
-    func groupByKey<T>(_ keyForElement:((Element) -> (T))) -> [T:[Element]] {
-        var dic:[T:[Element]] = [:]
+    func groupByKey<Key>(_ keyForElement:(Element) -> (Key)) -> [Key:[Element]] {
+        var dic:[Key:[Element]] = [:]
         
         for eachItem in self {
             let key = keyForElement(eachItem)
@@ -38,6 +38,14 @@ public extension Array {
         }
         
         return dic
+    }
+    
+    public func index<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key:Element] {
+        var dict = [Key:Element]()
+        for element in self {
+            dict[selectKey(element)] = element
+        }
+        return dict
     }
 }
 
