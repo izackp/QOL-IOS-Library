@@ -68,3 +68,49 @@ public func !==~(lhs: CGFloat, rhs: CGFloat) -> Bool {
     return !(lhs ==~ rhs)
 }
 
+
+extension Double {
+    public func roundToInt(_ rule: FloatingPointRoundingRule = .toNearestOrEven) -> Int? {
+        let rounded = self.rounded(rule)
+        if rounded <= Double(Int.min) + Double.Epsilon {
+            return Int.min
+        }
+        
+        if rounded >= Double(Int.max) - Double.Epsilon {
+            return Int.max
+        }
+        
+        return Int(rounded)
+    }
+}
+
+
+extension Float {
+    public func roundToInt(_ rule: FloatingPointRoundingRule = .toNearestOrEven) -> Int? {
+        let rounded = self.rounded(rule)
+        if rounded <= Float(Int.min) + Float.Epsilon {
+            return Int.min
+        }
+        
+        if rounded >= Float(Int.max) - Float.Epsilon {
+            return Int.max
+        }
+        
+        return Int(rounded)
+    }
+}
+
+extension CGFloat {
+    public func roundToInt(_ rule: FloatingPointRoundingRule = .toNearestOrEven) -> Int? {
+        let rounded = self.rounded(rule)
+        if rounded <= CGFloat(Int.min) + CGFloat.Epsilon {
+            return Int.min
+        }
+        
+        if rounded >= CGFloat(Int.max) - CGFloat.Epsilon {
+            return Int.max
+        }
+        
+        return Int(rounded)
+    }
+}
