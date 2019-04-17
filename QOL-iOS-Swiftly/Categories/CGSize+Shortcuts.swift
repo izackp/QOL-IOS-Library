@@ -9,7 +9,7 @@
 import Foundation
 
 public extension CGSize {
-    public func aspectFitScale(_ toSize:CGSize) -> CGFloat {
+    func aspectFitScale(_ toSize:CGSize) -> CGFloat {
         let scaleByWidth = toSize.width / CGFloat(width)
         let scaleByHeight = toSize.height / CGFloat(height)
         
@@ -17,12 +17,12 @@ public extension CGSize {
         return finalScale
     }
     
-    public func aspectFitInto(_ other:CGSize) -> CGSize {
+    func aspectFitInto(_ other:CGSize) -> CGSize {
         let scale = aspectFitScale(other)
         return CGSize(width:width*scale, height:height*scale)
     }
     
-    public func aspectFitNoUpscale(_ toSize:CGSize) -> CGSize? {
+    func aspectFitNoUpscale(_ toSize:CGSize) -> CGSize? {
         let shouldResize = (width > toSize.width || height > toSize.height)
         if (shouldResize) {
             return aspectFitInto(toSize)
@@ -30,7 +30,7 @@ public extension CGSize {
         return nil
     }
     
-    public func inverse() -> CGSize {
+    func inverse() -> CGSize {
         return CGSize(width:height, height:width)
     }
 }

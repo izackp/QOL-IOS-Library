@@ -10,11 +10,11 @@ import Foundation
 
 public extension UIScreen {
     
-    public func screenSize() -> CGRect {
+    func screenSize() -> CGRect {
         return screenSizeForOrientation(.portrait)
     }
     
-    public func screenSizeForOrientation(_ orientation:UIInterfaceOrientation) -> CGRect {
+    func screenSizeForOrientation(_ orientation:UIInterfaceOrientation) -> CGRect {
         let size = bounds.size
         var flip = orientation.isLandscape
         if #available(iOS 8.0, *) {

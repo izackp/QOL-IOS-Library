@@ -9,11 +9,11 @@
 import Foundation
 
 public extension UITextField {
-    public func textNonNil() -> String {
+    func textNonNil() -> String {
         return text ?? ""
     }
     
-    public func trimText() {
+    func trimText() {
         text = text?.trimWhiteSpace()
     }
 }
@@ -21,13 +21,13 @@ public extension UITextField {
 public extension UITextView {
     
     //Will only work if the textview is set to be scrollable
-    public func measureHeight(lineHeight: CGFloat) -> CGFloat {
+    func measureHeight(lineHeight: CGFloat) -> CGFloat {
         let height = contentSize.height
         let insets:CGFloat = self.textContainerInset.top + self.textContainerInset.bottom
         return height + insets
     }
     
-    public class func buildLabelLike(frame:CGRect) -> UITextView {
+    class func buildLabelLike(frame:CGRect) -> UITextView {
         let textView = UITextView.init(frame: frame)
         textView.isScrollEnabled = false
         textView.showsHorizontalScrollIndicator = false
@@ -36,17 +36,17 @@ public extension UITextView {
         return textView
     }
     
-    public func textNonNil() -> String {
+    func textNonNil() -> String {
         return text ?? ""
     }
     
-    public func resizeToFitText() {
+    func resizeToFitText() {
         height = 2
         layoutManager.allowsNonContiguousLayout = false
         height = measureHeight(lineHeight:22)//todo: hardcoded
     }
     
-    public func resizeToFitTextMethod5(simulatedFont:UIFont? = nil) {
+    func resizeToFitTextMethod5(simulatedFont:UIFont? = nil) {
         height = 2
         layoutManager.allowsNonContiguousLayout = false
         var fontToUse = font

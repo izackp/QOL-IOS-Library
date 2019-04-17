@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Array {
-    public init(count: Int, elementCreator: @autoclosure () -> Element) {
+    init(count: Int, elementCreator: @autoclosure () -> Element) {
         self = (0 ..< count).map { _ in elementCreator() }
     }
     
@@ -40,7 +40,7 @@ public extension Array {
         return dic
     }
     
-    public func index<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key:Element] {
+    func index<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key:Element] {
         var dict = [Key:Element]()
         for element in self {
             dict[selectKey(element)] = element
