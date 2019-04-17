@@ -39,4 +39,13 @@ public extension UICollectionView {
         let visibleRow = indexPathsForVisibleItems[indexOfMostVisibleCell].row
         return visibleRow
     }
+    
+    func contentWidth() -> CGFloat {
+        let withinContentInset = width - contentInset.widthOffset()
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            let result = withinContentInset - layout.sectionInset.widthOffset()
+            return result
+        }
+        return withinContentInset
+    }
 }

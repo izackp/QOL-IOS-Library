@@ -248,6 +248,8 @@
 		DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
 		DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */; };
 		DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */; };
+		DFFA9DF622677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA9DF522677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift */; };
+		DFFA9DF7226781B000B55B67 /* UIEdgeInsets+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA9DF522677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -451,6 +453,7 @@
 		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
 		DFF7CEB9182AA548009C7AA1 /* UIView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shortcuts.m"; sourceTree = "<group>"; };
+		DFFA9DF522677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Shortcuts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1102,6 +1105,7 @@
 				DFB3A8D320866417001D3118 /* UITextView+Shortcuts.swift */,
 				DFCB57B8207E4F210084C5B2 /* UIView+Shortcuts.swift */,
 				DFCB57CE207E4F410084C5B2 /* UIViewController+Shortcuts.swift */,
+				DFFA9DF522677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1287,6 +1291,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = DF27182D1820293E00C7D7E0;
@@ -1415,6 +1420,7 @@
 				DFCB57BF207E4F210084C5B2 /* String+Shortcuts.swift in Sources */,
 				DFCB57C1207E4F210084C5B2 /* TimeInterval+Shortcuts.swift in Sources */,
 				DFE1A9D221F63C6C00056EC5 /* CGSize+Shortcuts.swift in Sources */,
+				DFFA9DF622677FE400B55B67 /* UIEdgeInsets+Shortcuts.swift in Sources */,
 				DFCB57BE207E4F210084C5B2 /* Array+Shortcuts.swift in Sources */,
 				DFCB57C3207E4F210084C5B2 /* CGRect+Shortcuts.swift in Sources */,
 				DFCB57C9207E4F210084C5B2 /* UIImage+FaceDectection.swift in Sources */,
@@ -1514,6 +1520,7 @@
 				DFF644F3207FAEE100FA38A9 /* UIImage+RoundedCorner.m in Sources */,
 				DFB3A8DB20866579001D3118 /* UITextView+HeightCalc.m in Sources */,
 				DFF644A4207FAECF00FA38A9 /* NSArray+Shortcuts.m in Sources */,
+				DFFA9DF7226781B000B55B67 /* UIEdgeInsets+Shortcuts.swift in Sources */,
 				DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */,
 				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
 				DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */,
