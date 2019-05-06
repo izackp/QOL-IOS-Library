@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Set {
-    public func array() -> Array<Element> {
+    func array() -> Array<Element> {
         return Array(self)
     }
 }

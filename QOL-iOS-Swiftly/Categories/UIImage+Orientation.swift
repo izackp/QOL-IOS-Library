@@ -49,7 +49,7 @@ public extension UIImage {
         return self.simpleCrop(topLeft: crop.origin, bottomRight: CGPoint.init(x: crop.size.width, y: crop.size.height), rotation:rotation)
     }
 
-    public func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage {
+    func imageRotatedByDegrees(_ degrees: CGFloat, flip: Bool) -> UIImage {
 
         let degreesToRadians: (CGFloat) -> CGFloat = {
             return $0 / 180.0 * .pi
