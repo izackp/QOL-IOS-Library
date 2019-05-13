@@ -113,11 +113,15 @@ public extension CGRect {
     }
     
     func aspectRatio() -> CGFloat {
-        return width / height
+        return size.aspectRatio()
     }
     
     func aspectRatioInverse() -> CGFloat {
         return height / width
+    }
+    
+    func aspectCrop(_ ratio:CGFloat, allowBestMatch:Bool = false) -> CGRect {
+        return size.aspectCrop(ratio, allowBestMatch: allowBestMatch)
     }
     
     func capValueAtBounds(bounds:CGRect) -> CGRect {

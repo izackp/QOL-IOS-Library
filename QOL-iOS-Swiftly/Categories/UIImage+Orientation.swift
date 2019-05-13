@@ -22,23 +22,7 @@ public extension UIImage {
     }
     
     func aspectCrop(_ ratio:CGFloat, allowBestMatch:Bool = false) -> UIImage {
-        let isHorizontal = ratio > 1
-        let imageIsHorizontal = size.width > size.height
-        var ratioToUse = ratio
-        if (allowBestMatch) {
-            ratioToUse = imageIsHorizontal != isHorizontal ? (1.0 / ratio) : ratio
-        }
-        
-        if (size.height * ratioToUse <= size.width) {
-            let width = size.height * ratioToUse
-            let offset = (size.width - width) * 0.5
-            let newCrop = CGRect.init(x: offset/size.width, y: 0, width: (offset+width)/size.width, height: 1)
-            return simpleCrop(newCrop, rotation:0)
-        }
-        
-        let height = size.width * (1.0 / ratioToUse)
-        let offset = (size.height - height) * 0.5
-        let newCrop = CGRect.init(x: 0, y: offset/size.height, width: 1, height: (offset+height)/size.height)
+        let newCrop = size.aspectCrop(ratio, allowBestMatch: allowBestMatch)
         return simpleCrop(newCrop, rotation:0)
     }
     
