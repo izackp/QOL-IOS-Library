@@ -52,8 +52,13 @@
     if ([touch.view isKindOfClass:[UIButton class]])
     {
         UIButton* button = (UIButton*)touch.view;
-        if (button.isEnabled)
+        if (button.isEnabled) {
+            if (_ignoreButtons) {
+                [self clickOut];
+                return YES;
+            }
             return NO;
+        }
         return YES;
     }
     return YES;

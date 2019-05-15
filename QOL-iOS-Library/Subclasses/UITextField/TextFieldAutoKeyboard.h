@@ -10,4 +10,6 @@
 
 @interface TextFieldAutoKeyboard : UITextField
 
+@property (assign, nonatomic) bool ignoreButtons;
+
 @end
