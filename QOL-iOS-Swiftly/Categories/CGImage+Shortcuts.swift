@@ -9,7 +9,7 @@
 import Foundation
 
 public extension CGImage {
-    public func size() -> CGSize {
+    func size() -> CGSize {
         return CGSize(width:width, height:height)
     }
 }
