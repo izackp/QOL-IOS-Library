@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Int32 {
-    public func compare(_ other:Int32) -> ComparisonResult {
+    func compare(_ other:Int32) -> ComparisonResult {
         if (self == other) {
             return .orderedSame
         }
