@@ -23,16 +23,14 @@ NSString* const cHttpSuffix = @"/";
     return s;
 }
 
-- (NSString*)urlEncoded
-{
-    CFStringRef originalStringRef = (__bridge_retained CFStringRef)self;
-    NSString *s = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, originalStringRef, NULL, NULL, kCFStringEncodingUTF8 );
-    CFRelease(originalStringRef);
+- (NSString*)urlEncoded {
+    NSString *s = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes( NULL, (__bridge CFStringRef) self, NULL, NULL, kCFStringEncodingUTF8);
     return s;
 }
 
 - (NSString*)urlDecode {
-    return (__bridge NSString *) CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef) self, CFSTR(""), kCFStringEncodingUTF8);
+    NSString *s = (__bridge_transfer NSString *) CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef) self, CFSTR(""), kCFStringEncodingUTF8);
+    return s;
 }
 
 - (NSDictionary*)decodeUrlParameters {

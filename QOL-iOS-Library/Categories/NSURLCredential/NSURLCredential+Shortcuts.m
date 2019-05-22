@@ -18,8 +18,12 @@
     CFArrayRef array = CFArrayCreate(NULL, (const void **) certs, 1, NULL);
     SecTrustRef trust;
     SecPolicyRef SSLPolicy = SecPolicyCreateSSL(true, (__bridge CFStringRef)hostname);
-    if (SecTrustCreateWithCertificates(array, SSLPolicy, &trust) != errSecSuccess)
+    OSStatus result = SecTrustCreateWithCertificates(array, SSLPolicy, &trust);
+    CFRelease(array);
+    CFRelease(SSLPolicy);
+    if (result != errSecSuccess) {
         return nil;
+    }
     
     return [self credentialForTrustCustom:trust];
 }
@@ -43,9 +47,9 @@
     
     if (trustResult == kSecTrustResultRecoverableTrustFailure){
         
-        //NSLog(@"kSecTrustResultRecoverableTrustFailure");
         CFDataRef errDataRef = SecTrustCopyExceptions(trust);
-        SecTrustSetExceptions(trust, errDataRef);
+        SecTrustSetExceptions(trust, errDataRef); //TODO: Doesn't make a lot of sence to copy expections then re-set them?
+        CFRelease(errDataRef);
         err = SecTrustEvaluate(trust, &trustResult);
     }
     

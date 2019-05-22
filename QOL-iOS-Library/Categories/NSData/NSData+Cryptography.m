@@ -137,6 +137,8 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     SecTrustRef trust;
     SecPolicyRef policy = SecPolicyCreateBasicX509();
     SecTrustCreateWithCertificates(certs, policy, &trust);
+    CFRelease(certs);
+    CFRelease(policy);
     SecTrustResultType trustResult;
     SecTrustEvaluate(trust, &trustResult);
     SecKeyRef pub_key_leaf = SecTrustCopyPublicKey(trust);
@@ -182,7 +184,7 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     [publicKey setObject:(__bridge id)kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
     secStatus = SecItemCopyMatching((__bridge CFDictionaryRef)publicKey, (CFTypeRef *) &keyRef);
     
-    if (keyRef == nil)
+    if (secStatus != noErr || keyRef == nil)
         return NULL;
     
     return keyRef;
