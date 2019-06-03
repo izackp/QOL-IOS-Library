@@ -101,7 +101,7 @@ public extension UIImage {
 
 public extension UIImage {
     
-    func facesAsSquareWithDimention(dimention:CGFloat) -> [UIImage] {
+    func facesAsSquareWithDimention(dimention:CGFloat, inset:CGFloat) -> [UIImage] {
         
         guard let image = resizeAndFixOrientation(maxSize: size) else { return [] }
         
@@ -145,7 +145,7 @@ public extension UIImage {
                 
                 let face = feature as! CIFaceFeature
                 
-                let squaredSourceRect = face.bounds.getCenteredSquare().insetBy(dx: 10, dy: 10)
+                let squaredSourceRect = face.bounds.getCenteredSquare().insetBy(dx: inset, dy: inset)
                 
                 let squareDestinationRect = CGRect(x:0, y:0, width:dimention, height: dimention)
                 let squareDestinationSize = CGSize(width: dimention, height: dimention)
