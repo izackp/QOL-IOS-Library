@@ -103,6 +103,26 @@ public extension CGRect {
         }
     }
     
+    var rightAnchored: CGFloat {
+        get {
+            return right
+        }
+        set(value) {
+            let diff = value - right
+            x += diff
+        }
+    }
+    
+    var bottomAnchored: CGFloat {
+        get {
+            return bottom
+        }
+        set(value) {
+            let diff = value - bottom
+            y += diff
+        }
+    }
+    
     var center: CGPoint {
         get {
             return CGPoint.init(x: x + width * 0.5, y: y + height * 0.5)
