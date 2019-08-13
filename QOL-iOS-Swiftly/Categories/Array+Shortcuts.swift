@@ -27,11 +27,11 @@ public extension Array {
         return newArray
     }
     
-    func groupByKey<Key>(_ keyForElement:(Element) -> (Key)) -> [Key:[Element]] {
+    func groupByKey<Key>(_ keyForElement:(Element) -> (Key?)) -> [Key:[Element]] {
         var dic:[Key:[Element]] = [:]
         
         for eachItem in self {
-            let key = keyForElement(eachItem)
+            guard let key = keyForElement(eachItem) else { continue }
             var array:[Element] = dic[key] ?? []
             array.append(eachItem)
             dic[key] = array
@@ -52,6 +52,20 @@ public extension Array {
 public extension Sequence where Iterator.Element: Hashable {
     var uniqueElements: [Iterator.Element] {
         return Array( Set(self) )
+    }
+    
+    func unique<T:Hashable>(by: ((Iterator.Element) -> (T))) -> [Iterator.Element] {
+        var set = Set<T>()
+        var arrayOrdered = [Iterator.Element]()
+        for value in self {
+            let byValue = by(value)
+            if !set.contains(byValue) {
+                set.insert(byValue)
+                arrayOrdered.append(value)
+            }
+        }
+        
+        return arrayOrdered
     }
 }
 
