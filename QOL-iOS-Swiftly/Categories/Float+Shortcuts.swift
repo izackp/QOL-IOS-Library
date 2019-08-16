@@ -84,7 +84,6 @@ extension Double {
     }
 }
 
-
 extension Float {
     public func roundToInt(_ rule: FloatingPointRoundingRule = .toNearestOrEven) -> Int? {
         let rounded = self.rounded(rule)
