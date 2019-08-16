@@ -81,6 +81,19 @@ extension UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc @IBAction public func variableTapBack() {
+        let numVCs:Int = navigationController?.viewControllers.count ?? 0
+        if (isModal() && numVCs < 2) {
+            tapClose()
+        } else {
+            var vcList = self.navigationController?.viewControllers ?? []
+            let _ = vcList.popLast()
+            
+            self.navigationController?.setViewControllers(vcList, animated: true)
+        }
+    }
+
+    
     public func isModal() -> Bool {
         if self.presentingViewController != nil {
             return true
