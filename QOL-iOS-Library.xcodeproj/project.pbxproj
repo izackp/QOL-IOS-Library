@@ -111,6 +111,8 @@
 		DFE1A9D321F63C7E00056EC5 /* CGSize+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */; };
 		DFE1A9D521F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
 		DFE1A9D621F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
+		DFE3A7E02331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */; };
+		DFE3A7E12331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */; };
 		DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
 		DFF64493207FAE7C00FA38A9 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
 		DFF64494207FAE7C00FA38A9 /* CGRect+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */; };
@@ -449,6 +451,7 @@
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QOL_iOS_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFF7CEB8182AA548009C7AA1 /* UIView+Shortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shortcuts.h"; sourceTree = "<group>"; };
@@ -1090,6 +1093,7 @@
 				DF9DD702208F779A0016969C /* Float+Shortcuts.swift */,
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
+				DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */,
 				DFCB57B9207E4F210084C5B2 /* Sequence+Shortcuts.swift */,
 				DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */,
 				DFCB57B1207E4F200084C5B2 /* String+Shortcuts.swift */,
@@ -1431,6 +1435,7 @@
 				DFE1A9D521F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */,
 				DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */,
 				DFCB57C8207E4F210084C5B2 /* UILabel+Shortcuts.swift in Sources */,
+				DFE3A7E02331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */,
 				DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */,
 				DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */,
 			);
@@ -1503,6 +1508,7 @@
 				DFF6449E207FAE7C00FA38A9 /* UINavigationController+Shortcuts.swift in Sources */,
 				DFF64497207FAE7C00FA38A9 /* String+Shortcuts.swift in Sources */,
 				DFF644E7207FAECF00FA38A9 /* UIView+Transform.m in Sources */,
+				DFE3A7E12331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */,
 				DFF644BA207FAECF00FA38A9 /* NSString+MD5.m in Sources */,
 				DFF6450B207FAF0400FA38A9 /* Widget.m in Sources */,
 				DFF644F9207FAF0400FA38A9 /* TransitionSimpleSlide.m in Sources */,
