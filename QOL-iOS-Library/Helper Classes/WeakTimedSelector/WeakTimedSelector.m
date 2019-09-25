@@ -10,7 +10,6 @@
 
 @interface WeakTimedSelector ()
 
-@property (weak, nonatomic) id target;
 @property (assign, nonatomic) SEL selector;
 @property (strong, nonatomic) NSTimer* timer;
 
