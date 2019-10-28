@@ -70,6 +70,8 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DF4823E02367575B0037F441 /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */; };
+		DF4823E12367575B0037F441 /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */; };
 		DF763406232935B60024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */; };
 		DF763407232935BC0024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */; };
 		DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
@@ -413,6 +415,7 @@
 		DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoKeyboard.m; sourceTree = "<group>"; };
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
+		DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringBuilder.swift; sourceTree = "<group>"; };
 		DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPointSign+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -1045,6 +1048,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DF4823DE2367573B0037F441 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
 		DFB3A8D62086652B001D3118 /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,6 +1086,7 @@
 		DFCB57A1207E4D7F0084C5B2 /* QOL-iOS-Swiftly */ = {
 			isa = PBXGroup;
 			children = (
+				DF4823DE2367573B0037F441 /* Helper Classes */,
 				DFCB57A7207E4DA20084C5B2 /* Categories */,
 				DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */,
 				DFCB57D6207E51120084C5B2 /* Swift-Bridging-Header.h */,
@@ -1416,6 +1428,7 @@
 				DFCB57C5207E4F210084C5B2 /* UICollectionView+Shortcuts.swift in Sources */,
 				DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */,
 				DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */,
+				DF4823E02367575B0037F441 /* AttributedStringBuilder.swift in Sources */,
 				DFCB57CF207E4F410084C5B2 /* UIViewController+Shortcuts.swift in Sources */,
 				DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
 				DFCB57D8207E52790084C5B2 /* NSAttributedString+Shortcuts.swift in Sources */,
@@ -1521,6 +1534,7 @@
 				DFE1A9D621F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */,
 				DFF644B2207FAECF00FA38A9 /* NSManagedObjectContext+Shortcuts.m in Sources */,
 				DFF644DB207FAECF00FA38A9 /* UINavigationController+Transitions.m in Sources */,
+				DF4823E12367575B0037F441 /* AttributedStringBuilder.swift in Sources */,
 				DFF644B0207FAECF00FA38A9 /* NSManagedObject+ActiveRecord.m in Sources */,
 				DFF644A6207FAECF00FA38A9 /* NSDate+Compare.m in Sources */,
 				DFF644F3207FAEE100FA38A9 /* UIImage+RoundedCorner.m in Sources */,
