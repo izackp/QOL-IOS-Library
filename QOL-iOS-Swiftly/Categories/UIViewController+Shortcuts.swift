@@ -73,6 +73,15 @@ extension UIViewController {
         return alertController
     }
     
+    public func showActionSheet(_ actions:[UIAlertAction], title:String? = nil, message:String? = nil) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        for eachAction in actions {
+            alertController.addAction(eachAction)
+        }
+        self.present(alertController, animated: true, completion: nil)
+        return alertController
+    }
+    
     @objc @IBAction open func tapBack() {
         self.navigationController?.popViewController(animated: true)
     }
