@@ -10,6 +10,8 @@
 
 @interface WeakTimedSelector : NSObject
 
+@property (weak, nonatomic) id target; //Should be private but no other way to init in swift
+
 - (id)initWithTarget:(id)target selector:(SEL)selector;
 
 - (void)scheduleTimer:(NSTimeInterval)seconds;
