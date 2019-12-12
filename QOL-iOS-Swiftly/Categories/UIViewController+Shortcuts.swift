@@ -65,9 +65,9 @@ extension UIViewController {
         navBar.backgroundColor = UIColor.clear
     }
     
-    public func showMessage(_ message:String, title:String?) -> UIAlertController {
+    public func showMessage(_ message:String, title:String?, _ handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: .default, handler: handler)
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
         return alertController
