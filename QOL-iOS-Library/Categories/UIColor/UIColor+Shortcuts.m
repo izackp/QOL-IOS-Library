@@ -25,6 +25,19 @@
     return [self colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha];
 }
 
++ (nonnull UIColor*)colorFromIntRed:(int)red green:(int)green blue:(int)blue alpha:(int)alpha {
+    return [self color2WithRed:red green:green blue:blue alpha:alpha];
+}
+
++ (nonnull UIColor*)colorFromIntArray:(NSArray*)bytes {
+    if ([bytes count] == 3) {
+        return [self color2WithRed:(int)bytes[0] green:(int)bytes[1] blue:(int)bytes[2] alpha:1];
+    } else if ([bytes count] == 4) {
+        return [self color2WithRed:(int)bytes[0] green:(int)bytes[1] blue:(int)bytes[2] alpha:(int)bytes[3]];
+    }
+    return UIColor.whiteColor;
+}
+
 + (UIColor*)colorFromRGBHexValue:(NSInteger)hexValue {
     return [self colorFromRGBHexValue:hexValue withAlpha:1.0f];
 }
