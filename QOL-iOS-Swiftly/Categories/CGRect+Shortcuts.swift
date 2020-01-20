@@ -185,4 +185,13 @@ public extension CGRect {
         
         return rect
     }
+    
+    func toDp() -> CGRect {
+        let scale = UIScreen.main.scale
+        let xx = x / scale
+        let yy = y / scale
+        let ww = width / scale
+        let hh = height / scale
+        return CGRect.init(x: xx, y: yy, width: ww, height: hh)
+    }
 }
