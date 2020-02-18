@@ -58,4 +58,15 @@ public extension CGSize {
         let newCrop = CGRect.init(x: 0, y: offset/self.height, width: 1, height: (offset+height)/self.height)
         return newCrop
     }
+    
+    func toDp() -> CGSize {
+        let scale = UIScreen.main.scale
+        let ww = width / scale
+        let hh = height / scale
+        return CGSize(width: ww, height: hh)
+    }
+    
+    static func + (left : CGSize , right : CGSize) -> CGSize {
+        return CGSize(width: left.width + right.width, height: left.height + right.height)
+    }
 }
