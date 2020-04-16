@@ -7,6 +7,7 @@
 //
 
 #import "NSError+URLError.h"
+#import "NSBundle+Localizable.h"
 
 @implementation NSError (URLError)
 
@@ -40,27 +41,29 @@
 }
 
 + (NSString*)connectionErrorStringForCode:(NSInteger)code {
+    NSBundle* bundle = [NSBundle QOLBundle];
+    NSString* error = [bundle localized:@"Error connecting to the server: "];
     switch (code) {
         case kCFURLErrorBadURL:
-            return @"Error connecting to the server: Bad URL.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Bad URL."];
         case kCFURLErrorTimedOut:
-            return @"Error connecting to the server: Connection timed out.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Connection timed out."];
         case kCFURLErrorUnsupportedURL:
-            return @"Error connecting to the server: Unsupported URL.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Unsupported URL."];
         case kCFURLErrorCannotFindHost:
-            return @"Error connecting to the server: Could not find host.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Could not find host."];
         case kCFURLErrorCannotConnectToHost:
-            return @"Error connecting to the server: Could not connect to host.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Could not connect to host."];
         case kCFURLErrorNetworkConnectionLost:
-            return @"Error connecting to the server: Network connection lost.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Network connection lost."];
         case kCFURLErrorDNSLookupFailed:
-            return @"Error connecting to the server: DNS lookup failed.";
+            return [NSString stringWithFormat:@"%@%@", error, @"DNS lookup failed."];
         case kCFURLErrorNotConnectedToInternet:
-            return @"Error connecting to the server: Not connected to a network.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Not connected to a network."];
         case kCFURLErrorRedirectToNonExistentLocation:
-            return @"Error connecting to the server: Redirect to non existent location.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Redirect to non existent location."];
         case kCFURLErrorBadServerResponse:
-            return @"Error connecting to the server: Bad server response.";
+            return [NSString stringWithFormat:@"%@%@", error, @"Bad server response."];
             
         default:
             return nil;
