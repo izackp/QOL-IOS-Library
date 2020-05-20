@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
     public func stylizeNavBar() {//To be flat
-        let navController:UINavigationController = self.navigationController!
+        guard let navController:UINavigationController = self.navigationController else { return }
         let navigationBar:UINavigationBar = navController.navigationBar
         navController.setNavigationBarHidden(false, animated: true)
         navigationBar.barTintColor = UIColor.white
