@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char QOL_iOS_FrameworkVersionString[];
 #import "NSDate+FuzzyTime.h"
 #import "NSDate+Shortcuts.h"
 #import "NSError+URLError.h"
+#import "NSException+CallStackInfo.h"
 #import "NSManagedObject+ActiveRecord.h"
 #import "NSManagedObjectContext+Shortcuts.h"
 #import "NSMutableArray+Shortcuts.h"

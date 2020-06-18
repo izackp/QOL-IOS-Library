@@ -70,6 +70,9 @@
 		DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718991820299500C7D7E0 /* TextFieldAutoKeyboard.m */; };
 		DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */; };
 		DF2718B61820299600C7D7E0 /* ViewAutoKeyboardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */; };
+		DF434DE9249B415F001ED5B2 /* NSException+CallStackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DF434DE7249B415F001ED5B2 /* NSException+CallStackInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF434DEA249B415F001ED5B2 /* NSException+CallStackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF434DE8249B415F001ED5B2 /* NSException+CallStackInfo.m */; };
+		DF434DEC249B415F001ED5B2 /* NSException+CallStackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF434DE8249B415F001ED5B2 /* NSException+CallStackInfo.m */; };
 		DF4823E02367575B0037F441 /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */; };
 		DF4823E12367575B0037F441 /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */; };
 		DF763406232935B60024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */; };
@@ -417,6 +420,8 @@
 		DF27189C1820299500C7D7E0 /* TextViewAutoKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewAutoKeyboard.m; sourceTree = "<group>"; };
 		DF27189E1820299500C7D7E0 /* ViewAutoKeyboardColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAutoKeyboardColor.h; sourceTree = "<group>"; };
 		DF27189F1820299500C7D7E0 /* ViewAutoKeyboardColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAutoKeyboardColor.m; sourceTree = "<group>"; };
+		DF434DE7249B415F001ED5B2 /* NSException+CallStackInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSException+CallStackInfo.h"; sourceTree = "<group>"; };
+		DF434DE8249B415F001ED5B2 /* NSException+CallStackInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSException+CallStackInfo.m"; sourceTree = "<group>"; };
 		DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringBuilder.swift; sourceTree = "<group>"; };
 		DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPointSign+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -835,6 +840,7 @@
 				DF2718601820299500C7D7E0 /* NSDate */,
 				6AC536F719A285F200FC53BA /* NSData */,
 				DF17B84819F81EA0003EBBCF /* NSError */,
+				DF434DE6249B4139001ED5B2 /* NSException */,
 				DF17EF641854B08E0064E3C0 /* NSManagedObject */,
 				6A1B991518F327160056F52C /* NSManagedObjectContext */,
 				DF1996D519B4B1DF00FEE940 /* NSMutableArray */,
@@ -1051,6 +1057,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		DF434DE6249B4139001ED5B2 /* NSException */ = {
+			isa = PBXGroup;
+			children = (
+				DF434DE7249B415F001ED5B2 /* NSException+CallStackInfo.h */,
+				DF434DE8249B415F001ED5B2 /* NSException+CallStackInfo.m */,
+			);
+			path = NSException;
+			sourceTree = "<group>";
+		};
 		DF4823DE2367573B0037F441 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,6 +1182,7 @@
 				DFF64524207FB1FB00FA38A9 /* Swift-Bridging-Header.h in Headers */,
 				DFF644CA207FAECF00FA38A9 /* UIButton+Shortcuts.h in Headers */,
 				DFF644E8207FAECF00FA38A9 /* UIViewController+AddChild.h in Headers */,
+				DF434DE9249B415F001ED5B2 /* NSException+CallStackInfo.h in Headers */,
 				DFF644B5207FAECF00FA38A9 /* NSObject+Shortcuts.h in Headers */,
 				DFF644C2207FAECF00FA38A9 /* NSURLSession+Additions.h in Headers */,
 				DFF644E2207FAECF00FA38A9 /* UIView+Positioning.h in Headers */,
@@ -1376,6 +1392,7 @@
 				6A593AB519D5BDF9001BF583 /* UIViewController+Shortcuts.m in Sources */,
 				6A544F5318ED97D400B466EB /* UIStoryboard+Shortcuts.m in Sources */,
 				DF2718A61820299500C7D7E0 /* UIApplication+EasyAccess.m in Sources */,
+				DF434DEA249B415F001ED5B2 /* NSException+CallStackInfo.m in Sources */,
 				DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */,
 				DF2718A91820299500C7D7E0 /* UIImage+Alpha.m in Sources */,
 				6A7FDD1F18EC7B7000F04632 /* UIViewController+AddChild.m in Sources */,
@@ -1551,6 +1568,7 @@
 				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
 				DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */,
 				DFB3A9032087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
+				DF434DEC249B415F001ED5B2 /* NSException+CallStackInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
