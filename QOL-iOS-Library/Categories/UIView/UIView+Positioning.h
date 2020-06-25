@@ -38,4 +38,7 @@
 - (void)setRightAnchored:(CGFloat)value;
 - (void)setBottomAnchored:(CGFloat)value;
 
+- (void)fillParent;
+- (void)fillParent:(UIEdgeInsets)insets;
+
 @end

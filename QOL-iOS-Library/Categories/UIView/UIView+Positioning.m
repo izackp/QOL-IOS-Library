@@ -154,6 +154,21 @@
     self.frame = CGRectMake(self.x, self.y + diff, self.width, self.height);
 }
 
+- (void)fillParent {
+    if (self.superview == nil) { return; }
+    self.frame = CGRectMake(0, 0, self.superview.width, self.superview.height);
+}
+
+- (void)fillParent:(UIEdgeInsets)insets {
+    if (self.superview == nil) { return; }
+    
+    CGFloat xx = 0 + insets.left;
+    CGFloat yy = 0 + insets.top;
+    CGFloat ww = self.superview.width - xx - insets.right;
+    CGFloat hh = self.superview.height - yy - insets.bottom;
+    self.frame = CGRectMake(xx, yy, ww, hh);
+}
+
 - (CGPoint)positionInWindow {
     UIWindow* window = UIApplication.sharedApplication.delegate.window;
     CGPoint windowPoint = [self.superview convertPoint:self.frame.origin toView:window];
