@@ -78,6 +78,31 @@ extension UIViewController {
         for eachAction in actions {
             alertController.addAction(eachAction)
         }
+        
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            if let popoverController = alertController.popoverPresentationController {
+                popoverController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+                popoverController.sourceView = self.view
+                popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+            }
+        }
+        self.present(alertController, animated: true, completion: nil)
+        return alertController
+    }
+    
+    public func showActionSheetStyled(_ actions:[UIAlertAction], sourceView:UIView, permittedArrowDirections:UIPopoverArrowDirection) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        for eachAction in actions {
+            alertController.addAction(eachAction)
+        }
+        
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            if let popoverController = alertController.popoverPresentationController {
+                popoverController.sourceView = sourceView
+                popoverController.sourceRect = sourceView.bounds
+                popoverController.permittedArrowDirections = permittedArrowDirections
+            }
+        }
         self.present(alertController, animated: true, completion: nil)
         return alertController
     }
