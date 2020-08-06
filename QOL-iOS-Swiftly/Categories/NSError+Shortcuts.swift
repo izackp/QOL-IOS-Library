@@ -18,9 +18,9 @@ public extension NSError {
     func customerDesc() -> String {
         switch code {
         case NSFileWriteUnknownError:
-            return "Oh no! We are unable to save data to this device. (Unknown Error)"
+            return NSLocalizedString("Oh no! We are unable to save data to this device. (Unknown Error)", comment: "")
         case NSFileWriteOutOfSpaceError:
-            return "Oh no! You may be running out of storage space on this device.  Please free up some space!"
+            return NSLocalizedString("Oh no! You may be running out of storage space on this device.  Please free up some space!", comment: "")
         case NSFileWriteVolumeReadOnlyError: fallthrough
         case NSFileWriteNoPermissionError: fallthrough
         case NSFileWriteInvalidFileNameError: fallthrough

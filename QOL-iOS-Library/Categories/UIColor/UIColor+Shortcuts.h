@@ -22,9 +22,6 @@
 /*! Produces a color using red, green, and blue values that range from 0 to 255, and Alpha ranges from 0 to 1 */
 + (nonnull UIColor*)colorFromIntRed:(int)red green:(int)green blue:(int)blue alpha:(int)alpha;
 
-/*! Produces a color using red, green, and blue values that range from 0 to 255, and Alpha ranges from 0 to 1 */
-+ (nonnull UIColor*)colorFromIntArray:(NSArray*)bytes;
-
 /*! Produces a color using a hexadecimal rgb value 0xFFAA01 */
 + (nonnull UIColor*)colorFromRGBHexValue:(NSInteger)hexValue;
 

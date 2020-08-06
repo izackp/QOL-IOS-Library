@@ -77,6 +77,10 @@
 		DF4823E12367575B0037F441 /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */; };
 		DF763406232935B60024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */; };
 		DF763407232935BC0024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */; };
+		DF7816302446542300558380 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF78162F2446540500558380 /* Localizable.strings */; };
+		DF78163824465AF800558380 /* NSBundle+Localizable.h in Headers */ = {isa = PBXBuildFile; fileRef = DF78163624465AF800558380 /* NSBundle+Localizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF78163924465AF800558380 /* NSBundle+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78163724465AF800558380 /* NSBundle+Localizable.m */; };
+		DF78163A24465AF800558380 /* NSBundle+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78163724465AF800558380 /* NSBundle+Localizable.m */; };
 		DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
 		DF9135DD20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
 		DF96CACB22020EDE003FBDF6 /* Set+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */; };
@@ -424,6 +428,9 @@
 		DF434DE8249B415F001ED5B2 /* NSException+CallStackInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSException+CallStackInfo.m"; sourceTree = "<group>"; };
 		DF4823DF2367575B0037F441 /* AttributedStringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringBuilder.swift; sourceTree = "<group>"; };
 		DF763405232935B60024BA24 /* FloatingPointSign+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPointSign+Shortcuts.swift"; sourceTree = "<group>"; };
+		DF78162F2446540500558380 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DF78163624465AF800558380 /* NSBundle+Localizable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Localizable.h"; sourceTree = "<group>"; };
+		DF78163724465AF800558380 /* NSBundle+Localizable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Localizable.m"; sourceTree = "<group>"; };
 		DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF9DD702208F779A0016969C /* Float+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -811,6 +818,7 @@
 			isa = PBXGroup;
 			children = (
 				DF27183D1820293E00C7D7E0 /* QOL-iOS-Library-Prefix.pch */,
+				DF78162F2446540500558380 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -837,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				6A1B990A18F315440056F52C /* NSArray */,
+				DF78163524465ADB00558380 /* NSBundle */,
 				DF2718601820299500C7D7E0 /* NSDate */,
 				6AC536F719A285F200FC53BA /* NSData */,
 				DF17B84819F81EA0003EBBCF /* NSError */,
@@ -1074,6 +1083,15 @@
 			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
+		DF78163524465ADB00558380 /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				DF78163624465AF800558380 /* NSBundle+Localizable.h */,
+				DF78163724465AF800558380 /* NSBundle+Localizable.m */,
+			);
+			path = NSBundle;
+			sourceTree = "<group>";
+		};
 		DFB3A8D62086652B001D3118 /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1209,6 +1227,7 @@
 				DFF64502207FAF0400FA38A9 /* ProgressHUDWrapper.h in Headers */,
 				DFF644F2207FAEE100FA38A9 /* UIImage+RoundedCorner.h in Headers */,
 				DFF644BB207FAECF00FA38A9 /* NSString+Formatting.h in Headers */,
+				DF78163824465AF800558380 /* NSBundle+Localizable.h in Headers */,
 				DFF644D0207FAECF00FA38A9 /* UIFont+Debug.h in Headers */,
 				DFF64500207FAF0400FA38A9 /* _SVProgressHUD.h in Headers */,
 				DFF644EC207FAEE100FA38A9 /* UIImage+Alpha.h in Headers */,
@@ -1356,6 +1375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF7816302446542300558380 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1413,6 +1433,7 @@
 				DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */,
 				6A080D4119C0CB98009BBBFF /* _SVProgressHUD.m in Sources */,
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
+				DF78163924465AF800558380 /* NSBundle+Localizable.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
 				DF2718B01820299500C7D7E0 /* UIView+FindFirstResponder.m in Sources */,
 				DF17B84F19F8501A003EBBCF /* TransitionSimpleSlide.m in Sources */,
@@ -1566,6 +1587,7 @@
 				DFFA9DF7226781B000B55B67 /* UIEdgeInsets+Shortcuts.swift in Sources */,
 				DFF644D5207FAECF00FA38A9 /* UIImageView+Shortcuts.m in Sources */,
 				DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */,
+				DF78163A24465AF800558380 /* NSBundle+Localizable.m in Sources */,
 				DFF6449C207FAE7C00FA38A9 /* UIImage+Orientation.swift in Sources */,
 				DFB3A9032087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
 				DF434DEC249B415F001ED5B2 /* NSException+CallStackInfo.m in Sources */,

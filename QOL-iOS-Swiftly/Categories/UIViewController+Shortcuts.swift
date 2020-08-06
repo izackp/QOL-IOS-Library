@@ -67,7 +67,7 @@ extension UIViewController {
     
     public func showMessage(_ message:String, title:String?, _ handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: handler)
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: handler)
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
         return alertController

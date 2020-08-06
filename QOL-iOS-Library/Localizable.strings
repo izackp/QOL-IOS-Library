@@ -1,0 +1,19 @@
+/* 
+  File.strings
+  QOL-iOS-Library
+
+  Created by Isaac Paul on 4/14/20.
+  Copyright © 2020 Isaac Paul. All rights reserved.
+*/
+
+"Error connecting to the server: " = "Error connecting to the server: ";
+"Bad URL." = "Bad URL.";
+"Connection timed out." = "Connection timed out.";
+"Unsupported URL." = "Unsupported URL.";
+"Could not find host." = "Could not find host.";
+"Could not connect to host." = "Could not connect to host.";
+"Network connection lost." = "Network connection lost.";
+"DNS lookup failed." = "DNS lookup failed.";
+"Not connected to a network." = "Not connected to a network.";
+"Redirect to non existent location." = "Redirect to non existent location.";
+"Bad server response." = "Bad server response.";
