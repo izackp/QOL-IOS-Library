@@ -97,6 +97,18 @@ extension Float {
         
         return Int(rounded)
     }
+    
+    public func toCurrency(currencyCode:String = "USD") -> String {
+        var localeComponents: [String: String] = [NSLocale.Key.currencyCode.rawValue: currencyCode]
+        localeComponents[NSLocale.Key.languageCode.rawValue] = NSLocale.preferredLanguages.first
+        let localeID = NSLocale.localeIdentifier(fromComponents: localeComponents)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale(identifier: localeID)
+        numberFormatter.numberStyle = .currency
+        numberFormatter.usesGroupingSeparator = true
+        
+        return numberFormatter.string(from: NSNumber(value: self)) ?? ""
+    }
 }
 
 extension CGFloat {
