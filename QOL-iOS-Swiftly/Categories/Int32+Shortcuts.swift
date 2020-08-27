@@ -23,8 +23,8 @@ public extension Int {
         return self < other
     }
     
-    func toCurrency(currencyCode:String = "USD") -> String {
-        return Float(self).toCurrency(currencyCode: currencyCode)
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
 
@@ -43,8 +43,8 @@ public extension Int8 {
         return self < other
     }
     
-    func toCurrency(currencyCode:String = "USD") -> String {
-        return Float(self).toCurrency(currencyCode: currencyCode)
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
 
@@ -63,8 +63,8 @@ public extension Int16 {
         return self < other
     }
     
-    func toCurrency(currencyCode:String = "USD") -> String {
-        return Float(self).toCurrency(currencyCode: currencyCode)
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
 
@@ -83,8 +83,8 @@ public extension Int32 {
         return self < other
     }
     
-    func toCurrency(currencyCode:String = "USD") -> String {
-        return Float(self).toCurrency(currencyCode: currencyCode)
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
 
@@ -103,7 +103,7 @@ public extension Int64 {
         return self < other
     }
     
-    func toCurrency(currencyCode:String = "USD") -> String {
-        return Float(self).toCurrency(currencyCode: currencyCode)
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
