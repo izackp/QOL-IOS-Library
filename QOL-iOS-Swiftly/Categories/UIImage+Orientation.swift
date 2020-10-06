@@ -107,4 +107,30 @@ public extension UIImage {
         
         return newImage
     }
+    
+    func compositeBackground(_ imgBg:UIImage?) -> UIImage {
+        guard let background = imgBg else { return self }
+        let size = self.size
+        var scaledImageRect = CGRect.zero
+          
+        let aspectWidth = size.width / background.size.width
+        let aspectHeight = size.height / background.size.height
+        let aspectRatio = aspectHeight > aspectWidth ? aspectHeight : aspectWidth
+          
+        scaledImageRect.size.width = background.size.width * aspectRatio
+        scaledImageRect.size.height = background.size.height * aspectRatio
+        scaledImageRect.origin.x = (size.width - scaledImageRect.size.width) / 2.0;
+        scaledImageRect.origin.y = (size.height - scaledImageRect.size.height) / 2.0;
+        
+        UIGraphicsBeginImageContext(size)
+
+        let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        background.draw(in: scaledImageRect)
+        self.draw(in: areaSize, blendMode: .normal, alpha: 1)
+
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result ?? self
+    }
 }
