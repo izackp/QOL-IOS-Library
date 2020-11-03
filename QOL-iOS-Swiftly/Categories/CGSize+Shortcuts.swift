@@ -66,6 +66,13 @@ public extension CGSize {
         return CGSize(width: ww, height: hh)
     }
     
+    func toPx() -> CGSize {
+        let scale = UIScreen.main.scale
+        let ww = width * scale
+        let hh = height * scale
+        return CGSize(width: ww, height: hh)
+    }
+    
     static func + (left : CGSize , right : CGSize) -> CGSize {
         return CGSize(width: left.width + right.width, height: left.height + right.height)
     }

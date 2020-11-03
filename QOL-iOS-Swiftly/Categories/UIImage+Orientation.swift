@@ -108,21 +108,31 @@ public extension UIImage {
         return newImage
     }
     
+    func sizeInDp() -> CGSize {
+        let screenScale = UIScreen.main.scale
+        if (scale == screenScale) {
+            return size
+        }
+        let mul = screenScale / scale
+        return CGSize.init(width: size.width * mul, height: size.height * mul)
+    }
+    
     func compositeBackground(_ imgBg:UIImage?) -> UIImage {
         guard let background = imgBg else { return self }
-        let size = self.size
+        let size = self.sizeInDp()
+        let bgSize = background.sizeInDp()
         var scaledImageRect = CGRect.zero
           
-        let aspectWidth = size.width / background.size.width
-        let aspectHeight = size.height / background.size.height
+        let aspectWidth = size.width / bgSize.width
+        let aspectHeight = size.height / bgSize.height
         let aspectRatio = aspectHeight > aspectWidth ? aspectHeight : aspectWidth
           
-        scaledImageRect.size.width = background.size.width * aspectRatio
-        scaledImageRect.size.height = background.size.height * aspectRatio
+        scaledImageRect.size.width = bgSize.width * aspectRatio
+        scaledImageRect.size.height = bgSize.height * aspectRatio
         scaledImageRect.origin.x = (size.width - scaledImageRect.size.width) / 2.0;
         scaledImageRect.origin.y = (size.height - scaledImageRect.size.height) / 2.0;
         
-        UIGraphicsBeginImageContext(size)
+        UIGraphicsBeginImageContextWithOptions(size, true, UIScreen.main.scale)
 
         let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
