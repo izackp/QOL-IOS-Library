@@ -27,6 +27,39 @@ public extension UIView {
         }
     }
     
+    func firstView(_ include:((_ view:UIView)->Bool)) -> UIView? {
+        if (include(self)) {
+            return self
+        }
+        var subItems = self.subviews
+        while (subItems.count > 0) {
+            for eachSubView in subItems {
+                if (include(eachSubView)) {
+                    return eachSubView
+                }
+            }
+            subItems = UIView.deeper(subItems)
+        }
+        return nil
+    }
+    
+    static func deeper(_ list:[UIView]) -> [UIView] {
+        return list.flatMap({
+            return $0.subviews
+        })
+    }
+    
+    func findAllViews(_ include:((_ view:UIView)->Bool)) -> [UIView] {
+        var list:[UIView] = []
+        for eachView:UIView in subviews {
+            list += eachView.findAllViews(include)
+        }
+        if (include(self)) {
+            list.append(self)
+        }
+        return list
+    }
+    
     func findAllViews<T:UIView>(withType:T.Type) -> [T] {
         var list:[T] = []
         for eachView:UIView in subviews {
