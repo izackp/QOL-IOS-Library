@@ -68,6 +68,7 @@ public extension UIImage {
         return newImage!
     }
     
+    //Note: We should crop on 1x scale.. because cg image doesnt use scaling
     func simpleCrop(topLeft:CGPoint, bottomRight:CGPoint, rotation:Int) -> UIImage {
         var imgWidth = size.width
         var imgHeight = size.height
@@ -87,7 +88,9 @@ public extension UIImage {
         }
         var rect = CGRect.init(x: round(x), y: round(y), width: round(width), height: round(height))
         rect = rect.capValueAtBounds(bounds: CGRect.init(x: 0, y: 0, width: size.width, height: size.height))
-        let rotatedImage = imageRotatedByDegrees(CGFloat(rotation), flip:false)
+        let rotatedImage = rotation == 0 ? self : imageRotatedByDegrees(CGFloat(rotation), flip:false)//Note: Rotating fixed a bug... so we dont have to do the next line
+        
+        rect = rect * self.scale
         
         //NOTE: When width is not a whole number then the crop gets rounded up 1 pixel
         let imageRef:CGImage = rotatedImage.cgImage!.cropping(to: rect)!

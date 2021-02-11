@@ -198,4 +198,12 @@ public extension CGRect {
     static func + ( left : CGRect , right : CGRect) -> CGRect {
         return CGRect(x: left.x + right.x, y: left.y + right.y, width: left.width + right.width, height: left.height + right.height)
     }
+    
+    static func * ( left : CGRect , right : CGFloat) -> CGRect {
+        return CGRect(x: left.x * right, y: left.y * right, width: left.width * right, height: left.height * right)
+    }
+    
+    static func / ( left : CGRect , right : CGFloat) -> CGRect {
+        return CGRect(x: left.x / right, y: left.y / right, width: left.width / right, height: left.height / right)
+    }
 }
