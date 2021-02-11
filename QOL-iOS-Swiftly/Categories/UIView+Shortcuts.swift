@@ -82,6 +82,17 @@ public extension UIView {
         return nil
     }
     
+    func findParentView(_ check:(UIView)->(Bool)) -> UIView? {
+        var superview:UIView? = self.superview;
+        while let parent = superview {
+            if (check(parent)) {
+                return parent
+            }
+            superview = superview?.superview;
+        }
+        return nil
+    }
+    
     func topViewController() -> UIViewController? { //TODO: Move
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
