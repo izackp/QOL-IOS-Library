@@ -21,9 +21,37 @@
 
 #import "ProgressHUD.h"
 
+@implementation ProgressHUDScheme
+
+@synthesize font, clrStatus, clrSpinner, clrBackground, imgSuccess, imgError;
+
++ (ProgressHUDScheme*)light {
+    ProgressHUDScheme* scheme = [ProgressHUDScheme new];
+    scheme.font = [UIFont boldSystemFontOfSize:16];
+    scheme.clrStatus = [UIColor blackColor];
+    scheme.clrSpinner = [UIColor blackColor];
+    scheme.clrBackground = [UIColor colorWithWhite:0 alpha:0.1];
+    scheme.imgSuccess = @"ProgressHUD.bundle/success-color.png";
+    scheme.imgError = @"ProgressHUD.bundle/error-color.png";
+    return scheme;
+}
+
++ (ProgressHUDScheme*)dark {
+    ProgressHUDScheme* scheme = [ProgressHUDScheme new];
+    scheme.font = [UIFont boldSystemFontOfSize:16];
+    scheme.clrStatus = [UIColor whiteColor];
+    scheme.clrSpinner = [UIColor whiteColor];
+    scheme.clrBackground = [UIColor colorWithWhite:1 alpha:0.1];
+    scheme.imgSuccess = @"ProgressHUD.bundle/success-color.png";
+    scheme.imgError = @"ProgressHUD.bundle/error-color.png";
+    return scheme;
+}
+
+@end
+
 @implementation ProgressHUD
 
-@synthesize interaction, window, background, hud, spinner, image, label;
+@synthesize interaction, window, background, hud, spinner, image, label, scheme;
 
 + (ProgressHUD *)shared
 {
@@ -55,25 +83,25 @@
 + (void)showSuccess:(NSString *)status
 {
 	[self shared].interaction = YES;
-	[[self shared] hudMake:status imgage:HUD_IMAGE_SUCCESS spin:NO hide:YES];
+	[[self shared] hudMake:status imgage:[[self shared] imgSuccess] spin:NO hide:YES];
 }
 
 + (void)showSuccess:(NSString *)status Interaction:(BOOL)Interaction
 {
 	[self shared].interaction = Interaction;
-	[[self shared] hudMake:status imgage:HUD_IMAGE_SUCCESS spin:NO hide:YES];
+	[[self shared] hudMake:status imgage:[[self shared] imgSuccess] spin:NO hide:YES];
 }
 
 + (void)showError:(NSString *)status
 {
 	[self shared].interaction = YES;
-	[[self shared] hudMake:status imgage:HUD_IMAGE_ERROR spin:NO hide:YES];
+	[[self shared] hudMake:status imgage:[[self shared] imgError] spin:NO hide:YES];
 }
 
 + (void)showError:(NSString *)status Interaction:(BOOL)Interaction
 {
 	[self shared].interaction = Interaction;
-	[[self shared] hudMake:status imgage:HUD_IMAGE_ERROR spin:NO hide:YES];
+	[[self shared] hudMake:status imgage:[[self shared] imgError] spin:NO hide:YES];
 }
 
 - (id)init
@@ -89,8 +117,17 @@
 	background = nil; hud = nil; spinner = nil; image = nil; label = nil;
 	
 	self.alpha = 0;
+    scheme = [ProgressHUDScheme light];
 	
 	return self;
+}
+
+- (UIImage*)imgSuccess {
+    return [UIImage imageNamed:scheme.imgSuccess];
+}
+
+- (UIImage*)imgError {
+    return [UIImage imageNamed:scheme.imgError];
 }
 
 - (void)hudMake:(NSString *)status imgage:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide
@@ -120,7 +157,7 @@
 	{
 		hud = [[UIToolbar alloc] initWithFrame:CGRectZero];
 		hud.translucent = YES;
-		hud.backgroundColor = HUD_BACKGROUND_COLOR;
+		hud.backgroundColor = scheme.clrBackground;
 		hud.layer.cornerRadius = 10;
 		hud.layer.masksToBounds = YES;
 		
@@ -143,7 +180,7 @@
 	if (spinner == nil)
 	{
 		spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		spinner.color = HUD_SPINNER_COLOR;
+		spinner.color = scheme.clrSpinner;
 		spinner.hidesWhenStopped = YES;
 	}
 	if (spinner.superview == nil) [hud addSubview:spinner];
@@ -157,8 +194,8 @@
 	if (label == nil)
 	{
 		label = [[UILabel alloc] initWithFrame:CGRectZero];
-		label.font = HUD_STATUS_FONT;
-		label.textColor = HUD_STATUS_COLOR;
+		label.font = scheme.font;
+		label.textColor = scheme.clrStatus;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = NSTextAlignmentCenter;
 		label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
@@ -255,8 +292,8 @@ static CGFloat sRotation = 0.0f;
 		NSUInteger options = UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseOut;
 
 		[UIView animateWithDuration:0.15 delay:0 options:options animations:^{
-			hud.transform = CGAffineTransformScale(hud.transform, 1/1.4, 1/1.4);
-			hud.alpha = 1;
+            self->hud.transform = CGAffineTransformScale(self->hud.transform, 1/1.4, 1/1.4);
+            self->hud.alpha = 1;
 		}
 		completion:^(BOOL finished){ }];
 	}
@@ -269,8 +306,8 @@ static CGFloat sRotation = 0.0f;
 		NSUInteger options = UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseIn;
 
 		[UIView animateWithDuration:0.15 delay:0 options:options animations:^{
-			hud.transform = CGAffineTransformScale(hud.transform, 0.7, 0.7);
-			hud.alpha = 0;
+            self->hud.transform = CGAffineTransformScale(self->hud.transform, 0.7, 0.7);
+            self->hud.alpha = 0;
 		}
 		completion:^(BOOL finished)
 		{

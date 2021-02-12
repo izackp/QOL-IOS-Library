@@ -18,6 +18,7 @@
 - (void)removeAllSubviews;
 
 - (UIImage*)generateImage;
+- (UIImage*)generateImage:(BOOL)opaque;
 
 - (void)swapWithView:(UIView*)view;
 

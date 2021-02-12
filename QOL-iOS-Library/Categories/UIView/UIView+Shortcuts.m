@@ -40,7 +40,11 @@
 }
 
 - (UIImage*)generateImage {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0.0f);
+    return [self generateImage:true];
+}
+
+- (UIImage*)generateImage:(BOOL)opaque {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, opaque, 0.0f);
     
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

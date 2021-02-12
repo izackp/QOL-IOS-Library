@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6A080D3C19C0CB98009BBBFF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
 		6A080D3D19C0CB98009BBBFF /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
-		6A080D4119C0CB98009BBBFF /* _SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */; };
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
 		6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
 		6A1A80BA19993B18002F6F01 /* DispatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A80B919993B18002F6F01 /* DispatchHelper.m */; };
@@ -235,8 +234,6 @@
 		DFF644FD207FAF0400FA38A9 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
 		DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1A19C0CB98009BBBFF /* ProgressHUD.h */; };
 		DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
-		DFF64500207FAF0400FA38A9 /* _SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */; };
-		DFF64501207FAF0400FA38A9 /* _SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */; };
 		DFF64502207FAF0400FA38A9 /* ProgressHUDWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
 		DFF64504207FAF0400FA38A9 /* TableViewCellCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17EF741854B2610064E3C0 /* TableViewCellCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -311,9 +308,6 @@
 		6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUDWrapper.h; sourceTree = "<group>"; };
 		6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUDWrapper.m; sourceTree = "<group>"; };
-		6A080D3519C0CB98009BBBFF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _SVProgressHUD.h; path = SVProgressHUD/_SVProgressHUD.h; sourceTree = "<group>"; };
-		6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _SVProgressHUD.m; path = SVProgressHUD/_SVProgressHUD.m; sourceTree = "<group>"; };
 		6A0BD6B718BB86FC00E45103 /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
 		6A0BD6B818BB86FC00E45103 /* StopWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopWatch.m; sourceTree = "<group>"; };
 		6A184D5219925B6D00F51CE5 /* InAppTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppTransactions.h; sourceTree = "<group>"; };
@@ -522,7 +516,6 @@
 			isa = PBXGroup;
 			children = (
 				6A080D1819C0CB98009BBBFF /* ProgressHUD */,
-				6A080D1E19C0CB98009BBBFF /* SVProgressHUD */,
 				6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */,
 				6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */,
 			);
@@ -537,16 +530,6 @@
 				6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */,
 			);
 			path = ProgressHUD;
-			sourceTree = "<group>";
-		};
-		6A080D1E19C0CB98009BBBFF /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				6A080D3519C0CB98009BBBFF /* SVProgressHUD.bundle */,
-				6A080D3619C0CB98009BBBFF /* _SVProgressHUD.h */,
-				6A080D3719C0CB98009BBBFF /* _SVProgressHUD.m */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		6A0BD6B618BB86B900E45103 /* StopWatch */ = {
@@ -1233,7 +1216,6 @@
 				DFF644BB207FAECF00FA38A9 /* NSString+Formatting.h in Headers */,
 				DF78163824465AF800558380 /* NSBundle+Localizable.h in Headers */,
 				DFF644D0207FAECF00FA38A9 /* UIFont+Debug.h in Headers */,
-				DFF64500207FAF0400FA38A9 /* _SVProgressHUD.h in Headers */,
 				DFF644EC207FAEE100FA38A9 /* UIImage+Alpha.h in Headers */,
 				DFF64518207FAF1A00FA38A9 /* ViewAvoidKeyboard.h in Headers */,
 				DFF644A9207FAECF00FA38A9 /* NSDate+Shortcuts.h in Headers */,
@@ -1435,7 +1417,6 @@
 				6A50C22818BCF75E003EC6E3 /* UIDevice+SystemVersion.m in Sources */,
 				6A080D3D19C0CB98009BBBFF /* ProgressHUDWrapper.m in Sources */,
 				DF1996D819B4B23200FEE940 /* NSMutableArray+Shortcuts.m in Sources */,
-				6A080D4119C0CB98009BBBFF /* _SVProgressHUD.m in Sources */,
 				6AA6432E18E35E1C0047927E /* UIScrollView+Shortcuts.m in Sources */,
 				DF78163924465AF800558380 /* NSBundle+Localizable.m in Sources */,
 				DF2718B51820299600C7D7E0 /* TextViewAutoKeyboard.m in Sources */,
@@ -1506,7 +1487,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF64501207FAF0400FA38A9 /* _SVProgressHUD.m in Sources */,
 				DFF64496207FAE7C00FA38A9 /* Sequence+Shortcuts.swift in Sources */,
 				DFF644DD207FAECF00FA38A9 /* UIScrollView+Shortcuts.m in Sources */,
 				DF763407232935BC0024BA24 /* FloatingPointSign+Shortcuts.swift in Sources */,
