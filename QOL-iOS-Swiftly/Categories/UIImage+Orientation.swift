@@ -125,10 +125,11 @@ public extension UIImage {
         scaledImageRect.origin.x = (size.width - scaledImageRect.size.width) / 2.0;
         scaledImageRect.origin.y = (size.height - scaledImageRect.size.height) / 2.0;
         
-        UIGraphicsBeginImageContext(size)
+        UIGraphicsBeginImageContextWithOptions(size, true, self.scale)
 
         let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
+        //print("Compositing \(background.size.width)x\(background.size.height) on to \(self.size.width)x\(self.size.height)")
         background.draw(in: scaledImageRect)
         self.draw(in: areaSize, blendMode: .normal, alpha: 1)
 
