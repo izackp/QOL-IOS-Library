@@ -56,6 +56,20 @@
 
 #import <UIKit/UIKit.h>
 
+@interface ProgressHUDScheme : NSObject
+
+@property (nonatomic, retain) UIFont* font;
+@property (nonatomic, retain) UIColor* clrStatus;
+@property (nonatomic, retain) UIColor* clrSpinner;
+@property (nonatomic, retain) UIColor* clrBackground;
+@property (nonatomic, retain) NSString* imgSuccess;
+@property (nonatomic, retain) NSString* imgError;
+
++ (ProgressHUDScheme*)light;
++ (ProgressHUDScheme*)dark;
+
+@end
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 @interface ProgressHUD : UIView
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -81,5 +95,6 @@
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (nonatomic, retain) UIImageView *image;
 @property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) ProgressHUDScheme *scheme;
 
 @end
