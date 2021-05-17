@@ -19,6 +19,13 @@ public extension String {
         return str?.count ?? 0 > 0
     }
     
+    func emptyAsNil() -> String? {
+        if self.count == 0 {
+            return nil
+        }
+        return self
+    }
+    
     static func empty(_ str:String?) -> Bool {
         return str?.count ?? 0 == 0
     }
