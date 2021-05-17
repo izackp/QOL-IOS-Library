@@ -21,4 +21,6 @@
 
 - (void)swapWithView:(UIView*)view;
 
+- (id)recursiveDescription;
+
 @end
