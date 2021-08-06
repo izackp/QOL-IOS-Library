@@ -22,6 +22,10 @@ public extension Int {
     func isAscending(_ other:Int) -> Bool {
         return self < other
     }
+    
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
+    }
 }
 
 public extension Int8 {
@@ -37,6 +41,10 @@ public extension Int8 {
     
     func isAscending(_ other:Int8) -> Bool {
         return self < other
+    }
+    
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }
 
@@ -54,6 +62,10 @@ public extension Int16 {
     func isAscending(_ other:Int16) -> Bool {
         return self < other
     }
+    
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
+    }
 }
 
 public extension Int32 {
@@ -70,6 +82,10 @@ public extension Int32 {
     func isAscending(_ other:Int32) -> Bool {
         return self < other
     }
+    
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
+    }
 }
 
 public extension Int64 {
@@ -85,5 +101,9 @@ public extension Int64 {
     
     func isAscending(_ other:Int64) -> Bool {
         return self < other
+    }
+    
+    func toCurrency(decimalDivider:Float = 100, currencyCode:String = "USD") -> String {
+        return (Float(self) / decimalDivider).toCurrency(currencyCode: currencyCode)
     }
 }

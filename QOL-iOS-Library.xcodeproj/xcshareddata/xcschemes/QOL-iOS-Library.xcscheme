@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-               BuildableName = "QOL_iOS_Framework.framework"
-               BlueprintName = "QOL-iOS-Framework"
+               BlueprintIdentifier = "DF2718351820293E00C7D7E0"
+               BuildableName = "libQOL-iOS-Library.a"
+               BlueprintName = "QOL-iOS-Library"
                ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DF2718451820293E00C7D7E0"
+               BuildableName = "QOL-iOS-LibraryTests.xctest"
+               BlueprintName = "QOL-iOS-LibraryTests"
+               ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -40,15 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-            BuildableName = "QOL_iOS_Framework.framework"
-            BlueprintName = "QOL-iOS-Framework"
-            ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-            BuildableName = "QOL_iOS_Framework.framework"
-            BlueprintName = "QOL-iOS-Framework"
+            BlueprintIdentifier = "DF2718351820293E00C7D7E0"
+            BuildableName = "libQOL-iOS-Library.a"
+            BlueprintName = "QOL-iOS-Library"
             ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

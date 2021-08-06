@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-               BuildableName = "QOL_iOS_Framework.framework"
-               BlueprintName = "QOL-iOS-Framework"
+               BlueprintIdentifier = "DFCB579F207E4D7F0084C5B2"
+               BuildableName = "libQOL-iOS-Swiftly.a"
+               BlueprintName = "QOL-iOS-Swiftly"
                ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-            BuildableName = "QOL_iOS_Framework.framework"
-            BlueprintName = "QOL-iOS-Framework"
-            ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF64489207FAE1200FA38A9"
-            BuildableName = "QOL_iOS_Framework.framework"
-            BlueprintName = "QOL-iOS-Framework"
+            BlueprintIdentifier = "DFCB579F207E4D7F0084C5B2"
+            BuildableName = "libQOL-iOS-Swiftly.a"
+            BlueprintName = "QOL-iOS-Swiftly"
             ReferencedContainer = "container:QOL-iOS-Library.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
