@@ -100,6 +100,8 @@
 		DFB6134B1AE6D91F007B0401 /* ViewAvoidKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */; };
 		DFB6155A1AE7FE86007B0401 /* NSURLSession+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */; };
 		DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2718841820299500C7D7E0 /* UIImagePickerController+EasyAccess.m */; };
+		DFB8689B26D5880300F5AE8E /* Collection+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8689A26D5880300F5AE8E /* Collection+Shortcuts.swift */; };
+		DFB8689C26D5880B00F5AE8E /* Collection+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8689A26D5880300F5AE8E /* Collection+Shortcuts.swift */; };
 		DFCB57A3207E4D800084C5B2 /* QOL_iOS_Swiftly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */; };
 		DFCB57BC207E4F210084C5B2 /* UITableViewCell+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */; };
 		DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */; };
@@ -443,6 +445,7 @@
 		DFB6134A1AE6D91F007B0401 /* ViewAvoidKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAvoidKeyboard.m; sourceTree = "<group>"; };
 		DFB615581AE7FE86007B0401 /* NSURLSession+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+Additions.h"; sourceTree = "<group>"; };
 		DFB615591AE7FE86007B0401 /* NSURLSession+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+Additions.m"; sourceTree = "<group>"; };
+		DFB8689A26D5880300F5AE8E /* Collection+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFCB57A0207E4D7F0084C5B2 /* libQOL-iOS-Swiftly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQOL-iOS-Swiftly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCB57A2207E4D800084C5B2 /* QOL_iOS_Swiftly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QOL_iOS_Swiftly.swift; sourceTree = "<group>"; };
 		DFCB57AE207E4F200084C5B2 /* UITableViewCell+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -1124,6 +1127,7 @@
 				DFCB57AF207E4F200084C5B2 /* CGPoint+Shortcuts.swift */,
 				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
 				DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */,
+				DFB8689A26D5880300F5AE8E /* Collection+Shortcuts.swift */,
 				DF7ADA6B250FF05700D7AAD9 /* Data+Cryptography.swift */,
 				DF9DD702208F779A0016969C /* Float+Shortcuts.swift */,
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
@@ -1456,6 +1460,7 @@
 				DFCB57C5207E4F210084C5B2 /* UICollectionView+Shortcuts.swift in Sources */,
 				DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */,
 				DFCB57BD207E4F210084C5B2 /* CGPoint+Shortcuts.swift in Sources */,
+				DFB8689B26D5880300F5AE8E /* Collection+Shortcuts.swift in Sources */,
 				DF4823E02367575B0037F441 /* AttributedStringBuilder.swift in Sources */,
 				DFCB57CF207E4F410084C5B2 /* UIViewController+Shortcuts.swift in Sources */,
 				DFB3A9022087D58E001D3118 /* Int32+Shortcuts.swift in Sources */,
@@ -1504,6 +1509,7 @@
 				DFB3A8D52086641D001D3118 /* UITextView+Shortcuts.swift in Sources */,
 				DFF644E1207FAECF00FA38A9 /* UIView+FindFirstResponder.m in Sources */,
 				DF9DD704208F779A0016969C /* Float+Shortcuts.swift in Sources */,
+				DFB8689C26D5880B00F5AE8E /* Collection+Shortcuts.swift in Sources */,
 				DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */,
 				DFF64507207FAF0400FA38A9 /* StopWatch.m in Sources */,
 				DFF644AC207FAECF00FA38A9 /* NSData+Cryptography.m in Sources */,
