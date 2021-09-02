@@ -35,7 +35,6 @@
         case kCFURLErrorDNSLookupFailed:
         case kCFURLErrorNotConnectedToInternet:
         case kCFURLErrorRedirectToNonExistentLocation:
-        case kCFURLErrorBadServerResponse:
         case kCFURLErrorSecureConnectionFailed:
         case kCFNetServiceErrorTimeout:
         case kCFNetServiceErrorDNSServiceFailure:
