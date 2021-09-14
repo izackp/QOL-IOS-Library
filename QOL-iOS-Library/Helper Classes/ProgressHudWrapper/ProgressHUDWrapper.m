@@ -8,7 +8,6 @@
 
 #import "ProgressHUDWrapper.h"
 #import "ProgressHUD.h"
-#import "_SVProgressHUD.h"
 #import "UIDevice+SystemVersion.h"
 
 @implementation ProgressHUDWrapper
@@ -27,53 +26,40 @@
 + (void)setUserInteractionOnNormalWindow:(bool)enabled {
     UIWindow* normWindow = [self findNormalWindow];
     [normWindow setUserInteractionEnabled:enabled];
-
 }
 
 static NSString* sLastText = nil;
 
 + (void)show:(NSString*)text {
+    [self updateScheme];
     [self show:text allowInteraction:false];
 }
 
 + (void)show:(NSString*)text allowInteraction:(bool)allow {
     if ([text isEqualToString:sLastText])
         return;
+    [self updateScheme];
     sLastText = text;
     
     [self setUserInteractionOnNormalWindow:allow];
-    
-    if ([[UIDevice currentDevice] isIOS6OrLower])
-        [_SVProgressHUD showWithStatus:text];
-    else
-        [ProgressHUD show:text];
+    [ProgressHUD show:text];
 }
 
 + (void)showErrorBriefly:(NSString*)text {
+    [self updateScheme];
     [self reset];
-    
-    if ([[UIDevice currentDevice] isIOS6OrLower])
-        [_SVProgressHUD showErrorWithStatus:text];
-    else
-        [ProgressHUD showError:text];
+    [ProgressHUD showError:text];
 }
 
 + (void)showSuccessBriefly:(NSString*)text {
+    [self updateScheme];
     [self reset];
-    
-    if ([[UIDevice currentDevice] isIOS6OrLower])
-        [_SVProgressHUD showSuccessWithStatus:text];
-    else
-        [ProgressHUD showSuccess:text];
+    [ProgressHUD showSuccess:text];
 }
 
 + (void)dismiss {
     [self reset];
-    
-    if ([[UIDevice currentDevice] isIOS6OrLower])
-        [_SVProgressHUD dismiss];
-    else
-        [ProgressHUD dismiss];
+    [ProgressHUD dismiss];
 }
 
 + (void)reset {
@@ -81,4 +67,23 @@ static NSString* sLastText = nil;
     [self setUserInteractionOnNormalWindow:true];
 }
 
++ (void)updateScheme {
+    if (@available(iOS 12.0, *)) {
+        UIWindow* normWindow = [self findNormalWindow];
+        UIUserInterfaceStyle style = normWindow.rootViewController.traitCollection.userInterfaceStyle;
+        ProgressHUD* hud = [ProgressHUD shared];
+        switch (style) {
+        case UIUserInterfaceStyleLight:
+            [hud setScheme:[ProgressHUDScheme light]];
+                break;
+        case UIUserInterfaceStyleDark:
+            [hud setScheme:[ProgressHUDScheme dark]];
+                break;
+        default:
+            [hud setScheme:[ProgressHUDScheme light]];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+}
 @end
