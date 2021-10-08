@@ -18,6 +18,13 @@ extension UIViewController {
         navigationBar.isTranslucent = false
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
+        if #available(iOS 13.0, *) {
+            let barAppearance = UINavigationBarAppearance()
+            barAppearance.backgroundColor = UIColor.white
+            barAppearance.shadowColor = UIColor.clear
+            navigationItem.standardAppearance = barAppearance
+            navigationItem.scrollEdgeAppearance = barAppearance
+        }
     }
     
     public func customBarButtonWithText(target:Any?, text:String, action:Selector) -> UIButton {
