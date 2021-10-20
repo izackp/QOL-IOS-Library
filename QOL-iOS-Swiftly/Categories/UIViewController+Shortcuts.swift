@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    static let cBlankImage:UIImage = UIImage()
     public func stylizeNavBar() {//To be flat
         guard let navController:UINavigationController = self.navigationController else { return }
         let navigationBar:UINavigationBar = navController.navigationBar
         navController.setNavigationBarHidden(false, animated: true)
         navigationBar.barTintColor = UIColor.white
         navigationBar.isTranslucent = false
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIViewController.cBlankImage, for: .default)
+        navigationBar.shadowImage = UIViewController.cBlankImage
         if #available(iOS 13.0, *) {
             let barAppearance = UINavigationBarAppearance()
             barAppearance.backgroundColor = UIColor.white
