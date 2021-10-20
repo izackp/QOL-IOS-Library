@@ -208,48 +208,24 @@ const static size_t CIPHER_BUFFER_SIZE = 1024;
     else
         idx++;
     
-    if (idx >= len) {
-      return nil;
-    }
+    // PKCS #1 rsaEncryption szOID_RSA_RSA
+    static unsigned char seqiod[] = {0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00};
+    if (memcmp(&c_key[idx], seqiod, 15))
+        return nil;
     
-    //Header already stripped
-    if (c_key[idx] == 0x02) {
-        return self;
-    }
-
-    if (c_key[idx] != 0x30) {
-      return nil;
-    }
-
     idx += 15;
-
-    if (idx >= len - 2) {
-      return nil;
-    }
-
-    if (c_key[idx++] != 0x03) {
-      return nil;
-    }
-
-    if (c_key[idx] > 0x80) {
-      idx += c_key[idx] - 0x80 + 1;
-    }
-    else {
-      idx++;
-    }
-
-    if (idx >= len) {
-      return nil;
-    }
-
-    if (c_key[idx++] != 0x00) {
-      return nil;
-    }
-
-    if (idx >= len) {
-      return nil;
-    }
-
+    
+    if (c_key[idx++] != 0x03)
+        return nil;
+    
+    if (c_key[idx] > 0x80)
+        idx += c_key[idx] - 0x80 + 1;
+    else
+        idx++;
+    
+    if (c_key[idx++] != '\0')
+        return nil;
+    
     // Now make a new NSData from this buffer
     return([NSData dataWithBytes:&c_key[idx] length:len - idx]);
 }

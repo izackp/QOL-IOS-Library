@@ -40,6 +40,15 @@ public extension Array {
         return dic
     }
     
+    func firstIndex(start:Int, where predicate: (Element) -> Bool) -> Int? {
+        if (start < 0 || start >= self.count) {
+            return nil
+        }
+        let subArray = self[start..<self.count]
+        let result = subArray.firstIndex(where: predicate)
+        return result
+    }
+    
     func index<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key:Element] {
         var dict = [Key:Element]()
         for element in self {

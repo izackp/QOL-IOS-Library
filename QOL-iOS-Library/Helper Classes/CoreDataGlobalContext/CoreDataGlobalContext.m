@@ -8,7 +8,6 @@
 
 #import "CoreDataGlobalContext.h"
 #import <CoreData/CoreData.h>
-#import "NSManagedObjectContext+Shortcuts.h"
 #import "UIAlertView+Shortcuts.h"
 
 @implementation CoreDataGlobalContext

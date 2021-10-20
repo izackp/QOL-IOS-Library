@@ -11,12 +11,16 @@ It will be easier to for you to look at the code then for me to explain everythi
 Project Setup Instructions
 ---
 
-You can Drag and drop the project file into your project.
+There are 2 ways to set this project up:
+
+A) You can add this to your podfile.
+
+or
+
+B) You can Drag and drop the project file into your project.
 
 you will also have to
 
 - Go to the Build Settings for your project and
   - Add the `-ObjC -all_load` linker flags to the `Other Linker Flags` property.
   - Add the path of the library to the `Header Search Paths` property and make sure its recursive. Ex: `"$(SOURCE_ROOT)"/ExternalLibs/QOL-iOS-Library`
-
-You could add this to a podfile, but it's untested.

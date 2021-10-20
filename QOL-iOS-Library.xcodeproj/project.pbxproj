@@ -80,8 +80,6 @@
 		DF78163824465AF800558380 /* NSBundle+Localizable.h in Headers */ = {isa = PBXBuildFile; fileRef = DF78163624465AF800558380 /* NSBundle+Localizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF78163924465AF800558380 /* NSBundle+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78163724465AF800558380 /* NSBundle+Localizable.m */; };
 		DF78163A24465AF800558380 /* NSBundle+Localizable.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78163724465AF800558380 /* NSBundle+Localizable.m */; };
-		DF7ADA6C250FF05700D7AAD9 /* Data+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ADA6B250FF05700D7AAD9 /* Data+Cryptography.swift */; };
-		DF7ADA6D250FF05F00D7AAD9 /* Data+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7ADA6B250FF05700D7AAD9 /* Data+Cryptography.swift */; };
 		DF9135DC20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
 		DF9135DD20C07E2800B2161D /* UIScreen+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */; };
 		DF96CACB22020EDE003FBDF6 /* Set+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */; };
@@ -429,7 +427,6 @@
 		DF78162F2446540500558380 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DF78163624465AF800558380 /* NSBundle+Localizable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Localizable.h"; sourceTree = "<group>"; };
 		DF78163724465AF800558380 /* NSBundle+Localizable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Localizable.m"; sourceTree = "<group>"; };
-		DF7ADA6B250FF05700D7AAD9 /* Data+Cryptography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Cryptography.swift"; sourceTree = "<group>"; };
 		DF9135DB20C07E2800B2161D /* UIScreen+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF96CACA22020EDE003FBDF6 /* Set+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Shortcuts.swift"; sourceTree = "<group>"; };
 		DF9DD702208F779A0016969C /* Float+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Shortcuts.swift"; sourceTree = "<group>"; };
@@ -1128,7 +1125,6 @@
 				DFCB57B5207E4F200084C5B2 /* CGRect+Shortcuts.swift */,
 				DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */,
 				DFB8689A26D5880300F5AE8E /* Collection+Shortcuts.swift */,
-				DF7ADA6B250FF05700D7AAD9 /* Data+Cryptography.swift */,
 				DF9DD702208F779A0016969C /* Float+Shortcuts.swift */,
 				DFB3A9012087D58E001D3118 /* Int32+Shortcuts.swift */,
 				DFCB57D7207E52790084C5B2 /* NSAttributedString+Shortcuts.swift */,
@@ -1455,7 +1451,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7ADA6C250FF05700D7AAD9 /* Data+Cryptography.swift in Sources */,
 				DFCB57C7207E4F210084C5B2 /* Sequence+Shortcuts.swift in Sources */,
 				DFCB57C5207E4F210084C5B2 /* UICollectionView+Shortcuts.swift in Sources */,
 				DFCB57C0207E4F210084C5B2 /* UIApplication+Shortcuts.swift in Sources */,
@@ -1532,7 +1527,6 @@
 				DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */,
 				DFF644D9207FAECF00FA38A9 /* UINavigationController+SetItems.m in Sources */,
 				DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */,
-				DF7ADA6D250FF05F00D7AAD9 /* Data+Cryptography.swift in Sources */,
 				DFF644AA207FAECF00FA38A9 /* NSDate+Shortcuts.m in Sources */,
 				DFF6450F207FAF0F00FA38A9 /* DispatchHelper.m in Sources */,
 				DFF644C3207FAECF00FA38A9 /* NSURLSession+Additions.m in Sources */,
