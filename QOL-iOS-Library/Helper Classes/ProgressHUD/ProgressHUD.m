@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 #import "ProgressHUD.h"
+#import "WeakTimedSelector.h"
 
 @implementation ProgressHUDScheme
 
@@ -203,9 +204,9 @@ static NSString* sLastText = nil;
             [self hideProgressFG];
         } completion:^(BOOL finished){ }];
         
-        [NSThread detachNewThreadSelector:@selector(timedHide:)
-                                 toTarget:self
-                               withObject:[NSNumber numberWithDouble:sleep]];
+        if (_timedSel == nil)
+            _timedSel = [[WeakTimedSelector alloc] initWithTarget:self selector:@selector(hudHide)];
+        [_timedSel scheduleTimer:sleep];
          
     } else {
         _viewProgressBG.alpha = 0;
@@ -226,6 +227,9 @@ static NSString* sLastText = nil;
 		hud.layer.masksToBounds = YES;
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+        
+        UITapGestureRecognizer* singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+        [hud addGestureRecognizer:singleFingerTap];
 	}
 	
 	if (hud.superview == nil) {
@@ -283,6 +287,10 @@ static NSString* sLastText = nil;
     
     if (_viewProgressFG.superview == nil)
         [hud addSubview:_viewProgressFG];
+}
+
+- (void)onTap {
+    [self hudHide];
 }
 
 - (void)hudDestroy {
@@ -367,6 +375,8 @@ static CGFloat sRotation = 0.0f;
 }
 
 - (void)hudShow {
+    if (_timedSel != nil)
+        [_timedSel invalidate];
 	if (self.alpha == 0) {
 		self.alpha = 1;
 
@@ -406,13 +416,6 @@ static CGFloat sRotation = 0.0f;
         sleep = 5;
     }
     return sleep;
-}
-
-- (void)timedHide:(NSNumber*)sleep {
-	@autoreleasepool {
-		[NSThread sleepForTimeInterval:sleep.doubleValue];
-		[self performSelectorOnMainThread:@selector(hudHide) withObject:nil waitUntilDone:false];
-	}
 }
 
 @end

@@ -21,6 +21,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class WeakTimedSelector;
+
 @interface ProgressHUDScheme : NSObject
 
 @property (nonatomic, retain) UIFont* font;
@@ -64,5 +66,7 @@
 @property (nonatomic, retain) ProgressHUDScheme *scheme;
 @property (nonatomic, retain) UIView *viewProgressBG;
 @property (nonatomic, retain) UIView *viewProgressFG;
+
+@property (nonatomic, retain) WeakTimedSelector *timedSel;
 
 @end
