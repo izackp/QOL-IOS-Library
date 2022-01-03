@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A080D3C19C0CB98009BBBFF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
 		6A080D3D19C0CB98009BBBFF /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
 		6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BD6B818BB86FC00E45103 /* StopWatch.m */; };
 		6A184D5419925B6D00F51CE5 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
@@ -125,6 +124,10 @@
 		DFE1A9D321F63C7E00056EC5 /* CGSize+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */; };
 		DFE1A9D521F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
 		DFE1A9D621F63D0900056EC5 /* CGImage+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */; };
+		DFE33AF32783996500943DA0 /* ProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = DFE33AF02783995900943DA0 /* ProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFE33AF42783996500943DA0 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE33AF22783995900943DA0 /* ProgressHUD.m */; };
+		DFE33AF52783996A00943DA0 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE33AF22783995900943DA0 /* ProgressHUD.m */; };
+		DFE33AF627839A2600943DA0 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFE33AF12783995900943DA0 /* ProgressHUD.bundle */; };
 		DFE3A7E02331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */; };
 		DFE3A7E12331278D00DE8D77 /* NSError+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */; };
 		DFF64492207FAE7C00FA38A9 /* Array+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB57B0207E4F200084C5B2 /* Array+Shortcuts.swift */; };
@@ -234,8 +237,6 @@
 		DFF644FB207FAF0400FA38A9 /* CoreDataGlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DF17EF721854B2610064E3C0 /* CoreDataGlobalContext.m */; };
 		DFF644FC207FAF0400FA38A9 /* InAppTransactions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A184D5219925B6D00F51CE5 /* InAppTransactions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF644FD207FAF0400FA38A9 /* InAppTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A184D5319925B6D00F51CE5 /* InAppTransactions.m */; };
-		DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1A19C0CB98009BBBFF /* ProgressHUD.h */; };
-		DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */; };
 		DFF64502207FAF0400FA38A9 /* ProgressHUDWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFF64503207FAF0400FA38A9 /* ProgressHUDWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */; };
 		DFF64504207FAF0400FA38A9 /* TableViewCellCache.h in Headers */ = {isa = PBXBuildFile; fileRef = DF17EF741854B2610064E3C0 /* TableViewCellCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -305,9 +306,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6A080D1919C0CB98009BBBFF /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
-		6A080D1A19C0CB98009BBBFF /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
-		6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUDWrapper.h; sourceTree = "<group>"; };
 		6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUDWrapper.m; sourceTree = "<group>"; };
 		6A0BD6B718BB86FC00E45103 /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopWatch.h; sourceTree = "<group>"; };
@@ -469,6 +467,9 @@
 		DFDB30FD188EC60700B1287C /* UIImageView+Shortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Shortcuts.m"; sourceTree = "<group>"; };
 		DFE1A9D121F63C6B00056EC5 /* CGSize+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFE1A9D421F63D0900056EC5 /* CGImage+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Shortcuts.swift"; sourceTree = "<group>"; };
+		DFE33AF02783995900943DA0 /* ProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		DFE33AF12783995900943DA0 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		DFE33AF22783995900943DA0 /* ProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		DFE3A7DF2331278D00DE8D77 /* NSError+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Shortcuts.swift"; sourceTree = "<group>"; };
 		DFF6448A207FAE1200FA38A9 /* QOL_iOS_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QOL_iOS_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF64522207FB01600FA38A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -518,21 +519,10 @@
 		6A080D1719C0CB98009BBBFF /* ProgressHudWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				6A080D1819C0CB98009BBBFF /* ProgressHUD */,
 				6A080D1C19C0CB98009BBBFF /* ProgressHUDWrapper.h */,
 				6A080D1D19C0CB98009BBBFF /* ProgressHUDWrapper.m */,
 			);
 			path = ProgressHudWrapper;
-			sourceTree = "<group>";
-		};
-		6A080D1819C0CB98009BBBFF /* ProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				6A080D1919C0CB98009BBBFF /* ProgressHUD.bundle */,
-				6A080D1A19C0CB98009BBBFF /* ProgressHUD.h */,
-				6A080D1B19C0CB98009BBBFF /* ProgressHUD.m */,
-			);
-			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
 		6A0BD6B618BB86B900E45103 /* StopWatch */ = {
@@ -994,6 +984,7 @@
 		DF2718901820299500C7D7E0 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DFE33AEF2783995900943DA0 /* ProgressHUD */,
 				6AAF133019DAFC43004438AE /* UINavigationViewControllerTransitions */,
 				DF17EF701854B2610064E3C0 /* CoreDataGlobalContext */,
 				6A184D5119925B6D00F51CE5 /* InAppTransactions */,
@@ -1163,6 +1154,16 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		DFE33AEF2783995900943DA0 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DFE33AF02783995900943DA0 /* ProgressHUD.h */,
+				DFE33AF12783995900943DA0 /* ProgressHUD.bundle */,
+				DFE33AF22783995900943DA0 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1195,6 +1196,7 @@
 				DFF644B5207FAECF00FA38A9 /* NSObject+Shortcuts.h in Headers */,
 				DFF644C2207FAECF00FA38A9 /* NSURLSession+Additions.h in Headers */,
 				DFF644E2207FAECF00FA38A9 /* UIView+Positioning.h in Headers */,
+				DFE33AF32783996500943DA0 /* ProgressHUD.h in Headers */,
 				DFF644AD207FAECF00FA38A9 /* NSError+URLError.h in Headers */,
 				DFF644C6207FAECF00FA38A9 /* UIApplication+EasyAccess.h in Headers */,
 				DFF644D6207FAECF00FA38A9 /* UIImagePickerController+EasyAccess.h in Headers */,
@@ -1226,7 +1228,6 @@
 				DFF644FC207FAF0400FA38A9 /* InAppTransactions.h in Headers */,
 				DFF644D8207FAECF00FA38A9 /* UINavigationController+SetItems.h in Headers */,
 				DFF644C4207FAECF00FA38A9 /* UIAlertView+Shortcuts.h in Headers */,
-				DFF644FE207FAF0400FA38A9 /* ProgressHUD.h in Headers */,
 				DFF644CC207FAECF00FA38A9 /* UIColor+Shortcuts.h in Headers */,
 				DFF644DA207FAECF00FA38A9 /* UINavigationController+Transitions.h in Headers */,
 				DFF644D4207FAECF00FA38A9 /* UIImageView+Shortcuts.h in Headers */,
@@ -1365,6 +1366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE33AF627839A2600943DA0 /* ProgressHUD.bundle in Resources */,
 				DF7816302446542300558380 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1378,7 +1380,6 @@
 			files = (
 				DF2718A51820299500C7D7E0 /* UIAlertView+Shortcuts.m in Sources */,
 				DF2718B41820299600C7D7E0 /* TextFieldAutoKeyboard.m in Sources */,
-				6A080D3C19C0CB98009BBBFF /* ProgressHUD.m in Sources */,
 				6A0BD6B918BB86FC00E45103 /* StopWatch.m in Sources */,
 				6A5DDBEB18CA4E7000725BDE /* NSString+Search.m in Sources */,
 				DFB6133E1AE594E3007B0401 /* TransitionBase.m in Sources */,
@@ -1390,6 +1391,7 @@
 				6AC536FA19A2862300FC53BA /* NSData+Cryptography.m in Sources */,
 				DF2718A41820299500C7D7E0 /* NSString+Formatting.m in Sources */,
 				DFB67969187D90AF00981856 /* UIImagePickerController+EasyAccess.m in Sources */,
+				DFE33AF52783996A00943DA0 /* ProgressHUD.m in Sources */,
 				DF02844D1880305700596BA6 /* UIColor+Shortcuts.m in Sources */,
 				DF2718A21820299500C7D7E0 /* NSString+LoginCreds.m in Sources */,
 				DFF7CEBA182AA548009C7AA1 /* UIView+Shortcuts.m in Sources */,
@@ -1529,7 +1531,6 @@
 				DFF644D1207FAECF00FA38A9 /* UIFont+Debug.m in Sources */,
 				DFF644CD207FAECF00FA38A9 /* UIColor+Shortcuts.m in Sources */,
 				DFF644DF207FAECF00FA38A9 /* UIStoryboard+Shortcuts.m in Sources */,
-				DFF644FF207FAF0400FA38A9 /* ProgressHUD.m in Sources */,
 				DFF644D9207FAECF00FA38A9 /* UINavigationController+SetItems.m in Sources */,
 				DFF64519207FAF1A00FA38A9 /* ViewAvoidKeyboard.m in Sources */,
 				DF7ADA6D250FF05F00D7AAD9 /* Data+Cryptography.swift in Sources */,
@@ -1546,6 +1547,7 @@
 				DFF64499207FAE7C00FA38A9 /* UIApplication+Shortcuts.swift in Sources */,
 				DFF644CF207FAECF00FA38A9 /* UIDevice+SystemVersion.m in Sources */,
 				DFF6450D207FAF0F00FA38A9 /* Debugging.m in Sources */,
+				DFE33AF42783996500943DA0 /* ProgressHUD.m in Sources */,
 				DFF644B4207FAECF00FA38A9 /* NSMutableArray+Shortcuts.m in Sources */,
 				DFF644C5207FAECF00FA38A9 /* UIAlertView+Shortcuts.m in Sources */,
 				DFF644C7207FAECF00FA38A9 /* UIApplication+EasyAccess.m in Sources */,
