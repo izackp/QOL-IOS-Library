@@ -33,6 +33,8 @@
 @property (nonatomic, retain) NSString* imgError;
 @property (nonatomic, retain) UIColor* clrProgressBG;
 @property (nonatomic, retain) UIColor* clrProgressFG;
+@property (nonatomic, retain) UIColor* clrProgressFGError;
+@property (nonatomic, retain) UIColor* clrProgressFGSuccess;
 
 + (ProgressHUDScheme*)light;
 + (ProgressHUDScheme*)dark;

@@ -24,7 +24,7 @@
 
 @implementation ProgressHUDScheme
 
-@synthesize font, clrStatus, clrSpinner, clrBackground, imgSuccess, imgError, clrProgressBG, clrProgressFG;
+@synthesize font, clrStatus, clrSpinner, clrBackground, imgSuccess, imgError, clrProgressBG, clrProgressFG, clrProgressFGError, clrProgressFGSuccess;
 
 + (ProgressHUDScheme*)light {
     ProgressHUDScheme* scheme = [ProgressHUDScheme new];
@@ -34,6 +34,8 @@
     scheme.clrBackground = [UIColor colorWithWhite:0 alpha:0.1];
     scheme.clrProgressBG = [UIColor colorWithWhite:0.95 alpha:1];
     scheme.clrProgressFG = [UIColor colorWithWhite:0.85 alpha:1];
+    scheme.clrProgressFGError = [UIColor colorWithRed:0.784 green:0.353 blue:0.247 alpha:1.0];//200,90,63//#C85A3F
+    scheme.clrProgressFGSuccess = [UIColor colorWithRed:0.318 green:0.698 blue:0.553 alpha:1.0];//82,178,141//#51B28D
     scheme.imgSuccess = @"ProgressHUD.bundle/success-color.png";
     scheme.imgError = @"ProgressHUD.bundle/error-color.png";
     return scheme;
@@ -47,6 +49,8 @@
     scheme.clrBackground = [UIColor colorWithWhite:1 alpha:0.1];
     scheme.clrProgressBG = [UIColor colorWithWhite:0.5 alpha:1];//Need to update for dark
     scheme.clrProgressFG = [UIColor colorWithWhite:0.7 alpha:1];
+    scheme.clrProgressFGError = [UIColor colorWithRed:0.784 green:0.353 blue:0.247 alpha:1.0];//200,90,63//#C85A3F
+    scheme.clrProgressFGSuccess = [UIColor colorWithRed:0.318 green:0.698 blue:0.553 alpha:1.0];//82,178,141//#51B28D
     scheme.imgSuccess = @"ProgressHUD.bundle/success-color.png";
     scheme.imgError = @"ProgressHUD.bundle/error-color.png";
     return scheme;
@@ -128,7 +132,7 @@ static NSString* sLastText = nil;
     
     [self setUserInteractionOnNormalWindow:Interaction];
 	[self shared].interaction = Interaction;
-	[[self shared] hudMake:status image:nil spin:YES hide:NO];
+	[[self shared] hudMake:status image:nil color:[[self shared] fgColor] spin:YES hide:NO];
 }
 
 + (void)showSuccessBriefly:(NSString *)status {
@@ -139,7 +143,7 @@ static NSString* sLastText = nil;
     [self updateScheme];
     [self reset];
 	[self shared].interaction = Interaction;
-	[[self shared] hudMake:status image:[[self shared] imgSuccess] spin:NO hide:YES];
+	[[self shared] hudMake:status image:[[self shared] imgSuccess] color:[[self shared] fgSuccessColor] spin:NO hide:YES];
 }
 
 + (void)showErrorBriefly:(NSString *)status {
@@ -150,7 +154,7 @@ static NSString* sLastText = nil;
     [self updateScheme];
     [self reset];
 	[self shared].interaction = Interaction;
-	[[self shared] hudMake:status image:[[self shared] imgError] spin:NO hide:YES];
+    [[self shared] hudMake:status image:[[self shared] imgError] color:[[self shared] fgErrorColor] spin:NO hide:YES];
 }
 
 
@@ -178,8 +182,20 @@ static NSString* sLastText = nil;
     return [UIImage imageNamed:scheme.imgError];
 }
 
-- (void)hudMake:(NSString *)status image:(UIImage *)img spin:(BOOL)spin hide:(BOOL)hide {
-	[self hudCreate];
+- (UIColor*)fgErrorColor {
+    return scheme.clrProgressFGError;
+}
+
+- (UIColor*)fgSuccessColor {
+    return scheme.clrProgressFGSuccess;
+}
+
+- (UIColor*)fgColor {
+    return scheme.clrProgressFG;
+}
+
+- (void)hudMake:(NSString *)status image:(UIImage *)img color:(UIColor*)fgColor spin:(BOOL)spin hide:(BOOL)hide {
+    [self hudCreate:fgColor];
 	
 	label.text = status;
 	label.hidden = (status == nil) ? YES : NO;
@@ -218,7 +234,7 @@ static NSString* sLastText = nil;
     _viewProgressFG.frame = CGRectMake(0, _viewProgressFG.frame.origin.y, 0, _viewProgressFG.frame.size.height);
 }
 
-- (void)hudCreate {
+- (void)hudCreate:(UIColor*)fgColor {
 	if (hud == nil) {
 		hud = [[UIToolbar alloc] initWithFrame:CGRectZero];
 		hud.translucent = YES;
@@ -282,7 +298,7 @@ static NSString* sLastText = nil;
 	
     if (_viewProgressFG == nil) {
         _viewProgressFG = [[UIView alloc] initWithFrame:CGRectZero];
-        _viewProgressFG.backgroundColor = scheme.clrProgressFG;
+        _viewProgressFG.backgroundColor = fgColor;
     }
     
     if (_viewProgressFG.superview == nil)
