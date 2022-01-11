@@ -33,7 +33,7 @@ extension UIViewController {
         button.setTitle(text, for: UIControl.State.normal)
         button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        let width:CGFloat = ((button.titleLabel!.attributedText!.width(withConstrainedHeight: 44)) + 4.0)
+        let width:CGFloat = ((button.titleLabel!.attributedText?.width(withConstrainedHeight: 44)) ?? 0 + 4.0)
         button.frame = CGRect.init(origin: CGPoint.zero, size: CGSize(width:width, height:44))
         return button
     }
