@@ -299,6 +299,8 @@ static NSString* sLastText = nil;
     if (_viewProgressFG == nil) {
         _viewProgressFG = [[UIView alloc] initWithFrame:CGRectZero];
         _viewProgressFG.backgroundColor = fgColor;
+    } else {
+        _viewProgressFG.backgroundColor = fgColor;
     }
     
     if (_viewProgressFG.superview == nil)
