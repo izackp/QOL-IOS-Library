@@ -73,6 +73,20 @@ extension UIViewController {
         navBar.backgroundColor = UIColor.clear
     }
     
+    public func forceNavigationBarColor(_ color:UIColor) {
+        let navController = navigationController!
+        let navBar = navController.navigationBar
+        //Because nothing is working
+        for eachView in navBar.subviews {
+            eachView.backgroundColor = color
+            for eachImage in eachView.subviews {
+                if let imageView = eachImage as? UIImageView {
+                    imageView.backgroundColor = color
+                }
+            }
+        }
+    }
+    
     public func showMessage(_ message:String, title:String?, _ handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: handler)
