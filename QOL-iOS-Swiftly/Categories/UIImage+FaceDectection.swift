@@ -10,164 +10,129 @@ import Foundation
 import UIKit
 import CoreImage
 
-public enum FaceDetectionError: Error {
-    case noFacesFound
-    case unqualifiedFaces
-    case recognitionFailed(reason: String)
-    case spellNotKnownToWitch
+public class FindFacesResult {
+    public init(faces: [CIFeature], ciImage: CIImage, cgImage: CGImage) {
+        self.faces = faces
+        self.ciImage = ciImage
+        self.cgImage = cgImage
+        self.imageSize = cgImage.size()
+    }
+    
+    public let faces:[CIFeature]
+    public let ciImage:CIImage
+    public let cgImage:CGImage
+    public let imageSize:CGSize
 }
 
 public extension UIImage {
+    
+    func imageOrientationToExif() -> Int {
+        switch (self.imageOrientation) {
+            case .up:
+                return 1
+            case .down:
+                return 3
+            case .left:
+                return 8
+            case .right:
+                return 6
+            case .upMirrored:
+                return 2
+            case .downMirrored:
+                return 4
+            case .leftMirrored:
+                return 5
+            case .rightMirrored:
+                return 7
+            default:
+                return 0
+        }
+    }
 
-    //TODO: Should be cleaned up...
     func imageContainsUseableFace() -> Bool {
         
-        guard let image = resizeAndFixOrientation(maxSize: size) else { return false }
+        guard let result = findFaces() else { return false }
+        let faces = result.faces
+        let imageSize = result.imageSize
         
-        var cgImageOrientation = 0
-        
-        switch image.imageOrientation {
-        case .up:
-            cgImageOrientation = 1
-            
-        case .down:
-            cgImageOrientation = 3
-            
-        case .left:
-            cgImageOrientation = 8
-            
-        case .right:
-            cgImageOrientation = 6
-            
-        default:
-            cgImageOrientation = 0
-        }
-        
-        var foundFace = false
-        
-        // Transform for face rectangles
-        let height = image.size.height
-        var transform = CGAffineTransform.init(scaleX: 1, y: -1)
-        transform = transform.translatedBy(x: 0, y: (-1 * height))
-        
-        let margin = image.size.width / 13
-        let fullRect = CGRect.init(origin: CGPoint.zero, size: image.size)
+        let margin = imageSize.width / 13
+        let fullRect = CGRect.init(origin: CGPoint.zero, size: imageSize)
         let insetRect = fullRect.insetBy(dx: margin, dy: margin)
         
-        let imageOptions =  NSDictionary(object: NSNumber(value: cgImageOrientation) as NSNumber, forKey: CIDetectorImageOrientation as NSString)
-        let personciImage = CIImage(cgImage: image.cgImage!)
-        let accuracy = [CIDetectorAccuracy: CIDetectorAccuracyLow]
-        if let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy) {
+        for eachFeature in faces {
+            guard let face = eachFeature as? CIFaceFeature else { continue }
             
-            let faces = faceDetector.features(in: personciImage, options: imageOptions as? [String : AnyObject])
+            let inBounds = insetRect.contains(face.bounds)
+            let atSize = face.bounds.size.width > 150
             
-            print("\(faces.count) found")
-            
-            for (_, feature) in faces.enumerated() {
-                
-                let face = feature as! CIFaceFeature
-                
-                let inBounds = insetRect.contains(face.bounds)
-                let atSize = face.bounds.size.width > 150
-                
-//                // draw a text string
-//                UIGraphicsBeginImageContext(image.size)
-//                
-//                image.draw(at: CGPoint.zero)
-//                
-//                UIColor.red.setStroke()
-//                UIRectFrame(insetRect)
-//                
-//                UIColor.green.setStroke()
-//                UIRectFrame(face.bounds.applying(transform))
-//                
-//                let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//                UIGraphicsEndImageContext()
-                
-                let validFace = inBounds && atSize
-                
-                if (validFace) {
-                    
-                    foundFace = true
-                    break
-                }
-                
+            let validFace = inBounds && atSize
+            if (validFace) {
+                return true
             }
         }
+        return false
+    }
+    
+    //Note: low accuracy finds more faces..
+    func findFaces(accuracy:String = CIDetectorAccuracyLow) -> FindFacesResult? {
         
-        return foundFace
+        guard let image = resizeAndFixOrientation(maxSize: size) else { return nil }
+        
+        let cgImageOrientation = image.imageOrientationToExif()
+        let imageOptions =  NSDictionary(object: NSNumber(value: cgImageOrientation) as NSNumber, forKey: CIDetectorImageOrientation as NSString)
+        let otherImage = image.cgImage!
+        let ciImage = CIImage(cgImage: otherImage)
+        if let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: accuracy]) {
+            let faces = faceDetector.features(in: ciImage, options: imageOptions as? [String : AnyObject])
+            print("\(faces.count) found")
+            return FindFacesResult(faces: faces, ciImage: ciImage, cgImage: otherImage)
+        }
+        
+        return nil
     }
 }
 
 public extension UIImage {
     
     func facesAsSquareWithDimention(dimention:CGFloat, inset:CGFloat) -> [UIImage] {
-        
-        guard let image = resizeAndFixOrientation(maxSize: size) else { return [] }
-        
-        var cgImageOrientation = 0
-        
-        switch image.imageOrientation {
-        case .up:
-            cgImageOrientation = 1
-            
-        case .down:
-            cgImageOrientation = 3
-            
-        case .left:
-            cgImageOrientation = 8
-            
-        case .right:
-            cgImageOrientation = 6
-            
-        default:
-            cgImageOrientation = 0
-        }
+
+        guard let result = findFaces() else { return [] }
+        let faces = result.faces
+        let imageSize = result.imageSize
         
         // Transform for face rectangles
-        let height = image.size.height
+        let height = imageSize.height
         var transform = CGAffineTransform.init(scaleX: 1, y: -1)
         transform = transform.translatedBy(x: 1, y: (-1 * height))
         
-        let imageOptions =  NSDictionary(object: NSNumber(value: cgImageOrientation) as NSNumber, forKey: CIDetectorImageOrientation as NSString)
-        let personciImage = CIImage(cgImage: image.cgImage!)
-        let accuracy = [CIDetectorAccuracy: CIDetectorAccuracyLow]
-        
         var faceImages = [UIImage]()
-        
-        if let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy) {
+        for eachFeature in faces {
+            guard let face = eachFeature as? CIFaceFeature else { continue }
             
-            let faces = faceDetector.features(in: personciImage, options: imageOptions as? [String : AnyObject])
+            let squaredSourceRect = face.bounds.getCenteredSquare().insetBy(dx: inset, dy: inset)
             
-            print("\(faces.count) found")
+            let squareDestinationRect = CGRect(x:0, y:0, width:dimention, height: dimention)
+            let squareDestinationSize = CGSize(width: dimention, height: dimention)
             
-            for (_, feature) in faces.enumerated() {
-                
-                let face = feature as! CIFaceFeature
-                
-                let squaredSourceRect = face.bounds.getCenteredSquare().insetBy(dx: inset, dy: inset)
-                
-                let squareDestinationRect = CGRect(x:0, y:0, width:dimention, height: dimention)
-                let squareDestinationSize = CGSize(width: dimention, height: dimention)
-                
-                UIGraphicsBeginImageContext(squareDestinationSize)
-                
-                let context = UIGraphicsGetCurrentContext()
-                
-                var ciContext:CIContext? = nil
-                if #available(iOS 9.0, *) {
-                    ciContext = CIContext(cgContext: context!, options: nil)
-                } else {
-                    ciContext = CIContext.init()//TODO: Probably doesnt work
-                }
-                context!.concatenate(transform);
-
-                ciContext?.draw(personciImage, in: squareDestinationRect.applying(transform), from: squaredSourceRect)
-                let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsBeginImageContext(squareDestinationSize)
+            defer {
                 UIGraphicsEndImageContext()
-                
-                faceImages.append(newImage!)
             }
+            
+            guard let context = UIGraphicsGetCurrentContext() else { continue }
+            
+            let ciContext:CIContext
+            if #available(iOS 9.0, *) {
+                ciContext = CIContext(cgContext: context, options: nil)
+            } else {
+                ciContext = CIContext.init()//TODO: Probably doesnt work
+            }
+            
+            context.concatenate(transform)
+
+            ciContext.draw(result.ciImage, in: squareDestinationRect.applying(transform), from: squaredSourceRect)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            faceImages.append(newImage!)
         }
         
         return faceImages
