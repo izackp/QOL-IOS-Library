@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreImage
+import Vision
 
 public class FindFacesResult {
     public init(faces: [CIFeature], ciImage: CIImage, cgImage: CGImage) {
@@ -26,27 +27,32 @@ public class FindFacesResult {
 
 public extension UIImage {
     
-    func imageOrientationToExif() -> Int {
+    func imageOrientationToCGIPO() -> CGImagePropertyOrientation {
         switch (self.imageOrientation) {
             case .up:
-                return 1
-            case .down:
-                return 3
-            case .left:
-                return 8
-            case .right:
-                return 6
+                return .up
             case .upMirrored:
-                return 2
+                return .upMirrored
+            case .down:
+                return .down
             case .downMirrored:
-                return 4
+                return .downMirrored
             case .leftMirrored:
-                return 5
+                return .leftMirrored
+            case .right:
+                return .right
             case .rightMirrored:
-                return 7
+                return .rightMirrored
+            case .left:
+                return .left
             default:
-                return 0
+                return .up
         }
+    }
+    
+    func imageOrientationToExif() -> Int {
+        let value = self.imageOrientationToCGIPO()
+        return Int(value.rawValue)
     }
 
     func imageContainsUseableFace() -> Bool {
@@ -73,8 +79,16 @@ public extension UIImage {
         return false
     }
     
-    //Note: low accuracy finds more faces..
     func findFaces(accuracy:String = CIDetectorAccuracyLow) -> FindFacesResult? {
+        if #available(iOS 11.0, *) {
+            return nil//findFacesNew(accuracy: accuracy)
+        } else {
+            return findFaces2(accuracy: accuracy)
+        }
+    }
+    
+    //Note: low accuracy finds more faces..
+    func findFaces2(accuracy:String = CIDetectorAccuracyLow) -> FindFacesResult? {
         
         guard let image = resizeAndFixOrientation(maxSize: size) else { return nil }
         
@@ -82,13 +96,58 @@ public extension UIImage {
         let imageOptions =  NSDictionary(object: NSNumber(value: cgImageOrientation) as NSNumber, forKey: CIDetectorImageOrientation as NSString)
         let otherImage = image.cgImage!
         let ciImage = CIImage(cgImage: otherImage)
-        if let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: accuracy]) {
+        if let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy: accuracy, CIDetectorMinFeatureSize: 0.01]) {
             let faces = faceDetector.features(in: ciImage, options: imageOptions as? [String : AnyObject])
             print("\(faces.count) found")
             return FindFacesResult(faces: faces, ciImage: ciImage, cgImage: otherImage)
         }
         
         return nil
+    }
+    
+    @available(iOS 11.0, *)
+    func findFacesNew(accuracy:String = CIDetectorAccuracyLow) -> [CGRect] {
+        guard let image = resizeAndFixOrientation(maxSize: size) else { return [] }
+        let cgImageOrientation = image.imageOrientationToCGIPO()
+        let otherImage = image.cgImage!
+        //let ciImage = CIImage(cgImage: otherImage)
+        let imageRequestHandler = VNImageRequestHandler(cgImage: otherImage,
+                                                        orientation: cgImageOrientation,
+                                                        options: [:])
+
+        let rectDetectRequest = VNDetectFaceRectanglesRequest { (request:VNRequest, error:Error?) in
+            if let error = error {
+                print("Failed to detect rects: \(error.localizedDescription)")
+                return
+            }
+        }
+#if targetEnvironment(simulator)
+
+
+        rectDetectRequest.usesCPUOnly = true
+
+    #endif
+        //rectDetectRequest.maximumObservations = 0 //unlimited
+        //rectDetectRequest.minimumAspectRatio = 0.3 // height / width
+        //rectDetectRequest.minimumSize = 0.2
+        
+        do {
+            try imageRequestHandler.perform([rectDetectRequest])
+        } catch {
+            print("Failed to detect rects: \(error.localizedDescription)")
+        }
+        let rectList = rectDetectRequest.results ?? []
+        var boundBoxes:[CGRect] = []
+        for eachItem in rectList {
+            guard let face = eachItem as? VNFaceObservation else { continue }
+            print("idk: \(String(describing: eachItem))")
+            var box = face.boundingBox
+            let oldY = box.y
+            box.y = 1 - (oldY + box.height)
+            //box.height_ = (1 - oldY) - box.height
+            boundBoxes.append(box)
+        }
+        return boundBoxes
     }
 }
 
