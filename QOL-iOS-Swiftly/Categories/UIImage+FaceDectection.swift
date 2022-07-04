@@ -121,15 +121,10 @@ public extension UIImage {
                 return
             }
         }
-#if targetEnvironment(simulator)
-
-
-        rectDetectRequest.usesCPUOnly = true
-
-    #endif
-        //rectDetectRequest.maximumObservations = 0 //unlimited
-        //rectDetectRequest.minimumAspectRatio = 0.3 // height / width
-        //rectDetectRequest.minimumSize = 0.2
+        
+        #if targetEnvironment(simulator)
+            rectDetectRequest.usesCPUOnly = true
+        #endif
         
         do {
             try imageRequestHandler.perform([rectDetectRequest])
@@ -138,9 +133,7 @@ public extension UIImage {
         }
         let rectList = rectDetectRequest.results ?? []
         var boundBoxes:[CGRect] = []
-        for eachItem in rectList {
-            guard let face = eachItem as? VNFaceObservation else { continue }
-            print("idk: \(String(describing: eachItem))")
+        for face in rectList {
             var box = face.boundingBox
             let oldY = box.y
             box.y = 1 - (oldY + box.height)
