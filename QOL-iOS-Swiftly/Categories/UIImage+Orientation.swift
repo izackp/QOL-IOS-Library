@@ -96,12 +96,11 @@ public extension UIImage {
     }
     
     func resizeAndFixOrientation(maxSize: CGSize) -> UIImage? {
-        let finalSize = size.aspectFitNoUpscale(maxSize) ?? size
+        let scaledSize = size.aspectFitNoUpscale(maxSize) ?? size
+        let roundedSize = CGSize(width: floor(scaledSize.width), height: floor(scaledSize.height))
         
-        let newHeight = finalSize.height
-        let newWidth = finalSize.width
-        UIGraphicsBeginImageContextWithOptions(finalSize, false, self.scale)
-        draw(in: CGRect.init(x:0, y:0, width:newWidth, height:newHeight))
+        UIGraphicsBeginImageContextWithOptions(roundedSize, false, self.scale)
+        draw(in: CGRect.init(x:0, y:0, width:scaledSize.width, height:scaledSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
