@@ -26,13 +26,15 @@
     if (foundVC)
         return foundVC;
     
+    if (self.parentViewController != nil) {
+        foundVC = [self.parentViewController findVCInHeirachyWithClass:vcClass];
+    }
+    if (foundVC)
+        return foundVC;
+    
     UIViewController* presenting = self.presentingViewController;
     if (presenting != nil) {
         return [presenting findVCInHeirachyWithClass:vcClass];
-    }
-    
-    if (self.parentViewController != nil) {
-        return [self.parentViewController findVCInHeirachyWithClass:vcClass];
     }
     
     return nil;
