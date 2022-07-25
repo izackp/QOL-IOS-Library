@@ -11,7 +11,7 @@
 @implementation UIViewController (AddChild)
 
 - (void)addChildController:(UIViewController*)childController toView:(UIView*)view {
-    [childController willMoveToParentViewController:self];
+    //[childController willMoveToParentViewController:self];
     
     childController.view.frame = view.bounds;
     
@@ -38,7 +38,7 @@
     [self.view removeFromSuperview];
     [self removeFromParentViewController];
     
-    [self didMoveToParentViewController:nil];
+    //[self didMoveToParentViewController:nil];
 }
 
 @end
