@@ -10,7 +10,6 @@
 
 #import <objc/runtime.h>
 #import "NSManagedObject+ActiveRecord.h"
-#import "CoreDataGlobalContext.h"
 #import "NSManagedObjectContext+Shortcuts.h"
 #import "NSObject+Shortcuts.h"
 

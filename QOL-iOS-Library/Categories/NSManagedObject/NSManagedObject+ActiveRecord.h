@@ -74,8 +74,4 @@
 
 #endif
 
-//By Isaac:
-+ (id)createUnsavedEntity;
-+ (void)saveGlobalContext;
-
 @end

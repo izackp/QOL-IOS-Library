@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+/*
+ RootContext (private queue) - saves to persistent store
+ MainContext (main queue) child of RootContext - use for UI (FRC)
+ WorkerContext (private queue) - child of MainContext - use for updates & inserts
+ */
 @class NSManagedObjectContext;
 @class NSManagedObjectModel;
 @class NSPersistentStoreCoordinator;

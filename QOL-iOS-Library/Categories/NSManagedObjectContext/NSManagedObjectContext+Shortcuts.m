@@ -13,8 +13,12 @@
 - (void)saveAndLogError {
     NSError* error;
     [self save:&error];
-    if (error)
+    if (error) {
         NSLog(@"Could not save context from %@: \n%@", [self description], [error description]);
+        [self rollback];
+        return;
+    }
+    [self.parentContext saveAndLogError];
 }
 
 - (NSManagedObject*)existingObjectWithIDLogError:(NSManagedObjectID*)objId {
