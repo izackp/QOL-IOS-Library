@@ -84,7 +84,7 @@
     if (_managedObjectModel != nil)
         return _managedObjectModel;
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:self.databaseName withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Capture" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -121,7 +121,7 @@ const static int cMaxTries = 2;
         if (!hasPersistentStore) {
             NSLog(@"REMOVING STORE - Unresolved error %@ , %@", error, [error userInfo]);
             
-            [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
+            //[[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
         }
     }
     
