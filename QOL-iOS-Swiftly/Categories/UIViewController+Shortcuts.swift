@@ -150,11 +150,32 @@ extension UIViewController {
     }
 
     public func isModal() -> Bool {
-        if self.presentingViewController != nil {
+        //Should be a shallow search
+        /*
+        if let parent = self.parent {
+            if let nav = parent as? UINavigationController {
+                if (nav.parent != nil) {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }*/
+        if let presenting = self.presentingViewController { //This returns a controller if somewhere up the heirachy it is being presented.
+            if
+                let owningNav = self.navigationController,
+                let nav = presenting.presentedViewController as? UINavigationController {
+                return (owningNav == nav)
+            } else if let presented = presenting.presentedViewController { //always true
+                return (presented == self)
+            }
             return true
-        } else if self.navigationController?.presentingViewController?.presentedViewController == self.navigationController  {
-            return true
-        } else if self.tabBarController?.presentingViewController is UITabBarController {
+        }
+        //This is redundant now.
+        //else if self.navigationController?.presentingViewController?.presentedViewController == self.navigationController  {
+        //    return true
+        //}
+        else if self.tabBarController?.presentingViewController is UITabBarController {
             return true
         }
         return false
