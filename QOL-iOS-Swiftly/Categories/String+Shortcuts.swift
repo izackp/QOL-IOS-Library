@@ -44,49 +44,52 @@ public extension String {
         return result
     }
     
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
+    subscript (offset: Int) -> Character {
+        return self[index(startIndex, offsetBy: offset)]
     }
     
-    subscript (i: Int) -> String {
-        return String(self[i] as Character)
+    subscript (offset: Int) -> String {
+        return String(self[offset] as Character)
     }
-    /*
-    subscript (r: Range<Int>) -> String {
+    
+    subscript (r: ClosedRange<Int>) -> SubSequence {
         let start = index(startIndex, offsetBy: r.lowerBound)
         let end = index(startIndex, offsetBy: r.upperBound)
-        return String(self[Range(start ..< end)])
-    }*/
+        let range = start ..< end
+        return self[range]
+    }
     
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
     
-    func substring(from: Int) -> String {
+    func substring(from: Int) -> Substring {
         let fromIndex = index(from: from)
-        return String(self[fromIndex...])
+        return self[fromIndex...]
     }
     
-    func substring(to: Int) -> String {
+    func substring(to: Int) -> Substring {
         let toIndex = index(from: to)
-        return String(self[..<toIndex])
+        return self[..<toIndex]
     }
     
-    func substringSafe(to: Int) -> String {
+    func substringSafe(to: Int) -> Substring {
         if (self.count == 0) {
             return ""
         }
         
         let toFinal = (to > self.count) ? self.count : to
         let toIndex = index(from: toFinal)
-        return String(self[..<toIndex])
+        return self[..<toIndex]
     }
     
-    func substring(with r: Range<Int>) -> String {
+    // Doesnt seem right??
+    /*
+    func substring(with r: Range<Int>) -> Substring {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
-        return String(self[startIndex..<endIndex])
-    }
+        return self[startIndex..<endIndex]
+    }*/
     
     func trimWhiteSpace() -> String {
         let set = NSCharacterSet.whitespaces
