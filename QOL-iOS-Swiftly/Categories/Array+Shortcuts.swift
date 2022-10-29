@@ -8,6 +8,21 @@
 
 import Foundation
 
+public extension Sequence {
+    func groupByKey<Key>(_ keyForElement:(Element) -> (Key?)) -> [Key:[Element]] {
+        var dic:[Key:[Element]] = [:]
+        
+        for eachItem in self {
+            guard let key = keyForElement(eachItem) else { continue }
+            var array:[Element] = dic[key] ?? []
+            array.append(eachItem)
+            dic[key] = array
+        }
+        
+        return dic
+    }
+}
+
 public extension Array {
     init(count: Int, elementCreator: @autoclosure () -> Element) {
         self = (0 ..< count).map { _ in elementCreator() }
@@ -26,19 +41,7 @@ public extension Array {
         }
         return newArray
     }
-    
-    func groupByKey<Key>(_ keyForElement:(Element) -> (Key?)) -> [Key:[Element]] {
-        var dic:[Key:[Element]] = [:]
-        
-        for eachItem in self {
-            guard let key = keyForElement(eachItem) else { continue }
-            var array:[Element] = dic[key] ?? []
-            array.append(eachItem)
-            dic[key] = array
-        }
-        
-        return dic
-    }
+
     
     func firstIndex(start:Int, where predicate: (Element) -> Bool) -> Int? {
         if (start < 0 || start >= self.count) {
