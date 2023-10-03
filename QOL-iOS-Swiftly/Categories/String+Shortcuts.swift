@@ -30,6 +30,11 @@ public extension String {
         return str?.count ?? 0 == 0
     }
     
+    static func isBlank(_ str:String?) -> Bool {
+        let newStr = str?.trimWhiteSpace()
+        return newStr?.count ?? 0 == 0
+    }
+    
     func withMinLength(_ minLength:Int = 1) -> String? {
         if (count < minLength) {
             return nil
