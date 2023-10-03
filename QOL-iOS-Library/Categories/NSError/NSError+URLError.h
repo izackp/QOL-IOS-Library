@@ -11,7 +11,9 @@
 @interface NSError (URLError)
 
 - (bool)isConnectionError;
+- (bool)isSSLError;
 + (bool)isConnectionError:(NSInteger)code;
++ (bool)isSSLError:(NSInteger)code;
 - (NSString*)connectionErrorString;
 + (NSString*)connectionErrorStringForCode:(NSInteger)code;
 

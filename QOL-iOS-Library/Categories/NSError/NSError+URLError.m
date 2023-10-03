@@ -22,6 +22,13 @@
     return false;
 }
 
+- (bool)isSSLError {
+    if ([NSError isSSLError:self.code]) {
+        return true;
+    }
+    return false;
+}
+
 /// Errors that occur that depends on the user's connection or errors that resolve themselves with time or user intervention (connect to wifi).
 + (bool)isConnectionError:(NSInteger)code {
     
@@ -38,6 +45,24 @@
         case kCFURLErrorSecureConnectionFailed:
         case kCFNetServiceErrorTimeout:
         case kCFNetServiceErrorDNSServiceFailure:
+            return true;
+            
+        default:
+            return false;
+    }
+    return false;
+}
+
++ (bool)isSSLError:(NSInteger)code {
+    switch (code) {
+        case kCFURLErrorSecureConnectionFailed:
+        case kCFURLErrorServerCertificateHasBadDate:
+        case kCFURLErrorServerCertificateUntrusted:
+        case kCFURLErrorServerCertificateHasUnknownRoot:
+        case kCFURLErrorServerCertificateNotYetValid:
+        case kCFURLErrorClientCertificateRejected:
+        case kCFURLErrorClientCertificateRequired:
+        case kCFURLErrorCannotLoadFromNetwork:
             return true;
             
         default:
