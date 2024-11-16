@@ -18,16 +18,19 @@
 
 @interface CoreDataGlobalContext : NSObject
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *mainObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *backgroundObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *bgPSC;
 @property (strong, nonatomic) NSString *databaseName;
 
 + (id)sharedInstance;
 - (bool)saveContext:(NSError**)error;
 - (NSString*)storePath;
 - (void)clearStore;
-- (NSManagedObjectContext *)managedObjectContext;
+- (NSManagedObjectContext *)mainContext;
+- (NSManagedObjectContext *)backgroundContext;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 
 @end

@@ -12,9 +12,11 @@
 
 @implementation CoreDataGlobalContext
 
-@synthesize managedObjectContext = _managedObjectContext;
+@synthesize mainObjectContext = _mainObjectContext;
+@synthesize backgroundObjectContext = _backgroundObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize bgPSC = _bgPSC;
 
 + (id)sharedInstance {
     static CoreDataGlobalContext* sharedInstance = nil;
@@ -27,7 +29,7 @@
 
 - (bool)saveContext:(NSError**)error
 {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    NSManagedObjectContext *managedObjectContext = self.mainObjectContext;
     if (managedObjectContext == nil) {
         NSLog(@"WARNING! NO MANAGED OBJECT CONTEXT");
         return false;
@@ -52,31 +54,54 @@
     NSURL *storeURL = store.URL;
     [storeCoordinator removePersistentStore:store error:&error];
     [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
-    _managedObjectContext = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    _mainObjectContext = nil;
+    _backgroundObjectContext = nil;
     _managedObjectModel = nil;
     _persistentStoreCoordinator = nil;
+    _bgPSC = nil;
     [self persistentStoreCoordinator];
 }
 
 #pragma mark - Core Data stack
-- (NSManagedObjectContext *)managedObjectContext
+- (NSManagedObjectContext *)mainContext
 {
     if ([NSThread currentThread] != [NSThread mainThread])
     {
         NSLog(@"Warning accessing managed object context on BG thread");
     }
     
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+    if (_mainObjectContext != nil) {
+        return _mainObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        _managedObjectContext.persistentStoreCoordinator = coordinator;
-        _managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
+        _mainObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        _mainObjectContext.persistentStoreCoordinator = coordinator;
+        _mainObjectContext.mergePolicy = NSRollbackMergePolicy;
     }
-    return _managedObjectContext;
+    return _mainObjectContext;
+}
+
+- (NSManagedObjectContext *)backgroundContext
+{
+    if (_backgroundObjectContext != nil) {
+        return _backgroundObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self bgPSC];
+    if (coordinator != nil) {
+        _backgroundObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _backgroundObjectContext.persistentStoreCoordinator = coordinator;
+        _backgroundObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:_backgroundObjectContext];
+    }
+    return _backgroundObjectContext;
 }
 
 - (NSManagedObjectModel *)managedObjectModel
@@ -96,16 +121,29 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    if (![self addPersistentStore])
+    if (![self setPersistenceStore:_persistentStoreCoordinator])
         _persistentStoreCoordinator = nil;
 
     return _persistentStoreCoordinator;
 }
 
+- (NSPersistentStoreCoordinator *)bgPSC
+{
+    if (_bgPSC != nil)
+        return _bgPSC;
+    
+    _bgPSC = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+    if (![self setPersistenceStore:_bgPSC])
+        _bgPSC = nil;
+
+    return _bgPSC;
+}
+
 const static int cMaxTries = 2;
 
-- (bool)addPersistentStore {
-    if (_persistentStoreCoordinator == nil)
+- (bool)setPersistenceStore:(NSPersistentStoreCoordinator *)coordinator {
+    if (coordinator == nil)
         return false;
     
     NSURL *storeURL             = [self storeUrl];
@@ -116,7 +154,7 @@ const static int cMaxTries = 2;
     int numTries = 0;
     while (!hasPersistentStore && numTries < cMaxTries) { //true && false = false
         
-        hasPersistentStore = [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
+        hasPersistentStore = [coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
         
         if (!hasPersistentStore) {
             NSLog(@"REMOVING STORE - Unresolved error %@ , %@", error, [error userInfo]);
@@ -132,6 +170,17 @@ const static int cMaxTries = 2;
     }
     
     return true;
+}
+
+- (void)contextDidSave:(NSNotification *)notification {
+    NSManagedObjectContext *sender = notification.object;
+    if (sender == self.mainContext) {
+        return;
+    }
+    
+    [self.mainContext performBlock:^{
+        [self.mainContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
 }
 
 #pragma mark - Application's Documents directory
