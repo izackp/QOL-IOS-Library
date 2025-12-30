@@ -40,6 +40,10 @@ extension UIViewController {
     
     public func customBarButton(target:Any?, imageName:String, action:Selector) -> UIButton {
         let image:UIImage = UIImage.init(named: imageName)! //TODO: Check for missing image
+        return customBarButton(target: target, image: image, action: action)
+    }
+    
+    public func customBarButton(target:Any?, image:UIImage, action:Selector) -> UIButton {
         let button:UIButton = UIButton.init(type: UIButton.ButtonType.custom)
         button.setTitle(nil, for: UIControl.State.normal)
         button.setImage(image, for: UIControl.State.normal)
