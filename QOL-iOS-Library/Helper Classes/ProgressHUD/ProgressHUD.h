@@ -61,7 +61,9 @@
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UIView *background;
-@property (nonatomic, retain) UIToolbar *hud;
+@property (nonatomic, retain) UIView *hud;
+@property (nonatomic, retain) UIView *hudContent;
+@property (nonatomic, retain) UIView *effectView;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (nonatomic, retain) UIImageView *image;
 @property (nonatomic, retain) UILabel *label;

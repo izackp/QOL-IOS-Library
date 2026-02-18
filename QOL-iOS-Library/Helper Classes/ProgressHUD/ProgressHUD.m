@@ -60,7 +60,7 @@
 
 @implementation ProgressHUD
 
-@synthesize interaction, window, background, hud, spinner, image, label, scheme;
+@synthesize interaction, window, background, hud, hudContent, spinner, image, label, scheme, effectView;
 
 + (ProgressHUD *)shared
 {
@@ -233,19 +233,52 @@ static NSString* sLastText = nil;
 - (void)hideProgressFG {
     _viewProgressFG.frame = CGRectMake(0, _viewProgressFG.frame.origin.y, 0, _viewProgressFG.frame.size.height);
 }
+/*
+ if #available(iOS 26.0, *) {
+     let effectView = UIVisualEffectView(frame: contentView.frame)
+     let glassEffect = UIGlassEffect()
+     
+     glassEffect.isInteractive = true
+     
+     effectView.effect = glassEffect
+     effectView.layer.cornerRadius = 20
+     effectView.clipsToBounds = true
+     
+     effectView.contentView.addSubview(contentView)
+     self.contentView = effectView
+ } else {
+     self.contentView = contentView
+ }
+ */
 
 - (void)hudCreate:(UIColor*)fgColor {
 	if (hud == nil) {
-		hud = [[UIToolbar alloc] initWithFrame:CGRectZero];
-		hud.translucent = YES;
-		hud.backgroundColor = scheme.clrBackground;
-		hud.layer.cornerRadius = 10;
-		hud.layer.masksToBounds = YES;
+        if (@available(iOS 26.0, *)) {
+            UIVisualEffectView *hudView = [[UIVisualEffectView alloc] initWithFrame:CGRectZero];
+            UIGlassEffect *glassEffect = [[UIGlassEffect alloc] init];
+
+            glassEffect.interactive = YES;
+
+            hudView.effect = glassEffect;
+            hudView.layer.cornerRadius = 10;
+            hudView.clipsToBounds = YES;
+            effectView = hudView;
+            hud = hudView;
+            hudContent = hudView.contentView;
+        } else {
+            UIToolbar* hudView = [[UIToolbar alloc] initWithFrame:CGRectZero];
+            hudView.translucent = YES;
+            hudView.backgroundColor = scheme.clrBackground;
+            hud = hudView;
+            hudContent = hudView;
+            hud.layer.cornerRadius = 10;
+            hud.layer.masksToBounds = YES;
+        }
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
         
         UITapGestureRecognizer* singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
-        [hud addGestureRecognizer:singleFingerTap];
+        [hudContent addGestureRecognizer:singleFingerTap];
 	}
 	
 	if (hud.superview == nil) {
@@ -267,13 +300,13 @@ static NSString* sLastText = nil;
 	}
     
 	if (spinner.superview == nil)
-        [hud addSubview:spinner];
+        [hudContent addSubview:spinner];
 	
 	if (image == nil)
 		image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
 
 	if (image.superview == nil)
-        [hud addSubview:image];
+        [hudContent addSubview:image];
 	
 	if (label == nil) {
 		label = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -286,7 +319,7 @@ static NSString* sLastText = nil;
 	}
     
 	if (label.superview == nil)
-        [hud addSubview:label];
+        [hudContent addSubview:label];
     
     if (_viewProgressBG == nil) {
         _viewProgressBG = [[UIView alloc] initWithFrame:CGRectZero];
@@ -294,7 +327,7 @@ static NSString* sLastText = nil;
     }
     
     if (_viewProgressBG.superview == nil)
-        [hud addSubview:_viewProgressBG];
+        [hudContent addSubview:_viewProgressBG];
 	
     if (_viewProgressFG == nil) {
         _viewProgressFG = [[UIView alloc] initWithFrame:CGRectZero];
@@ -304,7 +337,7 @@ static NSString* sLastText = nil;
     }
     
     if (_viewProgressFG.superview == nil)
-        [hud addSubview:_viewProgressFG];
+        [hudContent addSubview:_viewProgressFG];
 }
 
 - (void)onTap {
@@ -322,6 +355,8 @@ static NSString* sLastText = nil;
     spinner = nil;
 	[hud removeFromSuperview];
     hud = nil;
+    hudContent = nil;
+    effectView = nil;
 	[background removeFromSuperview];
     background = nil;
     [_viewProgressBG removeFromSuperview];
